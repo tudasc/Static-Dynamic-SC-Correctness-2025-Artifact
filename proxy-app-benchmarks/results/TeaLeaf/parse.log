@@ -1,0 +1,214 @@
+[2025-07-25 10:28:23,925]:DEBUG: Command: jube run TeaLeaf.xml --tag layout
+[2025-07-25 10:28:23,925]:DEBUG: Version: 2.7.1
+[2025-07-25 10:28:23,926]:DEBUG: Parsing TeaLeaf.xml
+[2025-07-25 10:28:23,926]:DEBUG:   --> Preprocess run 1 <--
+[2025-07-25 10:28:23,926]:DEBUG:   Remove invalid tags
+[2025-07-25 10:28:23,926]:DEBUG:     Available tags: layout
+[2025-07-25 10:28:23,927]:DEBUG:   Remove invalid tags
+[2025-07-25 10:28:23,927]:DEBUG:     Available tags: layout
+[2025-07-25 10:28:23,927]:DEBUG:   Parsing <include-path>
+[2025-07-25 10:28:23,927]:DEBUG:     New path: ./../../common
+[2025-07-25 10:28:23,927]:DEBUG:     New path: ./../../platform/CLAIX-23
+[2025-07-25 10:28:23,927]:DEBUG:   Read $JUBE_INCLUDE_PATH
+[2025-07-25 10:28:23,927]:DEBUG:   Preprocess xml tree
+[2025-07-25 10:28:23,927]:DEBUG:     path: ./../../common
+[2025-07-25 10:28:23,927]:DEBUG:     path: ./../../platform/CLAIX-23
+[2025-07-25 10:28:23,927]:DEBUG:     path: /cvmfs/software.hpc.rwth.de/Linux/RH9/x86_64/intel/sapphirerapids/software/JUBE/2.7.1/share/jube/platform/slurm
+[2025-07-25 10:28:23,927]:DEBUG:     path: .
+[2025-07-25 10:28:23,971]:DEBUG:   New tags might be included, start additional include-preprocess run.
+[2025-07-25 10:28:23,971]:DEBUG:   --> Preprocess run 2 <--
+[2025-07-25 10:28:23,971]:DEBUG:   Remove invalid tags
+[2025-07-25 10:28:23,971]:DEBUG:     Available tags: layout
+[2025-07-25 10:28:23,971]:DEBUG:   Remove invalid tags
+[2025-07-25 10:28:23,972]:DEBUG:     Available tags: layout
+[2025-07-25 10:28:23,972]:DEBUG:   Parsing <include-path>
+[2025-07-25 10:28:23,972]:DEBUG:     New path: ./../../common
+[2025-07-25 10:28:23,972]:DEBUG:     New path: ./../../platform/CLAIX-23
+[2025-07-25 10:28:23,972]:DEBUG:   Read $JUBE_INCLUDE_PATH
+[2025-07-25 10:28:23,972]:DEBUG:   Preprocess xml tree
+[2025-07-25 10:28:23,972]:DEBUG:     path: ./../../common
+[2025-07-25 10:28:23,972]:DEBUG:     path: ./../../platform/CLAIX-23
+[2025-07-25 10:28:23,972]:DEBUG:     path: /cvmfs/software.hpc.rwth.de/Linux/RH9/x86_64/intel/sapphirerapids/software/JUBE/2.7.1/share/jube/platform/slurm
+[2025-07-25 10:28:23,972]:DEBUG:     path: .
+[2025-07-25 10:28:23,972]:DEBUG:   No preprocessing changes were detected, stop additional include-preprocess runs.
+[2025-07-25 10:28:23,972]:DEBUG:   Remove invalid tags
+[2025-07-25 10:28:23,972]:DEBUG:     Available tags: layout
+[2025-07-25 10:28:23,973]:DEBUG:   Preprocess done
+[2025-07-25 10:28:23,973]:DEBUG:   Preprocess benchmark xml tree
+[2025-07-25 10:28:23,973]:DEBUG:     Searching for type of "cover_config_pset" in cover.xml
+[2025-07-25 10:28:23,974]:DEBUG:     Created new <parameterset>: jube_f294ae0ff0c3c27a7d389c66b32d3697_cover_config_pset
+[2025-07-25 10:28:23,974]:DEBUG:     Searching for type of "cover_build_pset" in cover.xml
+[2025-07-25 10:28:23,974]:DEBUG:     Created new <parameterset>: jube_f294ae0ff0c3c27a7d389c66b32d3697_cover_build_pset
+[2025-07-25 10:28:23,974]:DEBUG:     Searching for type of "must_config_pset" in must.xml
+[2025-07-25 10:28:23,975]:DEBUG:     Created new <parameterset>: jube_70f0eb8b044700a5bbf5ab5c62fc67a3_must_config_pset
+[2025-07-25 10:28:23,975]:DEBUG:     Searching for type of "must_build_pset" in must.xml
+[2025-07-25 10:28:23,975]:DEBUG:     Created new <parameterset>: jube_70f0eb8b044700a5bbf5ab5c62fc67a3_must_build_pset
+[2025-07-25 10:28:23,975]:DEBUG:     Searching for type of "must_files" in must.xml
+[2025-07-25 10:28:23,976]:DEBUG:     Created new <fileset>: jube_70f0eb8b044700a5bbf5ab5c62fc67a3_must_files
+[2025-07-25 10:28:23,976]:DEBUG:     Searching for type of "must_execute_sub" in must.xml
+[2025-07-25 10:28:23,976]:DEBUG:     Created new <substituteset>: jube_70f0eb8b044700a5bbf5ab5c62fc67a3_must_execute_sub
+[2025-07-25 10:28:23,976]:DEBUG:     Searching for type of "compile_mode_pset" in defaults.xml
+[2025-07-25 10:28:23,977]:DEBUG:     Created new <parameterset>: jube_6735070c71f31aac0f70d8501cd4b1e2_compile_mode_pset
+[2025-07-25 10:28:23,977]:DEBUG:     Searching for type of "ignorelist_pset" in defaults.xml
+[2025-07-25 10:28:23,979]:DEBUG:     Created new <parameterset>: jube_6735070c71f31aac0f70d8501cd4b1e2_ignorelist_pset
+[2025-07-25 10:28:23,979]:DEBUG:     Searching for type of "measurement_mode_pset" in defaults.xml
+[2025-07-25 10:28:23,979]:DEBUG:     Created new <parameterset>: jube_6735070c71f31aac0f70d8501cd4b1e2_measurement_mode_pset
+[2025-07-25 10:28:23,979]:DEBUG:     Searching for type of "parcoach_files" in parcoach.xml
+[2025-07-25 10:28:23,989]:DEBUG:     Created new <fileset>: jube_c2086b6be069d6e864d249f274b90894_parcoach_files
+[2025-07-25 10:28:23,989]:DEBUG:     Searching for type of "parcoach_execute_sub" in parcoach.xml
+[2025-07-25 10:28:23,989]:DEBUG:     Created new <substituteset>: jube_c2086b6be069d6e864d249f274b90894_parcoach_execute_sub
+[2025-07-25 10:28:23,990]:DEBUG:   Parsing <parameterset name="config">
+[2025-07-25 10:28:23,990]:DEBUG:   Parsing <parameterset name="source">
+[2025-07-25 10:28:23,990]:DEBUG:     Searching for <parameterset name="source"> in defaults.xml
+[2025-07-25 10:28:23,991]:DEBUG:   Parsing <parameterset name="platform_specs_pset">
+[2025-07-25 10:28:23,992]:DEBUG:     Searching for <parameterset name="platform_specs_pset"> in system_settings.xml
+[2025-07-25 10:28:24,004]:DEBUG:     Searching for <parameterset name="platform_specs_pset"> in defaults.xml
+[2025-07-25 10:28:24,006]:DEBUG:     Searching for <parameterset name="systemParameter"> in platform.xml
+[2025-07-25 10:28:24,007]:DEBUG:   Parsing <parameterset name="execute_pset">
+[2025-07-25 10:28:24,007]:DEBUG:     Searching for <parameterset name="execute_pset"> in system_settings.xml
+[2025-07-25 10:28:24,007]:DEBUG:     Searching for <parameterset name="execute_pset"> in defaults.xml
+[2025-07-25 10:28:24,009]:DEBUG:     Searching for <parameterset name="executeset"> in platform.xml
+[2025-07-25 10:28:24,009]:DEBUG:   Parsing <parameterset name="toolchain_env_pset">
+[2025-07-25 10:28:24,009]:DEBUG:     Searching for <parameterset name="toolchain_env_pset"> in system_settings.xml
+[2025-07-25 10:28:24,010]:DEBUG:   Parsing <parameterset name="compile_pset">
+[2025-07-25 10:28:24,010]:DEBUG:     Searching for <parameterset name="compile_pset"> in system_settings.xml
+[2025-07-25 10:28:24,010]:DEBUG:     Searching for <parameterset name="compile_pset"> in defaults.xml
+[2025-07-25 10:28:24,012]:DEBUG:   Parsing <parameterset name="module_env_pset">
+[2025-07-25 10:28:24,012]:DEBUG:     Searching for <parameterset name="module_env_pset"> in system_settings.xml
+[2025-07-25 10:28:24,012]:DEBUG:     Searching for <parameterset name="module_env_pset"> in defaults.xml
+[2025-07-25 10:28:24,014]:DEBUG:   Parsing <parameterset name="mpirun_env_pset">
+[2025-07-25 10:28:24,014]:DEBUG:     Searching for <parameterset name="mpirun_env_pset"> in system_settings.xml
+[2025-07-25 10:28:24,014]:DEBUG:     Searching for <parameterset name="mpirun_env_pset"> in defaults.xml
+[2025-07-25 10:28:24,015]:DEBUG:   Parsing <parameterset name="export_env_pset">
+[2025-07-25 10:28:24,016]:DEBUG:     Searching for <parameterset name="export_env_pset"> in system_settings.xml
+[2025-07-25 10:28:24,016]:DEBUG:     Searching for <parameterset name="export_env_pset"> in defaults.xml
+[2025-07-25 10:28:24,017]:DEBUG:   Parsing <parameterset name="cover_config_pset">
+[2025-07-25 10:28:24,017]:DEBUG:     Searching for <parameterset name="cover_config_pset"> in cover.xml
+[2025-07-25 10:28:24,018]:DEBUG:   Parsing <parameterset name="cover_build_pset">
+[2025-07-25 10:28:24,018]:DEBUG:     Searching for <parameterset name="cover_build_pset"> in cover.xml
+[2025-07-25 10:28:24,018]:DEBUG:   Parsing <parameterset name="cover_compile_pset">
+[2025-07-25 10:28:24,018]:DEBUG:     Searching for <parameterset name="cover_compile_pset"> in cover.xml
+[2025-07-25 10:28:24,019]:DEBUG:   Parsing <parameterset name="cover_execute_pset">
+[2025-07-25 10:28:24,019]:DEBUG:     Searching for <parameterset name="cover_execute_pset"> in cover.xml
+[2025-07-25 10:28:24,019]:DEBUG:   Parsing <parameterset name="must_config_pset">
+[2025-07-25 10:28:24,019]:DEBUG:     Searching for <parameterset name="must_config_pset"> in must.xml
+[2025-07-25 10:28:24,019]:DEBUG:   Parsing <parameterset name="must_build_pset">
+[2025-07-25 10:28:24,019]:DEBUG:     Searching for <parameterset name="must_build_pset"> in must.xml
+[2025-07-25 10:28:24,020]:DEBUG:   Parsing <parameterset name="must_compile_pset">
+[2025-07-25 10:28:24,020]:DEBUG:     Searching for <parameterset name="must_compile_pset"> in must.xml
+[2025-07-25 10:28:24,020]:DEBUG:   Parsing <parameterset name="must_execute_pset">
+[2025-07-25 10:28:24,020]:DEBUG:     Searching for <parameterset name="must_execute_pset"> in must.xml
+[2025-07-25 10:28:24,021]:DEBUG:   Parsing <parameterset name="jube_f294ae0ff0c3c27a7d389c66b32d3697_cover_config_pset">
+[2025-07-25 10:28:24,021]:DEBUG:     Searching for <parameterset name="cover_config_pset"> in cover.xml
+[2025-07-25 10:28:24,021]:DEBUG:   Parsing <parameterset name="jube_f294ae0ff0c3c27a7d389c66b32d3697_cover_build_pset">
+[2025-07-25 10:28:24,021]:DEBUG:     Searching for <parameterset name="cover_build_pset"> in cover.xml
+[2025-07-25 10:28:24,022]:DEBUG:   Parsing <parameterset name="jube_70f0eb8b044700a5bbf5ab5c62fc67a3_must_config_pset">
+[2025-07-25 10:28:24,022]:DEBUG:     Searching for <parameterset name="must_config_pset"> in must.xml
+[2025-07-25 10:28:24,022]:DEBUG:   Parsing <parameterset name="jube_70f0eb8b044700a5bbf5ab5c62fc67a3_must_build_pset">
+[2025-07-25 10:28:24,022]:DEBUG:     Searching for <parameterset name="must_build_pset"> in must.xml
+[2025-07-25 10:28:24,023]:DEBUG:   Parsing <parameterset name="jube_6735070c71f31aac0f70d8501cd4b1e2_compile_mode_pset">
+[2025-07-25 10:28:24,023]:DEBUG:     Searching for <parameterset name="compile_mode_pset"> in defaults.xml
+[2025-07-25 10:28:24,024]:DEBUG:   Parsing <parameterset name="jube_6735070c71f31aac0f70d8501cd4b1e2_ignorelist_pset">
+[2025-07-25 10:28:24,024]:DEBUG:     Searching for <parameterset name="ignorelist_pset"> in defaults.xml
+[2025-07-25 10:28:24,026]:DEBUG:   Parsing <parameterset name="jube_6735070c71f31aac0f70d8501cd4b1e2_measurement_mode_pset">
+[2025-07-25 10:28:24,026]:DEBUG:     Searching for <parameterset name="measurement_mode_pset"> in defaults.xml
+[2025-07-25 10:28:24,027]:DEBUG:   Parsing <substituteset name="job_sub">
+[2025-07-25 10:28:24,027]:DEBUG:     Searching for <substituteset name="job_sub"> in system_settings.xml
+[2025-07-25 10:28:24,027]:DEBUG:     Searching for <substituteset name="job_sub"> in defaults.xml
+[2025-07-25 10:28:24,028]:DEBUG:     Searching for <substituteset name="executesub"> in platform.xml
+[2025-07-25 10:28:24,029]:DEBUG:   Parsing <substituteset name="tealeaf_execute_sub">
+[2025-07-25 10:28:24,029]:DEBUG:   Parsing <substituteset name="jube_70f0eb8b044700a5bbf5ab5c62fc67a3_must_execute_sub">
+[2025-07-25 10:28:24,029]:DEBUG:     Searching for <substituteset name="must_execute_sub"> in must.xml
+[2025-07-25 10:28:24,029]:DEBUG:   Parsing <substituteset name="jube_c2086b6be069d6e864d249f274b90894_parcoach_execute_sub">
+[2025-07-25 10:28:24,030]:DEBUG:     Searching for <substituteset name="parcoach_execute_sub"> in parcoach.xml
+[2025-07-25 10:28:24,030]:DEBUG:   Parsing <fileset name="cover_fset">
+[2025-07-25 10:28:24,030]:DEBUG:   Parsing <fileset name="source_files">
+[2025-07-25 10:28:24,030]:DEBUG:     Searching for <fileset name="source_files"> in system_settings.xml
+[2025-07-25 10:28:24,030]:DEBUG:     Searching for <fileset name="source_files"> in defaults.xml
+[2025-07-25 10:28:24,031]:DEBUG:   Parsing <fileset name="job_files">
+[2025-07-25 10:28:24,031]:DEBUG:     Searching for <fileset name="job_files"> in system_settings.xml
+[2025-07-25 10:28:24,032]:DEBUG:     Searching for <fileset name="job_files"> in defaults.xml
+[2025-07-25 10:28:24,033]:DEBUG:     Searching for <fileset name="jobfiles"> in platform.xml
+[2025-07-25 10:28:24,033]:DEBUG:   Parsing <fileset name="tealeaf_files">
+[2025-07-25 10:28:24,033]:DEBUG:   Parsing <fileset name="jube_70f0eb8b044700a5bbf5ab5c62fc67a3_must_files">
+[2025-07-25 10:28:24,034]:DEBUG:     Searching for <fileset name="must_files"> in must.xml
+[2025-07-25 10:28:24,034]:DEBUG:   Parsing <fileset name="jube_c2086b6be069d6e864d249f274b90894_parcoach_files">
+[2025-07-25 10:28:24,034]:DEBUG:     Searching for <fileset name="parcoach_files"> in parcoach.xml
+[2025-07-25 10:28:24,034]:DEBUG:   Parsing <patternset name="pattern">
+[2025-07-25 10:28:24,034]:DEBUG:     Searching for <patternset name="pattern"> in defaults.xml
+[2025-07-25 10:28:24,036]:DEBUG:   Parsing <patternset name="cover_time_pattern">
+[2025-07-25 10:28:24,036]:DEBUG:   Parsing <patternset name="cover_messages_pattern">
+[2025-07-25 10:28:24,036]:DEBUG:   Parsing <step name="build_cover">
+[2025-07-25 10:28:24,036]:DEBUG:   Parsing <step name="build_must">
+[2025-07-25 10:28:24,036]:DEBUG:   Parsing <step name="copy_source">
+[2025-07-25 10:28:24,036]:DEBUG:   Parsing <step name="compile_cover">
+[2025-07-25 10:28:24,036]:DEBUG:   Parsing <step name="compile">
+[2025-07-25 10:28:24,036]:DEBUG:   Parsing <step name="execute">
+[2025-07-25 10:28:24,036]:DEBUG:   Parsing <analyser name="analyse">
+[2025-07-25 10:28:24,036]:DEBUG:   Parsing <analyser name="cover_analyse">
+[2025-07-25 10:28:24,036]:DEBUG: Start consistency check
+[2025-07-25 10:28:24,036]:DEBUG: Create benchmark directory
+[2025-07-25 18:17:40,871]:DEBUG: Command: jube result TeaLeaf.benchmarks --id last
+[2025-07-25 18:17:40,891]:DEBUG: Version: 2.7.1
+[2025-07-25 18:17:40,891]:DEBUG: Parsing TeaLeaf.benchmarks/000001/configuration.xml
+[2025-07-25 18:17:40,910]:DEBUG:   --> Preprocess run 1 <--
+[2025-07-25 18:17:40,910]:DEBUG:   Remove invalid tags
+[2025-07-25 18:17:40,910]:DEBUG:     Available tags: 
+[2025-07-25 18:17:40,910]:DEBUG:   Parsing <selection>
+[2025-07-25 18:17:40,910]:DEBUG:   Remove invalid tags
+[2025-07-25 18:17:40,910]:DEBUG:     Available tags: layout
+[2025-07-25 18:17:40,910]:DEBUG:   Read $JUBE_INCLUDE_PATH
+[2025-07-25 18:17:40,910]:DEBUG:   Preprocess xml tree
+[2025-07-25 18:17:40,910]:DEBUG:     path: /cvmfs/software.hpc.rwth.de/Linux/RH9/x86_64/intel/sapphirerapids/software/JUBE/2.7.1/share/jube/platform/slurm
+[2025-07-25 18:17:40,910]:DEBUG:     path: TeaLeaf.benchmarks/000001
+[2025-07-25 18:17:40,910]:DEBUG:   No preprocessing changes were detected, stop additional include-preprocess runs.
+[2025-07-25 18:17:40,911]:DEBUG:   Remove invalid tags
+[2025-07-25 18:17:40,911]:DEBUG:     Available tags: layout
+[2025-07-25 18:17:40,911]:DEBUG:   Preprocess done
+[2025-07-25 18:17:40,911]:DEBUG:   Preprocess benchmark xml tree
+[2025-07-25 18:17:40,911]:DEBUG:   Parsing <parameterset name="config">
+[2025-07-25 18:17:40,911]:DEBUG:   Parsing <parameterset name="source">
+[2025-07-25 18:17:40,911]:DEBUG:   Parsing <parameterset name="platform_specs_pset">
+[2025-07-25 18:17:40,912]:DEBUG:   Parsing <parameterset name="execute_pset">
+[2025-07-25 18:17:40,912]:DEBUG:   Parsing <parameterset name="toolchain_env_pset">
+[2025-07-25 18:17:40,912]:DEBUG:   Parsing <parameterset name="compile_pset">
+[2025-07-25 18:17:40,912]:DEBUG:   Parsing <parameterset name="module_env_pset">
+[2025-07-25 18:17:40,912]:DEBUG:   Parsing <parameterset name="mpirun_env_pset">
+[2025-07-25 18:17:40,912]:DEBUG:   Parsing <parameterset name="export_env_pset">
+[2025-07-25 18:17:40,912]:DEBUG:   Parsing <parameterset name="cover_config_pset">
+[2025-07-25 18:17:40,912]:DEBUG:   Parsing <parameterset name="cover_build_pset">
+[2025-07-25 18:17:40,912]:DEBUG:   Parsing <parameterset name="cover_compile_pset">
+[2025-07-25 18:17:40,912]:DEBUG:   Parsing <parameterset name="cover_execute_pset">
+[2025-07-25 18:17:40,913]:DEBUG:   Parsing <parameterset name="must_config_pset">
+[2025-07-25 18:17:40,913]:DEBUG:   Parsing <parameterset name="must_build_pset">
+[2025-07-25 18:17:40,913]:DEBUG:   Parsing <parameterset name="must_compile_pset">
+[2025-07-25 18:17:40,913]:DEBUG:   Parsing <parameterset name="must_execute_pset">
+[2025-07-25 18:17:40,913]:DEBUG:   Parsing <parameterset name="jube_f294ae0ff0c3c27a7d389c66b32d3697_cover_config_pset">
+[2025-07-25 18:17:40,913]:DEBUG:   Parsing <parameterset name="jube_f294ae0ff0c3c27a7d389c66b32d3697_cover_build_pset">
+[2025-07-25 18:17:40,913]:DEBUG:   Parsing <parameterset name="jube_70f0eb8b044700a5bbf5ab5c62fc67a3_must_config_pset">
+[2025-07-25 18:17:40,913]:DEBUG:   Parsing <parameterset name="jube_70f0eb8b044700a5bbf5ab5c62fc67a3_must_build_pset">
+[2025-07-25 18:17:40,934]:DEBUG:   Parsing <parameterset name="jube_6735070c71f31aac0f70d8501cd4b1e2_compile_mode_pset">
+[2025-07-25 18:17:40,934]:DEBUG:   Parsing <parameterset name="jube_6735070c71f31aac0f70d8501cd4b1e2_ignorelist_pset">
+[2025-07-25 18:17:40,934]:DEBUG:   Parsing <parameterset name="jube_6735070c71f31aac0f70d8501cd4b1e2_measurement_mode_pset">
+[2025-07-25 18:17:40,934]:DEBUG:   Parsing <substituteset name="job_sub">
+[2025-07-25 18:17:40,934]:DEBUG:   Parsing <substituteset name="tealeaf_execute_sub">
+[2025-07-25 18:17:40,934]:DEBUG:   Parsing <substituteset name="jube_70f0eb8b044700a5bbf5ab5c62fc67a3_must_execute_sub">
+[2025-07-25 18:17:40,934]:DEBUG:   Parsing <substituteset name="jube_c2086b6be069d6e864d249f274b90894_parcoach_execute_sub">
+[2025-07-25 18:17:40,934]:DEBUG:   Parsing <fileset name="cover_fset">
+[2025-07-25 18:17:40,934]:DEBUG:   Parsing <fileset name="source_files">
+[2025-07-25 18:17:40,934]:DEBUG:   Parsing <fileset name="job_files">
+[2025-07-25 18:17:40,934]:DEBUG:   Parsing <fileset name="tealeaf_files">
+[2025-07-25 18:17:40,934]:DEBUG:   Parsing <fileset name="jube_70f0eb8b044700a5bbf5ab5c62fc67a3_must_files">
+[2025-07-25 18:17:40,934]:DEBUG:   Parsing <fileset name="jube_c2086b6be069d6e864d249f274b90894_parcoach_files">
+[2025-07-25 18:17:40,934]:DEBUG:   Parsing <patternset name="pattern">
+[2025-07-25 18:17:40,934]:DEBUG:   Parsing <patternset name="cover_time_pattern">
+[2025-07-25 18:17:40,934]:DEBUG:   Parsing <patternset name="cover_messages_pattern">
+[2025-07-25 18:17:40,934]:DEBUG:   Parsing <step name="build_cover">
+[2025-07-25 18:17:40,934]:DEBUG:   Parsing <step name="build_must">
+[2025-07-25 18:17:40,934]:DEBUG:   Parsing <step name="copy_source">
+[2025-07-25 18:17:40,934]:DEBUG:   Parsing <step name="compile_cover">
+[2025-07-25 18:17:40,934]:DEBUG:   Parsing <step name="compile">
+[2025-07-25 18:17:40,935]:DEBUG:   Parsing <step name="execute">
+[2025-07-25 18:17:40,935]:DEBUG:   Parsing <analyser name="analyse">
+[2025-07-25 18:17:40,935]:DEBUG:   Parsing <analyser name="cover_analyse">
+[2025-07-25 18:17:40,935]:DEBUG: Parsing TeaLeaf.benchmarks/000001/workpackages.xml

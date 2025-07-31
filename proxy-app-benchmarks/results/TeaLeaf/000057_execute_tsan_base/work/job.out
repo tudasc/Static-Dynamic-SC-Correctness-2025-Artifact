@@ -1,0 +1,94 @@
+nodelist=r23m[0130-0131,0134,0136]
+# Opening tea.out as log file.
+TeaLeaf:
+ - Ver.:     2.000
+ - Deck:     tea.in
+ - Out:      tea.out
+ - Problem:  tea.problems
+ - Solver:   CG
+ - Profiler: false
+Model:
+ - Name:      Serial
+ - Execution: Host
+MPI:
+ - Enabled:     true
+ - Total ranks: 192
+ - Header device-awareness (CUDA-awareness):  true
+ - Runtime device-awareness (CUDA-awareness): false
+ - Host-Device halo exchange staging buffer:  true
+ - X buffer elements: 393216
+ - Y buffer elements: 297216
+ - X buffer size:     16 KB
+ - Y buffer size:     12 KB
+# ---- 
+Output: |+1
+
+ Timestep 1
+ CG: 			2375 iterations
+ Wallclock: 		2.981s
+ Avg. time per cell: 	7.452596e-07
+ Error: 		9.663879e-31
+
+ Timestep 2
+ CG: 			2295 iterations
+ Wallclock: 		5.563s
+ Avg. time per cell: 	1.390802e-06
+ Error: 		9.901610e-31
+
+ Timestep 3
+ CG: 			2219 iterations
+ Wallclock: 		7.883s
+ Avg. time per cell: 	1.970782e-06
+ Error: 		9.927459e-31
+
+ Timestep 4
+ CG: 			2142 iterations
+ Wallclock: 		11.215s
+ Avg. time per cell: 	2.803782e-06
+ Error: 		9.816412e-31
+
+ Timestep 5
+ CG: 			2070 iterations
+ Wallclock: 		15.520s
+ Avg. time per cell: 	3.880060e-06
+ Error: 		9.561229e-31
+
+ Timestep 6
+ CG: 			2001 iterations
+ Wallclock: 		19.485s
+ Avg. time per cell: 	4.871328e-06
+ Error: 		9.777833e-31
+
+ Timestep 7
+ CG: 			1939 iterations
+ Wallclock: 		22.782s
+ Avg. time per cell: 	5.695483e-06
+ Error: 		9.759224e-31
+
+ Timestep 8
+ CG: 			1875 iterations
+ Wallclock: 		26.656s
+ Avg. time per cell: 	6.663970e-06
+ Error: 		9.471933e-31
+
+ Timestep 9
+ CG: 			1828 iterations
+ Wallclock: 		30.504s
+ Avg. time per cell: 	7.625930e-06
+ Error: 		9.694708e-31
+
+ Timestep 10
+ CG: 			1784 iterations
+ Wallclock: 		34.334s
+ Avg. time per cell: 	8.583422e-06
+ Error: 		9.976346e-31
+
+ Checking results...
+ Expected 9.605026999605091e+01
+ Actual   9.605027000155803e+01
+ This run PASSED (Difference is within 0.00000001%)
+Result:
+ - Problem: 2000x2000@10
+ - Outcome: PASSED
+Total Wallclock:  		34.334s
+EXECUTION VERIFICATION CHECK: SUCCESS

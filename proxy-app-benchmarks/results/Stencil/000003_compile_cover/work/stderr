@@ -1,0 +1,53 @@
+[WARN] OpenMPI's default binding is set to OFF, you can override this
+[INFO] Module gompi/2024a loaded.
+Lmod has detected the following error: The following module(s) are unknown: ""
+
+Please check the spelling or version number. Also try "module spider ..."
+It is also possible your cache file is out-of-date; it may help to try:
+  $ module --ignore_cache load ""
+
+Also make sure that all modulefiles written in TCL start with the string #%Module
+
+
+
+[INFO] Module LLVM/19.1.7 loaded.
+[INFO] Module CMake/3.29.3 loaded.
+/bin/bash: line 4: export: `invalid-compile-mode': not a valid identifier
+In file included from stencil.c:71:
+../../include/par-res-kern_general.h:190:12: warning: implicit conversion from 'int' to 'float' changes value from 2147483647 to 2147483648 [-Wimplicit-const-int-float-conversion]
+  190 |   cost_opt=INT_MAX;
+      |           ~^~~~~~~
+/cvmfs/software.hpc.rwth.de/Linux/RH9/x86_64/intel/sapphirerapids/software/LLVM/19.1.7-GCCcore-13.3.0/lib/clang/19/include/limits.h:50:19: note: expanded from macro 'INT_MAX'
+   50 | #define INT_MAX   __INT_MAX__
+      |                   ^~~~~~~~~~~
+<built-in>:60:21: note: expanded from macro '__INT_MAX__'
+   60 | #define __INT_MAX__ 2147483647
+      |                     ^~~~~~~~~~
+1 warning generated.
+In file included from ../../common/MPI_bail_out.c:50:
+../../include/par-res-kern_general.h:190:12: warning: implicit conversion from 'int' to 'float' changes value from 2147483647 to 2147483648 [-Wimplicit-const-int-float-conversion]
+  190 |   cost_opt=INT_MAX;
+      |           ~^~~~~~~
+/cvmfs/software.hpc.rwth.de/Linux/RH9/x86_64/intel/sapphirerapids/software/LLVM/19.1.7-GCCcore-13.3.0/lib/clang/19/include/limits.h:50:19: note: expanded from macro 'INT_MAX'
+   50 | #define INT_MAX   __INT_MAX__
+      |                   ^~~~~~~~~~~
+<built-in>:60:21: note: expanded from macro '__INT_MAX__'
+   60 | #define __INT_MAX__ 2147483647
+      |                     ^~~~~~~~~~
+1 warning generated.
+Running Contract Manager on Module: /tmp/ss540294/login23-4_837921/contrPlugin_cubiIr
+CoVer: Parsed contracts after 0.001202s
+## Contract violation detected! ##
+--> Function: MPI_Put
+--> Contract: CONTRACT{PRE { call_tag!(mpi_init) MSG "Missing Initialization call", ( call_tag!(epoch_fence_create,$:7) MSG "No fence epoch" ^ call_tag!(epoch_lock_create,$:7) MSG "No lock epoch" ^ call_tag!(epoch_pscw_create,$:7) MSG "No PSCW epoch") MSG "Mixed sync or missing epoch", call_tag!(rma_createwin,$:&7) MSG "Window initialization missing" } POST { call_tag!(mpi_finalize) MSG "Missing Finalization call", no! (write!(*0)) until! (call_tag!(rma_complete,$:7)) MSG "Local Data Race - Local write", no! (call_tag!(buf_write,$:0)) until! (call_tag!(rma_complete,$:7)) MSG "Local Data Race - Local write by call", no! (call!(MPI_Win_free,0:&7)) until! (call_tag!(rma_complete,$:7)) MSG "Possible inflight call at MPI_Win_free" } TAGS { buf_read(0) }}
+--> Precondition Subformula Status: Violated
+    --> Formula String: call_tag!(rma_createwin,$:&7)
+    --> Message: Window initialization missing
+    --> Error Info:
+        [ContractVerifierPreCall] Did not find precall function rma_createwin (Tag) with required parameters before MPI_Put at /rwthfs/rz/cluster/home/ss540294/static-dynamic-interop/benchmarks/Stencil/PRK_stencil.benchmarks/000001/000003_compile_cover/work/copy_source/MPIRMA/Stencil/stencil.c:348:7
+        [ContractVerifierPreCall] Did not find precall function rma_createwin (Tag) with required parameters before MPI_Put at /rwthfs/rz/cluster/home/ss540294/static-dynamic-interop/benchmarks/Stencil/PRK_stencil.benchmarks/000001/000003_compile_cover/work/copy_source/MPIRMA/Stencil/stencil.c:355:7
+        [ContractVerifierPreCall] Did not find precall function rma_createwin (Tag) with required parameters before MPI_Put at /rwthfs/rz/cluster/home/ss540294/static-dynamic-interop/benchmarks/Stencil/PRK_stencil.benchmarks/000001/000003_compile_cover/work/copy_source/MPIRMA/Stencil/stencil.c:376:7
+        [ContractVerifierPreCall] Did not find precall function rma_createwin (Tag) with required parameters before MPI_Put at /rwthfs/rz/cluster/home/ss540294/static-dynamic-interop/benchmarks/Stencil/PRK_stencil.benchmarks/000001/000003_compile_cover/work/copy_source/MPIRMA/Stencil/stencil.c:383:7
+
+CoVer: Total Tool Runtime 0.022725s
+

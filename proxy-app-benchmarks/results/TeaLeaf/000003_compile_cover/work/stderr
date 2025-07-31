@@ -1,0 +1,88 @@
+[WARN] OpenMPI's default binding is set to OFF, you can override this
+[INFO] Module gompi/2024a loaded.
+Lmod has detected the following error: The following module(s) are unknown: ""
+
+Please check the spelling or version number. Also try "module spider ..."
+It is also possible your cache file is out-of-date; it may help to try:
+  $ module --ignore_cache load ""
+
+Also make sure that all modulefiles written in TCL start with the string #%Module
+
+
+
+[INFO] Module LLVM/19.1.7 loaded.
+[INFO] Module CMake/3.29.3 loaded.
+/bin/bash: line 3: export: `invalid-compile-mode': not a valid identifier
+/bin/bash: line 3: export: `0': not a valid identifier
+/rwthfs/rz/cluster/home/ss540294/static-dynamic-interop/benchmarks/TeaLeaf/TeaLeaf.benchmarks/000001/000003_compile_cover/work/copy_source/driver/parse_config.cpp:73:15: warning: variable length arrays in C++ are a Clang extension [-Wvla-cxx-extension]
+   73 |     char word[len];
+      |               ^~~
+/rwthfs/rz/cluster/home/ss540294/static-dynamic-interop/benchmarks/TeaLeaf/TeaLeaf.benchmarks/000001/000003_compile_cover/work/copy_source/driver/parse_config.cpp:73:15: note: read of non-const variable 'len' is not allowed in a constant expression
+/rwthfs/rz/cluster/home/ss540294/static-dynamic-interop/benchmarks/TeaLeaf/TeaLeaf.benchmarks/000001/000003_compile_cover/work/copy_source/driver/parse_config.cpp:68:10: note: declared here
+   68 |   size_t len = 0;
+      |          ^
+/rwthfs/rz/cluster/home/ss540294/static-dynamic-interop/benchmarks/TeaLeaf/TeaLeaf.benchmarks/000001/000003_compile_cover/work/copy_source/driver/parse_config.cpp:159:15: warning: variable length arrays in C++ are a Clang extension [-Wvla-cxx-extension]
+  159 |     char word[len];
+      |               ^~~
+/rwthfs/rz/cluster/home/ss540294/static-dynamic-interop/benchmarks/TeaLeaf/TeaLeaf.benchmarks/000001/000003_compile_cover/work/copy_source/driver/parse_config.cpp:159:15: note: read of non-const variable 'len' is not allowed in a constant expression
+/rwthfs/rz/cluster/home/ss540294/static-dynamic-interop/benchmarks/TeaLeaf/TeaLeaf.benchmarks/000001/000003_compile_cover/work/copy_source/driver/parse_config.cpp:152:10: note: declared here
+  152 |   size_t len = 0;
+      |          ^
+/rwthfs/rz/cluster/home/ss540294/static-dynamic-interop/benchmarks/TeaLeaf/TeaLeaf.benchmarks/000001/000003_compile_cover/work/copy_source/driver/parse_config.cpp:184:15: warning: variable length arrays in C++ are a Clang extension [-Wvla-cxx-extension]
+  184 |     char word[len];
+      |               ^~~
+/rwthfs/rz/cluster/home/ss540294/static-dynamic-interop/benchmarks/TeaLeaf/TeaLeaf.benchmarks/000001/000003_compile_cover/work/copy_source/driver/parse_config.cpp:184:15: note: read of non-const variable 'len' is not allowed in a constant expression
+/rwthfs/rz/cluster/home/ss540294/static-dynamic-interop/benchmarks/TeaLeaf/TeaLeaf.benchmarks/000001/000003_compile_cover/work/copy_source/driver/parse_config.cpp:152:10: note: declared here
+  152 |   size_t len = 0;
+      |          ^
+3 warnings generated.
+/rwthfs/rz/cluster/home/ss540294/static-dynamic-interop/benchmarks/TeaLeaf/TeaLeaf.benchmarks/000001/000003_compile_cover/work/copy_source/driver/eigenvalue_driver.cpp:16:17: warning: variable length arrays in C++ are a Clang extension [-Wvla-cxx-extension]
+   16 |     double diag[num_cg_iters];
+      |                 ^~~~~~~~~~~~
+/rwthfs/rz/cluster/home/ss540294/static-dynamic-interop/benchmarks/TeaLeaf/TeaLeaf.benchmarks/000001/000003_compile_cover/work/copy_source/driver/eigenvalue_driver.cpp:16:17: note: function parameter 'num_cg_iters' with unknown value cannot be used in a constant expression
+/rwthfs/rz/cluster/home/ss540294/static-dynamic-interop/benchmarks/TeaLeaf/TeaLeaf.benchmarks/000001/000003_compile_cover/work/copy_source/driver/eigenvalue_driver.cpp:12:74: note: declared here
+   12 | void eigenvalue_driver_initialise(Chunk *chunks, Settings &settings, int num_cg_iters) {
+      |                                                                          ^
+/rwthfs/rz/cluster/home/ss540294/static-dynamic-interop/benchmarks/TeaLeaf/TeaLeaf.benchmarks/000001/000003_compile_cover/work/copy_source/driver/eigenvalue_driver.cpp:17:20: warning: variable length arrays in C++ are a Clang extension [-Wvla-cxx-extension]
+   17 |     double offdiag[num_cg_iters];
+      |                    ^~~~~~~~~~~~
+/rwthfs/rz/cluster/home/ss540294/static-dynamic-interop/benchmarks/TeaLeaf/TeaLeaf.benchmarks/000001/000003_compile_cover/work/copy_source/driver/eigenvalue_driver.cpp:17:20: note: function parameter 'num_cg_iters' with unknown value cannot be used in a constant expression
+/rwthfs/rz/cluster/home/ss540294/static-dynamic-interop/benchmarks/TeaLeaf/TeaLeaf.benchmarks/000001/000003_compile_cover/work/copy_source/driver/eigenvalue_driver.cpp:12:74: note: declared here
+   12 | void eigenvalue_driver_initialise(Chunk *chunks, Settings &settings, int num_cg_iters) {
+      |                                                                          ^
+2 warnings generated.
+/rwthfs/rz/cluster/home/ss540294/static-dynamic-interop/benchmarks/TeaLeaf/TeaLeaf.benchmarks/000001/000003_compile_cover/work/copy_source/driver/remote_halo_driver.cpp:49:24: warning: variable length arrays in C++ are a Clang extension [-Wvla-cxx-extension]
+   49 |   MPI_Request requests[max_messages];
+      |                        ^~~~~~~~~~~~
+/rwthfs/rz/cluster/home/ss540294/static-dynamic-interop/benchmarks/TeaLeaf/TeaLeaf.benchmarks/000001/000003_compile_cover/work/copy_source/driver/remote_halo_driver.cpp:49:24: note: read of non-const variable 'max_messages' is not allowed in a constant expression
+/rwthfs/rz/cluster/home/ss540294/static-dynamic-interop/benchmarks/TeaLeaf/TeaLeaf.benchmarks/000001/000003_compile_cover/work/copy_source/driver/remote_halo_driver.cpp:48:7: note: declared here
+   48 |   int max_messages = settings.num_chunks_per_rank * 4;
+      |       ^
+1 warning generated.
+Running Contract Manager on Module: /tmp/ss540294/login23-4_837921/contrPlugin_Ik97bb
+CoVer: Parsed contracts after 0.001077s
+## Contract violation detected! ##
+--> Function: MPI_Isend
+--> Contract: CONTRACT{PRE { call_tag!(mpi_init) MSG "Missing Initialization call" } POST { call_tag!(mpi_finalize) MSG "Missing Finalization call", no! (call_tag!(request_gen,$:6)) until! (call_tag!(req_complete,$:6)) MSG "Double Request Use", call_tag!(req_complete,$:6) MSG "Request Leak", no! (write!(*0)) until! (call_tag!(req_complete,$:6)) MSG "Local Data Race - Local write", no! (call_tag!(buf_write,$:0)) until! (call_tag!(req_complete,$:6)) MSG "Local Data Race - Local write by call" } TAGS { request_gen(6), buf_read(0), type_use(2) }}
+--> Postcondition Subformula Status: Violated
+    --> Formula String: no!(call_tag!(request_gen,$:6))until!(call_tag!(req_complete,$:6))
+    --> Message: Double Request Use
+    --> Error Info:
+        Found call to MPI_Isend at /rwthfs/rz/cluster/home/ss540294/static-dynamic-interop/benchmarks/TeaLeaf/TeaLeaf.benchmarks/000001/000003_compile_cover/work/copy_source/driver/comms.cpp:21:3 which is in conflict with MPI_Isend at /rwthfs/rz/cluster/home/ss540294/static-dynamic-interop/benchmarks/TeaLeaf/TeaLeaf.benchmarks/000001/000003_compile_cover/work/copy_source/driver/comms.cpp:21:3 before release
+
+## Contract violation detected! ##
+--> Function: MPI_Irecv
+--> Contract: CONTRACT{PRE { call_tag!(mpi_init) MSG "Missing Initialization call" } POST { call_tag!(mpi_finalize) MSG "Missing Finalization call", no! (call_tag!(request_gen,$:6)) until! (call_tag!(req_complete,$:6)) MSG "Double Request Use", call_tag!(req_complete,$:6) MSG "Request Leak", no! (read!(*0)) until! (call_tag!(req_complete,$:6)) MSG "Local Data Race - Local read", no! (call_tag!(buf_read,$:0)) until! (call_tag!(req_complete,$:6)) MSG "Local Data Race - Local read by call", no! (write!(*0)) until! (call_tag!(req_complete,$:6)) MSG "Local Data Race - Local write", no! (call_tag!(buf_write,$:0)) until! (call_tag!(req_complete,$:6)) MSG "Local Data Race - Local write by call" } TAGS { request_gen(6), buf_write(0) }}
+--> Postcondition Subformula Status: Violated
+    --> Formula String: no!(call_tag!(request_gen,$:6))until!(call_tag!(req_complete,$:6))
+    --> Message: Double Request Use
+    --> Error Info:
+        Found call to MPI_Irecv at /rwthfs/rz/cluster/home/ss540294/static-dynamic-interop/benchmarks/TeaLeaf/TeaLeaf.benchmarks/000001/000003_compile_cover/work/copy_source/driver/comms.cpp:22:3 which is in conflict with MPI_Irecv at /rwthfs/rz/cluster/home/ss540294/static-dynamic-interop/benchmarks/TeaLeaf/TeaLeaf.benchmarks/000001/000003_compile_cover/work/copy_source/driver/comms.cpp:22:3 before release
+--> Postcondition Subformula Status: Violated
+    --> Formula String: no!(call_tag!(buf_write,$:0))until!(call_tag!(req_complete,$:6))
+    --> Message: Local Data Race - Local write by call
+    --> Error Info:
+        Found call to MPI_Irecv at /rwthfs/rz/cluster/home/ss540294/static-dynamic-interop/benchmarks/TeaLeaf/TeaLeaf.benchmarks/000001/000003_compile_cover/work/copy_source/driver/comms.cpp:22:3 which is in conflict with MPI_Irecv at /rwthfs/rz/cluster/home/ss540294/static-dynamic-interop/benchmarks/TeaLeaf/TeaLeaf.benchmarks/000001/000003_compile_cover/work/copy_source/driver/comms.cpp:22:3 before release
+
+CoVer: Total Tool Runtime 0.084831s
+

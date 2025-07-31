@@ -1,0 +1,30 @@
+nodelist=r23m[0129,0133]
+[MUST] Unknown environment option MUST_DISABLE_TSAN_ONREPORT=1 is ignored
+[MUST] MUST configuration ...  with given layout.xml
+[MUST] Information: overwritting old intermediate data in directory "/rwthfs/rz/cluster/home/ss540294/static-dynamic-interop/benchmarks/Stencil/PRK_stencil.benchmarks/000001/000028_execute_tsan_must/work/must_temp"!
+[MUST] Weaver ... success
+[MUST] Weaver ... success
+[MUST] Code generation ... success
+[MUST] Build file generation ... success
+[MUST] Configuring intermediate build ... success
+[MUST] Building intermediate sources ... success
+[MUST] Installing intermediate modules ... success
+[MUST] Generating P^nMPI configuration ... success
+[MUST] Infrastructure in "/rwthfs/rz/cluster/home/ss540294/static-dynamic-interop/benchmarks/Stencil/PRK_stencil.benchmarks/000001/000028_execute_tsan_must/work/must_temp/install" is present and used.
+[MUST] Search for linked P^nMPI ... not found ... using LD_PRELOAD to load P^nMPI ... success
+[MUST] Executing application:
+[MUST-REPORT] MUST detected no MPI usage errors nor any suspicious behavior during this application run.
+Parallel Research Kernels version 2.17
+MPIRMA stencil execution on 2D grid
+Number of ranks        = 48
+Grid size              = 48000
+Radius of stencil      = 1
+Tiles in x/y-direction = 6/8
+Type of stencil        = star
+Data type              = double precision
+Compact representation of stencil loop body
+Number of iterations   = 100
+Solution validates
+Rate (MFlops/s): 8476.732306  Avg time (s): 2.989582  Total time (s): 298.958220
+[MUST] Execution finished.
+EXECUTION VERIFICATION CHECK: SUCCESS

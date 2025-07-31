@@ -1,0 +1,66 @@
+nodelist=n23m[0175,0189,0209]
+[MUST] Unknown environment option MUST_DISABLE_TSAN_ONREPORT=1 is ignored
+[MUST] MUST configuration ...  with given layout.xml
+[MUST] Information: overwritting old intermediate data in directory "/rwthfs/rz/cluster/home/ss540294/static-dynamic-interop/benchmarks/LULESH/LULESH.benchmarks/000001/000041_execute_tsan-cover_must/work/must_temp"!
+[MUST] Weaver ... success
+[MUST] Weaver ... success
+[MUST] Code generation ... success
+[MUST] Build file generation ... success
+[MUST] Configuring intermediate build ... success
+[MUST] Building intermediate sources ... success
+[MUST] Installing intermediate modules ... success
+[MUST] Generating P^nMPI configuration ... success
+[MUST] Infrastructure in "/rwthfs/rz/cluster/home/ss540294/static-dynamic-interop/benchmarks/LULESH/LULESH.benchmarks/000001/000041_execute_tsan-cover_must/work/must_temp/install" is present and used.
+[MUST] Search for linked P^nMPI ... not found ... using LD_PRELOAD to load P^nMPI ... success
+[MUST] Executing application:
+==217410==ERROR: ThreadSanitizer: SEGV on unknown address 0x656200035142 (pc 0x55f0a6e0189c bp 0x000000000001 sp 0x7ffec85852f8 T217410)
+==217410==The signal is caused by a READ memory access.
+    #0 void __tsan::MemoryAccessRangeT<false>(__tsan::ThreadState*, unsigned long, unsigned long, unsigned long) /dev/shm/eb.ss540294.2025-06-15T14-28-14/14_28_19/LLVM/19.1.7/GCCcore-13.3.0/llvm-project-19.1.7.src/compiler-rt/lib/tsan/rtl/tsan_rtl_access.cpp:707:19 (lulesh2.0.tsan-cover+0xe389c)
+    #1 MemoryAccessRange /dev/shm/eb.ss540294.2025-06-15T14-28-14/14_28_19/LLVM/19.1.7/GCCcore-13.3.0/llvm-project-19.1.7.src/compiler-rt/lib/tsan/rtl/tsan_rtl.h:541:5 (lulesh2.0.tsan-cover+0xad575)
+    #2 write_iovec /dev/shm/eb.ss540294.2025-06-15T14-28-14/14_28_19/LLVM/19.1.7/GCCcore-13.3.0/llvm-project-19.1.7.src/compiler-rt/lib/tsan/rtl/../../sanitizer_common/sanitizer_common_interceptors.inc:953:5 (lulesh2.0.tsan-cover+0xad575)
+    #3 process_vm_readv /dev/shm/eb.ss540294.2025-06-15T14-28-14/14_28_19/LLVM/19.1.7/GCCcore-13.3.0/llvm-project-19.1.7.src/compiler-rt/lib/tsan/rtl/../../sanitizer_common/sanitizer_common_interceptors.inc:6673:5 (lulesh2.0.tsan-cover+0xad575)
+    #4 uct_cma_iface_is_reachable_v2 /dev/shm/easybuild/easybuild.2024_10_30-09_39_12/UCX/1.16.0/GCCcore-13.3.0/ucx-1.16.0/src/uct/sm/scopy/cma/cma_iface.c:103:10 (libuct_cma.so.0+0x341c)
+    #5 ucp_wireup_is_reachable /dev/shm/easybuild/easybuild.2024_10_30-09_39_12/UCX/1.16.0/GCCcore-13.3.0/ucx-1.16.0/src/ucp/wireup/wireup.c:1270:13 (libucp.so.0+0x9f194)
+    #6 ucp_wireup_select_transport /dev/shm/easybuild/easybuild.2024_10_30-09_39_12/UCX/1.16.0/GCCcore-13.3.0/ucx-1.16.0/src/ucp/wireup/select.c:586:18 (libucp.so.0+0x99fd8)
+    #7 ucp_wireup_add_bw_lanes /dev/shm/easybuild/easybuild.2024_10_30-09_39_12/UCX/1.16.0/GCCcore-13.3.0/ucx-1.16.0/src/ucp/wireup/select.c:1588:22 (libucp.so.0+0x9a86a)
+    #8 ucp_wireup_add_rma_bw_lanes /dev/shm/easybuild/easybuild.2024_10_30-09_39_12/UCX/1.16.0/GCCcore-13.3.0/ucx-1.16.0/src/ucp/wireup/select.c:1866:46 (libucp.so.0+0x9af25)
+    #9 ucp_wireup_search_lanes /dev/shm/easybuild/easybuild.2024_10_30-09_39_12/UCX/1.16.0/GCCcore-13.3.0/ucx-1.16.0/src/ucp/wireup/select.c:2140:14 (libucp.so.0+0x9ba2f)
+    #10 ucp_wireup_select_lanes /dev/shm/easybuild/easybuild.2024_10_30-09_39_12/UCX/1.16.0/GCCcore-13.3.0/ucx-1.16.0/src/ucp/wireup/select.c:2400:18 (libucp.so.0+0x9c091)
+    #11 ucp_wireup_init_lanes /dev/shm/easybuild/easybuild.2024_10_30-09_39_12/UCX/1.16.0/GCCcore-13.3.0/ucx-1.16.0/src/ucp/wireup/wireup.c:1563:14 (libucp.so.0+0x9f351)
+    #12 ucp_ep_create_to_worker_addr /dev/shm/easybuild/easybuild.2024_10_30-09_39_12/UCX/1.16.0/GCCcore-13.3.0/ucx-1.16.0/src/ucp/core/ucp_ep.c:833:14 (libucp.so.0+0x35c9c)
+    #13 ucp_ep_create_api_to_worker_addr /dev/shm/easybuild/easybuild.2024_10_30-09_39_12/UCX/1.16.0/GCCcore-13.3.0/ucx-1.16.0/src/ucp/core/ucp_ep.c:1087:14 (libucp.so.0+0x364e3)
+    #14 ucp_ep_create /dev/shm/easybuild/easybuild.2024_10_30-09_39_12/UCX/1.16.0/GCCcore-13.3.0/ucx-1.16.0/src/ucp/core/ucp_ep.c:1193:18 (libucp.so.0+0x364e3)
+    #15 mca_pml_ucx_add_proc_common pml_ucx.c (libmpi.so.40+0x222c8e)
+    #16 mca_pml_ucx_add_procs <null> (libmpi.so.40+0x222ec6)
+    #17 ompi_mpi_instance_init_common instance.c (libmpi.so.40+0xa0998)
+    #18 ompi_mpi_instance_init <null> (libmpi.so.40+0xa0d12)
+    #19 ompi_mpi_init <null> (libmpi.so.40+0x94616)
+    #20 PMPI_Init_thread <null> (libmpi.so.40+0xc6bef)
+    #21 NQJ_Init_thread /rwthfs/rz/cluster/home/ss540294/static-dynamic-interop/MUST/externals/GTI/externals/PnMPI/src/pnmpi/wrapper.c:633:11 (libpnmpi.so+0x88e32)
+    #22 XMPI_Init_thread /rwthfs/rz/cluster/home/ss540294/static-dynamic-interop/dep/MUST/459c14f6a5f98473cda82f9dadbd1370/build/externals/GTI/externals/PnMPI/src/pnmpi/./wrapper_c.c:32542:13 (libpnmpi.so+0xe2e07)
+    #23 MPI_Init_thread /rwthfs/rz/cluster/home/ss540294/static-dynamic-interop/dep/MUST/459c14f6a5f98473cda82f9dadbd1370/build/externals/mpi-handle-shim/gen-wrappers.cpp:47:26 (libMpiHandleShim.so+0x167c5)
+    #24 NQJ_Init_thread /rwthfs/rz/cluster/home/ss540294/static-dynamic-interop/MUST/externals/GTI/externals/PnMPI/src/pnmpi/wrapper.c:605:17 (libpnmpi.so+0x88eb6)
+    #25 XMPI_Init_thread_NewStack /rwthfs/rz/cluster/home/ss540294/static-dynamic-interop/dep/MUST/459c14f6a5f98473cda82f9dadbd1370/build/externals/GTI/externals/PnMPI/src/pnmpi/./wrapper_c.c:37954:13 (libpnmpi.so+0xec28d)
+    #26 MPI_Init_thread /rwthfs/rz/cluster/home/ss540294/static-dynamic-interop/dep/MUST/459c14f6a5f98473cda82f9dadbd1370/build/externals/GTI/modules/comm-protocols/CProtMpiSplitWorld.wrap.cpp:114:11 (libcProtMpiSplitComm.so+0x12f23)
+    #27 NQJ_Init_thread /rwthfs/rz/cluster/home/ss540294/static-dynamic-interop/MUST/externals/GTI/externals/PnMPI/src/pnmpi/wrapper.c:605:17 (libpnmpi.so+0x88eb6)
+    #28 XMPI_Init_thread /rwthfs/rz/cluster/home/ss540294/static-dynamic-interop/dep/MUST/459c14f6a5f98473cda82f9dadbd1370/build/externals/GTI/externals/PnMPI/src/pnmpi/./wrapper_c.c:32542:13 (libpnmpi.so+0xe2e07)
+    #29 XMPI_Init_thread_check /rwthfs/rz/cluster/home/ss540294/static-dynamic-interop/MUST/externals/GTI/externals/PnMPI/src/modules/limit-threading/limit-threading.c:178:13 (limit-threading.so+0x1cc3)
+    #30 MPI_Init /rwthfs/rz/cluster/home/ss540294/static-dynamic-interop/MUST/externals/GTI/externals/PnMPI/src/modules/limit-threading/limit-threading.c:271:14 (limit-threading.so+0x1cc3)
+    #31 NQJ_Init /rwthfs/rz/cluster/home/ss540294/static-dynamic-interop/MUST/externals/GTI/externals/PnMPI/src/pnmpi/wrapper.c:308:21 (libpnmpi.so+0x88c0a)
+    #32 PNMPI_Common_MPI_Init /rwthfs/rz/cluster/home/ss540294/static-dynamic-interop/MUST/externals/GTI/externals/PnMPI/src/pnmpi/wrapper.c:112:17 (libpnmpi.so+0x88aa6)
+    #33 MPI_Init /rwthfs/rz/cluster/home/ss540294/static-dynamic-interop/MUST/externals/GTI/externals/PnMPI/src/pnmpi/wrapper.c:281:16 (libpnmpi.so+0x88aa6)
+    #34 main /rwthfs/rz/cluster/home/ss540294/static-dynamic-interop/benchmarks/LULESH/LULESH.benchmarks/000001/000006_compile_tsan-cover/work/copy_source/lulesh.cc:2671:4 (lulesh2.0.tsan-cover+0x1370ea)
+    #35 __libc_start_call_main <null> (libc.so.6+0x295cf) (BuildId: b5fa5a9afce174ac5751cad3fcbfacbc10158cfd)
+    #36 __libc_start_main@GLIBC_2.2.5 <null> (libc.so.6+0x2967f) (BuildId: b5fa5a9afce174ac5751cad3fcbfacbc10158cfd)
+    #37 _start <null> (lulesh2.0.tsan-cover+0x734d4)
+
+==217410==Register values:
+rax = 0x000055f0a6dcb45f  rbx = 0x0000000000000010  rcx = 0x0000000000000010  rdx = 0x72617774666f732f  
+rdi = 0x00007f9136e08800  rsi = 0x72610774666f7328  rbp = 0x0000000000000001  rsp = 0x00007ffec85852f8  
+ r8 = 0x0000000000000001   r9 = 0x00000fffffffffff  r10 = 0x00007ffec8585370  r11 = 0x0000000000000297  
+r12 = 0x00007f9136e08800  r13 = 0x0000000000000010  r14 = 0x0000000000000001  r15 = 0x00007ffec8585378  
+ThreadSanitizer can not provide additional info.
+SUMMARY: ThreadSanitizer: SEGV /dev/shm/easybuild/easybuild.2024_10_30-09_39_12/UCX/1.16.0/GCCcore-13.3.0/ucx-1.16.0/src/uct/sm/scopy/cma/cma_iface.c:103:10 in uct_cma_iface_is_reachable_v2
+==217410==ABORTING
+[MUST] Execution finished.
+EXECUTION VERIFICATION CHECK: FAILURE

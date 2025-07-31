@@ -1,0 +1,21 @@
+result:
+| bench_id | wp_id |    compile | measurement | tasks | num_cells | end_step | time_avg | time_std | verification |
+|----------|-------|------------|-------------|-------|-----------|----------|----------|----------|--------------|
+|        1 |     7 |       base |        base |    48 |      2000 |       10 |   17.009 |    0.187 |      SUCCESS |
+|        1 |    44 |       tsan |        base |    48 |      2000 |       10 |  176.428 |    0.839 |      SUCCESS |
+|        1 |    26 | tsan-cover |        base |    48 |      2000 |       10 |   17.488 |    0.396 |      SUCCESS |
+|        1 |    10 |       base |        must |    48 |      2000 |       10 |   20.995 |    1.659 |      SUCCESS |
+|        1 |    47 |       tsan |        must |    48 |      2000 |       10 |  317.750 |    0.326 |      SUCCESS |
+|        1 |    28 | tsan-cover |        must |    48 |      2000 |       10 |   27.575 |    3.196 |      SUCCESS |
+|        1 |    14 |       base |        base |    96 |      2000 |       10 |    9.753 |    0.005 |      SUCCESS |
+|        1 |    49 |       tsan |        base |    96 |      2000 |       10 |   72.560 |    2.278 |      SUCCESS |
+|        1 |    33 | tsan-cover |        base |    96 |      2000 |       10 |   10.473 |    0.113 |      SUCCESS |
+|        1 |    17 |       base |        must |    96 |      2000 |       10 |   13.782 |    0.397 |      SUCCESS |
+|        1 |    53 |       tsan |        must |    96 |      2000 |       10 |  196.533 |    4.011 |      SUCCESS |
+|        1 |    35 | tsan-cover |        must |    96 |      2000 |       10 |   21.919 |    0.652 |      SUCCESS |
+|        1 |    19 |       base |        base |   192 |      2000 |       10 |    6.447 |    0.037 |      SUCCESS |
+|        1 |    56 |       tsan |        base |   192 |      2000 |       10 |   38.671 |    3.768 |      SUCCESS |
+|        1 |    37 | tsan-cover |        base |   192 |      2000 |       10 |    7.183 |    0.322 |      SUCCESS |
+|        1 |    23 |       base |        must |   192 |      2000 |       10 |   10.253 |    0.000 |      SUCCESS |
+|        1 |    58 |       tsan |        must |   192 |      2000 |       10 |  137.767 |    0.717 |      SUCCESS |
+|        1 |    40 | tsan-cover |        must |   192 |      2000 |       10 |   20.059 |    0.404 |      SUCCESS |

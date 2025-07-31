@@ -1,0 +1,335 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<analyse>
+  <analyser name="analyse">
+    <step name="execute">
+      <workpackage id="47">
+        <pattern name="verification" type="string">SUCCESS</pattern>
+        <pattern name="verification_first" type="string">SUCCESS</pattern>
+        <pattern name="verification_cnt" type="int">3</pattern>
+        <pattern name="verification_last" type="string">SUCCESS</pattern>
+        <pattern name="time" type="float">317.39</pattern>
+        <pattern name="time_first" type="float">317.39</pattern>
+        <pattern name="time_min" type="float">317.39</pattern>
+        <pattern name="time_max" type="float">318.024</pattern>
+        <pattern name="time_sum" type="float">953.249</pattern>
+        <pattern name="time_sum2" type="float">302894.76390099997</pattern>
+        <pattern name="time_cnt" type="int">3</pattern>
+        <pattern name="time_avg" type="float">317.74966666666666</pattern>
+        <pattern name="time_std" type="float">0.3255001279484521</pattern>
+        <pattern name="time_last" type="float">317.835</pattern>
+      </workpackage>
+      <workpackage id="17">
+        <pattern name="verification" type="string">SUCCESS</pattern>
+        <pattern name="verification_first" type="string">SUCCESS</pattern>
+        <pattern name="verification_cnt" type="int">3</pattern>
+        <pattern name="verification_last" type="string">SUCCESS</pattern>
+        <pattern name="time" type="float">13.622</pattern>
+        <pattern name="time_first" type="float">13.622</pattern>
+        <pattern name="time_min" type="float">13.49</pattern>
+        <pattern name="time_max" type="float">14.234</pattern>
+        <pattern name="time_sum" type="float">41.346000000000004</pattern>
+        <pattern name="time_sum2" type="float">570.1457399999999</pattern>
+        <pattern name="time_cnt" type="int">3</pattern>
+        <pattern name="time_avg" type="float">13.782000000000002</pattern>
+        <pattern name="time_std" type="float">0.39696851260512955</pattern>
+        <pattern name="time_last" type="float">13.49</pattern>
+      </workpackage>
+      <workpackage id="40">
+        <pattern name="verification" type="string">SUCCESS</pattern>
+        <pattern name="verification_first" type="string">SUCCESS</pattern>
+        <pattern name="verification_cnt" type="int">2</pattern>
+        <pattern name="verification_last" type="string">SUCCESS</pattern>
+        <pattern name="time" type="float">19.773</pattern>
+        <pattern name="time_first" type="float">19.773</pattern>
+        <pattern name="time_min" type="float">19.773</pattern>
+        <pattern name="time_max" type="float">20.344</pattern>
+        <pattern name="time_sum" type="float">40.117000000000004</pattern>
+        <pattern name="time_sum2" type="float">804.849865</pattern>
+        <pattern name="time_cnt" type="int">2</pattern>
+        <pattern name="time_avg" type="float">20.058500000000002</pattern>
+        <pattern name="time_std" type="float">0.4037579720572569</pattern>
+        <pattern name="time_last" type="float">20.344</pattern>
+      </workpackage>
+      <workpackage id="10">
+        <pattern name="verification" type="string">SUCCESS</pattern>
+        <pattern name="verification_first" type="string">SUCCESS</pattern>
+        <pattern name="verification_cnt" type="int">3</pattern>
+        <pattern name="verification_last" type="string">SUCCESS</pattern>
+        <pattern name="time" type="float">22.897</pattern>
+        <pattern name="time_first" type="float">22.897</pattern>
+        <pattern name="time_min" type="float">19.843</pattern>
+        <pattern name="time_max" type="float">22.897</pattern>
+        <pattern name="time_sum" type="float">62.985</pattern>
+        <pattern name="time_sum2" type="float">1327.8772829999998</pattern>
+        <pattern name="time_cnt" type="int">3</pattern>
+        <pattern name="time_avg" type="float">20.995</pattern>
+        <pattern name="time_std" type="float">1.659398686271591</pattern>
+        <pattern name="time_last" type="float">19.843</pattern>
+      </workpackage>
+      <workpackage id="33">
+        <pattern name="verification" type="string">SUCCESS</pattern>
+        <pattern name="verification_first" type="string">SUCCESS</pattern>
+        <pattern name="verification_cnt" type="int">3</pattern>
+        <pattern name="verification_last" type="string">SUCCESS</pattern>
+        <pattern name="time" type="float">10.479</pattern>
+        <pattern name="time_first" type="float">10.479</pattern>
+        <pattern name="time_min" type="float">10.357</pattern>
+        <pattern name="time_max" type="float">10.583</pattern>
+        <pattern name="time_sum" type="float">31.418999999999997</pattern>
+        <pattern name="time_sum2" type="float">329.076779</pattern>
+        <pattern name="time_cnt" type="int">3</pattern>
+        <pattern name="time_avg" type="float">10.472999999999999</pattern>
+        <pattern name="time_std" type="float">0.11311940593907258</pattern>
+        <pattern name="time_last" type="float">10.357</pattern>
+      </workpackage>
+      <workpackage id="26">
+        <pattern name="verification" type="string">SUCCESS</pattern>
+        <pattern name="verification_first" type="string">SUCCESS</pattern>
+        <pattern name="verification_cnt" type="int">3</pattern>
+        <pattern name="verification_last" type="string">SUCCESS</pattern>
+        <pattern name="time" type="float">17.927</pattern>
+        <pattern name="time_first" type="float">17.927</pattern>
+        <pattern name="time_min" type="float">17.158</pattern>
+        <pattern name="time_max" type="float">17.927</pattern>
+        <pattern name="time_sum" type="float">52.464</pattern>
+        <pattern name="time_sum2" type="float">917.803934</pattern>
+        <pattern name="time_cnt" type="int">3</pattern>
+        <pattern name="time_avg" type="float">17.488</pattern>
+        <pattern name="time_std" type="float">0.39591792078667326</pattern>
+        <pattern name="time_last" type="float">17.379</pattern>
+      </workpackage>
+      <workpackage id="19">
+        <pattern name="verification" type="string">SUCCESS</pattern>
+        <pattern name="verification_first" type="string">SUCCESS</pattern>
+        <pattern name="verification_cnt" type="int">2</pattern>
+        <pattern name="verification_last" type="string">SUCCESS</pattern>
+        <pattern name="time" type="float">6.421</pattern>
+        <pattern name="time_first" type="float">6.421</pattern>
+        <pattern name="time_min" type="float">6.421</pattern>
+        <pattern name="time_max" type="float">6.473</pattern>
+        <pattern name="time_sum" type="float">12.894</pattern>
+        <pattern name="time_sum2" type="float">83.12897000000001</pattern>
+        <pattern name="time_cnt" type="int">2</pattern>
+        <pattern name="time_avg" type="float">6.447</pattern>
+        <pattern name="time_std" type="float">0.03676955262185473</pattern>
+        <pattern name="time_last" type="float">6.473</pattern>
+      </workpackage>
+      <workpackage id="56">
+        <pattern name="verification" type="string">SUCCESS</pattern>
+        <pattern name="verification_first" type="string">SUCCESS</pattern>
+        <pattern name="verification_cnt" type="int">3</pattern>
+        <pattern name="verification_last" type="string">SUCCESS</pattern>
+        <pattern name="time" type="float">34.334</pattern>
+        <pattern name="time_first" type="float">34.334</pattern>
+        <pattern name="time_min" type="float">34.334</pattern>
+        <pattern name="time_max" type="float">41.144</pattern>
+        <pattern name="time_sum" type="float">116.012</pattern>
+        <pattern name="time_sum2" type="float">4514.657448</pattern>
+        <pattern name="time_cnt" type="int">3</pattern>
+        <pattern name="time_avg" type="float">38.67066666666667</pattern>
+        <pattern name="time_std" type="float">3.7680277776754205</pattern>
+        <pattern name="time_last" type="float">40.534</pattern>
+      </workpackage>
+      <workpackage id="49">
+        <pattern name="verification" type="string">SUCCESS</pattern>
+        <pattern name="verification_first" type="string">SUCCESS</pattern>
+        <pattern name="verification_cnt" type="int">3</pattern>
+        <pattern name="verification_last" type="string">SUCCESS</pattern>
+        <pattern name="time" type="float">69.989</pattern>
+        <pattern name="time_first" type="float">69.989</pattern>
+        <pattern name="time_min" type="float">69.989</pattern>
+        <pattern name="time_max" type="float">74.327</pattern>
+        <pattern name="time_sum" type="float">217.679</pattern>
+        <pattern name="time_sum2" type="float">15805.092819000001</pattern>
+        <pattern name="time_cnt" type="int">3</pattern>
+        <pattern name="time_avg" type="float">72.55966666666667</pattern>
+        <pattern name="time_std" type="float">2.2778431318537637</pattern>
+        <pattern name="time_last" type="float">73.363</pattern>
+      </workpackage>
+      <workpackage id="7">
+        <pattern name="verification" type="string">SUCCESS</pattern>
+        <pattern name="verification_first" type="string">SUCCESS</pattern>
+        <pattern name="verification_cnt" type="int">3</pattern>
+        <pattern name="verification_last" type="string">SUCCESS</pattern>
+        <pattern name="time" type="float">16.846</pattern>
+        <pattern name="time_first" type="float">16.846</pattern>
+        <pattern name="time_min" type="float">16.846</pattern>
+        <pattern name="time_max" type="float">17.213</pattern>
+        <pattern name="time_sum" type="float">51.027</pattern>
+        <pattern name="time_sum2" type="float">867.9881089999999</pattern>
+        <pattern name="time_cnt" type="int">3</pattern>
+        <pattern name="time_avg" type="float">17.009</pattern>
+        <pattern name="time_std" type="float">0.18690371852884563</pattern>
+        <pattern name="time_last" type="float">16.968</pattern>
+      </workpackage>
+      <workpackage id="35">
+        <pattern name="verification" type="string">SUCCESS</pattern>
+        <pattern name="verification_first" type="string">SUCCESS</pattern>
+        <pattern name="verification_cnt" type="int">3</pattern>
+        <pattern name="verification_last" type="string">SUCCESS</pattern>
+        <pattern name="time" type="float">22.117</pattern>
+        <pattern name="time_first" type="float">22.117</pattern>
+        <pattern name="time_min" type="float">21.191</pattern>
+        <pattern name="time_max" type="float">22.45</pattern>
+        <pattern name="time_sum" type="float">65.758</pattern>
+        <pattern name="time_sum2" type="float">1442.2226699999999</pattern>
+        <pattern name="time_cnt" type="int">3</pattern>
+        <pattern name="time_avg" type="float">21.91933333333333</pattern>
+        <pattern name="time_std" type="float">0.6523605853615895</pattern>
+        <pattern name="time_last" type="float">21.191</pattern>
+      </workpackage>
+      <workpackage id="28">
+        <pattern name="verification" type="string">SUCCESS</pattern>
+        <pattern name="verification_first" type="string">SUCCESS</pattern>
+        <pattern name="verification_cnt" type="int">3</pattern>
+        <pattern name="verification_last" type="string">FAILURE</pattern>
+        <pattern name="time" type="float">29.835</pattern>
+        <pattern name="time_first" type="float">29.835</pattern>
+        <pattern name="time_min" type="float">25.315</pattern>
+        <pattern name="time_max" type="float">29.835</pattern>
+        <pattern name="time_sum" type="float">55.150000000000006</pattern>
+        <pattern name="time_sum2" type="float">1530.97645</pattern>
+        <pattern name="time_cnt" type="int">2</pattern>
+        <pattern name="time_avg" type="float">27.575000000000003</pattern>
+        <pattern name="time_std" type="float">3.196122650963174</pattern>
+        <pattern name="time_last" type="float">25.315</pattern>
+      </workpackage>
+      <workpackage id="58">
+        <pattern name="verification" type="string">SUCCESS</pattern>
+        <pattern name="verification_first" type="string">SUCCESS</pattern>
+        <pattern name="verification_cnt" type="int">3</pattern>
+        <pattern name="verification_last" type="string">SUCCESS</pattern>
+        <pattern name="time" type="float">138.388</pattern>
+        <pattern name="time_first" type="float">138.388</pattern>
+        <pattern name="time_min" type="float">136.982</pattern>
+        <pattern name="time_max" type="float">138.388</pattern>
+        <pattern name="time_sum" type="float">413.3</pattern>
+        <pattern name="time_sum2" type="float">56939.991768</pattern>
+        <pattern name="time_cnt" type="int">3</pattern>
+        <pattern name="time_avg" type="float">137.76666666666668</pattern>
+        <pattern name="time_std" type="float">0.7170894876720234</pattern>
+        <pattern name="time_last" type="float">137.93</pattern>
+      </workpackage>
+      <workpackage id="14">
+        <pattern name="verification" type="string">SUCCESS</pattern>
+        <pattern name="verification_first" type="string">SUCCESS</pattern>
+        <pattern name="verification_cnt" type="int">3</pattern>
+        <pattern name="verification_last" type="string">SUCCESS</pattern>
+        <pattern name="time" type="float">9.755</pattern>
+        <pattern name="time_first" type="float">9.755</pattern>
+        <pattern name="time_min" type="float">9.747</pattern>
+        <pattern name="time_max" type="float">9.756</pattern>
+        <pattern name="time_sum" type="float">29.258000000000003</pattern>
+        <pattern name="time_sum2" type="float">285.34357</pattern>
+        <pattern name="time_cnt" type="int">3</pattern>
+        <pattern name="time_avg" type="float">9.752666666666668</pattern>
+        <pattern name="time_std" type="float">0.004932882858969923</pattern>
+        <pattern name="time_last" type="float">9.747</pattern>
+      </workpackage>
+      <workpackage id="44">
+        <pattern name="verification" type="string">SUCCESS</pattern>
+        <pattern name="verification_first" type="string">SUCCESS</pattern>
+        <pattern name="verification_cnt" type="int">3</pattern>
+        <pattern name="verification_last" type="string">FAILURE</pattern>
+        <pattern name="time" type="float">175.835</pattern>
+        <pattern name="time_first" type="float">175.835</pattern>
+        <pattern name="time_min" type="float">175.835</pattern>
+        <pattern name="time_max" type="float">177.021</pattern>
+        <pattern name="time_sum" type="float">352.856</pattern>
+        <pattern name="time_sum2" type="float">62254.381666</pattern>
+        <pattern name="time_cnt" type="int">2</pattern>
+        <pattern name="time_avg" type="float">176.428</pattern>
+        <pattern name="time_std" type="float">0.8386286424874594</pattern>
+        <pattern name="time_last" type="float">177.021</pattern>
+      </workpackage>
+      <workpackage id="37">
+        <pattern name="verification" type="string">SUCCESS</pattern>
+        <pattern name="verification_first" type="string">SUCCESS</pattern>
+        <pattern name="verification_cnt" type="int">3</pattern>
+        <pattern name="verification_last" type="string">SUCCESS</pattern>
+        <pattern name="time" type="float">7.009</pattern>
+        <pattern name="time_first" type="float">7.009</pattern>
+        <pattern name="time_min" type="float">6.985</pattern>
+        <pattern name="time_max" type="float">7.554</pattern>
+        <pattern name="time_sum" type="float">21.548000000000002</pattern>
+        <pattern name="time_sum2" type="float">154.97922200000002</pattern>
+        <pattern name="time_cnt" type="int">3</pattern>
+        <pattern name="time_avg" type="float">7.182666666666667</pattern>
+        <pattern name="time_std" type="float">0.3218079137208004</pattern>
+        <pattern name="time_last" type="float">7.554</pattern>
+      </workpackage>
+      <workpackage id="23">
+        <pattern name="verification" type="string">SUCCESS</pattern>
+        <pattern name="verification_first" type="string">SUCCESS</pattern>
+        <pattern name="verification_cnt" type="int">1</pattern>
+        <pattern name="verification_last" type="string">SUCCESS</pattern>
+        <pattern name="time" type="float">10.253</pattern>
+        <pattern name="time_first" type="float">10.253</pattern>
+        <pattern name="time_min" type="float">10.253</pattern>
+        <pattern name="time_max" type="float">10.253</pattern>
+        <pattern name="time_sum" type="float">10.253</pattern>
+        <pattern name="time_sum2" type="float">105.124009</pattern>
+        <pattern name="time_cnt" type="int">1</pattern>
+        <pattern name="time_avg" type="float">10.253</pattern>
+        <pattern name="time_std" type="int">0</pattern>
+        <pattern name="time_last" type="float">10.253</pattern>
+      </workpackage>
+      <workpackage id="53">
+        <pattern name="verification" type="string">SUCCESS</pattern>
+        <pattern name="verification_first" type="string">SUCCESS</pattern>
+        <pattern name="verification_cnt" type="int">3</pattern>
+        <pattern name="verification_last" type="string">SUCCESS</pattern>
+        <pattern name="time" type="float">194.922</pattern>
+        <pattern name="time_first" type="float">194.922</pattern>
+        <pattern name="time_min" type="float">193.577</pattern>
+        <pattern name="time_max" type="float">201.099</pattern>
+        <pattern name="time_sum" type="float">589.598</pattern>
+        <pattern name="time_sum2" type="float">115907.448814</pattern>
+        <pattern name="time_cnt" type="int">3</pattern>
+        <pattern name="time_avg" type="float">196.53266666666664</pattern>
+        <pattern name="time_std" type="float">4.011334732149407</pattern>
+        <pattern name="time_last" type="float">201.099</pattern>
+      </workpackage>
+    </step>
+  </analyser>
+  <analyser name="cover_analyse">
+    <step name="compile_cover">
+      <workpackage id="3">
+        <pattern name="cover_time" type="float">11.27</pattern>
+        <pattern name="cover_time_first" type="float">11.27</pattern>
+        <pattern name="cover_time_min" type="float">11.27</pattern>
+        <pattern name="cover_time_max" type="float">11.27</pattern>
+        <pattern name="cover_time_sum" type="float">11.27</pattern>
+        <pattern name="cover_time_sum2" type="float">127.01289999999999</pattern>
+        <pattern name="cover_time_cnt" type="int">1</pattern>
+        <pattern name="cover_time_avg" type="float">11.27</pattern>
+        <pattern name="cover_time_std" type="int">0</pattern>
+        <pattern name="cover_time_last" type="float">11.27</pattern>
+        <pattern name="cover_total_messages" type="int">3</pattern>
+        <pattern name="cover_total_messages_first" type="int">3</pattern>
+        <pattern name="cover_total_messages_min" type="int">3</pattern>
+        <pattern name="cover_total_messages_max" type="int">3</pattern>
+        <pattern name="cover_total_messages_sum" type="int">3</pattern>
+        <pattern name="cover_total_messages_sum2" type="int">9</pattern>
+        <pattern name="cover_total_messages_cnt" type="int">1</pattern>
+        <pattern name="cover_total_messages_avg" type="float">3.0</pattern>
+        <pattern name="cover_total_messages_std" type="int">0</pattern>
+        <pattern name="cover_total_messages_last" type="int">3</pattern>
+        <pattern name="cover_race_messages" type="int">1</pattern>
+        <pattern name="cover_race_messages_first" type="int">1</pattern>
+        <pattern name="cover_race_messages_min" type="int">1</pattern>
+        <pattern name="cover_race_messages_max" type="int">1</pattern>
+        <pattern name="cover_race_messages_sum" type="int">1</pattern>
+        <pattern name="cover_race_messages_sum2" type="int">1</pattern>
+        <pattern name="cover_race_messages_cnt" type="int">1</pattern>
+        <pattern name="cover_race_messages_avg" type="float">1.0</pattern>
+        <pattern name="cover_race_messages_std" type="int">0</pattern>
+        <pattern name="cover_race_messages_last" type="int">1</pattern>
+        <pattern name="verification" type="string">FAILURE</pattern>
+        <pattern name="verification_cnt" type="int">0</pattern>
+        <pattern name="verification_first" type="string">FAILURE</pattern>
+        <pattern name="verification_last" type="string">FAILURE</pattern>
+      </workpackage>
+    </step>
+  </analyser>
+</analyse>

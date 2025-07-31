@@ -1,0 +1,21 @@
+result:
+| bench_id | wp_id |    compile | measurement | tasks | size | time_avg | time_std | verification |
+|----------|-------|------------|-------------|-------|------|----------|----------|--------------|
+|        1 |     9 |       base |        base |    27 |   20 |    9.760 |    0.023 |      SUCCESS |
+|        1 |    45 |       tsan |        base |    27 |   20 |   85.889 |    0.065 |      SUCCESS |
+|        1 |    25 | tsan-cover |        base |    27 |   20 |   13.053 |    0.114 |      SUCCESS |
+|        1 |    17 |       base |        must |    27 |   20 |   12.611 |    0.064 |      SUCCESS |
+|        1 |    54 |       tsan |        must |    27 |   20 |  108.411 |    0.263 |      SUCCESS |
+|        1 |    34 | tsan-cover |        must |    27 |   20 |   21.813 |    0.070 |      FAILURE |
+|        1 |    12 |       base |        base |    64 |   20 |   13.222 |    0.031 |      SUCCESS |
+|        1 |    46 |       tsan |        base |    64 |   20 |  114.952 |    5.350 |      SUCCESS |
+|        1 |    29 | tsan-cover |        base |    64 |   20 |   17.903 |    0.085 |      SUCCESS |
+|        1 |    21 |       base |        must |    64 |   20 |   18.282 |    0.199 |      SUCCESS |
+|        1 |    57 |       tsan |        must |    64 |   20 |  166.158 |    5.587 |      SUCCESS |
+|        1 |    37 | tsan-cover |        must |    64 |   20 |   30.424 |    0.181 |      FAILURE |
+|        1 |    13 |       base |        base |   125 |   20 |   17.425 |    0.070 |      SUCCESS |
+|        1 |    50 |       tsan |        base |   125 |   20 |  149.233 |    7.663 |      SUCCESS |
+|        1 |    33 | tsan-cover |        base |   125 |   20 |   23.997 |    0.062 |      SUCCESS |
+|        1 |    24 |       base |        must |   125 |   20 |   24.542 |    0.048 |      SUCCESS |
+|        1 |    58 |       tsan |        must |   125 |   20 |  237.265 |    7.529 |      SUCCESS |
+|        1 |    41 | tsan-cover |        must |   125 |   20 |   40.980 |    0.116 |      FAILURE |

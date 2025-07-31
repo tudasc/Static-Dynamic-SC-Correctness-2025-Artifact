@@ -1,0 +1,431 @@
++ [[ -n '' ]]
++ global_bashenv=1
++ [[ -e /opt/lmod/lmod/init/profile ]]
++ [[ -r /opt/lmod/lmod/init/profile ]]
++ . /opt/lmod/lmod/init/profile
+++ '[' -z '' ']'
+++ LMOD_ALLOW_ROOT_USE=no
+++ '[' -n '' ']'
+++ '[' no '!=' yes ']'
++++ id -u
+++ '[' 25954 = 0 ']'
+++ '[' -z /cvmfs/software.hpc.rwth.de/Linux/RH9/x86_64/intel/sapphirerapids/modules/all ']'
+++ findExec READLINK_CMD /usr/bin/readlink readlink
+++ Nm=READLINK_CMD
+++ confPath=/usr/bin/readlink
+++ execNm=readlink
+++ eval READLINK_CMD=/usr/bin/readlink
++++ READLINK_CMD=/usr/bin/readlink
+++ '[' '!' -x /usr/bin/readlink ']'
+++ unset Nm confPath execNm
+++ findExec PS_CMD /usr/bin/ps ps
+++ Nm=PS_CMD
+++ confPath=/usr/bin/ps
+++ execNm=ps
+++ eval PS_CMD=/usr/bin/ps
++++ PS_CMD=/usr/bin/ps
+++ '[' '!' -x /usr/bin/ps ']'
+++ unset Nm confPath execNm
+++ findExec EXPR_CMD /usr/bin/expr expr
+++ Nm=EXPR_CMD
+++ confPath=/usr/bin/expr
+++ execNm=expr
+++ eval EXPR_CMD=/usr/bin/expr
++++ EXPR_CMD=/usr/bin/expr
+++ '[' '!' -x /usr/bin/expr ']'
+++ unset Nm confPath execNm
+++ findExec BASENAME_CMD /usr/bin/basename basename
+++ Nm=BASENAME_CMD
+++ confPath=/usr/bin/basename
+++ execNm=basename
+++ eval BASENAME_CMD=/usr/bin/basename
++++ BASENAME_CMD=/usr/bin/basename
+++ '[' '!' -x /usr/bin/basename ']'
+++ unset Nm confPath execNm
+++ unset -f findExec
+++ '[' -f /proc/46298/exe ']'
++++ /usr/bin/readlink /proc/46298/exe
+++ my_shell=/usr/bin/bash
++++ /usr/bin/expr /usr/bin/bash : '-*\(.*\)'
+++ my_shell=/usr/bin/bash
++++ /usr/bin/basename /usr/bin/bash
+++ my_shell=bash
+++ case ${my_shell} in
+++ '[' -f /opt/lmod/8.7.47/init/bash ']'
+++ . /opt/lmod/8.7.47/init/bash
++++ '[' -z '' ']'
++++ case "$-" in
++++ __lmod_vx=x
++++ '[' -n x ']'
++++ set +x
+Shell debugging temporarily silenced: export LMOD_SH_DBG_ON=1 for this output (/opt/lmod/8.7.47/init/bash)
+Shell debugging restarted
++++ unset __lmod_vx
+++ unset my_shell PS_CMD EXPR_CMD BASENAME_CMD MODULEPATH_INIT LMOD_ALLOW_ROOT_USE READLINK_CMD
++ export MUST_DISABLE_TSAN_ONREPORT=1
++ MUST_DISABLE_TSAN_ONREPORT=1
++ export OMP_NUM_THREADS=1
++ OMP_NUM_THREADS=1
++ export time_output_file=/rwthfs/rz/cluster/home/ss540294/static-dynamic-interop/benchmarks/TeaLeaf/TeaLeaf.benchmarks/000001/000003_compile_cover/work/time.out
++ time_output_file=/rwthfs/rz/cluster/home/ss540294/static-dynamic-interop/benchmarks/TeaLeaf/TeaLeaf.benchmarks/000001/000003_compile_cover/work/time.out
++ export 'TSAN_OPTIONS= ignore_noninstrumented_modules=1 exitcode=0 log_path=stdout detect_deadlocks=0'
++ TSAN_OPTIONS=' ignore_noninstrumented_modules=1 exitcode=0 log_path=stdout detect_deadlocks=0'
++ echo nodelist=n23m0182
++ SOURCE_DIR=compile/copy_source
++ LAYOUT_DIR=/rwthfs/rz/cluster/home/ss540294/static-dynamic-interop/benchmarks/TeaLeaf/TeaLeaf.benchmarks/000001/000045_execute_tsan_base/work
++ COMPILE_DIR=compile
++ module use /home/rwth1269/modules/
++ '[' -z '' ']'
++ case "$-" in
++ __lmod_sh_dbg=x
++ '[' -n x ']'
++ set +x
+Shell debugging temporarily silenced: export LMOD_SH_DBG_ON=1 for Lmod's output
+Shell debugging restarted
++ unset __lmod_sh_dbg
++ return 0
++ module purge
++ '[' -z '' ']'
++ case "$-" in
++ __lmod_sh_dbg=x
++ '[' -n x ']'
++ set +x
+Shell debugging temporarily silenced: export LMOD_SH_DBG_ON=1 for Lmod's output
+Shell debugging restarted
++ unset __lmod_sh_dbg
++ return 0
++ for path in /home/rwth1269/modules
++ module use /home/rwth1269/modules
++ '[' -z '' ']'
++ case "$-" in
++ __lmod_sh_dbg=x
++ '[' -n x ']'
++ set +x
+Shell debugging temporarily silenced: export LMOD_SH_DBG_ON=1 for Lmod's output
+Shell debugging restarted
++ unset __lmod_sh_dbg
++ return 0
++ for modulename in gompi/2024a ${mpi_name}/${mpi_version} LLVM/19 CMake/3.29.3 ${must_prerequisite_modules}
++ module load gompi/2024a
++ '[' -z '' ']'
++ case "$-" in
++ __lmod_sh_dbg=x
++ '[' -n x ']'
++ set +x
+Shell debugging temporarily silenced: export LMOD_SH_DBG_ON=1 for Lmod's output
+[INFO] Module gompi/2024a loaded.
+Shell debugging restarted
++ unset __lmod_sh_dbg
++ return 0
++ for modulename in gompi/2024a ${mpi_name}/${mpi_version} LLVM/19 CMake/3.29.3 ${must_prerequisite_modules}
++ module load /
++ '[' -z '' ']'
++ case "$-" in
++ __lmod_sh_dbg=x
++ '[' -n x ']'
++ set +x
+Shell debugging temporarily silenced: export LMOD_SH_DBG_ON=1 for Lmod's output
+Lmod has detected the following error: The following module(s) are unknown: ""
+
+Please check the spelling or version number. Also try "module spider ..."
+It is also possible your cache file is out-of-date; it may help to try:
+  $ module --ignore_cache load ""
+
+Also make sure that all modulefiles written in TCL start with the string
+#%Module
+
+
+
+Shell debugging restarted
++ unset __lmod_sh_dbg
++ return 1
++ for modulename in gompi/2024a ${mpi_name}/${mpi_version} LLVM/19 CMake/3.29.3 ${must_prerequisite_modules}
++ module load LLVM/19
++ '[' -z '' ']'
++ case "$-" in
++ __lmod_sh_dbg=x
++ '[' -n x ']'
++ set +x
+Shell debugging temporarily silenced: export LMOD_SH_DBG_ON=1 for Lmod's output
+[INFO] Module LLVM/19.1.7 loaded.
+Shell debugging restarted
++ unset __lmod_sh_dbg
++ return 0
++ for modulename in gompi/2024a ${mpi_name}/${mpi_version} LLVM/19 CMake/3.29.3 ${must_prerequisite_modules}
++ module load CMake/3.29.3
++ '[' -z '' ']'
++ case "$-" in
++ __lmod_sh_dbg=x
++ '[' -n x ']'
++ set +x
+Shell debugging temporarily silenced: export LMOD_SH_DBG_ON=1 for Lmod's output
+[INFO] Module CMake/3.29.3 loaded.
+Shell debugging restarted
++ unset __lmod_sh_dbg
++ return 0
++ for item in OMPI_CC=clang OMPI_CXX=clang++ CC=clang CXX=clang++ PMIX_MCA_gds=hash OMPI_MCA_memory=^patcher ${openmp_export} ${parcoach_export}
++ export OMPI_CC=clang
++ OMPI_CC=clang
++ for item in OMPI_CC=clang OMPI_CXX=clang++ CC=clang CXX=clang++ PMIX_MCA_gds=hash OMPI_MCA_memory=^patcher ${openmp_export} ${parcoach_export}
++ export OMPI_CXX=clang++
++ OMPI_CXX=clang++
++ for item in OMPI_CC=clang OMPI_CXX=clang++ CC=clang CXX=clang++ PMIX_MCA_gds=hash OMPI_MCA_memory=^patcher ${openmp_export} ${parcoach_export}
++ export CC=clang
++ CC=clang
++ for item in OMPI_CC=clang OMPI_CXX=clang++ CC=clang CXX=clang++ PMIX_MCA_gds=hash OMPI_MCA_memory=^patcher ${openmp_export} ${parcoach_export}
++ export CXX=clang++
++ CXX=clang++
++ for item in OMPI_CC=clang OMPI_CXX=clang++ CC=clang CXX=clang++ PMIX_MCA_gds=hash OMPI_MCA_memory=^patcher ${openmp_export} ${parcoach_export}
++ export PMIX_MCA_gds=hash
++ PMIX_MCA_gds=hash
++ for item in OMPI_CC=clang OMPI_CXX=clang++ CC=clang CXX=clang++ PMIX_MCA_gds=hash OMPI_MCA_memory=^patcher ${openmp_export} ${parcoach_export}
++ export 'OMPI_MCA_memory=^patcher'
++ OMPI_MCA_memory='^patcher'
++ JUBE_ERR_CODE=0
++ '[' 0 -ne 0 ']'
++ srun compile/serial-tealeaf.tsan
+[n23m0182.hpc.itc.rwth-aachen.de:46398] mca_base_component_repository_open: unable to open mca_accelerator_cuda: libcuda.so: cannot open shared object file: No such file or directory (ignored)
+[n23m0182.hpc.itc.rwth-aachen.de:46404] mca_base_component_repository_open: unable to open mca_accelerator_cuda: libcuda.so: cannot open shared object file: No such file or directory (ignored)
+[n23m0182.hpc.itc.rwth-aachen.de:46408] mca_base_component_repository_open: unable to open mca_accelerator_cuda: libcuda.so: cannot open shared object file: No such file or directory (ignored)
+[n23m0182.hpc.itc.rwth-aachen.de:46427] mca_base_component_repository_open: unable to open mca_accelerator_cuda: libcuda.so: cannot open shared object file: No such file or directory (ignored)
+[n23m0182.hpc.itc.rwth-aachen.de:46423] mca_base_component_repository_open: unable to open mca_accelerator_cuda: libcuda.so: cannot open shared object file: No such file or directory (ignored)
+[n23m0182.hpc.itc.rwth-aachen.de:46412] mca_base_component_repository_open: unable to open mca_accelerator_cuda: libcuda.so: cannot open shared object file: No such file or directory (ignored)
+[n23m0182.hpc.itc.rwth-aachen.de:46434] mca_base_component_repository_open: unable to open mca_accelerator_cuda: libcuda.so: cannot open shared object file: No such file or directory (ignored)
+[n23m0182.hpc.itc.rwth-aachen.de:46405] mca_base_component_repository_open: unable to open mca_accelerator_cuda: libcuda.so: cannot open shared object file: No such file or directory (ignored)
+[n23m0182.hpc.itc.rwth-aachen.de:46398] mca_base_component_repository_open: unable to open mca_rcache_gpusm: libcuda.so: cannot open shared object file: No such file or directory (ignored)
+[n23m0182.hpc.itc.rwth-aachen.de:46404] mca_base_component_repository_open: unable to open mca_rcache_gpusm: libcuda.so: cannot open shared object file: No such file or directory (ignored)
+[n23m0182.hpc.itc.rwth-aachen.de:46398] mca_base_component_repository_open: unable to open mca_rcache_rgpusm: libcuda.so: cannot open shared object file: No such file or directory (ignored)
+[n23m0182.hpc.itc.rwth-aachen.de:46404] mca_base_component_repository_open: unable to open mca_rcache_rgpusm: libcuda.so: cannot open shared object file: No such file or directory (ignored)
+[n23m0182.hpc.itc.rwth-aachen.de:46428] mca_base_component_repository_open: unable to open mca_accelerator_cuda: libcuda.so: cannot open shared object file: No such file or directory (ignored)
+[n23m0182.hpc.itc.rwth-aachen.de:46398] mca_base_component_repository_open: unable to open mca_btl_smcuda: libcuda.so: cannot open shared object file: No such file or directory (ignored)
+[n23m0182.hpc.itc.rwth-aachen.de:46404] mca_base_component_repository_open: unable to open mca_btl_smcuda: libcuda.so: cannot open shared object file: No such file or directory (ignored)
+[n23m0182.hpc.itc.rwth-aachen.de:46426] mca_base_component_repository_open: unable to open mca_accelerator_cuda: libcuda.so: cannot open shared object file: No such file or directory (ignored)
+[n23m0182.hpc.itc.rwth-aachen.de:46440] mca_base_component_repository_open: unable to open mca_accelerator_cuda: libcuda.so: cannot open shared object file: No such file or directory (ignored)
+[n23m0182.hpc.itc.rwth-aachen.de:46433] mca_base_component_repository_open: unable to open mca_accelerator_cuda: libcuda.so: cannot open shared object file: No such file or directory (ignored)
+[n23m0182.hpc.itc.rwth-aachen.de:46408] mca_base_component_repository_open: unable to open mca_rcache_gpusm: libcuda.so: cannot open shared object file: No such file or directory (ignored)
+[n23m0182.hpc.itc.rwth-aachen.de:46408] mca_base_component_repository_open: unable to open mca_rcache_rgpusm: libcuda.so: cannot open shared object file: No such file or directory (ignored)
+[n23m0182.hpc.itc.rwth-aachen.de:46408] mca_base_component_repository_open: unable to open mca_btl_smcuda: libcuda.so: cannot open shared object file: No such file or directory (ignored)
+[n23m0182.hpc.itc.rwth-aachen.de:46430] mca_base_component_repository_open: unable to open mca_accelerator_cuda: libcuda.so: cannot open shared object file: No such file or directory (ignored)
+[n23m0182.hpc.itc.rwth-aachen.de:46424] mca_base_component_repository_open: unable to open mca_accelerator_cuda: libcuda.so: cannot open shared object file: No such file or directory (ignored)
+[n23m0182.hpc.itc.rwth-aachen.de:46418] mca_base_component_repository_open: unable to open mca_accelerator_cuda: libcuda.so: cannot open shared object file: No such file or directory (ignored)
+[n23m0182.hpc.itc.rwth-aachen.de:46432] mca_base_component_repository_open: unable to open mca_accelerator_cuda: libcuda.so: cannot open shared object file: No such file or directory (ignored)
+[n23m0182.hpc.itc.rwth-aachen.de:46437] mca_base_component_repository_open: unable to open mca_accelerator_cuda: libcuda.so: cannot open shared object file: No such file or directory (ignored)
+[n23m0182.hpc.itc.rwth-aachen.de:46419] mca_base_component_repository_open: unable to open mca_accelerator_cuda: libcuda.so: cannot open shared object file: No such file or directory (ignored)
+[n23m0182.hpc.itc.rwth-aachen.de:46435] mca_base_component_repository_open: unable to open mca_accelerator_cuda: libcuda.so: cannot open shared object file: No such file or directory (ignored)
+[n23m0182.hpc.itc.rwth-aachen.de:46422] mca_base_component_repository_open: unable to open mca_accelerator_cuda: libcuda.so: cannot open shared object file: No such file or directory (ignored)
+[n23m0182.hpc.itc.rwth-aachen.de:46403] mca_base_component_repository_open: unable to open mca_accelerator_cuda: libcuda.so: cannot open shared object file: No such file or directory (ignored)
+[n23m0182.hpc.itc.rwth-aachen.de:46410] mca_base_component_repository_open: unable to open mca_accelerator_cuda: libcuda.so: cannot open shared object file: No such file or directory (ignored)
+[n23m0182.hpc.itc.rwth-aachen.de:46414] mca_base_component_repository_open: unable to open mca_accelerator_cuda: libcuda.so: cannot open shared object file: No such file or directory (ignored)
+[n23m0182.hpc.itc.rwth-aachen.de:46399] mca_base_component_repository_open: unable to open mca_accelerator_cuda: libcuda.so: cannot open shared object file: No such file or directory (ignored)
+[n23m0182.hpc.itc.rwth-aachen.de:46441] mca_base_component_repository_open: unable to open mca_accelerator_cuda: libcuda.so: cannot open shared object file: No such file or directory (ignored)
+[n23m0182.hpc.itc.rwth-aachen.de:46445] mca_base_component_repository_open: unable to open mca_accelerator_cuda: libcuda.so: cannot open shared object file: No such file or directory (ignored)
+[n23m0182.hpc.itc.rwth-aachen.de:46439] mca_base_component_repository_open: unable to open mca_accelerator_cuda: libcuda.so: cannot open shared object file: No such file or directory (ignored)
+[n23m0182.hpc.itc.rwth-aachen.de:46400] mca_base_component_repository_open: unable to open mca_accelerator_cuda: libcuda.so: cannot open shared object file: No such file or directory (ignored)
+[n23m0182.hpc.itc.rwth-aachen.de:46436] mca_base_component_repository_open: unable to open mca_accelerator_cuda: libcuda.so: cannot open shared object file: No such file or directory (ignored)
+[n23m0182.hpc.itc.rwth-aachen.de:46411] mca_base_component_repository_open: unable to open mca_accelerator_cuda: libcuda.so: cannot open shared object file: No such file or directory (ignored)
+[n23m0182.hpc.itc.rwth-aachen.de:46417] mca_base_component_repository_open: unable to open mca_accelerator_cuda: libcuda.so: cannot open shared object file: No such file or directory (ignored)
+[n23m0182.hpc.itc.rwth-aachen.de:46429] mca_base_component_repository_open: unable to open mca_accelerator_cuda: libcuda.so: cannot open shared object file: No such file or directory (ignored)
+[n23m0182.hpc.itc.rwth-aachen.de:46409] mca_base_component_repository_open: unable to open mca_accelerator_cuda: libcuda.so: cannot open shared object file: No such file or directory (ignored)
+[n23m0182.hpc.itc.rwth-aachen.de:46444] mca_base_component_repository_open: unable to open mca_accelerator_cuda: libcuda.so: cannot open shared object file: No such file or directory (ignored)
+[n23m0182.hpc.itc.rwth-aachen.de:46402] mca_base_component_repository_open: unable to open mca_accelerator_cuda: libcuda.so: cannot open shared object file: No such file or directory (ignored)
+[n23m0182.hpc.itc.rwth-aachen.de:46442] mca_base_component_repository_open: unable to open mca_accelerator_cuda: libcuda.so: cannot open shared object file: No such file or directory (ignored)
+[n23m0182.hpc.itc.rwth-aachen.de:46421] mca_base_component_repository_open: unable to open mca_accelerator_cuda: libcuda.so: cannot open shared object file: No such file or directory (ignored)
+[n23m0182.hpc.itc.rwth-aachen.de:46416] mca_base_component_repository_open: unable to open mca_accelerator_cuda: libcuda.so: cannot open shared object file: No such file or directory (ignored)
+[n23m0182.hpc.itc.rwth-aachen.de:46406] mca_base_component_repository_open: unable to open mca_accelerator_cuda: libcuda.so: cannot open shared object file: No such file or directory (ignored)
+[n23m0182.hpc.itc.rwth-aachen.de:46438] mca_base_component_repository_open: unable to open mca_accelerator_cuda: libcuda.so: cannot open shared object file: No such file or directory (ignored)
+[n23m0182.hpc.itc.rwth-aachen.de:46431] mca_base_component_repository_open: unable to open mca_accelerator_cuda: libcuda.so: cannot open shared object file: No such file or directory (ignored)
+[n23m0182.hpc.itc.rwth-aachen.de:46443] mca_base_component_repository_open: unable to open mca_accelerator_cuda: libcuda.so: cannot open shared object file: No such file or directory (ignored)
+[n23m0182.hpc.itc.rwth-aachen.de:46425] mca_base_component_repository_open: unable to open mca_accelerator_cuda: libcuda.so: cannot open shared object file: No such file or directory (ignored)
+[n23m0182.hpc.itc.rwth-aachen.de:46420] mca_base_component_repository_open: unable to open mca_accelerator_cuda: libcuda.so: cannot open shared object file: No such file or directory (ignored)
+[n23m0182.hpc.itc.rwth-aachen.de:46415] mca_base_component_repository_open: unable to open mca_accelerator_cuda: libcuda.so: cannot open shared object file: No such file or directory (ignored)
+[n23m0182.hpc.itc.rwth-aachen.de:46401] mca_base_component_repository_open: unable to open mca_accelerator_cuda: libcuda.so: cannot open shared object file: No such file or directory (ignored)
+[n23m0182.hpc.itc.rwth-aachen.de:46413] mca_base_component_repository_open: unable to open mca_accelerator_cuda: libcuda.so: cannot open shared object file: No such file or directory (ignored)
+[n23m0182.hpc.itc.rwth-aachen.de:46407] mca_base_component_repository_open: unable to open mca_accelerator_cuda: libcuda.so: cannot open shared object file: No such file or directory (ignored)
+[n23m0182.hpc.itc.rwth-aachen.de:46412] mca_base_component_repository_open: unable to open mca_rcache_gpusm: libcuda.so: cannot open shared object file: No such file or directory (ignored)
+[n23m0182.hpc.itc.rwth-aachen.de:46412] mca_base_component_repository_open: unable to open mca_rcache_rgpusm: libcuda.so: cannot open shared object file: No such file or directory (ignored)
+[n23m0182.hpc.itc.rwth-aachen.de:46412] mca_base_component_repository_open: unable to open mca_btl_smcuda: libcuda.so: cannot open shared object file: No such file or directory (ignored)
+[n23m0182.hpc.itc.rwth-aachen.de:46427] mca_base_component_repository_open: unable to open mca_rcache_gpusm: libcuda.so: cannot open shared object file: No such file or directory (ignored)
+[n23m0182.hpc.itc.rwth-aachen.de:46427] mca_base_component_repository_open: unable to open mca_rcache_rgpusm: libcuda.so: cannot open shared object file: No such file or directory (ignored)
+[n23m0182.hpc.itc.rwth-aachen.de:46427] mca_base_component_repository_open: unable to open mca_btl_smcuda: libcuda.so: cannot open shared object file: No such file or directory (ignored)
+[n23m0182.hpc.itc.rwth-aachen.de:46433] mca_base_component_repository_open: unable to open mca_rcache_gpusm: libcuda.so: cannot open shared object file: No such file or directory (ignored)
+[n23m0182.hpc.itc.rwth-aachen.de:46433] mca_base_component_repository_open: unable to open mca_rcache_rgpusm: libcuda.so: cannot open shared object file: No such file or directory (ignored)
+[n23m0182.hpc.itc.rwth-aachen.de:46433] mca_base_component_repository_open: unable to open mca_btl_smcuda: libcuda.so: cannot open shared object file: No such file or directory (ignored)
+[n23m0182.hpc.itc.rwth-aachen.de:46423] mca_base_component_repository_open: unable to open mca_rcache_gpusm: libcuda.so: cannot open shared object file: No such file or directory (ignored)
+[n23m0182.hpc.itc.rwth-aachen.de:46423] mca_base_component_repository_open: unable to open mca_rcache_rgpusm: libcuda.so: cannot open shared object file: No such file or directory (ignored)
+[n23m0182.hpc.itc.rwth-aachen.de:46423] mca_base_component_repository_open: unable to open mca_btl_smcuda: libcuda.so: cannot open shared object file: No such file or directory (ignored)
+[n23m0182.hpc.itc.rwth-aachen.de:46430] mca_base_component_repository_open: unable to open mca_rcache_gpusm: libcuda.so: cannot open shared object file: No such file or directory (ignored)
+[n23m0182.hpc.itc.rwth-aachen.de:46430] mca_base_component_repository_open: unable to open mca_rcache_rgpusm: libcuda.so: cannot open shared object file: No such file or directory (ignored)
+[n23m0182.hpc.itc.rwth-aachen.de:46430] mca_base_component_repository_open: unable to open mca_btl_smcuda: libcuda.so: cannot open shared object file: No such file or directory (ignored)
+[n23m0182.hpc.itc.rwth-aachen.de:46405] mca_base_component_repository_open: unable to open mca_rcache_gpusm: libcuda.so: cannot open shared object file: No such file or directory (ignored)
+[n23m0182.hpc.itc.rwth-aachen.de:46403] mca_base_component_repository_open: unable to open mca_rcache_gpusm: libcuda.so: cannot open shared object file: No such file or directory (ignored)
+[n23m0182.hpc.itc.rwth-aachen.de:46428] mca_base_component_repository_open: unable to open mca_rcache_gpusm: libcuda.so: cannot open shared object file: No such file or directory (ignored)
+[n23m0182.hpc.itc.rwth-aachen.de:46436] mca_base_component_repository_open: unable to open mca_rcache_gpusm: libcuda.so: cannot open shared object file: No such file or directory (ignored)
+[n23m0182.hpc.itc.rwth-aachen.de:46405] mca_base_component_repository_open: unable to open mca_rcache_rgpusm: libcuda.so: cannot open shared object file: No such file or directory (ignored)
+[n23m0182.hpc.itc.rwth-aachen.de:46403] mca_base_component_repository_open: unable to open mca_rcache_rgpusm: libcuda.so: cannot open shared object file: No such file or directory (ignored)
+[n23m0182.hpc.itc.rwth-aachen.de:46428] mca_base_component_repository_open: unable to open mca_rcache_rgpusm: libcuda.so: cannot open shared object file: No such file or directory (ignored)
+[n23m0182.hpc.itc.rwth-aachen.de:46436] mca_base_component_repository_open: unable to open mca_rcache_rgpusm: libcuda.so: cannot open shared object file: No such file or directory (ignored)
+[n23m0182.hpc.itc.rwth-aachen.de:46405] mca_base_component_repository_open: unable to open mca_btl_smcuda: libcuda.so: cannot open shared object file: No such file or directory (ignored)
+[n23m0182.hpc.itc.rwth-aachen.de:46428] mca_base_component_repository_open: unable to open mca_btl_smcuda: libcuda.so: cannot open shared object file: No such file or directory (ignored)
+[n23m0182.hpc.itc.rwth-aachen.de:46403] mca_base_component_repository_open: unable to open mca_btl_smcuda: libcuda.so: cannot open shared object file: No such file or directory (ignored)
+[n23m0182.hpc.itc.rwth-aachen.de:46436] mca_base_component_repository_open: unable to open mca_btl_smcuda: libcuda.so: cannot open shared object file: No such file or directory (ignored)
+[n23m0182.hpc.itc.rwth-aachen.de:46410] mca_base_component_repository_open: unable to open mca_rcache_gpusm: libcuda.so: cannot open shared object file: No such file or directory (ignored)
+[n23m0182.hpc.itc.rwth-aachen.de:46410] mca_base_component_repository_open: unable to open mca_rcache_rgpusm: libcuda.so: cannot open shared object file: No such file or directory (ignored)
+[n23m0182.hpc.itc.rwth-aachen.de:46434] mca_base_component_repository_open: unable to open mca_rcache_gpusm: libcuda.so: cannot open shared object file: No such file or directory (ignored)
+[n23m0182.hpc.itc.rwth-aachen.de:46434] mca_base_component_repository_open: unable to open mca_rcache_rgpusm: libcuda.so: cannot open shared object file: No such file or directory (ignored)
+[n23m0182.hpc.itc.rwth-aachen.de:46410] mca_base_component_repository_open: unable to open mca_btl_smcuda: libcuda.so: cannot open shared object file: No such file or directory (ignored)
+[n23m0182.hpc.itc.rwth-aachen.de:46434] mca_base_component_repository_open: unable to open mca_btl_smcuda: libcuda.so: cannot open shared object file: No such file or directory (ignored)
+[n23m0182.hpc.itc.rwth-aachen.de:46426] mca_base_component_repository_open: unable to open mca_rcache_gpusm: libcuda.so: cannot open shared object file: No such file or directory (ignored)
+[n23m0182.hpc.itc.rwth-aachen.de:46426] mca_base_component_repository_open: unable to open mca_rcache_rgpusm: libcuda.so: cannot open shared object file: No such file or directory (ignored)
+[n23m0182.hpc.itc.rwth-aachen.de:46426] mca_base_component_repository_open: unable to open mca_btl_smcuda: libcuda.so: cannot open shared object file: No such file or directory (ignored)
+[n23m0182.hpc.itc.rwth-aachen.de:46429] mca_base_component_repository_open: unable to open mca_rcache_gpusm: libcuda.so: cannot open shared object file: No such file or directory (ignored)
+[n23m0182.hpc.itc.rwth-aachen.de:46429] mca_base_component_repository_open: unable to open mca_rcache_rgpusm: libcuda.so: cannot open shared object file: No such file or directory (ignored)
+[n23m0182.hpc.itc.rwth-aachen.de:46445] mca_base_component_repository_open: unable to open mca_rcache_gpusm: libcuda.so: cannot open shared object file: No such file or directory (ignored)
+[n23m0182.hpc.itc.rwth-aachen.de:46444] mca_base_component_repository_open: unable to open mca_rcache_gpusm: libcuda.so: cannot open shared object file: No such file or directory (ignored)
+[n23m0182.hpc.itc.rwth-aachen.de:46445] mca_base_component_repository_open: unable to open mca_rcache_rgpusm: libcuda.so: cannot open shared object file: No such file or directory (ignored)
+[n23m0182.hpc.itc.rwth-aachen.de:46429] mca_base_component_repository_open: unable to open mca_btl_smcuda: libcuda.so: cannot open shared object file: No such file or directory (ignored)
+[n23m0182.hpc.itc.rwth-aachen.de:46444] mca_base_component_repository_open: unable to open mca_rcache_rgpusm: libcuda.so: cannot open shared object file: No such file or directory (ignored)
+[n23m0182.hpc.itc.rwth-aachen.de:46445] mca_base_component_repository_open: unable to open mca_btl_smcuda: libcuda.so: cannot open shared object file: No such file or directory (ignored)
+[n23m0182.hpc.itc.rwth-aachen.de:46444] mca_base_component_repository_open: unable to open mca_btl_smcuda: libcuda.so: cannot open shared object file: No such file or directory (ignored)
+[n23m0182.hpc.itc.rwth-aachen.de:46418] mca_base_component_repository_open: unable to open mca_rcache_gpusm: libcuda.so: cannot open shared object file: No such file or directory (ignored)
+[n23m0182.hpc.itc.rwth-aachen.de:46418] mca_base_component_repository_open: unable to open mca_rcache_rgpusm: libcuda.so: cannot open shared object file: No such file or directory (ignored)
+[n23m0182.hpc.itc.rwth-aachen.de:46413] mca_base_component_repository_open: unable to open mca_rcache_gpusm: libcuda.so: cannot open shared object file: No such file or directory (ignored)
+[n23m0182.hpc.itc.rwth-aachen.de:46418] mca_base_component_repository_open: unable to open mca_btl_smcuda: libcuda.so: cannot open shared object file: No such file or directory (ignored)
+[n23m0182.hpc.itc.rwth-aachen.de:46442] mca_base_component_repository_open: unable to open mca_rcache_gpusm: libcuda.so: cannot open shared object file: No such file or directory (ignored)
+[n23m0182.hpc.itc.rwth-aachen.de:46411] mca_base_component_repository_open: unable to open mca_rcache_gpusm: libcuda.so: cannot open shared object file: No such file or directory (ignored)
+[n23m0182.hpc.itc.rwth-aachen.de:46443] mca_base_component_repository_open: unable to open mca_rcache_gpusm: libcuda.so: cannot open shared object file: No such file or directory (ignored)
+[n23m0182.hpc.itc.rwth-aachen.de:46435] mca_base_component_repository_open: unable to open mca_rcache_gpusm: libcuda.so: cannot open shared object file: No such file or directory (ignored)
+[n23m0182.hpc.itc.rwth-aachen.de:46413] mca_base_component_repository_open: unable to open mca_rcache_rgpusm: libcuda.so: cannot open shared object file: No such file or directory (ignored)
+[n23m0182.hpc.itc.rwth-aachen.de:46437] mca_base_component_repository_open: unable to open mca_rcache_gpusm: libcuda.so: cannot open shared object file: No such file or directory (ignored)
+[n23m0182.hpc.itc.rwth-aachen.de:46402] mca_base_component_repository_open: unable to open mca_rcache_gpusm: libcuda.so: cannot open shared object file: No such file or directory (ignored)
+[n23m0182.hpc.itc.rwth-aachen.de:46419] mca_base_component_repository_open: unable to open mca_rcache_gpusm: libcuda.so: cannot open shared object file: No such file or directory (ignored)
+[n23m0182.hpc.itc.rwth-aachen.de:46442] mca_base_component_repository_open: unable to open mca_rcache_rgpusm: libcuda.so: cannot open shared object file: No such file or directory (ignored)
+[n23m0182.hpc.itc.rwth-aachen.de:46443] mca_base_component_repository_open: unable to open mca_rcache_rgpusm: libcuda.so: cannot open shared object file: No such file or directory (ignored)
+[n23m0182.hpc.itc.rwth-aachen.de:46435] mca_base_component_repository_open: unable to open mca_rcache_rgpusm: libcuda.so: cannot open shared object file: No such file or directory (ignored)
+[n23m0182.hpc.itc.rwth-aachen.de:46411] mca_base_component_repository_open: unable to open mca_rcache_rgpusm: libcuda.so: cannot open shared object file: No such file or directory (ignored)
+[n23m0182.hpc.itc.rwth-aachen.de:46437] mca_base_component_repository_open: unable to open mca_rcache_rgpusm: libcuda.so: cannot open shared object file: No such file or directory (ignored)
+[n23m0182.hpc.itc.rwth-aachen.de:46419] mca_base_component_repository_open: unable to open mca_rcache_rgpusm: libcuda.so: cannot open shared object file: No such file or directory (ignored)
+[n23m0182.hpc.itc.rwth-aachen.de:46402] mca_base_component_repository_open: unable to open mca_rcache_rgpusm: libcuda.so: cannot open shared object file: No such file or directory (ignored)
+[n23m0182.hpc.itc.rwth-aachen.de:46413] mca_base_component_repository_open: unable to open mca_btl_smcuda: libcuda.so: cannot open shared object file: No such file or directory (ignored)
+[n23m0182.hpc.itc.rwth-aachen.de:46443] mca_base_component_repository_open: unable to open mca_btl_smcuda: libcuda.so: cannot open shared object file: No such file or directory (ignored)
+[n23m0182.hpc.itc.rwth-aachen.de:46442] mca_base_component_repository_open: unable to open mca_btl_smcuda: libcuda.so: cannot open shared object file: No such file or directory (ignored)
+[n23m0182.hpc.itc.rwth-aachen.de:46435] mca_base_component_repository_open: unable to open mca_btl_smcuda: libcuda.so: cannot open shared object file: No such file or directory (ignored)
+[n23m0182.hpc.itc.rwth-aachen.de:46411] mca_base_component_repository_open: unable to open mca_btl_smcuda: libcuda.so: cannot open shared object file: No such file or directory (ignored)
+[n23m0182.hpc.itc.rwth-aachen.de:46437] mca_base_component_repository_open: unable to open mca_btl_smcuda: libcuda.so: cannot open shared object file: No such file or directory (ignored)
+[n23m0182.hpc.itc.rwth-aachen.de:46419] mca_base_component_repository_open: unable to open mca_btl_smcuda: libcuda.so: cannot open shared object file: No such file or directory (ignored)
+[n23m0182.hpc.itc.rwth-aachen.de:46402] mca_base_component_repository_open: unable to open mca_btl_smcuda: libcuda.so: cannot open shared object file: No such file or directory (ignored)
+[n23m0182.hpc.itc.rwth-aachen.de:46400] mca_base_component_repository_open: unable to open mca_rcache_gpusm: libcuda.so: cannot open shared object file: No such file or directory (ignored)
+[n23m0182.hpc.itc.rwth-aachen.de:46420] mca_base_component_repository_open: unable to open mca_rcache_gpusm: libcuda.so: cannot open shared object file: No such file or directory (ignored)
+[n23m0182.hpc.itc.rwth-aachen.de:46440] mca_base_component_repository_open: unable to open mca_rcache_gpusm: libcuda.so: cannot open shared object file: No such file or directory (ignored)
+[n23m0182.hpc.itc.rwth-aachen.de:46416] mca_base_component_repository_open: unable to open mca_rcache_gpusm: libcuda.so: cannot open shared object file: No such file or directory (ignored)
+[n23m0182.hpc.itc.rwth-aachen.de:46425] mca_base_component_repository_open: unable to open mca_rcache_gpusm: libcuda.so: cannot open shared object file: No such file or directory (ignored)
+[n23m0182.hpc.itc.rwth-aachen.de:46439] mca_base_component_repository_open: unable to open mca_rcache_gpusm: libcuda.so: cannot open shared object file: No such file or directory (ignored)
+[n23m0182.hpc.itc.rwth-aachen.de:46406] mca_base_component_repository_open: unable to open mca_rcache_gpusm: libcuda.so: cannot open shared object file: No such file or directory (ignored)
+[n23m0182.hpc.itc.rwth-aachen.de:46401] mca_base_component_repository_open: unable to open mca_rcache_gpusm: libcuda.so: cannot open shared object file: No such file or directory (ignored)
+[n23m0182.hpc.itc.rwth-aachen.de:46400] mca_base_component_repository_open: unable to open mca_rcache_rgpusm: libcuda.so: cannot open shared object file: No such file or directory (ignored)
+[n23m0182.hpc.itc.rwth-aachen.de:46417] mca_base_component_repository_open: unable to open mca_rcache_gpusm: libcuda.so: cannot open shared object file: No such file or directory (ignored)
+[n23m0182.hpc.itc.rwth-aachen.de:46420] mca_base_component_repository_open: unable to open mca_rcache_rgpusm: libcuda.so: cannot open shared object file: No such file or directory (ignored)
+[n23m0182.hpc.itc.rwth-aachen.de:46421] mca_base_component_repository_open: unable to open mca_rcache_gpusm: libcuda.so: cannot open shared object file: No such file or directory (ignored)
+[n23m0182.hpc.itc.rwth-aachen.de:46440] mca_base_component_repository_open: unable to open mca_rcache_rgpusm: libcuda.so: cannot open shared object file: No such file or directory (ignored)
+[n23m0182.hpc.itc.rwth-aachen.de:46424] mca_base_component_repository_open: unable to open mca_rcache_gpusm: libcuda.so: cannot open shared object file: No such file or directory (ignored)
+[n23m0182.hpc.itc.rwth-aachen.de:46406] mca_base_component_repository_open: unable to open mca_rcache_rgpusm: libcuda.so: cannot open shared object file: No such file or directory (ignored)
+[n23m0182.hpc.itc.rwth-aachen.de:46425] mca_base_component_repository_open: unable to open mca_rcache_rgpusm: libcuda.so: cannot open shared object file: No such file or directory (ignored)
+[n23m0182.hpc.itc.rwth-aachen.de:46416] mca_base_component_repository_open: unable to open mca_rcache_rgpusm: libcuda.so: cannot open shared object file: No such file or directory (ignored)
+[n23m0182.hpc.itc.rwth-aachen.de:46439] mca_base_component_repository_open: unable to open mca_rcache_rgpusm: libcuda.so: cannot open shared object file: No such file or directory (ignored)
+[n23m0182.hpc.itc.rwth-aachen.de:46401] mca_base_component_repository_open: unable to open mca_rcache_rgpusm: libcuda.so: cannot open shared object file: No such file or directory (ignored)
+[n23m0182.hpc.itc.rwth-aachen.de:46417] mca_base_component_repository_open: unable to open mca_rcache_rgpusm: libcuda.so: cannot open shared object file: No such file or directory (ignored)
+[n23m0182.hpc.itc.rwth-aachen.de:46421] mca_base_component_repository_open: unable to open mca_rcache_rgpusm: libcuda.so: cannot open shared object file: No such file or directory (ignored)
+[n23m0182.hpc.itc.rwth-aachen.de:46424] mca_base_component_repository_open: unable to open mca_rcache_rgpusm: libcuda.so: cannot open shared object file: No such file or directory (ignored)
+[n23m0182.hpc.itc.rwth-aachen.de:46400] mca_base_component_repository_open: unable to open mca_btl_smcuda: libcuda.so: cannot open shared object file: No such file or directory (ignored)
+[n23m0182.hpc.itc.rwth-aachen.de:46440] mca_base_component_repository_open: unable to open mca_btl_smcuda: libcuda.so: cannot open shared object file: No such file or directory (ignored)
+[n23m0182.hpc.itc.rwth-aachen.de:46420] mca_base_component_repository_open: unable to open mca_btl_smcuda: libcuda.so: cannot open shared object file: No such file or directory (ignored)
+[n23m0182.hpc.itc.rwth-aachen.de:46432] mca_base_component_repository_open: unable to open mca_rcache_gpusm: libcuda.so: cannot open shared object file: No such file or directory (ignored)
+[n23m0182.hpc.itc.rwth-aachen.de:46406] mca_base_component_repository_open: unable to open mca_btl_smcuda: libcuda.so: cannot open shared object file: No such file or directory (ignored)
+[n23m0182.hpc.itc.rwth-aachen.de:46425] mca_base_component_repository_open: unable to open mca_btl_smcuda: libcuda.so: cannot open shared object file: No such file or directory (ignored)
+[n23m0182.hpc.itc.rwth-aachen.de:46416] mca_base_component_repository_open: unable to open mca_btl_smcuda: libcuda.so: cannot open shared object file: No such file or directory (ignored)
+[n23m0182.hpc.itc.rwth-aachen.de:46401] mca_base_component_repository_open: unable to open mca_btl_smcuda: libcuda.so: cannot open shared object file: No such file or directory (ignored)
+[n23m0182.hpc.itc.rwth-aachen.de:46417] mca_base_component_repository_open: unable to open mca_btl_smcuda: libcuda.so: cannot open shared object file: No such file or directory (ignored)
+[n23m0182.hpc.itc.rwth-aachen.de:46432] mca_base_component_repository_open: unable to open mca_rcache_rgpusm: libcuda.so: cannot open shared object file: No such file or directory (ignored)
+[n23m0182.hpc.itc.rwth-aachen.de:46399] mca_base_component_repository_open: unable to open mca_rcache_gpusm: libcuda.so: cannot open shared object file: No such file or directory (ignored)
+[n23m0182.hpc.itc.rwth-aachen.de:46439] mca_base_component_repository_open: unable to open mca_btl_smcuda: libcuda.so: cannot open shared object file: No such file or directory (ignored)
+[n23m0182.hpc.itc.rwth-aachen.de:46424] mca_base_component_repository_open: unable to open mca_btl_smcuda: libcuda.so: cannot open shared object file: No such file or directory (ignored)
+[n23m0182.hpc.itc.rwth-aachen.de:46421] mca_base_component_repository_open: unable to open mca_btl_smcuda: libcuda.so: cannot open shared object file: No such file or directory (ignored)
+[n23m0182.hpc.itc.rwth-aachen.de:46409] mca_base_component_repository_open: unable to open mca_rcache_gpusm: libcuda.so: cannot open shared object file: No such file or directory (ignored)
+[n23m0182.hpc.itc.rwth-aachen.de:46399] mca_base_component_repository_open: unable to open mca_rcache_rgpusm: libcuda.so: cannot open shared object file: No such file or directory (ignored)
+[n23m0182.hpc.itc.rwth-aachen.de:46407] mca_base_component_repository_open: unable to open mca_rcache_gpusm: libcuda.so: cannot open shared object file: No such file or directory (ignored)
+[n23m0182.hpc.itc.rwth-aachen.de:46432] mca_base_component_repository_open: unable to open mca_btl_smcuda: libcuda.so: cannot open shared object file: No such file or directory (ignored)
+[n23m0182.hpc.itc.rwth-aachen.de:46409] mca_base_component_repository_open: unable to open mca_rcache_rgpusm: libcuda.so: cannot open shared object file: No such file or directory (ignored)
+[n23m0182.hpc.itc.rwth-aachen.de:46415] mca_base_component_repository_open: unable to open mca_rcache_gpusm: libcuda.so: cannot open shared object file: No such file or directory (ignored)
+[n23m0182.hpc.itc.rwth-aachen.de:46422] mca_base_component_repository_open: unable to open mca_rcache_gpusm: libcuda.so: cannot open shared object file: No such file or directory (ignored)
+[n23m0182.hpc.itc.rwth-aachen.de:46441] mca_base_component_repository_open: unable to open mca_rcache_gpusm: libcuda.so: cannot open shared object file: No such file or directory (ignored)
+[n23m0182.hpc.itc.rwth-aachen.de:46438] mca_base_component_repository_open: unable to open mca_rcache_gpusm: libcuda.so: cannot open shared object file: No such file or directory (ignored)
+[n23m0182.hpc.itc.rwth-aachen.de:46407] mca_base_component_repository_open: unable to open mca_rcache_rgpusm: libcuda.so: cannot open shared object file: No such file or directory (ignored)
+[n23m0182.hpc.itc.rwth-aachen.de:46414] mca_base_component_repository_open: unable to open mca_rcache_gpusm: libcuda.so: cannot open shared object file: No such file or directory (ignored)
+[n23m0182.hpc.itc.rwth-aachen.de:46399] mca_base_component_repository_open: unable to open mca_btl_smcuda: libcuda.so: cannot open shared object file: No such file or directory (ignored)
+[n23m0182.hpc.itc.rwth-aachen.de:46422] mca_base_component_repository_open: unable to open mca_rcache_rgpusm: libcuda.so: cannot open shared object file: No such file or directory (ignored)
+[n23m0182.hpc.itc.rwth-aachen.de:46415] mca_base_component_repository_open: unable to open mca_rcache_rgpusm: libcuda.so: cannot open shared object file: No such file or directory (ignored)
+[n23m0182.hpc.itc.rwth-aachen.de:46438] mca_base_component_repository_open: unable to open mca_rcache_rgpusm: libcuda.so: cannot open shared object file: No such file or directory (ignored)
+[n23m0182.hpc.itc.rwth-aachen.de:46441] mca_base_component_repository_open: unable to open mca_rcache_rgpusm: libcuda.so: cannot open shared object file: No such file or directory (ignored)
+[n23m0182.hpc.itc.rwth-aachen.de:46431] mca_base_component_repository_open: unable to open mca_rcache_gpusm: libcuda.so: cannot open shared object file: No such file or directory (ignored)
+[n23m0182.hpc.itc.rwth-aachen.de:46409] mca_base_component_repository_open: unable to open mca_btl_smcuda: libcuda.so: cannot open shared object file: No such file or directory (ignored)
+[n23m0182.hpc.itc.rwth-aachen.de:46414] mca_base_component_repository_open: unable to open mca_rcache_rgpusm: libcuda.so: cannot open shared object file: No such file or directory (ignored)
+[n23m0182.hpc.itc.rwth-aachen.de:46407] mca_base_component_repository_open: unable to open mca_btl_smcuda: libcuda.so: cannot open shared object file: No such file or directory (ignored)
+[n23m0182.hpc.itc.rwth-aachen.de:46431] mca_base_component_repository_open: unable to open mca_rcache_rgpusm: libcuda.so: cannot open shared object file: No such file or directory (ignored)
+[n23m0182.hpc.itc.rwth-aachen.de:46422] mca_base_component_repository_open: unable to open mca_btl_smcuda: libcuda.so: cannot open shared object file: No such file or directory (ignored)
+[n23m0182.hpc.itc.rwth-aachen.de:46415] mca_base_component_repository_open: unable to open mca_btl_smcuda: libcuda.so: cannot open shared object file: No such file or directory (ignored)
+[n23m0182.hpc.itc.rwth-aachen.de:46441] mca_base_component_repository_open: unable to open mca_btl_smcuda: libcuda.so: cannot open shared object file: No such file or directory (ignored)
+[n23m0182.hpc.itc.rwth-aachen.de:46438] mca_base_component_repository_open: unable to open mca_btl_smcuda: libcuda.so: cannot open shared object file: No such file or directory (ignored)
+[n23m0182.hpc.itc.rwth-aachen.de:46414] mca_base_component_repository_open: unable to open mca_btl_smcuda: libcuda.so: cannot open shared object file: No such file or directory (ignored)
+[n23m0182.hpc.itc.rwth-aachen.de:46431] mca_base_component_repository_open: unable to open mca_btl_smcuda: libcuda.so: cannot open shared object file: No such file or directory (ignored)
+[n23m0182:46426:0:46426] Caught signal 11 (Segmentation fault: Sent by the kernel at address (nil))
+==== backtrace (tid:  46426) ====
+ 0 0x0000000000083646 __tsan::CallUserSignalHandler()  /dev/shm/eb.ss540294.2025-06-15T14-28-14/14_28_19/LLVM/19.1.7/GCCcore-13.3.0/llvm-project-19.1.7.src/compiler-rt/lib/tsan/rtl/tsan_interceptors_posix.cpp:2117
+ 1 0x0000000000083b6b sighandler()  /dev/shm/eb.ss540294.2025-06-15T14-28-14/14_28_19/LLVM/19.1.7/GCCcore-13.3.0/llvm-project-19.1.7.src/compiler-rt/lib/tsan/rtl/tsan_interceptors_posix.cpp:2205
+ 2 0x000000000003ebf0 __GI___sigaction()  :0
+ 3 0x00000000000e487c __tsan::MemoryAccessRangeT<false>()  /dev/shm/eb.ss540294.2025-06-15T14-28-14/14_28_19/LLVM/19.1.7/GCCcore-13.3.0/llvm-project-19.1.7.src/compiler-rt/lib/tsan/rtl/tsan_platform.h:930
+ 4 0x00000000000ae556 __interceptor_process_vm_readv()  /dev/shm/eb.ss540294.2025-06-15T14-28-14/14_28_19/LLVM/19.1.7/GCCcore-13.3.0/llvm-project-19.1.7.src/compiler-rt/lib/tsan/rtl/tsan_rtl.h:541
+ 5 0x00000000000ae556 ___interceptor_process_vm_readv()  /dev/shm/eb.ss540294.2025-06-15T14-28-14/14_28_19/LLVM/19.1.7/GCCcore-13.3.0/llvm-project-19.1.7.src/compiler-rt/lib/tsan/rtl/../../sanitizer_common/sanitizer_common_interceptors.inc:6673
+ 6 0x000000000000341d uct_cma_iface_is_reachable_v2()  /dev/shm/easybuild/easybuild.2024_10_30-09_39_12/UCX/1.16.0/GCCcore-13.3.0/ucx-1.16.0/src/uct/sm/scopy/cma/cma_iface.c:103
+ 7 0x000000000009f195 ucp_wireup_is_reachable()  /dev/shm/easybuild/easybuild.2024_10_30-09_39_12/UCX/1.16.0/GCCcore-13.3.0/ucx-1.16.0/src/ucp/wireup/wireup.c:1270
+ 8 0x0000000000099fd9 ucp_wireup_select_transport()  /dev/shm/easybuild/easybuild.2024_10_30-09_39_12/UCX/1.16.0/GCCcore-13.3.0/ucx-1.16.0/src/ucp/wireup/select.c:586
+ 9 0x000000000009a86b ucp_wireup_add_bw_lanes()  /dev/shm/easybuild/easybuild.2024_10_30-09_39_12/UCX/1.16.0/GCCcore-13.3.0/ucx-1.16.0/src/ucp/wireup/select.c:1588
+10 0x000000000009af26 ucp_wireup_add_rma_bw_lanes()  /dev/shm/easybuild/easybuild.2024_10_30-09_39_12/UCX/1.16.0/GCCcore-13.3.0/ucx-1.16.0/src/ucp/wireup/select.c:1866
+11 0x000000000009ba30 ucp_wireup_search_lanes()  /dev/shm/easybuild/easybuild.2024_10_30-09_39_12/UCX/1.16.0/GCCcore-13.3.0/ucx-1.16.0/src/ucp/wireup/select.c:2140
+12 0x000000000009c092 ucp_wireup_select_lanes()  /dev/shm/easybuild/easybuild.2024_10_30-09_39_12/UCX/1.16.0/GCCcore-13.3.0/ucx-1.16.0/src/ucp/wireup/select.c:2400
+13 0x000000000009f352 ucp_wireup_init_lanes()  /dev/shm/easybuild/easybuild.2024_10_30-09_39_12/UCX/1.16.0/GCCcore-13.3.0/ucx-1.16.0/src/ucp/wireup/wireup.c:1563
+14 0x0000000000035c9d ucp_ep_create_to_worker_addr()  /dev/shm/easybuild/easybuild.2024_10_30-09_39_12/UCX/1.16.0/GCCcore-13.3.0/ucx-1.16.0/src/ucp/core/ucp_ep.c:833
+15 0x00000000000364e4 ucp_ep_create_api_to_worker_addr()  /dev/shm/easybuild/easybuild.2024_10_30-09_39_12/UCX/1.16.0/GCCcore-13.3.0/ucx-1.16.0/src/ucp/core/ucp_ep.c:1087
+16 0x00000000000364e4 ucp_ep_create()  /dev/shm/easybuild/easybuild.2024_10_30-09_39_12/UCX/1.16.0/GCCcore-13.3.0/ucx-1.16.0/src/ucp/core/ucp_ep.c:1193
+17 0x0000000000222c8f mca_pml_ucx_add_proc_common()  pml_ucx.c:0
+18 0x0000000000222ec7 mca_pml_ucx_add_procs()  ???:0
+19 0x00000000000a0999 ompi_mpi_instance_init_common()  instance.c:0
+20 0x00000000000a0d13 ompi_mpi_instance_init()  ???:0
+21 0x0000000000094617 ompi_mpi_init()  ???:0
+22 0x00000000000c6aad PMPI_Init()  ???:0
+23 0x000000000013d2e7 initialise_comms()  /rwthfs/rz/cluster/home/ss540294/static-dynamic-interop/benchmarks/TeaLeaf/TeaLeaf.benchmarks/000001/000005_compile_tsan/work/copy_source/driver/comms.cpp:5
+24 0x000000000013c8fd main()  /rwthfs/rz/cluster/home/ss540294/static-dynamic-interop/benchmarks/TeaLeaf/TeaLeaf.benchmarks/000001/000005_compile_tsan/work/copy_source/driver/main.cpp:67
+25 0x00000000000295d0 __libc_start_call_main()  ???:0
+26 0x0000000000029680 __libc_start_main_alias_2()  :0
+27 0x00000000000744b5 _start()  ???:0
+=================================
+ThreadSanitizer:DEADLYSIGNAL
+slurmstepd: error:  mpi/pmix_v5: _errhandler: n23m0182 [0]: pmixp_client_v2.c:211: Error handler invoked: status = -61, source = [slurm.pmix.59781752.0:28]
+slurmstepd: error: *** STEP 59781752.0 ON n23m0182 CANCELLED AT 2025-07-25T17:11:51 ***
+srun: First task exited 5s ago
+srun: StepId=59781752.0 tasks 0-27,29-47: running
+srun: StepId=59781752.0 task 28: exited
+srun: launch/slurm: _step_signal: Terminating StepId=59781752.0
+srun: Job step aborted: Waiting up to 92 seconds for job step to finish.
+srun: error: n23m0182: tasks 0-27,29-47: Killed
+++ grep Wallclock: job.out
+++ tail -n 1
+++ cut -d: -f2
++ echo 'Total Wallclock: '
++ JUBE_ERR_CODE=0
++ '[' 0 -ne 0 ']'
++ printf 'EXECUTION VERIFICATION CHECK: '
++ grep -q '\[MUST-REPORT\] Error.*race' job.out
++ grep -q '^srun: error:' job.err
++ echo FAILURE
++ JUBE_ERR_CODE=0
++ '[' 0 -ne 0 ']'
++ touch ready

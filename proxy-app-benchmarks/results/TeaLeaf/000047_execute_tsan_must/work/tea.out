@@ -1,0 +1,154 @@
+Solution Parameters:
+	dt_init = 0.004000
+	end_time = 10.000000
+	end_step = 10
+	grid_x_min = 0.000000
+	grid_y_min = 0.000000
+	grid_x_max = 10.000000
+	grid_y_max = 10.000000
+	grid_x_cells = 2000
+	grid_y_cells = 2000
+	presteps = 30
+	ppcg_inner_steps = 10
+	eps_lim = 0.000010
+	max_iters = 10000
+	eps = 0.000000
+	halo_depth = 2
+	check_result = 1
+	coefficient = 1
+	num_chunks_per_rank = 1
+	summary_frequency = 10
+	
+state 0
+	density = 1.000000000000E+02
+	energy= 1.000000000000E-04
+	
+state 1
+	density = 1.000000000000E-01
+	energy= 2.500000000000E+01
+	x_min = 5.000000000000E-05
+	y_min = 1.000050000000E+00
+	x_max = 9.999500000000E-01
+	y_max = 1.999950000000E+00
+	radius = 1.678502865419E+243
+	geometry = 0
+	
+state 2
+	density = 1.000000000000E-01
+	energy= 1.000000000000E-01
+	x_min = 1.000050000000E+00
+	y_min = 1.000050000000E+00
+	x_max = 5.999950000000E+00
+	y_max = 1.999950000000E+00
+	radius = 2.664991480922E-81
+	geometry = 0
+	
+state 3
+	density = 1.000000000000E-01
+	energy= 1.000000000000E-01
+	x_min = 5.000050000000E+00
+	y_min = 1.000050000000E+00
+	x_max = 5.999950000000E+00
+	y_max = 7.999950000000E+00
+	radius = 1.398043280968E-76
+	geometry = 0
+	
+state 4
+	density = 1.000000000000E-01
+	energy= 1.000000000000E-01
+	x_min = 5.000050000000E+00
+	y_min = 7.000050000000E+00
+	x_max = 9.999950000000E+00
+	y_max = 7.999950000000E+00
+	radius = 9.124581902040E-313
+	geometry = 0
+TeaLeaf:
+ - Ver.:     2.000
+ - Deck:     tea.in
+ - Out:      tea.out
+ - Problem:  tea.problems
+ - Solver:   CG
+ - Profiler: false
+Model:
+ - Name:      Serial
+ - Execution: Host
+MPI:
+ - Enabled:     true
+ - Total ranks: 48
+ - Header device-awareness (CUDA-awareness):  true
+ - Runtime device-awareness (CUDA-awareness): false
+ - Host-Device halo exchange staging buffer:  true
+ - X buffer elements: 194304
+ - Y buffer elements: 146304
+ - X buffer size:     32 KB
+ - Y buffer size:     24 KB
+# ---- 
+Output: |+1
+
+ Timestep 1
+ CG: 			2375 iterations
+ Wallclock: 		33.662s
+ Avg. time per cell: 	8.415444e-06
+ Error: 		9.663879e-31
+
+ Timestep 2
+ CG: 			2295 iterations
+ Wallclock: 		66.463s
+ Avg. time per cell: 	1.661570e-05
+ Error: 		9.901626e-31
+
+ Timestep 3
+ CG: 			2219 iterations
+ Wallclock: 		98.945s
+ Avg. time per cell: 	2.473616e-05
+ Error: 		9.929494e-31
+
+ Timestep 4
+ CG: 			2142 iterations
+ Wallclock: 		131.615s
+ Avg. time per cell: 	3.290367e-05
+ Error: 		9.812083e-31
+
+ Timestep 5
+ CG: 			2070 iterations
+ Wallclock: 		163.875s
+ Avg. time per cell: 	4.096870e-05
+ Error: 		9.528060e-31
+
+ Timestep 6
+ CG: 			2001 iterations
+ Wallclock: 		195.601s
+ Avg. time per cell: 	4.890014e-05
+ Error: 		9.719288e-31
+
+ Timestep 7
+ CG: 			1939 iterations
+ Wallclock: 		226.695s
+ Avg. time per cell: 	5.667363e-05
+ Error: 		9.823081e-31
+
+ Timestep 8
+ CG: 			1875 iterations
+ Wallclock: 		257.421s
+ Avg. time per cell: 	6.435517e-05
+ Error: 		9.536278e-31
+
+ Timestep 9
+ CG: 			1828 iterations
+ Wallclock: 		287.848s
+ Avg. time per cell: 	7.196190e-05
+ Error: 		9.812886e-31
+
+ Timestep 10
+ CG: 			1777 iterations
+ Wallclock: 		318.024s
+ Avg. time per cell: 	7.950604e-05
+ Error: 		9.943237e-31
+
+ Checking results...
+ Expected 9.605026999605091e+01
+ Actual   9.605027000152018e+01
+ This run PASSED (Difference is within 0.00000001%)
+Result:
+ - Problem: 2000x2000@10
+ - Outcome: PASSED

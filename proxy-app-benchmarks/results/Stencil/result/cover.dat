@@ -1,0 +1,4 @@
+cover:
+| jube_benchmark_id | cover_time | cover_total_messages | cover_race_messages |
+|-------------------|------------|----------------------|---------------------|
+|                 1 |       0.85 |                    4 |                   0 |

@@ -1,0 +1,94 @@
+nodelist=n23m[0182,0201]
+# Opening tea.out as log file.
+TeaLeaf:
+ - Ver.:     2.000
+ - Deck:     tea.in
+ - Out:      tea.out
+ - Problem:  tea.problems
+ - Solver:   CG
+ - Profiler: false
+Model:
+ - Name:      Serial
+ - Execution: Host
+MPI:
+ - Enabled:     true
+ - Total ranks: 96
+ - Header device-awareness (CUDA-awareness):  true
+ - Runtime device-awareness (CUDA-awareness): false
+ - Host-Device halo exchange staging buffer:  true
+ - X buffer elements: 292608
+ - Y buffer elements: 196608
+ - X buffer size:     24 KB
+ - Y buffer size:     16 KB
+# ---- 
+Output: |+1
+
+ Timestep 1
+ CG: 			2375 iterations
+ Wallclock: 		5.205s
+ Avg. time per cell: 	1.301336e-06
+ Error: 		9.663879e-31
+
+ Timestep 2
+ CG: 			2295 iterations
+ Wallclock: 		10.261s
+ Avg. time per cell: 	2.565321e-06
+ Error: 		9.901642e-31
+
+ Timestep 3
+ CG: 			2219 iterations
+ Wallclock: 		15.301s
+ Avg. time per cell: 	3.825278e-06
+ Error: 		9.929476e-31
+
+ Timestep 4
+ CG: 			2142 iterations
+ Wallclock: 		23.822s
+ Avg. time per cell: 	5.955610e-06
+ Error: 		9.820664e-31
+
+ Timestep 5
+ CG: 			2070 iterations
+ Wallclock: 		32.953s
+ Avg. time per cell: 	8.238248e-06
+ Error: 		9.551463e-31
+
+ Timestep 6
+ CG: 			2001 iterations
+ Wallclock: 		41.814s
+ Avg. time per cell: 	1.045346e-05
+ Error: 		9.840375e-31
+
+ Timestep 7
+ CG: 			1938 iterations
+ Wallclock: 		50.493s
+ Avg. time per cell: 	1.262314e-05
+ Error: 		9.989086e-31
+
+ Timestep 8
+ CG: 			1874 iterations
+ Wallclock: 		58.225s
+ Avg. time per cell: 	1.455635e-05
+ Error: 		9.910321e-31
+
+ Timestep 9
+ CG: 			1828 iterations
+ Wallclock: 		66.373s
+ Avg. time per cell: 	1.659334e-05
+ Error: 		9.753241e-31
+
+ Timestep 10
+ CG: 			1778 iterations
+ Wallclock: 		74.327s
+ Avg. time per cell: 	1.858172e-05
+ Error: 		9.967162e-31
+
+ Checking results...
+ Expected 9.605026999605091e+01
+ Actual   9.605027000162545e+01
+ This run PASSED (Difference is within 0.00000001%)
+Result:
+ - Problem: 2000x2000@10
+ - Outcome: PASSED
+Total Wallclock:  		74.327s
+EXECUTION VERIFICATION CHECK: SUCCESS

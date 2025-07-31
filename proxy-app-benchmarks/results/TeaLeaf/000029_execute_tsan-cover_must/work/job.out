@@ -1,0 +1,57 @@
+nodelist=r23m[0129,0133]
+[MUST] Unknown environment option MUST_DISABLE_TSAN_ONREPORT=1 is ignored
+[MUST] MUST configuration ...  with given layout.xml
+[MUST] Information: overwritting old intermediate data in directory "/rwthfs/rz/cluster/home/ss540294/static-dynamic-interop/benchmarks/TeaLeaf/TeaLeaf.benchmarks/000001/000029_execute_tsan-cover_must/work/must_temp"!
+[MUST] Weaver ... success
+[MUST] Weaver ... success
+[MUST] Code generation ... success
+[MUST] Build file generation ... success
+[MUST] Configuring intermediate build ... success
+[MUST] Building intermediate sources ... success
+[MUST] Installing intermediate modules ... success
+[MUST] Generating P^nMPI configuration ... success
+[MUST] Infrastructure in "/rwthfs/rz/cluster/home/ss540294/static-dynamic-interop/benchmarks/TeaLeaf/TeaLeaf.benchmarks/000001/000029_execute_tsan-cover_must/work/must_temp/install" is present and used.
+[MUST] Search for linked P^nMPI ... not found ... using LD_PRELOAD to load P^nMPI ... success
+[MUST] Executing application:
+# Opening tea.out as log file.
+TeaLeaf:
+ - Ver.:     2.000
+ - Deck:     tea.in
+ - Out:      tea.out
+ - Problem:  tea.problems
+ - Solver:   CG
+ - Profiler: false
+Model:
+ - Name:      Serial
+ - Execution: Host
+/rwthfs/rz/cluster/home/ss540294/static-dynamic-interop/benchmarks/TeaLeaf/TeaLeaf.benchmarks/000001/000029_execute_tsan-cover_must/work/compile/serial-tealeaf.tsan-cover(___interceptor_backtrace+0xed)[0x5615ac17e07d]
+/rwthfs/rz/cluster/home/ss540294/static-dynamic-interop/dep/MUST/459c14f6a5f98473cda82f9dadbd1370/install/modules//libcProtMpiSplitComm.so(+0x135e8)[0x7f24343155e8]
+/rwthfs/rz/cluster/home/ss540294/static-dynamic-interop/dep/MUST/459c14f6a5f98473cda82f9dadbd1370/install/modules//libcProtMpiSplitComm.so(_Z15mySignalHandleri+0x14b)[0x7f243431559b]
+/rwthfs/rz/cluster/home/ss540294/static-dynamic-interop/benchmarks/TeaLeaf/TeaLeaf.benchmarks/000001/000029_execute_tsan-cover_must/work/compile/serial-tealeaf.tsan-cover(+0x82fd6)[0x5615ac162fd6]
+/rwthfs/rz/cluster/home/ss540294/static-dynamic-interop/benchmarks/TeaLeaf/TeaLeaf.benchmarks/000001/000029_execute_tsan-cover_must/work/compile/serial-tealeaf.tsan-cover(+0x834fb)[0x5615ac1634fb]
+/lib64/libc.so.6(+0x3ebf0)[0x7f243603ebf0]
+/rwthfs/rz/cluster/home/ss540294/static-dynamic-interop/benchmarks/TeaLeaf/TeaLeaf.benchmarks/000001/000029_execute_tsan-cover_must/work/compile/serial-tealeaf.tsan-cover(+0xe420c)[0x5615ac1c420c]
+/rwthfs/rz/cluster/home/ss540294/static-dynamic-interop/benchmarks/TeaLeaf/TeaLeaf.benchmarks/000001/000029_execute_tsan-cover_must/work/compile/serial-tealeaf.tsan-cover(___interceptor_process_vm_readv+0x166)[0x5615ac18dee6]
+/cvmfs/software.hpc.rwth.de/Linux/RH9/x86_64/intel/sapphirerapids/software/UCX/1.16.0-GCCcore-13.3.0/lib64/ucx/libuct_cma.so.0(+0x341d)[0x7f2423bff41d]
+/cvmfs/software.hpc.rwth.de/Linux/RH9/x86_64/intel/sapphirerapids/software/UCX/1.16.0-GCCcore-13.3.0/lib64/libucp.so.0(ucp_wireup_is_reachable+0xc5)[0x7f24363ce195]
+/cvmfs/software.hpc.rwth.de/Linux/RH9/x86_64/intel/sapphirerapids/software/UCX/1.16.0-GCCcore-13.3.0/lib64/libucp.so.0(+0x99fd9)[0x7f24363c8fd9]
+/cvmfs/software.hpc.rwth.de/Linux/RH9/x86_64/intel/sapphirerapids/software/UCX/1.16.0-GCCcore-13.3.0/lib64/libucp.so.0(+0x9a86b)[0x7f24363c986b]
+/cvmfs/software.hpc.rwth.de/Linux/RH9/x86_64/intel/sapphirerapids/software/UCX/1.16.0-GCCcore-13.3.0/lib64/libucp.so.0(+0x9af26)[0x7f24363c9f26]
+/cvmfs/software.hpc.rwth.de/Linux/RH9/x86_64/intel/sapphirerapids/software/UCX/1.16.0-GCCcore-13.3.0/lib64/libucp.so.0(+0x9ba30)[0x7f24363caa30]
+/cvmfs/software.hpc.rwth.de/Linux/RH9/x86_64/intel/sapphirerapids/software/UCX/1.16.0-GCCcore-13.3.0/lib64/libucp.so.0(ucp_wireup_select_lanes+0xe2)[0x7f24363cb092]
+/cvmfs/software.hpc.rwth.de/Linux/RH9/x86_64/intel/sapphirerapids/software/UCX/1.16.0-GCCcore-13.3.0/lib64/libucp.so.0(ucp_wireup_init_lanes+0x102)[0x7f24363ce352]
+/cvmfs/software.hpc.rwth.de/Linux/RH9/x86_64/intel/sapphirerapids/software/UCX/1.16.0-GCCcore-13.3.0/lib64/libucp.so.0(+0xa0449)[0x7f24363cf449]
+/cvmfs/software.hpc.rwth.de/Linux/RH9/x86_64/intel/sapphirerapids/software/UCX/1.16.0-GCCcore-13.3.0/lib64/libucp.so.0(+0xa0b61)[0x7f24363cfb61]
+/cvmfs/software.hpc.rwth.de/Linux/RH9/x86_64/intel/sapphirerapids/software/UCX/1.16.0-GCCcore-13.3.0/lib64/libuct.so.0(+0x1a38c)[0x7f2436bfb38c]
+/cvmfs/software.hpc.rwth.de/Linux/RH9/x86_64/intel/sapphirerapids/software/UCX/1.16.0-GCCcore-13.3.0/lib64/libucp.so.0(ucp_worker_progress+0x5a)[0x7f243637727a]
+MPI:
+ - Enabled:     true
+ - Total ranks: 48
+ - Header device-awareness (CUDA-awareness):  true
+ - Runtime device-awareness (CUDA-awareness): false
+ - Host-Device halo exchange staging buffer:  true
+rank 44 (of 48), pid 80812 caught signal nr 11
+Waiting up to 30 seconds for analyses to be finished.
+[MUST] Execution finished.
+Total Wallclock: 
+EXECUTION VERIFICATION CHECK: FAILURE

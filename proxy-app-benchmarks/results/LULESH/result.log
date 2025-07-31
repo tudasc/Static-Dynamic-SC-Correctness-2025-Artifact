@@ -1,0 +1,513 @@
+[2025-07-24 08:56:45,752]:DEBUG: No data found for analyser "cover_analyse" in benchmark run 1. Run analyse step automatically.
+[2025-07-24 08:56:45,753]:DEBUG: Run analyser "cover_analyse"
+[2025-07-24 08:56:45,753]:DEBUG:   available pattern:
+[2025-07-24 08:56:45,753]:DEBUG:          | pattern      | value                                    |
+[2025-07-24 08:56:45,753]:DEBUG:          |--------------|------------------------------------------|
+[2025-07-24 08:56:45,753]:DEBUG:          | time         | Grind                                    |
+[2025-07-24 08:56:45,753]:DEBUG:          |              | time.*\(\s*${jube_pat_fp}\s*overall\)    |
+[2025-07-24 08:56:45,753]:DEBUG:          | verification | EXECUTION VERIFICATION CHECK:            |
+[2025-07-24 08:56:45,753]:DEBUG:          |              | ${jube_pat_wrd}                          |
+[2025-07-24 08:56:45,753]:DEBUG: 
+[2025-07-24 08:56:45,753]:DEBUG:   available derived pattern:
+[2025-07-24 08:56:45,753]:DEBUG:          | pattern | value |
+[2025-07-24 08:56:45,753]:DEBUG:          |---------|-------|
+[2025-07-24 08:56:45,753]:DEBUG:   analyse step "compile_cover"
+[2025-07-24 08:56:45,753]:DEBUG:     scan file LULESH.benchmarks/000001/000003_compile_cover/work/time.out
+[2025-07-24 08:56:45,755]:DEBUG:       file "time.out" scanned pattern found:
+[2025-07-24 08:56:45,756]:DEBUG:          | verification |                                          |
+[2025-07-24 08:56:45,756]:DEBUG:          |         time |                                          |
+[2025-07-24 08:56:45,756]:DEBUG:          |   cover_time |          first:3.87, min:3.87, max:3.87, |
+[2025-07-24 08:56:45,756]:DEBUG:          |              | sum:3.87, sum2:14.9769, cnt:1, avg:3.87, |
+[2025-07-24 08:56:45,756]:DEBUG:          |              | std:0, last:3.87                         |
+[2025-07-24 08:56:45,756]:DEBUG:     scan file LULESH.benchmarks/000001/000003_compile_cover/work/stdout
+[2025-07-24 08:56:45,769]:DEBUG:       file "stdout" scanned pattern found:
+[2025-07-24 08:56:45,769]:DEBUG:          |         verification |                                          |
+[2025-07-24 08:56:45,769]:DEBUG:          |                 time |                                          |
+[2025-07-24 08:56:45,769]:DEBUG:          |           cover_time |          first:3.87, min:3.87, max:3.87, |
+[2025-07-24 08:56:45,769]:DEBUG:          |                      | sum:3.87, sum2:14.9769, cnt:1, avg:3.87, |
+[2025-07-24 08:56:45,769]:DEBUG:          |                      | std:0, last:3.87                         |
+[2025-07-24 08:56:45,769]:DEBUG:          | cover_total_messages |    first:135, min:135, max:135, sum:135, |
+[2025-07-24 08:56:45,769]:DEBUG:          |                      | sum2:18225, cnt:1, avg:135.0, std:0,     |
+[2025-07-24 08:56:45,769]:DEBUG:          |                      | last:135                                 |
+[2025-07-24 08:56:45,769]:DEBUG:          |  cover_race_messages |        first:29, min:29, max:29, sum:29, |
+[2025-07-24 08:56:45,769]:DEBUG:          |                      | sum2:841, cnt:1, avg:29.0, std:0,        |
+[2025-07-24 08:56:45,769]:DEBUG:          |                      | last:29                                  |
+[2025-07-24 08:56:45,773]:DEBUG: sort using: jube_wp_id
+[2025-07-24 08:56:45,773]:DEBUG: jube_benchmark_id;cover_time;cover_total_messages;cover_race_messages
+[2025-07-24 08:56:45,773]:DEBUG: 1;3.87;135;29
+[2025-07-24 08:56:45,774]:DEBUG: 
+[2025-07-24 08:56:45,774]:DEBUG: sort using: jube_wp_id
+[2025-07-24 08:56:45,774]:DEBUG: cover:
+[2025-07-24 08:56:45,774]:DEBUG: | jube_benchmark_id | cover_time | cover_total_messages | cover_race_messages |
+[2025-07-24 08:56:45,774]:DEBUG: |-------------------|------------|----------------------|---------------------|
+[2025-07-24 08:56:45,774]:DEBUG: |                 1 |       3.87 |                  135 |                  29 |
+[2025-07-24 08:56:45,775]:DEBUG: 
+[2025-07-24 08:56:45,775]:DEBUG: No data found for analyser "analyse" in benchmark run 1. Run analyse step automatically.
+[2025-07-24 08:56:45,776]:DEBUG: Run analyser "analyse"
+[2025-07-24 08:56:45,776]:DEBUG:   available pattern:
+[2025-07-24 08:56:45,776]:DEBUG:          | pattern      | value                                    |
+[2025-07-24 08:56:45,776]:DEBUG:          |--------------|------------------------------------------|
+[2025-07-24 08:56:45,776]:DEBUG:          | time         | Grind                                    |
+[2025-07-24 08:56:45,776]:DEBUG:          |              | time.*\(\s*${jube_pat_fp}\s*overall\)    |
+[2025-07-24 08:56:45,776]:DEBUG:          | verification | EXECUTION VERIFICATION CHECK:            |
+[2025-07-24 08:56:45,776]:DEBUG:          |              | ${jube_pat_wrd}                          |
+[2025-07-24 08:56:45,776]:DEBUG: 
+[2025-07-24 08:56:45,776]:DEBUG:   available derived pattern:
+[2025-07-24 08:56:45,776]:DEBUG:          | pattern | value |
+[2025-07-24 08:56:45,776]:DEBUG:          |---------|-------|
+[2025-07-24 08:56:45,776]:DEBUG:   analyse step "execute"
+[2025-07-24 08:56:45,777]:DEBUG:     scan file LULESH.benchmarks/000001/000046_execute_tsan_base/work/job.out
+[2025-07-24 08:56:45,778]:DEBUG:       file "job.out" scanned pattern found:
+[2025-07-24 08:56:45,778]:DEBUG:          | verification |       first:SUCCESS, cnt:1, last:SUCCESS |
+[2025-07-24 08:56:45,778]:DEBUG:          |         time |            first:118.0987, min:118.0987, |
+[2025-07-24 08:56:45,779]:DEBUG:          |              | max:118.0987, sum:118.0987,              |
+[2025-07-24 08:56:45,779]:DEBUG:          |              | sum2:13947.302941689999, cnt:1,          |
+[2025-07-24 08:56:45,779]:DEBUG:          |              | avg:118.0987, std:0, last:118.0987       |
+[2025-07-24 08:56:45,779]:DEBUG:     scan file LULESH.benchmarks/000001/000048_execute_tsan_base/work/job.out
+[2025-07-24 08:56:45,781]:DEBUG:       file "job.out" scanned pattern found:
+[2025-07-24 08:56:45,781]:DEBUG:          | verification |       first:SUCCESS, cnt:2, last:SUCCESS |
+[2025-07-24 08:56:45,781]:DEBUG:          |         time |           first:118.0987, min:108.77515, |
+[2025-07-24 08:56:45,781]:DEBUG:          |              | max:118.0987, sum:226.87385,             |
+[2025-07-24 08:56:45,781]:DEBUG:          |              | sum2:25779.3361992125, cnt:2,            |
+[2025-07-24 08:56:45,781]:DEBUG:          |              | avg:113.436925, std:6.592745429731611,   |
+[2025-07-24 08:56:45,781]:DEBUG:          |              | last:108.77515                           |
+[2025-07-24 08:56:45,782]:DEBUG:     scan file LULESH.benchmarks/000001/000047_execute_tsan_base/work/job.out
+[2025-07-24 08:56:45,784]:DEBUG:       file "job.out" scanned pattern found:
+[2025-07-24 08:56:45,784]:DEBUG:          | verification |       first:SUCCESS, cnt:3, last:SUCCESS |
+[2025-07-24 08:56:45,784]:DEBUG:          |         time |           first:118.0987, min:108.77515, |
+[2025-07-24 08:56:45,784]:DEBUG:          |              | max:118.0987, sum:344.85719,             |
+[2025-07-24 08:56:45,784]:DEBUG:          |              | sum2:39699.4047167681, cnt:3,            |
+[2025-07-24 08:56:45,784]:DEBUG:          |              | avg:114.95239666666667,                  |
+[2025-07-24 08:56:45,784]:DEBUG:          |              | std:5.349963482868985, last:117.98334    |
+[2025-07-24 08:56:45,784]:DEBUG:     scan file LULESH.benchmarks/000001/000060_execute_tsan_must/work/job.out
+[2025-07-24 08:56:45,786]:DEBUG:       file "job.out" scanned pattern found:
+[2025-07-24 08:56:45,786]:DEBUG:          | verification |       first:SUCCESS, cnt:1, last:SUCCESS |
+[2025-07-24 08:56:45,786]:DEBUG:          |         time |          first:243.18377, min:243.18377, |
+[2025-07-24 08:56:45,786]:DEBUG:          |              | max:243.18377, sum:243.18377,            |
+[2025-07-24 08:56:45,787]:DEBUG:          |              | sum2:59138.345991412905, cnt:1,          |
+[2025-07-24 08:56:45,787]:DEBUG:          |              | avg:243.18377, std:0, last:243.18377     |
+[2025-07-24 08:56:45,787]:DEBUG:     scan file LULESH.benchmarks/000001/000058_execute_tsan_must/work/job.out
+[2025-07-24 08:56:45,789]:DEBUG:       file "job.out" scanned pattern found:
+[2025-07-24 08:56:45,789]:DEBUG:          | verification |       first:SUCCESS, cnt:2, last:SUCCESS |
+[2025-07-24 08:56:45,789]:DEBUG:          |         time |          first:243.18377, min:228.79043, |
+[2025-07-24 08:56:45,789]:DEBUG:          |              | max:243.18377, sum:471.9742,             |
+[2025-07-24 08:56:45,789]:DEBUG:          |              | sum2:111483.4068509978, cnt:2,           |
+[2025-07-24 08:56:45,789]:DEBUG:          |              | avg:235.9871, std:10.177628317923295,    |
+[2025-07-24 08:56:45,789]:DEBUG:          |              | last:228.79043                           |
+[2025-07-24 08:56:45,789]:DEBUG:     scan file LULESH.benchmarks/000001/000059_execute_tsan_must/work/job.out
+[2025-07-24 08:56:45,791]:DEBUG:       file "job.out" scanned pattern found:
+[2025-07-24 08:56:45,791]:DEBUG:          | verification |       first:SUCCESS, cnt:3, last:SUCCESS |
+[2025-07-24 08:56:45,791]:DEBUG:          |         time |          first:243.18377, min:228.79043, |
+[2025-07-24 08:56:45,791]:DEBUG:          |              | max:243.18377, sum:711.79497,            |
+[2025-07-24 08:56:45,791]:DEBUG:          |              | sum2:168997.4085743907, cnt:3,           |
+[2025-07-24 08:56:45,791]:DEBUG:          |              | avg:237.26499, std:7.52934709288895,     |
+[2025-07-24 08:56:45,791]:DEBUG:          |              | last:239.82077                           |
+[2025-07-24 08:56:45,792]:DEBUG:     scan file LULESH.benchmarks/000001/000036_execute_tsan-cover_must/work/job.out
+[2025-07-24 08:56:45,794]:DEBUG:       file "job.out" scanned pattern found:
+[2025-07-24 08:56:45,794]:DEBUG:          | verification |                                          |
+[2025-07-24 08:56:45,794]:DEBUG:          |         time |          first:21.755995, min:21.755995, |
+[2025-07-24 08:56:45,794]:DEBUG:          |              | max:21.755995, sum:21.755995,            |
+[2025-07-24 08:56:45,794]:DEBUG:          |              | sum2:473.32331844002493, cnt:1,          |
+[2025-07-24 08:56:45,794]:DEBUG:          |              | avg:21.755995, std:0, last:21.755995     |
+[2025-07-24 08:56:45,794]:DEBUG:     scan file LULESH.benchmarks/000001/000034_execute_tsan-cover_must/work/job.out
+[2025-07-24 08:56:45,796]:DEBUG:       file "job.out" scanned pattern found:
+[2025-07-24 08:56:45,796]:DEBUG:          | verification |                                          |
+[2025-07-24 08:56:45,796]:DEBUG:          |         time |          first:21.755995, min:21.755995, |
+[2025-07-24 08:56:45,796]:DEBUG:          |              | max:21.792888, sum:43.548883000000004,   |
+[2025-07-24 08:56:45,796]:DEBUG:          |              | sum2:948.253285820569, cnt:2,            |
+[2025-07-24 08:56:45,796]:DEBUG:          |              | avg:21.774441500000002,                  |
+[2025-07-24 08:56:45,796]:DEBUG:          |              | std:0.026087290474696115, last:21.792888 |
+[2025-07-24 08:56:45,797]:DEBUG:     scan file LULESH.benchmarks/000001/000035_execute_tsan-cover_must/work/job.out
+[2025-07-24 08:56:45,799]:DEBUG:       file "job.out" scanned pattern found:
+[2025-07-24 08:56:45,799]:DEBUG:          | verification |                                          |
+[2025-07-24 08:56:45,799]:DEBUG:          |         time |          first:21.755995, min:21.755995, |
+[2025-07-24 08:56:45,799]:DEBUG:          |              | max:21.890617, sum:65.43950000000001,    |
+[2025-07-24 08:56:45,799]:DEBUG:          |              | sum2:1427.4523984612579, cnt:3,          |
+[2025-07-24 08:56:45,799]:DEBUG:          |              | avg:21.81316666666667,                   |
+[2025-07-24 08:56:45,799]:DEBUG:          |              | std:0.0695642793546881, last:21.890617   |
+[2025-07-24 08:56:45,799]:DEBUG:     scan file LULESH.benchmarks/000001/000053_execute_tsan_must/work/job.out
+[2025-07-24 08:56:45,801]:DEBUG:       file "job.out" scanned pattern found:
+[2025-07-24 08:56:45,801]:DEBUG:          | verification |       first:SUCCESS, cnt:1, last:SUCCESS |
+[2025-07-24 08:56:45,801]:DEBUG:          |         time |          first:108.62707, min:108.62707, |
+[2025-07-24 08:56:45,801]:DEBUG:          |              | max:108.62707, sum:108.62707,            |
+[2025-07-24 08:56:45,801]:DEBUG:          |              | sum2:11799.8403367849, cnt:1,            |
+[2025-07-24 08:56:45,801]:DEBUG:          |              | avg:108.62707, std:0, last:108.62707     |
+[2025-07-24 08:56:45,802]:DEBUG:     scan file LULESH.benchmarks/000001/000052_execute_tsan_must/work/job.out
+[2025-07-24 08:56:45,804]:DEBUG:       file "job.out" scanned pattern found:
+[2025-07-24 08:56:45,804]:DEBUG:          | verification |       first:SUCCESS, cnt:2, last:SUCCESS |
+[2025-07-24 08:56:45,804]:DEBUG:          |         time |          first:108.62707, min:108.48802, |
+[2025-07-24 08:56:45,804]:DEBUG:          |              | max:108.62707, sum:217.11509,            |
+[2025-07-24 08:56:45,804]:DEBUG:          |              | sum2:23569.490820305302, cnt:2,          |
+[2025-07-24 08:56:45,804]:DEBUG:          |              | avg:108.557545, std:0.09832319792245103, |
+[2025-07-24 08:56:45,804]:DEBUG:          |              | last:108.48802                           |
+[2025-07-24 08:56:45,804]:DEBUG:     scan file LULESH.benchmarks/000001/000054_execute_tsan_must/work/job.out
+[2025-07-24 08:56:45,806]:DEBUG:       file "job.out" scanned pattern found:
+[2025-07-24 08:56:45,806]:DEBUG:          | verification |       first:SUCCESS, cnt:3, last:SUCCESS |
+[2025-07-24 08:56:45,806]:DEBUG:          |         time |          first:108.62707, min:108.11789, |
+[2025-07-24 08:56:45,806]:DEBUG:          |              | max:108.62707, sum:325.23298,            |
+[2025-07-24 08:56:45,806]:DEBUG:          |              | sum2:35258.9689583574, cnt:3,            |
+[2025-07-24 08:56:45,806]:DEBUG:          |              | avg:108.41099333333334,                  |
+[2025-07-24 08:56:45,806]:DEBUG:          |              | std:0.26318415346217705, last:108.11789  |
+[2025-07-24 08:56:45,807]:DEBUG:     scan file LULESH.benchmarks/000001/000050_execute_tsan_base/work/job.out
+[2025-07-24 08:56:45,809]:DEBUG:       file "job.out" scanned pattern found:
+[2025-07-24 08:56:45,809]:DEBUG:          | verification |       first:SUCCESS, cnt:1, last:SUCCESS |
+[2025-07-24 08:56:45,809]:DEBUG:          |         time |          first:158.05853, min:158.05853, |
+[2025-07-24 08:56:45,809]:DEBUG:          |              | max:158.05853, sum:158.05853,            |
+[2025-07-24 08:56:45,809]:DEBUG:          |              | sum2:24982.4989057609, cnt:1,            |
+[2025-07-24 08:56:45,809]:DEBUG:          |              | avg:158.05853, std:0, last:158.05853     |
+[2025-07-24 08:56:45,810]:DEBUG:     scan file LULESH.benchmarks/000001/000049_execute_tsan_base/work/job.out
+[2025-07-24 08:56:45,811]:DEBUG:       file "job.out" scanned pattern found:
+[2025-07-24 08:56:45,811]:DEBUG:          | verification |       first:SUCCESS, cnt:2, last:SUCCESS |
+[2025-07-24 08:56:45,811]:DEBUG:          |         time |          first:158.05853, min:144.27635, |
+[2025-07-24 08:56:45,811]:DEBUG:          |              | max:158.05853, sum:302.33488,            |
+[2025-07-24 08:56:45,812]:DEBUG:          |              | sum2:45798.164075083405, cnt:2,          |
+[2025-07-24 08:56:45,812]:DEBUG:          |              | avg:151.16744, std:9.745472937533767,    |
+[2025-07-24 08:56:45,812]:DEBUG:          |              | last:144.27635                           |
+[2025-07-24 08:56:45,812]:DEBUG:     scan file LULESH.benchmarks/000001/000051_execute_tsan_base/work/job.out
+[2025-07-24 08:56:45,814]:DEBUG:       file "job.out" scanned pattern found:
+[2025-07-24 08:56:45,814]:DEBUG:          | verification |       first:SUCCESS, cnt:3, last:SUCCESS |
+[2025-07-24 08:56:45,814]:DEBUG:          |         time |          first:158.05853, min:144.27635, |
+[2025-07-24 08:56:45,814]:DEBUG:          |              | max:158.05853, sum:447.69847,            |
+[2025-07-24 08:56:45,814]:DEBUG:          |              | sum2:66928.7373727715, cnt:3,            |
+[2025-07-24 08:56:45,814]:DEBUG:          |              | avg:149.23282333333333,                  |
+[2025-07-24 08:56:45,814]:DEBUG:          |              | std:7.662593968685538, last:145.36359    |
+[2025-07-24 08:56:45,815]:DEBUG:     scan file LULESH.benchmarks/000001/000008_execute_base_base/work/job.out
+[2025-07-24 08:56:45,817]:DEBUG:       file "job.out" scanned pattern found:
+[2025-07-24 08:56:45,817]:DEBUG:          | verification |       first:SUCCESS, cnt:1, last:SUCCESS |
+[2025-07-24 08:56:45,817]:DEBUG:          |         time |          first:9.7617916, min:9.7617916, |
+[2025-07-24 08:56:45,817]:DEBUG:          |              | max:9.7617916, sum:9.7617916,            |
+[2025-07-24 08:56:45,817]:DEBUG:          |              | sum2:95.29257524183056, cnt:1,           |
+[2025-07-24 08:56:45,817]:DEBUG:          |              | avg:9.7617916, std:0, last:9.7617916     |
+[2025-07-24 08:56:45,817]:DEBUG:     scan file LULESH.benchmarks/000001/000009_execute_base_base/work/job.out
+[2025-07-24 08:56:45,819]:DEBUG:       file "job.out" scanned pattern found:
+[2025-07-24 08:56:45,819]:DEBUG:          | verification |       first:SUCCESS, cnt:2, last:SUCCESS |
+[2025-07-24 08:56:45,819]:DEBUG:          |         time |          first:9.7617916, min:9.7617916, |
+[2025-07-24 08:56:45,819]:DEBUG:          |              | max:9.782107, sum:19.5438986,            |
+[2025-07-24 08:56:45,819]:DEBUG:          |              | sum2:190.98219260127956, cnt:2,          |
+[2025-07-24 08:56:45,819]:DEBUG:          |              | avg:9.7719493, std:0.0143651571038936,   |
+[2025-07-24 08:56:45,819]:DEBUG:          |              | last:9.782107                            |
+[2025-07-24 08:56:45,820]:DEBUG:     scan file LULESH.benchmarks/000001/000007_execute_base_base/work/job.out
+[2025-07-24 08:56:45,821]:DEBUG:       file "job.out" scanned pattern found:
+[2025-07-24 08:56:45,822]:DEBUG:          | verification |       first:SUCCESS, cnt:3, last:SUCCESS |
+[2025-07-24 08:56:45,822]:DEBUG:          |         time |          first:9.7617916, min:9.7354705, |
+[2025-07-24 08:56:45,822]:DEBUG:          |              | max:9.782107, sum:29.279369099999997,    |
+[2025-07-24 08:56:45,822]:DEBUG:          |              | sum2:285.7615784576498, cnt:3,           |
+[2025-07-24 08:56:45,822]:DEBUG:          |              | avg:9.759789699999999,                   |
+[2025-07-24 08:56:45,822]:DEBUG:          |              | std:0.023382610756927682, last:9.7354705 |
+[2025-07-24 08:56:45,822]:DEBUG:     scan file LULESH.benchmarks/000001/000026_execute_tsan-cover_base/work/job.out
+[2025-07-24 08:56:45,824]:DEBUG:       file "job.out" scanned pattern found:
+[2025-07-24 08:56:45,824]:DEBUG:          | verification |       first:SUCCESS, cnt:1, last:SUCCESS |
+[2025-07-24 08:56:45,824]:DEBUG:          |         time |          first:12.969303, min:12.969303, |
+[2025-07-24 08:56:45,824]:DEBUG:          |              | max:12.969303, sum:12.969303,            |
+[2025-07-24 08:56:45,824]:DEBUG:          |              | sum2:168.202820305809, cnt:1,            |
+[2025-07-24 08:56:45,824]:DEBUG:          |              | avg:12.969303, std:0, last:12.969303     |
+[2025-07-24 08:56:45,825]:DEBUG:     scan file LULESH.benchmarks/000001/000025_execute_tsan-cover_base/work/job.out
+[2025-07-24 08:56:45,827]:DEBUG:       file "job.out" scanned pattern found:
+[2025-07-24 08:56:45,827]:DEBUG:          | verification |       first:SUCCESS, cnt:2, last:SUCCESS |
+[2025-07-24 08:56:45,827]:DEBUG:          |         time |          first:12.969303, min:12.969303, |
+[2025-07-24 08:56:45,827]:DEBUG:          |              | max:13.00763, sum:25.976933000000002,    |
+[2025-07-24 08:56:45,827]:DEBUG:          |              | sum2:337.40125852270904, cnt:2,          |
+[2025-07-24 08:56:45,827]:DEBUG:          |              | avg:12.988466500000001,                  |
+[2025-07-24 08:56:45,827]:DEBUG:          |              | std:0.027101281602235783, last:13.00763  |
+[2025-07-24 08:56:45,827]:DEBUG:     scan file LULESH.benchmarks/000001/000027_execute_tsan-cover_base/work/job.out
+[2025-07-24 08:56:45,829]:DEBUG:       file "job.out" scanned pattern found:
+[2025-07-24 08:56:45,829]:DEBUG:          | verification |       first:SUCCESS, cnt:3, last:SUCCESS |
+[2025-07-24 08:56:45,829]:DEBUG:          |         time |          first:12.969303, min:12.969303, |
+[2025-07-24 08:56:45,829]:DEBUG:          |              | max:13.183012, sum:39.159945,            |
+[2025-07-24 08:56:45,829]:DEBUG:          |              | sum2:511.19306391485304, cnt:3,          |
+[2025-07-24 08:56:45,829]:DEBUG:          |              | avg:13.053315, std:0.11394394933050163,  |
+[2025-07-24 08:56:45,829]:DEBUG:          |              | last:13.183012                           |
+[2025-07-24 08:56:45,830]:DEBUG:     scan file LULESH.benchmarks/000001/000013_execute_base_base/work/job.out
+[2025-07-24 08:56:45,832]:DEBUG:       file "job.out" scanned pattern found:
+[2025-07-24 08:56:45,832]:DEBUG:          | verification |       first:SUCCESS, cnt:1, last:SUCCESS |
+[2025-07-24 08:56:45,832]:DEBUG:          |         time |          first:17.383766, min:17.383766, |
+[2025-07-24 08:56:45,832]:DEBUG:          |              | max:17.383766, sum:17.383766,            |
+[2025-07-24 08:56:45,832]:DEBUG:          |              | sum2:302.195320342756, cnt:1,            |
+[2025-07-24 08:56:45,832]:DEBUG:          |              | avg:17.383766, std:0, last:17.383766     |
+[2025-07-24 08:56:45,832]:DEBUG:     scan file LULESH.benchmarks/000001/000015_execute_base_base/work/job.out
+[2025-07-24 08:56:45,834]:DEBUG:       file "job.out" scanned pattern found:
+[2025-07-24 08:56:45,834]:DEBUG:          | verification |       first:SUCCESS, cnt:2, last:SUCCESS |
+[2025-07-24 08:56:45,834]:DEBUG:          |         time |          first:17.383766, min:17.383766, |
+[2025-07-24 08:56:45,834]:DEBUG:          |              | max:17.384972, sum:34.768738,            |
+[2025-07-24 08:56:45,834]:DEBUG:          |              | sum2:604.4325717835401, cnt:2,           |
+[2025-07-24 08:56:45,834]:DEBUG:          |              | avg:17.384369,                           |
+[2025-07-24 08:56:45,834]:DEBUG:          |              | std:0.0008527708330750011,               |
+[2025-07-24 08:56:45,834]:DEBUG:          |              | last:17.384972                           |
+[2025-07-24 08:56:45,835]:DEBUG:     scan file LULESH.benchmarks/000001/000014_execute_base_base/work/job.out
+[2025-07-24 08:56:45,837]:DEBUG:       file "job.out" scanned pattern found:
+[2025-07-24 08:56:45,837]:DEBUG:          | verification |       first:SUCCESS, cnt:3, last:SUCCESS |
+[2025-07-24 08:56:45,837]:DEBUG:          |         time |          first:17.383766, min:17.383766, |
+[2025-07-24 08:56:45,837]:DEBUG:          |              | max:17.506469, sum:52.275206999999995,   |
+[2025-07-24 08:56:45,837]:DEBUG:          |              | sum2:910.9090286315011, cnt:3,           |
+[2025-07-24 08:56:45,837]:DEBUG:          |              | avg:17.425068999999997,                  |
+[2025-07-24 08:56:45,837]:DEBUG:          |              | std:0.07049704681156775, last:17.506469  |
+[2025-07-24 08:56:45,837]:DEBUG:     scan file LULESH.benchmarks/000001/000019_execute_base_must/work/job.out
+[2025-07-24 08:56:45,839]:DEBUG:       file "job.out" scanned pattern found:
+[2025-07-24 08:56:45,839]:DEBUG:          | verification |       first:SUCCESS, cnt:1, last:SUCCESS |
+[2025-07-24 08:56:45,839]:DEBUG:          |         time |          first:18.511464, min:18.511464, |
+[2025-07-24 08:56:45,839]:DEBUG:          |              | max:18.511464, sum:18.511464,            |
+[2025-07-24 08:56:45,839]:DEBUG:          |              | sum2:342.674299423296, cnt:1,            |
+[2025-07-24 08:56:45,839]:DEBUG:          |              | avg:18.511464, std:0, last:18.511464     |
+[2025-07-24 08:56:45,840]:DEBUG:     scan file LULESH.benchmarks/000001/000021_execute_base_must/work/job.out
+[2025-07-24 08:56:45,842]:DEBUG:       file "job.out" scanned pattern found:
+[2025-07-24 08:56:45,842]:DEBUG:          | verification |       first:SUCCESS, cnt:2, last:SUCCESS |
+[2025-07-24 08:56:45,842]:DEBUG:          |         time |          first:18.511464, min:18.151298, |
+[2025-07-24 08:56:45,842]:DEBUG:          |              | max:18.511464, sum:36.662762,            |
+[2025-07-24 08:56:45,842]:DEBUG:          |              | sum2:672.1439185081001, cnt:2,           |
+[2025-07-24 08:56:45,842]:DEBUG:          |              | avg:18.331381, std:0.254675820952911,    |
+[2025-07-24 08:56:45,842]:DEBUG:          |              | last:18.151298                           |
+[2025-07-24 08:56:45,842]:DEBUG:     scan file LULESH.benchmarks/000001/000020_execute_base_must/work/job.out
+[2025-07-24 08:56:45,844]:DEBUG:       file "job.out" scanned pattern found:
+[2025-07-24 08:56:45,844]:DEBUG:          | verification |       first:SUCCESS, cnt:3, last:SUCCESS |
+[2025-07-24 08:56:45,844]:DEBUG:          |         time |          first:18.511464, min:18.151298, |
+[2025-07-24 08:56:45,844]:DEBUG:          |              | max:18.511464, sum:54.846439000000004,   |
+[2025-07-24 08:56:45,844]:DEBUG:          |              | sum2:1002.7900277484291, cnt:3,          |
+[2025-07-24 08:56:45,844]:DEBUG:          |              | avg:18.282146333333333,                  |
+[2025-07-24 08:56:45,844]:DEBUG:          |              | std:0.1992537178933596, last:18.183677   |
+[2025-07-24 08:56:45,845]:DEBUG:     scan file LULESH.benchmarks/000001/000029_execute_tsan-cover_base/work/job.out
+[2025-07-24 08:56:45,847]:DEBUG:       file "job.out" scanned pattern found:
+[2025-07-24 08:56:45,847]:DEBUG:          | verification |       first:SUCCESS, cnt:1, last:SUCCESS |
+[2025-07-24 08:56:45,847]:DEBUG:          |         time |          first:17.819788, min:17.819788, |
+[2025-07-24 08:56:45,847]:DEBUG:          |              | max:17.819788, sum:17.819788,            |
+[2025-07-24 08:56:45,847]:DEBUG:          |              | sum2:317.54484436494397, cnt:1,          |
+[2025-07-24 08:56:45,847]:DEBUG:          |              | avg:17.819788, std:0, last:17.819788     |
+[2025-07-24 08:56:45,847]:DEBUG:     scan file LULESH.benchmarks/000001/000028_execute_tsan-cover_base/work/job.out
+[2025-07-24 08:56:45,849]:DEBUG:       file "job.out" scanned pattern found:
+[2025-07-24 08:56:45,849]:DEBUG:          | verification |       first:SUCCESS, cnt:2, last:SUCCESS |
+[2025-07-24 08:56:45,849]:DEBUG:          |         time |          first:17.819788, min:17.819788, |
+[2025-07-24 08:56:45,849]:DEBUG:          |              | max:17.98929, sum:35.809078,             |
+[2025-07-24 08:56:45,849]:DEBUG:          |              | sum2:641.159399069044, cnt:2,            |
+[2025-07-24 08:56:45,849]:DEBUG:          |              | avg:17.904539, std:0.11985601362479012,  |
+[2025-07-24 08:56:45,849]:DEBUG:          |              | last:17.98929                            |
+[2025-07-24 08:56:45,849]:DEBUG:     scan file LULESH.benchmarks/000001/000030_execute_tsan-cover_base/work/job.out
+[2025-07-24 08:56:45,851]:DEBUG:       file "job.out" scanned pattern found:
+[2025-07-24 08:56:45,851]:DEBUG:          | verification |       first:SUCCESS, cnt:3, last:SUCCESS |
+[2025-07-24 08:56:45,851]:DEBUG:          |         time |          first:17.819788, min:17.819788, |
+[2025-07-24 08:56:45,851]:DEBUG:          |              | max:17.98929, sum:53.707668999999996,    |
+[2025-07-24 08:56:45,851]:DEBUG:          |              | sum2:961.5189588543249, cnt:3,           |
+[2025-07-24 08:56:45,851]:DEBUG:          |              | avg:17.902556333333333,                  |
+[2025-07-24 08:56:45,851]:DEBUG:          |              | std:0.08482054528433264, last:17.898591  |
+[2025-07-24 08:56:45,852]:DEBUG:     scan file LULESH.benchmarks/000001/000016_execute_base_must/work/job.out
+[2025-07-24 08:56:45,853]:DEBUG:       file "job.out" scanned pattern found:
+[2025-07-24 08:56:45,853]:DEBUG:          | verification |       first:SUCCESS, cnt:1, last:SUCCESS |
+[2025-07-24 08:56:45,853]:DEBUG:          |         time |          first:12.684671, min:12.684671, |
+[2025-07-24 08:56:45,853]:DEBUG:          |              | max:12.684671, sum:12.684671,            |
+[2025-07-24 08:56:45,853]:DEBUG:          |              | sum2:160.900878378241, cnt:1,            |
+[2025-07-24 08:56:45,853]:DEBUG:          |              | avg:12.684671, std:0, last:12.684671     |
+[2025-07-24 08:56:45,854]:DEBUG:     scan file LULESH.benchmarks/000001/000018_execute_base_must/work/job.out
+[2025-07-24 08:56:45,856]:DEBUG:       file "job.out" scanned pattern found:
+[2025-07-24 08:56:45,856]:DEBUG:          | verification |       first:SUCCESS, cnt:2, last:SUCCESS |
+[2025-07-24 08:56:45,856]:DEBUG:          |         time |          first:12.684671, min:12.568019, |
+[2025-07-24 08:56:45,856]:DEBUG:          |              | max:12.684671, sum:25.25269,             |
+[2025-07-24 08:56:45,856]:DEBUG:          |              | sum2:318.85597996260196, cnt:2,          |
+[2025-07-24 08:56:45,856]:DEBUG:          |              | avg:12.626345, std:0.08248542023860438,  |
+[2025-07-24 08:56:45,856]:DEBUG:          |              | last:12.568019                           |
+[2025-07-24 08:56:45,856]:DEBUG:     scan file LULESH.benchmarks/000001/000017_execute_base_must/work/job.out
+[2025-07-24 08:56:45,858]:DEBUG:       file "job.out" scanned pattern found:
+[2025-07-24 08:56:45,858]:DEBUG:          | verification |       first:SUCCESS, cnt:3, last:SUCCESS |
+[2025-07-24 08:56:45,858]:DEBUG:          |         time |          first:12.684671, min:12.568019, |
+[2025-07-24 08:56:45,858]:DEBUG:          |              | max:12.684671, sum:37.833791000000005,   |
+[2025-07-24 08:56:45,858]:DEBUG:          |              | sum2:477.14008233480297, cnt:3,          |
+[2025-07-24 08:56:45,858]:DEBUG:          |              | avg:12.611263666666668,                  |
+[2025-07-24 08:56:45,858]:DEBUG:          |              | std:0.0639082320303037, last:12.581101   |
+[2025-07-24 08:56:45,859]:DEBUG:     scan file LULESH.benchmarks/000001/000041_execute_tsan-cover_must/work/job.out
+[2025-07-24 08:56:45,871]:DEBUG:       file "job.out" scanned pattern found:
+[2025-07-24 08:56:45,871]:DEBUG:          | verification | first:FAILURE, cnt:1, last:FAILURE |
+[2025-07-24 08:56:45,871]:DEBUG:          |         time |                                    |
+[2025-07-24 08:56:45,871]:DEBUG:     scan file LULESH.benchmarks/000001/000040_execute_tsan-cover_must/work/job.out
+[2025-07-24 08:56:45,873]:DEBUG:       file "job.out" scanned pattern found:
+[2025-07-24 08:56:45,873]:DEBUG:          | verification |       first:FAILURE, cnt:1, last:FAILURE |
+[2025-07-24 08:56:45,873]:DEBUG:          |         time |          first:40.898504, min:40.898504, |
+[2025-07-24 08:56:45,873]:DEBUG:          |              | max:40.898504, sum:40.898504,            |
+[2025-07-24 08:56:45,873]:DEBUG:          |              | sum2:1672.6876294380163, cnt:1,          |
+[2025-07-24 08:56:45,873]:DEBUG:          |              | avg:40.898504, std:0, last:40.898504     |
+[2025-07-24 08:56:45,874]:DEBUG:     scan file LULESH.benchmarks/000001/000042_execute_tsan-cover_must/work/job.out
+[2025-07-24 08:56:45,876]:DEBUG:       file "job.out" scanned pattern found:
+[2025-07-24 08:56:45,876]:DEBUG:          | verification |       first:FAILURE, cnt:1, last:FAILURE |
+[2025-07-24 08:56:45,876]:DEBUG:          |         time |          first:40.898504, min:40.898504, |
+[2025-07-24 08:56:45,876]:DEBUG:          |              | max:41.062166, sum:81.96067,             |
+[2025-07-24 08:56:45,876]:DEBUG:          |              | sum2:3358.789106049572, cnt:2,           |
+[2025-07-24 08:56:45,876]:DEBUG:          |              | avg:40.980335, std:0.11572651002615228,  |
+[2025-07-24 08:56:45,876]:DEBUG:          |              | last:41.062166                           |
+[2025-07-24 08:56:45,876]:DEBUG:     scan file LULESH.benchmarks/000001/000044_execute_tsan_base/work/job.out
+[2025-07-24 08:56:45,878]:DEBUG:       file "job.out" scanned pattern found:
+[2025-07-24 08:56:45,878]:DEBUG:          | verification |       first:SUCCESS, cnt:1, last:SUCCESS |
+[2025-07-24 08:56:45,878]:DEBUG:          |         time |          first:85.813918, min:85.813918, |
+[2025-07-24 08:56:45,878]:DEBUG:          |              | max:85.813918, sum:85.813918,            |
+[2025-07-24 08:56:45,878]:DEBUG:          |              | sum2:7364.0285225107245, cnt:1,          |
+[2025-07-24 08:56:45,878]:DEBUG:          |              | avg:85.813918, std:0, last:85.813918     |
+[2025-07-24 08:56:45,879]:DEBUG:     scan file LULESH.benchmarks/000001/000045_execute_tsan_base/work/job.out
+[2025-07-24 08:56:45,881]:DEBUG:       file "job.out" scanned pattern found:
+[2025-07-24 08:56:45,881]:DEBUG:          | verification |       first:SUCCESS, cnt:2, last:SUCCESS |
+[2025-07-24 08:56:45,881]:DEBUG:          |         time |          first:85.813918, min:85.813918, |
+[2025-07-24 08:56:45,881]:DEBUG:          |              | max:85.926768, sum:171.74068599999998,   |
+[2025-07-24 08:56:45,881]:DEBUG:          |              | sum2:14747.437981436547, cnt:2,          |
+[2025-07-24 08:56:45,881]:DEBUG:          |              | avg:85.87034299999999,                   |
+[2025-07-24 08:56:45,881]:DEBUG:          |              | std:0.07979700027427822, last:85.926768  |
+[2025-07-24 08:56:45,881]:DEBUG:     scan file LULESH.benchmarks/000001/000043_execute_tsan_base/work/job.out
+[2025-07-24 08:56:45,883]:DEBUG:       file "job.out" scanned pattern found:
+[2025-07-24 08:56:45,883]:DEBUG:          | verification |       first:SUCCESS, cnt:3, last:SUCCESS |
+[2025-07-24 08:56:45,883]:DEBUG:          |         time |          first:85.813918, min:85.813918, |
+[2025-07-24 08:56:45,883]:DEBUG:          |              | max:85.926768, sum:257.666677,           |
+[2025-07-24 08:56:45,883]:DEBUG:          |              | sum2:22130.713910768627, cnt:3,          |
+[2025-07-24 08:56:45,883]:DEBUG:          |              | avg:85.88889233333333,                   |
+[2025-07-24 08:56:45,883]:DEBUG:          |              | std:0.06493083957074579, last:85.925991  |
+[2025-07-24 08:56:45,884]:DEBUG:     scan file LULESH.benchmarks/000001/000038_execute_tsan-cover_must/work/job.out
+[2025-07-24 08:56:45,886]:DEBUG:       file "job.out" scanned pattern found:
+[2025-07-24 08:56:45,886]:DEBUG:          | verification |                                          |
+[2025-07-24 08:56:45,886]:DEBUG:          |         time |          first:30.233479, min:30.233479, |
+[2025-07-24 08:56:45,886]:DEBUG:          |              | max:30.233479, sum:30.233479,            |
+[2025-07-24 08:56:45,886]:DEBUG:          |              | sum2:914.063252443441, cnt:1,            |
+[2025-07-24 08:56:45,886]:DEBUG:          |              | avg:30.233479, std:0, last:30.233479     |
+[2025-07-24 08:56:45,886]:DEBUG:     scan file LULESH.benchmarks/000001/000039_execute_tsan-cover_must/work/job.out
+[2025-07-24 08:56:45,888]:DEBUG:       file "job.out" scanned pattern found:
+[2025-07-24 08:56:45,888]:DEBUG:          | verification |                                          |
+[2025-07-24 08:56:45,888]:DEBUG:          |         time |          first:30.233479, min:30.233479, |
+[2025-07-24 08:56:45,888]:DEBUG:          |              | max:30.445897, sum:60.679376,            |
+[2025-07-24 08:56:45,888]:DEBUG:          |              | sum2:1841.01589657805, cnt:2,            |
+[2025-07-24 08:56:45,888]:DEBUG:          |              | avg:30.339688, std:0.15020220824661662,  |
+[2025-07-24 08:56:45,888]:DEBUG:          |              | last:30.445897                           |
+[2025-07-24 08:56:45,889]:DEBUG:     scan file LULESH.benchmarks/000001/000037_execute_tsan-cover_must/work/job.out
+[2025-07-24 08:56:45,891]:DEBUG:       file "job.out" scanned pattern found:
+[2025-07-24 08:56:45,891]:DEBUG:          | verification |                                          |
+[2025-07-24 08:56:45,891]:DEBUG:          |         time |          first:30.233479, min:30.233479, |
+[2025-07-24 08:56:45,891]:DEBUG:          |              | max:30.592917, sum:91.27229299999999,    |
+[2025-07-24 08:56:45,891]:DEBUG:          |              | sum2:2776.9424671469387, cnt:3,          |
+[2025-07-24 08:56:45,891]:DEBUG:          |              | avg:30.424097666666665,                  |
+[2025-07-24 08:56:45,891]:DEBUG:          |              | std:0.18070785030427466, last:30.592917  |
+[2025-07-24 08:56:45,891]:DEBUG:     scan file LULESH.benchmarks/000001/000033_execute_tsan-cover_base/work/job.out
+[2025-07-24 08:56:45,893]:DEBUG:       file "job.out" scanned pattern found:
+[2025-07-24 08:56:45,893]:DEBUG:          | verification |       first:SUCCESS, cnt:1, last:SUCCESS |
+[2025-07-24 08:56:45,893]:DEBUG:          |         time |          first:24.048061, min:24.048061, |
+[2025-07-24 08:56:45,893]:DEBUG:          |              | max:24.048061, sum:24.048061,            |
+[2025-07-24 08:56:45,893]:DEBUG:          |              | sum2:578.3092378597211, cnt:1,           |
+[2025-07-24 08:56:45,893]:DEBUG:          |              | avg:24.048061, std:0, last:24.048061     |
+[2025-07-24 08:56:45,894]:DEBUG:     scan file LULESH.benchmarks/000001/000032_execute_tsan-cover_base/work/job.out
+[2025-07-24 08:56:45,896]:DEBUG:       file "job.out" scanned pattern found:
+[2025-07-24 08:56:45,896]:DEBUG:          | verification |       first:SUCCESS, cnt:2, last:SUCCESS |
+[2025-07-24 08:56:45,896]:DEBUG:          |         time |          first:24.048061, min:23.928258, |
+[2025-07-24 08:56:45,896]:DEBUG:          |              | max:24.048061, sum:47.976319000000004,   |
+[2025-07-24 08:56:45,896]:DEBUG:          |              | sum2:1150.870768774285, cnt:2,           |
+[2025-07-24 08:56:45,896]:DEBUG:          |              | avg:23.988159500000002,                  |
+[2025-07-24 08:56:45,896]:DEBUG:          |              | std:0.08471351370472073, last:23.928258  |
+[2025-07-24 08:56:45,896]:DEBUG:     scan file LULESH.benchmarks/000001/000031_execute_tsan-cover_base/work/job.out
+[2025-07-24 08:56:45,898]:DEBUG:       file "job.out" scanned pattern found:
+[2025-07-24 08:56:45,898]:DEBUG:          | verification |       first:SUCCESS, cnt:3, last:SUCCESS |
+[2025-07-24 08:56:45,898]:DEBUG:          |         time |          first:24.048061, min:23.928258, |
+[2025-07-24 08:56:45,898]:DEBUG:          |              | max:24.048061, sum:71.99009000000001,    |
+[2025-07-24 08:56:45,898]:DEBUG:          |              | sum2:1727.531966414726, cnt:3,           |
+[2025-07-24 08:56:45,898]:DEBUG:          |              | avg:23.99669666666667,                   |
+[2025-07-24 08:56:45,898]:DEBUG:          |              | std:0.06169958951331606, last:24.013771  |
+[2025-07-24 08:56:45,899]:DEBUG:     scan file LULESH.benchmarks/000001/000057_execute_tsan_must/work/job.out
+[2025-07-24 08:56:45,901]:DEBUG:       file "job.out" scanned pattern found:
+[2025-07-24 08:56:45,901]:DEBUG:          | verification |       first:SUCCESS, cnt:1, last:SUCCESS |
+[2025-07-24 08:56:45,901]:DEBUG:          |         time |          first:162.24824, min:162.24824, |
+[2025-07-24 08:56:45,901]:DEBUG:          |              | max:162.24824, sum:162.24824,            |
+[2025-07-24 08:56:45,901]:DEBUG:          |              | sum2:26324.491383097604, cnt:1,          |
+[2025-07-24 08:56:45,901]:DEBUG:          |              | avg:162.24824, std:0, last:162.24824     |
+[2025-07-24 08:56:45,901]:DEBUG:     scan file LULESH.benchmarks/000001/000055_execute_tsan_must/work/job.out
+[2025-07-24 08:56:45,903]:DEBUG:       file "job.out" scanned pattern found:
+[2025-07-24 08:56:45,903]:DEBUG:          | verification |       first:SUCCESS, cnt:2, last:SUCCESS |
+[2025-07-24 08:56:45,903]:DEBUG:          |         time |          first:162.24824, min:162.24824, |
+[2025-07-24 08:56:45,903]:DEBUG:          |              | max:172.55708, sum:334.80532000000005,   |
+[2025-07-24 08:56:45,903]:DEBUG:          |              | sum2:56100.437241224005, cnt:2,          |
+[2025-07-24 08:56:45,903]:DEBUG:          |              | avg:167.40266000000003,                  |
+[2025-07-24 08:56:45,903]:DEBUG:          |              | std:7.2894506701663735, last:172.55708   |
+[2025-07-24 08:56:45,904]:DEBUG:     scan file LULESH.benchmarks/000001/000056_execute_tsan_must/work/job.out
+[2025-07-24 08:56:45,905]:DEBUG:       file "job.out" scanned pattern found:
+[2025-07-24 08:56:45,905]:DEBUG:          | verification |       first:SUCCESS, cnt:3, last:SUCCESS |
+[2025-07-24 08:56:45,905]:DEBUG:          |         time |          first:162.24824, min:162.24824, |
+[2025-07-24 08:56:45,905]:DEBUG:          |              | max:172.55708, sum:498.47488000000004,   |
+[2025-07-24 08:56:45,905]:DEBUG:          |              | sum2:82888.1621118176, cnt:3,            |
+[2025-07-24 08:56:45,906]:DEBUG:          |              | avg:166.15829333333335,                  |
+[2025-07-24 08:56:45,906]:DEBUG:          |              | std:5.586894552408271, last:163.66956    |
+[2025-07-24 08:56:45,906]:DEBUG:     scan file LULESH.benchmarks/000001/000012_execute_base_base/work/job.out
+[2025-07-24 08:56:45,908]:DEBUG:       file "job.out" scanned pattern found:
+[2025-07-24 08:56:45,908]:DEBUG:          | verification |       first:SUCCESS, cnt:1, last:SUCCESS |
+[2025-07-24 08:56:45,908]:DEBUG:          |         time |          first:13.245003, min:13.245003, |
+[2025-07-24 08:56:45,908]:DEBUG:          |              | max:13.245003, sum:13.245003,            |
+[2025-07-24 08:56:45,908]:DEBUG:          |              | sum2:175.430104470009, cnt:1,            |
+[2025-07-24 08:56:45,908]:DEBUG:          |              | avg:13.245003, std:0, last:13.245003     |
+[2025-07-24 08:56:45,909]:DEBUG:     scan file LULESH.benchmarks/000001/000011_execute_base_base/work/job.out
+[2025-07-24 08:56:45,910]:DEBUG:       file "job.out" scanned pattern found:
+[2025-07-24 08:56:45,910]:DEBUG:          | verification |       first:SUCCESS, cnt:2, last:SUCCESS |
+[2025-07-24 08:56:45,910]:DEBUG:          |         time |          first:13.245003, min:13.186514, |
+[2025-07-24 08:56:45,910]:DEBUG:          |              | max:13.245003, sum:26.431517,            |
+[2025-07-24 08:56:45,910]:DEBUG:          |              | sum2:349.314255942205, cnt:2,            |
+[2025-07-24 08:56:45,910]:DEBUG:          |              | avg:13.2157585,                          |
+[2025-07-24 08:56:45,910]:DEBUG:          |              | std:0.041357968524916876, last:13.186514 |
+[2025-07-24 08:56:45,911]:DEBUG:     scan file LULESH.benchmarks/000001/000010_execute_base_base/work/job.out
+[2025-07-24 08:56:45,913]:DEBUG:       file "job.out" scanned pattern found:
+[2025-07-24 08:56:45,913]:DEBUG:          | verification |       first:SUCCESS, cnt:3, last:SUCCESS |
+[2025-07-24 08:56:45,913]:DEBUG:          |         time |          first:13.245003, min:13.186514, |
+[2025-07-24 08:56:45,913]:DEBUG:          |              | max:13.245003, sum:39.665413,            |
+[2025-07-24 08:56:45,913]:DEBUG:          |              | sum2:524.450259281021, cnt:3,            |
+[2025-07-24 08:56:45,913]:DEBUG:          |              | avg:13.221804333333333,                  |
+[2025-07-24 08:56:45,913]:DEBUG:          |              | std:0.031062792571280324, last:13.233896 |
+[2025-07-24 08:56:45,913]:DEBUG:     scan file LULESH.benchmarks/000001/000023_execute_base_must/work/job.out
+[2025-07-24 08:56:45,915]:DEBUG:       file "job.out" scanned pattern found:
+[2025-07-24 08:56:45,915]:DEBUG:          | verification |       first:SUCCESS, cnt:1, last:SUCCESS |
+[2025-07-24 08:56:45,915]:DEBUG:          |         time |          first:24.580809, min:24.580809, |
+[2025-07-24 08:56:45,915]:DEBUG:          |              | max:24.580809, sum:24.580809,            |
+[2025-07-24 08:56:45,915]:DEBUG:          |              | sum2:604.216171094481, cnt:1,            |
+[2025-07-24 08:56:45,915]:DEBUG:          |              | avg:24.580809, std:0, last:24.580809     |
+[2025-07-24 08:56:45,916]:DEBUG:     scan file LULESH.benchmarks/000001/000024_execute_base_must/work/job.out
+[2025-07-24 08:56:45,917]:DEBUG:       file "job.out" scanned pattern found:
+[2025-07-24 08:56:45,917]:DEBUG:          | verification |       first:SUCCESS, cnt:2, last:SUCCESS |
+[2025-07-24 08:56:45,917]:DEBUG:          |         time |          first:24.580809, min:24.555527, |
+[2025-07-24 08:56:45,917]:DEBUG:          |              | max:24.580809, sum:49.136336,            |
+[2025-07-24 08:56:45,917]:DEBUG:          |              | sum2:1207.1900773422099, cnt:2,          |
+[2025-07-24 08:56:45,917]:DEBUG:          |              | avg:24.568168, std:0.017877073637197306, |
+[2025-07-24 08:56:45,917]:DEBUG:          |              | last:24.555527                           |
+[2025-07-24 08:56:45,918]:DEBUG:     scan file LULESH.benchmarks/000001/000022_execute_base_must/work/job.out
+[2025-07-24 08:56:45,920]:DEBUG:       file "job.out" scanned pattern found:
+[2025-07-24 08:56:45,920]:DEBUG:          | verification |       first:SUCCESS, cnt:3, last:SUCCESS |
+[2025-07-24 08:56:45,920]:DEBUG:          |         time |          first:24.580809, min:24.488842, |
+[2025-07-24 08:56:45,920]:DEBUG:          |              | max:24.580809, sum:73.625178,            |
+[2025-07-24 08:56:45,920]:DEBUG:          |              | sum2:1806.8934598431738, cnt:3,          |
+[2025-07-24 08:56:45,920]:DEBUG:          |              | avg:24.541726, std:0.04751139834506881,  |
+[2025-07-24 08:56:45,920]:DEBUG:          |              | last:24.488842                           |
+[2025-07-24 08:56:45,938]:DEBUG: sort using: tasks,compile_mode,measurement_mode,jube_wp_id
+[2025-07-24 08:56:45,938]:DEBUG: bench_id;wp_id;compile;measurement;tasks;size;time_avg;time_std;verification
+[2025-07-24 08:56:45,938]:DEBUG: 1;9;base;base;27;20;9.759789699999999;0.023382610756927682;SUCCESS
+[2025-07-24 08:56:45,938]:DEBUG: 1;45;tsan;base;27;20;85.88889233333333;0.06493083957074579;SUCCESS
+[2025-07-24 08:56:45,939]:DEBUG: 1;25;tsan-cover;base;27;20;13.053315;0.11394394933050163;SUCCESS
+[2025-07-24 08:56:45,939]:DEBUG: 1;17;base;must;27;20;12.611263666666668;0.0639082320303037;SUCCESS
+[2025-07-24 08:56:45,939]:DEBUG: 1;54;tsan;must;27;20;108.41099333333334;0.26318415346217705;SUCCESS
+[2025-07-24 08:56:45,939]:DEBUG: 1;34;tsan-cover;must;27;20;21.81316666666667;0.0695642793546881;FAILURE
+[2025-07-24 08:56:45,939]:DEBUG: 1;12;base;base;64;20;13.221804333333333;0.031062792571280324;SUCCESS
+[2025-07-24 08:56:45,939]:DEBUG: 1;46;tsan;base;64;20;114.95239666666667;5.349963482868985;SUCCESS
+[2025-07-24 08:56:45,939]:DEBUG: 1;29;tsan-cover;base;64;20;17.902556333333333;0.08482054528433264;SUCCESS
+[2025-07-24 08:56:45,939]:DEBUG: 1;21;base;must;64;20;18.282146333333333;0.1992537178933596;SUCCESS
+[2025-07-24 08:56:45,939]:DEBUG: 1;57;tsan;must;64;20;166.15829333333335;5.586894552408271;SUCCESS
+[2025-07-24 08:56:45,939]:DEBUG: 1;37;tsan-cover;must;64;20;30.424097666666665;0.18070785030427466;FAILURE
+[2025-07-24 08:56:45,939]:DEBUG: 1;13;base;base;125;20;17.425068999999997;0.07049704681156775;SUCCESS
+[2025-07-24 08:56:45,939]:DEBUG: 1;50;tsan;base;125;20;149.23282333333333;7.662593968685538;SUCCESS
+[2025-07-24 08:56:45,939]:DEBUG: 1;33;tsan-cover;base;125;20;23.99669666666667;0.06169958951331606;SUCCESS
+[2025-07-24 08:56:45,939]:DEBUG: 1;24;base;must;125;20;24.541726;0.04751139834506881;SUCCESS
+[2025-07-24 08:56:45,939]:DEBUG: 1;58;tsan;must;125;20;237.26499;7.52934709288895;SUCCESS
+[2025-07-24 08:56:45,939]:DEBUG: 1;41;tsan-cover;must;125;20;40.980335;0.11572651002615228;FAILURE
+[2025-07-24 08:56:45,939]:DEBUG: 
+[2025-07-24 08:56:45,952]:DEBUG: sort using: tasks,compile_mode,measurement_mode,jube_wp_id
+[2025-07-24 08:56:45,953]:DEBUG: result:
+[2025-07-24 08:56:45,953]:DEBUG: | bench_id | wp_id |    compile | measurement | tasks | size | time_avg | time_std | verification |
+[2025-07-24 08:56:45,953]:DEBUG: |----------|-------|------------|-------------|-------|------|----------|----------|--------------|
+[2025-07-24 08:56:45,953]:DEBUG: |        1 |     9 |       base |        base |    27 |   20 |    9.760 |    0.023 |      SUCCESS |
+[2025-07-24 08:56:45,953]:DEBUG: |        1 |    45 |       tsan |        base |    27 |   20 |   85.889 |    0.065 |      SUCCESS |
+[2025-07-24 08:56:45,953]:DEBUG: |        1 |    25 | tsan-cover |        base |    27 |   20 |   13.053 |    0.114 |      SUCCESS |
+[2025-07-24 08:56:45,953]:DEBUG: |        1 |    17 |       base |        must |    27 |   20 |   12.611 |    0.064 |      SUCCESS |
+[2025-07-24 08:56:45,953]:DEBUG: |        1 |    54 |       tsan |        must |    27 |   20 |  108.411 |    0.263 |      SUCCESS |
+[2025-07-24 08:56:45,953]:DEBUG: |        1 |    34 | tsan-cover |        must |    27 |   20 |   21.813 |    0.070 |      FAILURE |
+[2025-07-24 08:56:45,953]:DEBUG: |        1 |    12 |       base |        base |    64 |   20 |   13.222 |    0.031 |      SUCCESS |
+[2025-07-24 08:56:45,953]:DEBUG: |        1 |    46 |       tsan |        base |    64 |   20 |  114.952 |    5.350 |      SUCCESS |
+[2025-07-24 08:56:45,953]:DEBUG: |        1 |    29 | tsan-cover |        base |    64 |   20 |   17.903 |    0.085 |      SUCCESS |
+[2025-07-24 08:56:45,953]:DEBUG: |        1 |    21 |       base |        must |    64 |   20 |   18.282 |    0.199 |      SUCCESS |
+[2025-07-24 08:56:45,953]:DEBUG: |        1 |    57 |       tsan |        must |    64 |   20 |  166.158 |    5.587 |      SUCCESS |
+[2025-07-24 08:56:45,953]:DEBUG: |        1 |    37 | tsan-cover |        must |    64 |   20 |   30.424 |    0.181 |      FAILURE |
+[2025-07-24 08:56:45,953]:DEBUG: |        1 |    13 |       base |        base |   125 |   20 |   17.425 |    0.070 |      SUCCESS |
+[2025-07-24 08:56:45,953]:DEBUG: |        1 |    50 |       tsan |        base |   125 |   20 |  149.233 |    7.663 |      SUCCESS |
+[2025-07-24 08:56:45,953]:DEBUG: |        1 |    33 | tsan-cover |        base |   125 |   20 |   23.997 |    0.062 |      SUCCESS |
+[2025-07-24 08:56:45,953]:DEBUG: |        1 |    24 |       base |        must |   125 |   20 |   24.542 |    0.048 |      SUCCESS |
+[2025-07-24 08:56:45,953]:DEBUG: |        1 |    58 |       tsan |        must |   125 |   20 |  237.265 |    7.529 |      SUCCESS |
+[2025-07-24 08:56:45,953]:DEBUG: |        1 |    41 | tsan-cover |        must |   125 |   20 |   40.980 |    0.116 |      FAILURE |
+[2025-07-24 08:56:45,953]:DEBUG: 

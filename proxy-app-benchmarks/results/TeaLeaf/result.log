@@ -1,0 +1,453 @@
+[2025-07-25 18:17:41,763]:DEBUG: No data found for analyser "cover_analyse" in benchmark run 1. Run analyse step automatically.
+[2025-07-25 18:17:41,763]:DEBUG: Run analyser "cover_analyse"
+[2025-07-25 18:17:41,764]:DEBUG:   available pattern:
+[2025-07-25 18:17:41,764]:DEBUG:          | pattern      | value                                    |
+[2025-07-25 18:17:41,764]:DEBUG:          |--------------|------------------------------------------|
+[2025-07-25 18:17:41,764]:DEBUG:          | time         | Total Wallclock:\s*${jube_pat_fp}s       |
+[2025-07-25 18:17:41,764]:DEBUG:          | verification | EXECUTION VERIFICATION CHECK:            |
+[2025-07-25 18:17:41,764]:DEBUG:          |              | ${jube_pat_wrd}                          |
+[2025-07-25 18:17:41,764]:DEBUG: 
+[2025-07-25 18:17:41,764]:DEBUG:   available derived pattern:
+[2025-07-25 18:17:41,764]:DEBUG:          | pattern | value |
+[2025-07-25 18:17:41,764]:DEBUG:          |---------|-------|
+[2025-07-25 18:17:41,764]:DEBUG:   analyse step "compile_cover"
+[2025-07-25 18:17:41,764]:DEBUG:     scan file TeaLeaf.benchmarks/000001/000003_compile_cover/work/time.out
+[2025-07-25 18:17:41,767]:DEBUG:       file "time.out" scanned pattern found:
+[2025-07-25 18:17:41,767]:DEBUG:          | verification |                                          |
+[2025-07-25 18:17:41,767]:DEBUG:          |         time |                                          |
+[2025-07-25 18:17:41,767]:DEBUG:          |   cover_time |       first:11.27, min:11.27, max:11.27, |
+[2025-07-25 18:17:41,767]:DEBUG:          |              | sum:11.27, sum2:127.01289999999999,      |
+[2025-07-25 18:17:41,767]:DEBUG:          |              | cnt:1, avg:11.27, std:0, last:11.27      |
+[2025-07-25 18:17:41,767]:DEBUG:     scan file TeaLeaf.benchmarks/000001/000003_compile_cover/work/stdout
+[2025-07-25 18:17:41,776]:DEBUG:       file "stdout" scanned pattern found:
+[2025-07-25 18:17:41,777]:DEBUG:          |         verification |                                          |
+[2025-07-25 18:17:41,777]:DEBUG:          |                 time |                                          |
+[2025-07-25 18:17:41,777]:DEBUG:          |           cover_time |       first:11.27, min:11.27, max:11.27, |
+[2025-07-25 18:17:41,777]:DEBUG:          |                      | sum:11.27, sum2:127.01289999999999,      |
+[2025-07-25 18:17:41,777]:DEBUG:          |                      | cnt:1, avg:11.27, std:0, last:11.27      |
+[2025-07-25 18:17:41,777]:DEBUG:          | cover_total_messages |    first:3, min:3, max:3, sum:3, sum2:9, |
+[2025-07-25 18:17:41,777]:DEBUG:          |                      | cnt:1, avg:3.0, std:0, last:3            |
+[2025-07-25 18:17:41,777]:DEBUG:          |  cover_race_messages |    first:1, min:1, max:1, sum:1, sum2:1, |
+[2025-07-25 18:17:41,777]:DEBUG:          |                      | cnt:1, avg:1.0, std:0, last:1            |
+[2025-07-25 18:17:41,783]:DEBUG: sort using: jube_wp_id
+[2025-07-25 18:17:41,783]:DEBUG: jube_benchmark_id;cover_time;cover_total_messages;cover_race_messages
+[2025-07-25 18:17:41,783]:DEBUG: 1;11.27;3;1
+[2025-07-25 18:17:41,783]:DEBUG: 
+[2025-07-25 18:17:41,784]:DEBUG: sort using: jube_wp_id
+[2025-07-25 18:17:41,784]:DEBUG: cover:
+[2025-07-25 18:17:41,784]:DEBUG: | jube_benchmark_id | cover_time | cover_total_messages | cover_race_messages |
+[2025-07-25 18:17:41,784]:DEBUG: |-------------------|------------|----------------------|---------------------|
+[2025-07-25 18:17:41,784]:DEBUG: |                 1 |      11.27 |                    3 |                   1 |
+[2025-07-25 18:17:41,784]:DEBUG: 
+[2025-07-25 18:17:41,784]:DEBUG: No data found for analyser "analyse" in benchmark run 1. Run analyse step automatically.
+[2025-07-25 18:17:41,784]:DEBUG: Run analyser "analyse"
+[2025-07-25 18:17:41,784]:DEBUG:   available pattern:
+[2025-07-25 18:17:41,784]:DEBUG:          | pattern      | value                                    |
+[2025-07-25 18:17:41,784]:DEBUG:          |--------------|------------------------------------------|
+[2025-07-25 18:17:41,785]:DEBUG:          | time         | Total Wallclock:\s*${jube_pat_fp}s       |
+[2025-07-25 18:17:41,785]:DEBUG:          | verification | EXECUTION VERIFICATION CHECK:            |
+[2025-07-25 18:17:41,785]:DEBUG:          |              | ${jube_pat_wrd}                          |
+[2025-07-25 18:17:41,785]:DEBUG: 
+[2025-07-25 18:17:41,785]:DEBUG:   available derived pattern:
+[2025-07-25 18:17:41,785]:DEBUG:          | pattern | value |
+[2025-07-25 18:17:41,785]:DEBUG:          |---------|-------|
+[2025-07-25 18:17:41,785]:DEBUG:   analyse step "execute"
+[2025-07-25 18:17:41,792]:DEBUG:     scan file TeaLeaf.benchmarks/000001/000046_execute_tsan_must/work/job.out
+[2025-07-25 18:17:41,794]:DEBUG:       file "job.out" scanned pattern found:
+[2025-07-25 18:17:41,794]:DEBUG:          | verification |       first:SUCCESS, cnt:1, last:SUCCESS |
+[2025-07-25 18:17:41,794]:DEBUG:          |         time |    first:317.39, min:317.39, max:317.39, |
+[2025-07-25 18:17:41,794]:DEBUG:          |              | sum:317.39, sum2:100736.41209999999,     |
+[2025-07-25 18:17:41,794]:DEBUG:          |              | cnt:1, avg:317.39, std:0, last:317.39    |
+[2025-07-25 18:17:41,795]:DEBUG:     scan file TeaLeaf.benchmarks/000001/000047_execute_tsan_must/work/job.out
+[2025-07-25 18:17:41,797]:DEBUG:       file "job.out" scanned pattern found:
+[2025-07-25 18:17:41,797]:DEBUG:          | verification |       first:SUCCESS, cnt:2, last:SUCCESS |
+[2025-07-25 18:17:41,797]:DEBUG:          |         time |   first:317.39, min:317.39, max:318.024, |
+[2025-07-25 18:17:41,797]:DEBUG:          |              | sum:635.414, sum2:201875.676676, cnt:2,  |
+[2025-07-25 18:17:41,797]:DEBUG:          |              | avg:317.707, std:0.44830569928123315,    |
+[2025-07-25 18:17:41,797]:DEBUG:          |              | last:318.024                             |
+[2025-07-25 18:17:41,798]:DEBUG:     scan file TeaLeaf.benchmarks/000001/000048_execute_tsan_must/work/job.out
+[2025-07-25 18:17:41,800]:DEBUG:       file "job.out" scanned pattern found:
+[2025-07-25 18:17:41,800]:DEBUG:          | verification |       first:SUCCESS, cnt:3, last:SUCCESS |
+[2025-07-25 18:17:41,800]:DEBUG:          |         time |   first:317.39, min:317.39, max:318.024, |
+[2025-07-25 18:17:41,800]:DEBUG:          |              | sum:953.249, sum2:302894.76390099997,    |
+[2025-07-25 18:17:41,800]:DEBUG:          |              | cnt:3, avg:317.74966666666666,           |
+[2025-07-25 18:17:41,800]:DEBUG:          |              | std:0.3255001279484521, last:317.835     |
+[2025-07-25 18:17:41,801]:DEBUG:     scan file TeaLeaf.benchmarks/000001/000017_execute_base_must/work/job.out
+[2025-07-25 18:17:41,803]:DEBUG:       file "job.out" scanned pattern found:
+[2025-07-25 18:17:41,803]:DEBUG:          | verification |       first:SUCCESS, cnt:1, last:SUCCESS |
+[2025-07-25 18:17:41,803]:DEBUG:          |         time |    first:13.622, min:13.622, max:13.622, |
+[2025-07-25 18:17:41,803]:DEBUG:          |              | sum:13.622, sum2:185.558884, cnt:1,      |
+[2025-07-25 18:17:41,803]:DEBUG:          |              | avg:13.622, std:0, last:13.622           |
+[2025-07-25 18:17:41,805]:DEBUG:     scan file TeaLeaf.benchmarks/000001/000018_execute_base_must/work/job.out
+[2025-07-25 18:17:41,807]:DEBUG:       file "job.out" scanned pattern found:
+[2025-07-25 18:17:41,807]:DEBUG:          | verification |       first:SUCCESS, cnt:2, last:SUCCESS |
+[2025-07-25 18:17:41,807]:DEBUG:          |         time |    first:13.622, min:13.622, max:14.234, |
+[2025-07-25 18:17:41,807]:DEBUG:          |              | sum:27.856, sum2:388.16564, cnt:2,       |
+[2025-07-25 18:17:41,807]:DEBUG:          |              | avg:13.928, std:0.43274935008610976,     |
+[2025-07-25 18:17:41,807]:DEBUG:          |              | last:14.234                              |
+[2025-07-25 18:17:41,808]:DEBUG:     scan file TeaLeaf.benchmarks/000001/000016_execute_base_must/work/job.out
+[2025-07-25 18:17:41,810]:DEBUG:       file "job.out" scanned pattern found:
+[2025-07-25 18:17:41,810]:DEBUG:          | verification |       first:SUCCESS, cnt:3, last:SUCCESS |
+[2025-07-25 18:17:41,810]:DEBUG:          |         time |     first:13.622, min:13.49, max:14.234, |
+[2025-07-25 18:17:41,810]:DEBUG:          |              | sum:41.346000000000004,                  |
+[2025-07-25 18:17:41,810]:DEBUG:          |              | sum2:570.1457399999999, cnt:3,           |
+[2025-07-25 18:17:41,810]:DEBUG:          |              | avg:13.782000000000002,                  |
+[2025-07-25 18:17:41,810]:DEBUG:          |              | std:0.39696851260512955, last:13.49      |
+[2025-07-25 18:17:41,812]:DEBUG:     scan file TeaLeaf.benchmarks/000001/000042_execute_tsan-cover_must/work/job.out
+[2025-07-25 18:17:41,813]:DEBUG:       file "job.out" scanned pattern found:
+[2025-07-25 18:17:41,813]:DEBUG:          | verification |       first:SUCCESS, cnt:1, last:SUCCESS |
+[2025-07-25 18:17:41,813]:DEBUG:          |         time |    first:19.773, min:19.773, max:19.773, |
+[2025-07-25 18:17:41,814]:DEBUG:          |              | sum:19.773, sum2:390.971529, cnt:1,      |
+[2025-07-25 18:17:41,814]:DEBUG:          |              | avg:19.773, std:0, last:19.773           |
+[2025-07-25 18:17:41,815]:DEBUG:     scan file TeaLeaf.benchmarks/000001/000040_execute_tsan-cover_must/work/job.out
+[2025-07-25 18:17:41,817]:DEBUG:       file "job.out" scanned pattern found:
+[2025-07-25 18:17:41,817]:DEBUG:          | verification |       first:SUCCESS, cnt:1, last:SUCCESS |
+[2025-07-25 18:17:41,817]:DEBUG:          |         time |    first:19.773, min:19.773, max:19.773, |
+[2025-07-25 18:17:41,817]:DEBUG:          |              | sum:19.773, sum2:390.971529, cnt:1,      |
+[2025-07-25 18:17:41,817]:DEBUG:          |              | avg:19.773, std:0, last:19.773           |
+[2025-07-25 18:17:41,819]:DEBUG:     scan file TeaLeaf.benchmarks/000001/000041_execute_tsan-cover_must/work/job.out
+[2025-07-25 18:17:41,821]:DEBUG:       file "job.out" scanned pattern found:
+[2025-07-25 18:17:41,821]:DEBUG:          | verification |       first:SUCCESS, cnt:2, last:SUCCESS |
+[2025-07-25 18:17:41,821]:DEBUG:          |         time |    first:19.773, min:19.773, max:20.344, |
+[2025-07-25 18:17:41,821]:DEBUG:          |              | sum:40.117000000000004, sum2:804.849865, |
+[2025-07-25 18:17:41,821]:DEBUG:          |              | cnt:2, avg:20.058500000000002,           |
+[2025-07-25 18:17:41,821]:DEBUG:          |              | std:0.4037579720572569, last:20.344      |
+[2025-07-25 18:17:41,823]:DEBUG:     scan file TeaLeaf.benchmarks/000001/000011_execute_base_must/work/job.out
+[2025-07-25 18:17:41,825]:DEBUG:       file "job.out" scanned pattern found:
+[2025-07-25 18:17:41,825]:DEBUG:          | verification |       first:SUCCESS, cnt:1, last:SUCCESS |
+[2025-07-25 18:17:41,825]:DEBUG:          |         time |    first:22.897, min:22.897, max:22.897, |
+[2025-07-25 18:17:41,825]:DEBUG:          |              | sum:22.897, sum2:524.2726089999999,      |
+[2025-07-25 18:17:41,825]:DEBUG:          |              | cnt:1, avg:22.897, std:0, last:22.897    |
+[2025-07-25 18:17:41,826]:DEBUG:     scan file TeaLeaf.benchmarks/000001/000012_execute_base_must/work/job.out
+[2025-07-25 18:17:41,828]:DEBUG:       file "job.out" scanned pattern found:
+[2025-07-25 18:17:41,828]:DEBUG:          | verification |       first:SUCCESS, cnt:2, last:SUCCESS |
+[2025-07-25 18:17:41,828]:DEBUG:          |         time |    first:22.897, min:20.245, max:22.897, |
+[2025-07-25 18:17:41,828]:DEBUG:          |              | sum:43.141999999999996,                  |
+[2025-07-25 18:17:41,828]:DEBUG:          |              | sum2:934.1326339999999, cnt:2,           |
+[2025-07-25 18:17:41,828]:DEBUG:          |              | avg:21.570999999999998,                  |
+[2025-07-25 18:17:41,828]:DEBUG:          |              | std:1.8752471837067668, last:20.245      |
+[2025-07-25 18:17:41,831]:DEBUG:     scan file TeaLeaf.benchmarks/000001/000010_execute_base_must/work/job.out
+[2025-07-25 18:17:41,832]:DEBUG:       file "job.out" scanned pattern found:
+[2025-07-25 18:17:41,832]:DEBUG:          | verification |       first:SUCCESS, cnt:3, last:SUCCESS |
+[2025-07-25 18:17:41,832]:DEBUG:          |         time |    first:22.897, min:19.843, max:22.897, |
+[2025-07-25 18:17:41,832]:DEBUG:          |              | sum:62.985, sum2:1327.8772829999998,     |
+[2025-07-25 18:17:41,832]:DEBUG:          |              | cnt:3, avg:20.995,                       |
+[2025-07-25 18:17:41,832]:DEBUG:          |              | std:1.659398686271591, last:19.843       |
+[2025-07-25 18:17:41,834]:DEBUG:     scan file TeaLeaf.benchmarks/000001/000032_execute_tsan-cover_base/work/job.out
+[2025-07-25 18:17:41,836]:DEBUG:       file "job.out" scanned pattern found:
+[2025-07-25 18:17:41,836]:DEBUG:          | verification |       first:SUCCESS, cnt:1, last:SUCCESS |
+[2025-07-25 18:17:41,836]:DEBUG:          |         time |    first:10.479, min:10.479, max:10.479, |
+[2025-07-25 18:17:41,836]:DEBUG:          |              | sum:10.479, sum2:109.80944099999998,     |
+[2025-07-25 18:17:41,836]:DEBUG:          |              | cnt:1, avg:10.479, std:0, last:10.479    |
+[2025-07-25 18:17:41,838]:DEBUG:     scan file TeaLeaf.benchmarks/000001/000033_execute_tsan-cover_base/work/job.out
+[2025-07-25 18:17:41,839]:DEBUG:       file "job.out" scanned pattern found:
+[2025-07-25 18:17:41,839]:DEBUG:          | verification |       first:SUCCESS, cnt:2, last:SUCCESS |
+[2025-07-25 18:17:41,839]:DEBUG:          |         time |    first:10.479, min:10.479, max:10.583, |
+[2025-07-25 18:17:41,839]:DEBUG:          |              | sum:21.061999999999998, sum2:221.80933,  |
+[2025-07-25 18:17:41,839]:DEBUG:          |              | cnt:2, avg:10.530999999999999,           |
+[2025-07-25 18:17:41,839]:DEBUG:          |              | std:0.07353910524370946, last:10.583     |
+[2025-07-25 18:17:41,842]:DEBUG:     scan file TeaLeaf.benchmarks/000001/000031_execute_tsan-cover_base/work/job.out
+[2025-07-25 18:17:41,844]:DEBUG:       file "job.out" scanned pattern found:
+[2025-07-25 18:17:41,844]:DEBUG:          | verification |       first:SUCCESS, cnt:3, last:SUCCESS |
+[2025-07-25 18:17:41,844]:DEBUG:          |         time |    first:10.479, min:10.357, max:10.583, |
+[2025-07-25 18:17:41,844]:DEBUG:          |              | sum:31.418999999999997, sum2:329.076779, |
+[2025-07-25 18:17:41,844]:DEBUG:          |              | cnt:3, avg:10.472999999999999,           |
+[2025-07-25 18:17:41,844]:DEBUG:          |              | std:0.11311940593907258, last:10.357     |
+[2025-07-25 18:17:41,847]:DEBUG:     scan file TeaLeaf.benchmarks/000001/000026_execute_tsan-cover_base/work/job.out
+[2025-07-25 18:17:41,849]:DEBUG:       file "job.out" scanned pattern found:
+[2025-07-25 18:17:41,849]:DEBUG:          | verification |       first:SUCCESS, cnt:1, last:SUCCESS |
+[2025-07-25 18:17:41,849]:DEBUG:          |         time |    first:17.927, min:17.927, max:17.927, |
+[2025-07-25 18:17:41,849]:DEBUG:          |              | sum:17.927, sum2:321.377329, cnt:1,      |
+[2025-07-25 18:17:41,849]:DEBUG:          |              | avg:17.927, std:0, last:17.927           |
+[2025-07-25 18:17:41,851]:DEBUG:     scan file TeaLeaf.benchmarks/000001/000025_execute_tsan-cover_base/work/job.out
+[2025-07-25 18:17:41,852]:DEBUG:       file "job.out" scanned pattern found:
+[2025-07-25 18:17:41,852]:DEBUG:          | verification |       first:SUCCESS, cnt:2, last:SUCCESS |
+[2025-07-25 18:17:41,852]:DEBUG:          |         time |    first:17.927, min:17.158, max:17.927, |
+[2025-07-25 18:17:41,852]:DEBUG:          |              | sum:35.085, sum2:615.774293, cnt:2,      |
+[2025-07-25 18:17:41,852]:DEBUG:          |              | avg:17.5425, std:0.5437651147323533,     |
+[2025-07-25 18:17:41,852]:DEBUG:          |              | last:17.158                              |
+[2025-07-25 18:17:41,855]:DEBUG:     scan file TeaLeaf.benchmarks/000001/000027_execute_tsan-cover_base/work/job.out
+[2025-07-25 18:17:41,856]:DEBUG:       file "job.out" scanned pattern found:
+[2025-07-25 18:17:41,856]:DEBUG:          | verification |       first:SUCCESS, cnt:3, last:SUCCESS |
+[2025-07-25 18:17:41,856]:DEBUG:          |         time |    first:17.927, min:17.158, max:17.927, |
+[2025-07-25 18:17:41,856]:DEBUG:          |              | sum:52.464, sum2:917.803934, cnt:3,      |
+[2025-07-25 18:17:41,856]:DEBUG:          |              | avg:17.488, std:0.39591792078667326,     |
+[2025-07-25 18:17:41,856]:DEBUG:          |              | last:17.379                              |
+[2025-07-25 18:17:41,859]:DEBUG:     scan file TeaLeaf.benchmarks/000001/000019_execute_base_base/work/job.out
+[2025-07-25 18:17:41,861]:DEBUG:       file "job.out" scanned pattern found:
+[2025-07-25 18:17:41,861]:DEBUG:          | verification |  |
+[2025-07-25 18:17:41,861]:DEBUG:          |         time |  |
+[2025-07-25 18:17:41,863]:DEBUG:     scan file TeaLeaf.benchmarks/000001/000021_execute_base_base/work/job.out
+[2025-07-25 18:17:41,864]:DEBUG:       file "job.out" scanned pattern found:
+[2025-07-25 18:17:41,864]:DEBUG:          | verification |       first:SUCCESS, cnt:1, last:SUCCESS |
+[2025-07-25 18:17:41,864]:DEBUG:          |         time |       first:6.421, min:6.421, max:6.421, |
+[2025-07-25 18:17:41,864]:DEBUG:          |              | sum:6.421, sum2:41.229241, cnt:1,        |
+[2025-07-25 18:17:41,864]:DEBUG:          |              | avg:6.421, std:0, last:6.421             |
+[2025-07-25 18:17:41,866]:DEBUG:     scan file TeaLeaf.benchmarks/000001/000020_execute_base_base/work/job.out
+[2025-07-25 18:17:41,868]:DEBUG:       file "job.out" scanned pattern found:
+[2025-07-25 18:17:41,868]:DEBUG:          | verification |       first:SUCCESS, cnt:2, last:SUCCESS |
+[2025-07-25 18:17:41,868]:DEBUG:          |         time |       first:6.421, min:6.421, max:6.473, |
+[2025-07-25 18:17:41,868]:DEBUG:          |              | sum:12.894, sum2:83.12897000000001,      |
+[2025-07-25 18:17:41,868]:DEBUG:          |              | cnt:2, avg:6.447,                        |
+[2025-07-25 18:17:41,868]:DEBUG:          |              | std:0.03676955262185473, last:6.473      |
+[2025-07-25 18:17:41,870]:DEBUG:     scan file TeaLeaf.benchmarks/000001/000057_execute_tsan_base/work/job.out
+[2025-07-25 18:17:41,871]:DEBUG:       file "job.out" scanned pattern found:
+[2025-07-25 18:17:41,871]:DEBUG:          | verification |       first:SUCCESS, cnt:1, last:SUCCESS |
+[2025-07-25 18:17:41,871]:DEBUG:          |         time |    first:34.334, min:34.334, max:34.334, |
+[2025-07-25 18:17:41,871]:DEBUG:          |              | sum:34.334, sum2:1178.8235560000003,     |
+[2025-07-25 18:17:41,871]:DEBUG:          |              | cnt:1, avg:34.334, std:0, last:34.334    |
+[2025-07-25 18:17:41,873]:DEBUG:     scan file TeaLeaf.benchmarks/000001/000056_execute_tsan_base/work/job.out
+[2025-07-25 18:17:41,875]:DEBUG:       file "job.out" scanned pattern found:
+[2025-07-25 18:17:41,875]:DEBUG:          | verification |       first:SUCCESS, cnt:2, last:SUCCESS |
+[2025-07-25 18:17:41,875]:DEBUG:          |         time |    first:34.334, min:34.334, max:41.144, |
+[2025-07-25 18:17:41,875]:DEBUG:          |              | sum:75.47800000000001, sum2:2871.652292, |
+[2025-07-25 18:17:41,875]:DEBUG:          |              | cnt:2, avg:37.739000000000004,           |
+[2025-07-25 18:17:41,875]:DEBUG:          |              | std:4.815397179880362, last:41.144       |
+[2025-07-25 18:17:41,876]:DEBUG:     scan file TeaLeaf.benchmarks/000001/000055_execute_tsan_base/work/job.out
+[2025-07-25 18:17:41,878]:DEBUG:       file "job.out" scanned pattern found:
+[2025-07-25 18:17:41,878]:DEBUG:          | verification |       first:SUCCESS, cnt:3, last:SUCCESS |
+[2025-07-25 18:17:41,878]:DEBUG:          |         time |    first:34.334, min:34.334, max:41.144, |
+[2025-07-25 18:17:41,878]:DEBUG:          |              | sum:116.012, sum2:4514.657448, cnt:3,    |
+[2025-07-25 18:17:41,878]:DEBUG:          |              | avg:38.67066666666667,                   |
+[2025-07-25 18:17:41,878]:DEBUG:          |              | std:3.7680277776754205, last:40.534      |
+[2025-07-25 18:17:41,881]:DEBUG:     scan file TeaLeaf.benchmarks/000001/000051_execute_tsan_base/work/job.out
+[2025-07-25 18:17:41,883]:DEBUG:       file "job.out" scanned pattern found:
+[2025-07-25 18:17:41,883]:DEBUG:          | verification |       first:SUCCESS, cnt:1, last:SUCCESS |
+[2025-07-25 18:17:41,883]:DEBUG:          |         time |    first:69.989, min:69.989, max:69.989, |
+[2025-07-25 18:17:41,883]:DEBUG:          |              | sum:69.989, sum2:4898.460121000001,      |
+[2025-07-25 18:17:41,883]:DEBUG:          |              | cnt:1, avg:69.989, std:0, last:69.989    |
+[2025-07-25 18:17:41,885]:DEBUG:     scan file TeaLeaf.benchmarks/000001/000050_execute_tsan_base/work/job.out
+[2025-07-25 18:17:41,887]:DEBUG:       file "job.out" scanned pattern found:
+[2025-07-25 18:17:41,888]:DEBUG:          | verification |       first:SUCCESS, cnt:2, last:SUCCESS |
+[2025-07-25 18:17:41,888]:DEBUG:          |         time |    first:69.989, min:69.989, max:74.327, |
+[2025-07-25 18:17:41,888]:DEBUG:          |              | sum:144.316, sum2:10422.96305, cnt:2,    |
+[2025-07-25 18:17:41,888]:DEBUG:          |              | avg:72.158, std:3.067429216787099,       |
+[2025-07-25 18:17:41,888]:DEBUG:          |              | last:74.327                              |
+[2025-07-25 18:17:41,890]:DEBUG:     scan file TeaLeaf.benchmarks/000001/000049_execute_tsan_base/work/job.out
+[2025-07-25 18:17:41,891]:DEBUG:       file "job.out" scanned pattern found:
+[2025-07-25 18:17:41,891]:DEBUG:          | verification |       first:SUCCESS, cnt:3, last:SUCCESS |
+[2025-07-25 18:17:41,891]:DEBUG:          |         time |    first:69.989, min:69.989, max:74.327, |
+[2025-07-25 18:17:41,891]:DEBUG:          |              | sum:217.679, sum2:15805.092819000001,    |
+[2025-07-25 18:17:41,891]:DEBUG:          |              | cnt:3, avg:72.55966666666667,            |
+[2025-07-25 18:17:41,891]:DEBUG:          |              | std:2.2778431318537637, last:73.363      |
+[2025-07-25 18:17:41,893]:DEBUG:     scan file TeaLeaf.benchmarks/000001/000009_execute_base_base/work/job.out
+[2025-07-25 18:17:41,895]:DEBUG:       file "job.out" scanned pattern found:
+[2025-07-25 18:17:41,895]:DEBUG:          | verification |       first:SUCCESS, cnt:1, last:SUCCESS |
+[2025-07-25 18:17:41,895]:DEBUG:          |         time |    first:16.846, min:16.846, max:16.846, |
+[2025-07-25 18:17:41,895]:DEBUG:          |              | sum:16.846, sum2:283.787716, cnt:1,      |
+[2025-07-25 18:17:41,895]:DEBUG:          |              | avg:16.846, std:0, last:16.846           |
+[2025-07-25 18:17:41,897]:DEBUG:     scan file TeaLeaf.benchmarks/000001/000007_execute_base_base/work/job.out
+[2025-07-25 18:17:41,898]:DEBUG:       file "job.out" scanned pattern found:
+[2025-07-25 18:17:41,898]:DEBUG:          | verification |       first:SUCCESS, cnt:2, last:SUCCESS |
+[2025-07-25 18:17:41,898]:DEBUG:          |         time |    first:16.846, min:16.846, max:17.213, |
+[2025-07-25 18:17:41,898]:DEBUG:          |              | sum:34.059, sum2:580.075085, cnt:2,      |
+[2025-07-25 18:17:41,898]:DEBUG:          |              | avg:17.0295, std:0.25950818869544395,    |
+[2025-07-25 18:17:41,898]:DEBUG:          |              | last:17.213                              |
+[2025-07-25 18:17:41,900]:DEBUG:     scan file TeaLeaf.benchmarks/000001/000008_execute_base_base/work/job.out
+[2025-07-25 18:17:41,901]:DEBUG:       file "job.out" scanned pattern found:
+[2025-07-25 18:17:41,901]:DEBUG:          | verification |       first:SUCCESS, cnt:3, last:SUCCESS |
+[2025-07-25 18:17:41,901]:DEBUG:          |         time |    first:16.846, min:16.846, max:17.213, |
+[2025-07-25 18:17:41,901]:DEBUG:          |              | sum:51.027, sum2:867.9881089999999,      |
+[2025-07-25 18:17:41,901]:DEBUG:          |              | cnt:3, avg:17.009,                       |
+[2025-07-25 18:17:41,901]:DEBUG:          |              | std:0.18690371852884563, last:16.968     |
+[2025-07-25 18:17:41,903]:DEBUG:     scan file TeaLeaf.benchmarks/000001/000036_execute_tsan-cover_must/work/job.out
+[2025-07-25 18:17:41,905]:DEBUG:       file "job.out" scanned pattern found:
+[2025-07-25 18:17:41,905]:DEBUG:          | verification |       first:SUCCESS, cnt:1, last:SUCCESS |
+[2025-07-25 18:17:41,905]:DEBUG:          |         time |    first:22.117, min:22.117, max:22.117, |
+[2025-07-25 18:17:41,905]:DEBUG:          |              | sum:22.117, sum2:489.161689, cnt:1,      |
+[2025-07-25 18:17:41,905]:DEBUG:          |              | avg:22.117, std:0, last:22.117           |
+[2025-07-25 18:17:41,907]:DEBUG:     scan file TeaLeaf.benchmarks/000001/000034_execute_tsan-cover_must/work/job.out
+[2025-07-25 18:17:41,908]:DEBUG:       file "job.out" scanned pattern found:
+[2025-07-25 18:17:41,908]:DEBUG:          | verification |       first:SUCCESS, cnt:2, last:SUCCESS |
+[2025-07-25 18:17:41,908]:DEBUG:          |         time |     first:22.117, min:22.117, max:22.45, |
+[2025-07-25 18:17:41,908]:DEBUG:          |              | sum:44.567, sum2:993.164189, cnt:2,      |
+[2025-07-25 18:17:41,908]:DEBUG:          |              | avg:22.2835, std:0.23546655813492443,    |
+[2025-07-25 18:17:41,908]:DEBUG:          |              | last:22.45                               |
+[2025-07-25 18:17:41,909]:DEBUG:     scan file TeaLeaf.benchmarks/000001/000035_execute_tsan-cover_must/work/job.out
+[2025-07-25 18:17:41,911]:DEBUG:       file "job.out" scanned pattern found:
+[2025-07-25 18:17:41,911]:DEBUG:          | verification |       first:SUCCESS, cnt:3, last:SUCCESS |
+[2025-07-25 18:17:41,911]:DEBUG:          |         time |     first:22.117, min:21.191, max:22.45, |
+[2025-07-25 18:17:41,911]:DEBUG:          |              | sum:65.758, sum2:1442.2226699999999,     |
+[2025-07-25 18:17:41,911]:DEBUG:          |              | cnt:3, avg:21.91933333333333,            |
+[2025-07-25 18:17:41,911]:DEBUG:          |              | std:0.6523605853615895, last:21.191      |
+[2025-07-25 18:17:41,913]:DEBUG:     scan file TeaLeaf.benchmarks/000001/000028_execute_tsan-cover_must/work/job.out
+[2025-07-25 18:17:41,914]:DEBUG:       file "job.out" scanned pattern found:
+[2025-07-25 18:17:41,914]:DEBUG:          | verification |       first:SUCCESS, cnt:1, last:SUCCESS |
+[2025-07-25 18:17:41,914]:DEBUG:          |         time |    first:29.835, min:29.835, max:29.835, |
+[2025-07-25 18:17:41,914]:DEBUG:          |              | sum:29.835, sum2:890.1272250000001,      |
+[2025-07-25 18:17:41,914]:DEBUG:          |              | cnt:1, avg:29.835, std:0, last:29.835    |
+[2025-07-25 18:17:41,915]:DEBUG:     scan file TeaLeaf.benchmarks/000001/000030_execute_tsan-cover_must/work/job.out
+[2025-07-25 18:17:41,917]:DEBUG:       file "job.out" scanned pattern found:
+[2025-07-25 18:17:41,917]:DEBUG:          | verification |       first:SUCCESS, cnt:2, last:SUCCESS |
+[2025-07-25 18:17:41,917]:DEBUG:          |         time |    first:29.835, min:25.315, max:29.835, |
+[2025-07-25 18:17:41,917]:DEBUG:          |              | sum:55.150000000000006, sum2:1530.97645, |
+[2025-07-25 18:17:41,917]:DEBUG:          |              | cnt:2, avg:27.575000000000003,           |
+[2025-07-25 18:17:41,917]:DEBUG:          |              | std:3.196122650963174, last:25.315       |
+[2025-07-25 18:17:41,918]:DEBUG:     scan file TeaLeaf.benchmarks/000001/000029_execute_tsan-cover_must/work/job.out
+[2025-07-25 18:17:41,930]:DEBUG:       file "job.out" scanned pattern found:
+[2025-07-25 18:17:41,930]:DEBUG:          | verification |       first:SUCCESS, cnt:3, last:FAILURE |
+[2025-07-25 18:17:41,930]:DEBUG:          |         time |    first:29.835, min:25.315, max:29.835, |
+[2025-07-25 18:17:41,930]:DEBUG:          |              | sum:55.150000000000006, sum2:1530.97645, |
+[2025-07-25 18:17:41,930]:DEBUG:          |              | cnt:2, avg:27.575000000000003,           |
+[2025-07-25 18:17:41,930]:DEBUG:          |              | std:3.196122650963174, last:25.315       |
+[2025-07-25 18:17:41,931]:DEBUG:     scan file TeaLeaf.benchmarks/000001/000060_execute_tsan_must/work/job.out
+[2025-07-25 18:17:41,934]:DEBUG:       file "job.out" scanned pattern found:
+[2025-07-25 18:17:41,934]:DEBUG:          | verification |       first:SUCCESS, cnt:1, last:SUCCESS |
+[2025-07-25 18:17:41,934]:DEBUG:          |         time | first:138.388, min:138.388, max:138.388, |
+[2025-07-25 18:17:41,934]:DEBUG:          |              | sum:138.388, sum2:19151.238544, cnt:1,   |
+[2025-07-25 18:17:41,934]:DEBUG:          |              | avg:138.388, std:0, last:138.388         |
+[2025-07-25 18:17:41,936]:DEBUG:     scan file TeaLeaf.benchmarks/000001/000058_execute_tsan_must/work/job.out
+[2025-07-25 18:17:41,938]:DEBUG:       file "job.out" scanned pattern found:
+[2025-07-25 18:17:41,938]:DEBUG:          | verification |       first:SUCCESS, cnt:2, last:SUCCESS |
+[2025-07-25 18:17:41,938]:DEBUG:          |         time | first:138.388, min:136.982, max:138.388, |
+[2025-07-25 18:17:41,938]:DEBUG:          |              | sum:275.37, sum2:37915.306868, cnt:2,    |
+[2025-07-25 18:17:41,938]:DEBUG:          |              | avg:137.685, std:0.9941921343486982,     |
+[2025-07-25 18:17:41,938]:DEBUG:          |              | last:136.982                             |
+[2025-07-25 18:17:41,939]:DEBUG:     scan file TeaLeaf.benchmarks/000001/000059_execute_tsan_must/work/job.out
+[2025-07-25 18:17:41,941]:DEBUG:       file "job.out" scanned pattern found:
+[2025-07-25 18:17:41,941]:DEBUG:          | verification |       first:SUCCESS, cnt:3, last:SUCCESS |
+[2025-07-25 18:17:41,941]:DEBUG:          |         time | first:138.388, min:136.982, max:138.388, |
+[2025-07-25 18:17:41,941]:DEBUG:          |              | sum:413.3, sum2:56939.991768, cnt:3,     |
+[2025-07-25 18:17:41,941]:DEBUG:          |              | avg:137.76666666666668,                  |
+[2025-07-25 18:17:41,941]:DEBUG:          |              | std:0.7170894876720234, last:137.93      |
+[2025-07-25 18:17:41,943]:DEBUG:     scan file TeaLeaf.benchmarks/000001/000013_execute_base_base/work/job.out
+[2025-07-25 18:17:41,945]:DEBUG:       file "job.out" scanned pattern found:
+[2025-07-25 18:17:41,945]:DEBUG:          | verification |       first:SUCCESS, cnt:1, last:SUCCESS |
+[2025-07-25 18:17:41,945]:DEBUG:          |         time |       first:9.755, min:9.755, max:9.755, |
+[2025-07-25 18:17:41,945]:DEBUG:          |              | sum:9.755, sum2:95.16002500000002,       |
+[2025-07-25 18:17:41,945]:DEBUG:          |              | cnt:1, avg:9.755, std:0, last:9.755      |
+[2025-07-25 18:17:41,946]:DEBUG:     scan file TeaLeaf.benchmarks/000001/000015_execute_base_base/work/job.out
+[2025-07-25 18:17:41,948]:DEBUG:       file "job.out" scanned pattern found:
+[2025-07-25 18:17:41,948]:DEBUG:          | verification |       first:SUCCESS, cnt:2, last:SUCCESS |
+[2025-07-25 18:17:41,948]:DEBUG:          |         time |       first:9.755, min:9.755, max:9.756, |
+[2025-07-25 18:17:41,948]:DEBUG:          |              | sum:19.511000000000003, sum2:190.339561, |
+[2025-07-25 18:17:41,948]:DEBUG:          |              | cnt:2, avg:9.755500000000001,            |
+[2025-07-25 18:17:41,948]:DEBUG:          |              | std:0.0007071067400995428, last:9.756    |
+[2025-07-25 18:17:41,950]:DEBUG:     scan file TeaLeaf.benchmarks/000001/000014_execute_base_base/work/job.out
+[2025-07-25 18:17:41,951]:DEBUG:       file "job.out" scanned pattern found:
+[2025-07-25 18:17:41,951]:DEBUG:          | verification |       first:SUCCESS, cnt:3, last:SUCCESS |
+[2025-07-25 18:17:41,951]:DEBUG:          |         time |       first:9.755, min:9.747, max:9.756, |
+[2025-07-25 18:17:41,951]:DEBUG:          |              | sum:29.258000000000003, sum2:285.34357,  |
+[2025-07-25 18:17:41,951]:DEBUG:          |              | cnt:3, avg:9.752666666666668,            |
+[2025-07-25 18:17:41,951]:DEBUG:          |              | std:0.004932882858969923, last:9.747     |
+[2025-07-25 18:17:41,954]:DEBUG:     scan file TeaLeaf.benchmarks/000001/000044_execute_tsan_base/work/job.out
+[2025-07-25 18:17:41,956]:DEBUG:       file "job.out" scanned pattern found:
+[2025-07-25 18:17:41,956]:DEBUG:          | verification |       first:SUCCESS, cnt:1, last:SUCCESS |
+[2025-07-25 18:17:41,956]:DEBUG:          |         time | first:175.835, min:175.835, max:175.835, |
+[2025-07-25 18:17:41,956]:DEBUG:          |              | sum:175.835, sum2:30917.947225000004,    |
+[2025-07-25 18:17:41,956]:DEBUG:          |              | cnt:1, avg:175.835, std:0, last:175.835  |
+[2025-07-25 18:17:41,958]:DEBUG:     scan file TeaLeaf.benchmarks/000001/000043_execute_tsan_base/work/job.out
+[2025-07-25 18:17:41,959]:DEBUG:       file "job.out" scanned pattern found:
+[2025-07-25 18:17:41,960]:DEBUG:          | verification |       first:SUCCESS, cnt:2, last:SUCCESS |
+[2025-07-25 18:17:41,960]:DEBUG:          |         time | first:175.835, min:175.835, max:177.021, |
+[2025-07-25 18:17:41,960]:DEBUG:          |              | sum:352.856, sum2:62254.381666, cnt:2,   |
+[2025-07-25 18:17:41,960]:DEBUG:          |              | avg:176.428, std:0.8386286424874594,     |
+[2025-07-25 18:17:41,960]:DEBUG:          |              | last:177.021                             |
+[2025-07-25 18:17:41,963]:DEBUG:     scan file TeaLeaf.benchmarks/000001/000045_execute_tsan_base/work/job.out
+[2025-07-25 18:17:41,975]:DEBUG:       file "job.out" scanned pattern found:
+[2025-07-25 18:17:41,975]:DEBUG:          | verification |       first:SUCCESS, cnt:3, last:FAILURE |
+[2025-07-25 18:17:41,975]:DEBUG:          |         time | first:175.835, min:175.835, max:177.021, |
+[2025-07-25 18:17:41,975]:DEBUG:          |              | sum:352.856, sum2:62254.381666, cnt:2,   |
+[2025-07-25 18:17:41,975]:DEBUG:          |              | avg:176.428, std:0.8386286424874594,     |
+[2025-07-25 18:17:41,975]:DEBUG:          |              | last:177.021                             |
+[2025-07-25 18:17:41,977]:DEBUG:     scan file TeaLeaf.benchmarks/000001/000039_execute_tsan-cover_base/work/job.out
+[2025-07-25 18:17:41,979]:DEBUG:       file "job.out" scanned pattern found:
+[2025-07-25 18:17:41,979]:DEBUG:          | verification |       first:SUCCESS, cnt:1, last:SUCCESS |
+[2025-07-25 18:17:41,979]:DEBUG:          |         time |       first:7.009, min:7.009, max:7.009, |
+[2025-07-25 18:17:41,979]:DEBUG:          |              | sum:7.009, sum2:49.126081000000006,      |
+[2025-07-25 18:17:41,979]:DEBUG:          |              | cnt:1, avg:7.009, std:0, last:7.009      |
+[2025-07-25 18:17:41,980]:DEBUG:     scan file TeaLeaf.benchmarks/000001/000037_execute_tsan-cover_base/work/job.out
+[2025-07-25 18:17:41,982]:DEBUG:       file "job.out" scanned pattern found:
+[2025-07-25 18:17:41,982]:DEBUG:          | verification |       first:SUCCESS, cnt:2, last:SUCCESS |
+[2025-07-25 18:17:41,982]:DEBUG:          |         time |       first:7.009, min:6.985, max:7.009, |
+[2025-07-25 18:17:41,982]:DEBUG:          |              | sum:13.994, sum2:97.91630600000002,      |
+[2025-07-25 18:17:41,982]:DEBUG:          |              | cnt:2, avg:6.997,                        |
+[2025-07-25 18:17:41,982]:DEBUG:          |              | std:0.016970562749244505, last:6.985     |
+[2025-07-25 18:17:41,985]:DEBUG:     scan file TeaLeaf.benchmarks/000001/000038_execute_tsan-cover_base/work/job.out
+[2025-07-25 18:17:41,986]:DEBUG:       file "job.out" scanned pattern found:
+[2025-07-25 18:17:41,986]:DEBUG:          | verification |       first:SUCCESS, cnt:3, last:SUCCESS |
+[2025-07-25 18:17:41,986]:DEBUG:          |         time |       first:7.009, min:6.985, max:7.554, |
+[2025-07-25 18:17:41,986]:DEBUG:          |              | sum:21.548000000000002,                  |
+[2025-07-25 18:17:41,986]:DEBUG:          |              | sum2:154.97922200000002, cnt:3,          |
+[2025-07-25 18:17:41,986]:DEBUG:          |              | avg:7.182666666666667,                   |
+[2025-07-25 18:17:41,986]:DEBUG:          |              | std:0.3218079137208004, last:7.554       |
+[2025-07-25 18:17:41,989]:DEBUG:     scan file TeaLeaf.benchmarks/000001/000024_execute_base_must/work/job.out
+[2025-07-25 18:17:41,990]:DEBUG:       file "job.out" scanned pattern found:
+[2025-07-25 18:17:41,990]:DEBUG:          | verification |  |
+[2025-07-25 18:17:41,990]:DEBUG:          |         time |  |
+[2025-07-25 18:17:41,992]:DEBUG:     scan file TeaLeaf.benchmarks/000001/000023_execute_base_must/work/job.out
+[2025-07-25 18:17:41,994]:DEBUG:       file "job.out" scanned pattern found:
+[2025-07-25 18:17:41,994]:DEBUG:          | verification |       first:SUCCESS, cnt:1, last:SUCCESS |
+[2025-07-25 18:17:41,994]:DEBUG:          |         time |    first:10.253, min:10.253, max:10.253, |
+[2025-07-25 18:17:41,994]:DEBUG:          |              | sum:10.253, sum2:105.124009, cnt:1,      |
+[2025-07-25 18:17:41,994]:DEBUG:          |              | avg:10.253, std:0, last:10.253           |
+[2025-07-25 18:17:41,995]:DEBUG:     scan file TeaLeaf.benchmarks/000001/000022_execute_base_must/work/job.out
+[2025-07-25 18:17:41,996]:DEBUG:       file "job.out" scanned pattern found:
+[2025-07-25 18:17:41,996]:DEBUG:          | verification |       first:SUCCESS, cnt:1, last:SUCCESS |
+[2025-07-25 18:17:41,996]:DEBUG:          |         time |    first:10.253, min:10.253, max:10.253, |
+[2025-07-25 18:17:41,996]:DEBUG:          |              | sum:10.253, sum2:105.124009, cnt:1,      |
+[2025-07-25 18:17:41,996]:DEBUG:          |              | avg:10.253, std:0, last:10.253           |
+[2025-07-25 18:17:41,997]:DEBUG:     scan file TeaLeaf.benchmarks/000001/000053_execute_tsan_must/work/job.out
+[2025-07-25 18:17:41,999]:DEBUG:       file "job.out" scanned pattern found:
+[2025-07-25 18:17:41,999]:DEBUG:          | verification |       first:SUCCESS, cnt:1, last:SUCCESS |
+[2025-07-25 18:17:41,999]:DEBUG:          |         time | first:194.922, min:194.922, max:194.922, |
+[2025-07-25 18:17:41,999]:DEBUG:          |              | sum:194.922, sum2:37994.586084, cnt:1,   |
+[2025-07-25 18:17:41,999]:DEBUG:          |              | avg:194.922, std:0, last:194.922         |
+[2025-07-25 18:17:42,001]:DEBUG:     scan file TeaLeaf.benchmarks/000001/000052_execute_tsan_must/work/job.out
+[2025-07-25 18:17:42,003]:DEBUG:       file "job.out" scanned pattern found:
+[2025-07-25 18:17:42,003]:DEBUG:          | verification |       first:SUCCESS, cnt:2, last:SUCCESS |
+[2025-07-25 18:17:42,003]:DEBUG:          |         time | first:194.922, min:193.577, max:194.922, |
+[2025-07-25 18:17:42,003]:DEBUG:          |              | sum:388.499, sum2:75466.641013, cnt:2,   |
+[2025-07-25 18:17:42,003]:DEBUG:          |              | avg:194.2495, std:0.9510586206945967,    |
+[2025-07-25 18:17:42,003]:DEBUG:          |              | last:193.577                             |
+[2025-07-25 18:17:42,005]:DEBUG:     scan file TeaLeaf.benchmarks/000001/000054_execute_tsan_must/work/job.out
+[2025-07-25 18:17:42,007]:DEBUG:       file "job.out" scanned pattern found:
+[2025-07-25 18:17:42,007]:DEBUG:          | verification |       first:SUCCESS, cnt:3, last:SUCCESS |
+[2025-07-25 18:17:42,007]:DEBUG:          |         time | first:194.922, min:193.577, max:201.099, |
+[2025-07-25 18:17:42,007]:DEBUG:          |              | sum:589.598, sum2:115907.448814, cnt:3,  |
+[2025-07-25 18:17:42,007]:DEBUG:          |              | avg:196.53266666666664,                  |
+[2025-07-25 18:17:42,007]:DEBUG:          |              | std:4.011334732149407, last:201.099      |
+[2025-07-25 18:17:42,022]:DEBUG: sort using: tasks,compile_mode,measurement_mode,jube_wp_id
+[2025-07-25 18:17:42,022]:DEBUG: bench_id;wp_id;compile;measurement;tasks;num_cells;end_step;time_avg;time_std;verification
+[2025-07-25 18:17:42,022]:DEBUG: 1;7;base;base;48;2000;10;17.009;0.18690371852884563;SUCCESS
+[2025-07-25 18:17:42,023]:DEBUG: 1;44;tsan;base;48;2000;10;176.428;0.8386286424874594;SUCCESS
+[2025-07-25 18:17:42,023]:DEBUG: 1;26;tsan-cover;base;48;2000;10;17.488;0.39591792078667326;SUCCESS
+[2025-07-25 18:17:42,023]:DEBUG: 1;10;base;must;48;2000;10;20.995;1.659398686271591;SUCCESS
+[2025-07-25 18:17:42,023]:DEBUG: 1;47;tsan;must;48;2000;10;317.74966666666666;0.3255001279484521;SUCCESS
+[2025-07-25 18:17:42,023]:DEBUG: 1;28;tsan-cover;must;48;2000;10;27.575000000000003;3.196122650963174;SUCCESS
+[2025-07-25 18:17:42,023]:DEBUG: 1;14;base;base;96;2000;10;9.752666666666668;0.004932882858969923;SUCCESS
+[2025-07-25 18:17:42,023]:DEBUG: 1;49;tsan;base;96;2000;10;72.55966666666667;2.2778431318537637;SUCCESS
+[2025-07-25 18:17:42,023]:DEBUG: 1;33;tsan-cover;base;96;2000;10;10.472999999999999;0.11311940593907258;SUCCESS
+[2025-07-25 18:17:42,023]:DEBUG: 1;17;base;must;96;2000;10;13.782000000000002;0.39696851260512955;SUCCESS
+[2025-07-25 18:17:42,023]:DEBUG: 1;53;tsan;must;96;2000;10;196.53266666666664;4.011334732149407;SUCCESS
+[2025-07-25 18:17:42,023]:DEBUG: 1;35;tsan-cover;must;96;2000;10;21.91933333333333;0.6523605853615895;SUCCESS
+[2025-07-25 18:17:42,023]:DEBUG: 1;19;base;base;192;2000;10;6.447;0.03676955262185473;SUCCESS
+[2025-07-25 18:17:42,023]:DEBUG: 1;56;tsan;base;192;2000;10;38.67066666666667;3.7680277776754205;SUCCESS
+[2025-07-25 18:17:42,023]:DEBUG: 1;37;tsan-cover;base;192;2000;10;7.182666666666667;0.3218079137208004;SUCCESS
+[2025-07-25 18:17:42,023]:DEBUG: 1;23;base;must;192;2000;10;10.253;0;SUCCESS
+[2025-07-25 18:17:42,023]:DEBUG: 1;58;tsan;must;192;2000;10;137.76666666666668;0.7170894876720234;SUCCESS
+[2025-07-25 18:17:42,023]:DEBUG: 1;40;tsan-cover;must;192;2000;10;20.058500000000002;0.4037579720572569;SUCCESS
+[2025-07-25 18:17:42,023]:DEBUG: 
+[2025-07-25 18:17:42,034]:DEBUG: sort using: tasks,compile_mode,measurement_mode,jube_wp_id
+[2025-07-25 18:17:42,034]:DEBUG: result:
+[2025-07-25 18:17:42,034]:DEBUG: | bench_id | wp_id |    compile | measurement | tasks | num_cells | end_step | time_avg | time_std | verification |
+[2025-07-25 18:17:42,034]:DEBUG: |----------|-------|------------|-------------|-------|-----------|----------|----------|----------|--------------|
+[2025-07-25 18:17:42,034]:DEBUG: |        1 |     7 |       base |        base |    48 |      2000 |       10 |   17.009 |    0.187 |      SUCCESS |
+[2025-07-25 18:17:42,035]:DEBUG: |        1 |    44 |       tsan |        base |    48 |      2000 |       10 |  176.428 |    0.839 |      SUCCESS |
+[2025-07-25 18:17:42,035]:DEBUG: |        1 |    26 | tsan-cover |        base |    48 |      2000 |       10 |   17.488 |    0.396 |      SUCCESS |
+[2025-07-25 18:17:42,035]:DEBUG: |        1 |    10 |       base |        must |    48 |      2000 |       10 |   20.995 |    1.659 |      SUCCESS |
+[2025-07-25 18:17:42,035]:DEBUG: |        1 |    47 |       tsan |        must |    48 |      2000 |       10 |  317.750 |    0.326 |      SUCCESS |
+[2025-07-25 18:17:42,035]:DEBUG: |        1 |    28 | tsan-cover |        must |    48 |      2000 |       10 |   27.575 |    3.196 |      SUCCESS |
+[2025-07-25 18:17:42,035]:DEBUG: |        1 |    14 |       base |        base |    96 |      2000 |       10 |    9.753 |    0.005 |      SUCCESS |
+[2025-07-25 18:17:42,035]:DEBUG: |        1 |    49 |       tsan |        base |    96 |      2000 |       10 |   72.560 |    2.278 |      SUCCESS |
+[2025-07-25 18:17:42,035]:DEBUG: |        1 |    33 | tsan-cover |        base |    96 |      2000 |       10 |   10.473 |    0.113 |      SUCCESS |
+[2025-07-25 18:17:42,035]:DEBUG: |        1 |    17 |       base |        must |    96 |      2000 |       10 |   13.782 |    0.397 |      SUCCESS |
+[2025-07-25 18:17:42,035]:DEBUG: |        1 |    53 |       tsan |        must |    96 |      2000 |       10 |  196.533 |    4.011 |      SUCCESS |
+[2025-07-25 18:17:42,035]:DEBUG: |        1 |    35 | tsan-cover |        must |    96 |      2000 |       10 |   21.919 |    0.652 |      SUCCESS |
+[2025-07-25 18:17:42,035]:DEBUG: |        1 |    19 |       base |        base |   192 |      2000 |       10 |    6.447 |    0.037 |      SUCCESS |
+[2025-07-25 18:17:42,035]:DEBUG: |        1 |    56 |       tsan |        base |   192 |      2000 |       10 |   38.671 |    3.768 |      SUCCESS |
+[2025-07-25 18:17:42,035]:DEBUG: |        1 |    37 | tsan-cover |        base |   192 |      2000 |       10 |    7.183 |    0.322 |      SUCCESS |
+[2025-07-25 18:17:42,035]:DEBUG: |        1 |    23 |       base |        must |   192 |      2000 |       10 |   10.253 |    0.000 |      SUCCESS |
+[2025-07-25 18:17:42,035]:DEBUG: |        1 |    58 |       tsan |        must |   192 |      2000 |       10 |  137.767 |    0.717 |      SUCCESS |
+[2025-07-25 18:17:42,035]:DEBUG: |        1 |    40 | tsan-cover |        must |   192 |      2000 |       10 |   20.059 |    0.404 |      SUCCESS |
+[2025-07-25 18:17:42,035]:DEBUG: 

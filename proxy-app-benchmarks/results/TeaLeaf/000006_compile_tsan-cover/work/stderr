@@ -1,0 +1,339 @@
+[WARN] OpenMPI's default binding is set to OFF, you can override this
+[INFO] Module gompi/2024a loaded.
+Lmod has detected the following error: The following module(s) are unknown: ""
+
+Please check the spelling or version number. Also try "module spider ..."
+It is also possible your cache file is out-of-date; it may help to try:
+  $ module --ignore_cache load ""
+
+Also make sure that all modulefiles written in TCL start with the string #%Module
+
+
+
+[INFO] Module LLVM/19.1.7 loaded.
+[INFO] Module CMake/3.29.3 loaded.
+/rwthfs/rz/cluster/home/ss540294/static-dynamic-interop/benchmarks/TeaLeaf/TeaLeaf.benchmarks/000001/000006_compile_tsan-cover/work/copy_source/driver/parse_config.cpp:73:15: warning: variable length arrays in C++ are a Clang extension [-Wvla-cxx-extension]
+   73 |     char word[len];
+      |               ^~~
+/rwthfs/rz/cluster/home/ss540294/static-dynamic-interop/benchmarks/TeaLeaf/TeaLeaf.benchmarks/000001/000006_compile_tsan-cover/work/copy_source/driver/parse_config.cpp:73:15: note: read of non-const variable 'len' is not allowed in a constant expression
+/rwthfs/rz/cluster/home/ss540294/static-dynamic-interop/benchmarks/TeaLeaf/TeaLeaf.benchmarks/000001/000006_compile_tsan-cover/work/copy_source/driver/parse_config.cpp:68:10: note: declared here
+   68 |   size_t len = 0;
+      |          ^
+/rwthfs/rz/cluster/home/ss540294/static-dynamic-interop/benchmarks/TeaLeaf/TeaLeaf.benchmarks/000001/000006_compile_tsan-cover/work/copy_source/driver/parse_config.cpp:159:15: warning: variable length arrays in C++ are a Clang extension [-Wvla-cxx-extension]
+  159 |     char word[len];
+      |               ^~~
+/rwthfs/rz/cluster/home/ss540294/static-dynamic-interop/benchmarks/TeaLeaf/TeaLeaf.benchmarks/000001/000006_compile_tsan-cover/work/copy_source/driver/parse_config.cpp:159:15: note: read of non-const variable 'len' is not allowed in a constant expression
+/rwthfs/rz/cluster/home/ss540294/static-dynamic-interop/benchmarks/TeaLeaf/TeaLeaf.benchmarks/000001/000006_compile_tsan-cover/work/copy_source/driver/parse_config.cpp:152:10: note: declared here
+  152 |   size_t len = 0;
+      |          ^
+/rwthfs/rz/cluster/home/ss540294/static-dynamic-interop/benchmarks/TeaLeaf/TeaLeaf.benchmarks/000001/000006_compile_tsan-cover/work/copy_source/driver/parse_config.cpp:184:15: warning: variable length arrays in C++ are a Clang extension [-Wvla-cxx-extension]
+  184 |     char word[len];
+      |               ^~~
+/rwthfs/rz/cluster/home/ss540294/static-dynamic-interop/benchmarks/TeaLeaf/TeaLeaf.benchmarks/000001/000006_compile_tsan-cover/work/copy_source/driver/parse_config.cpp:184:15: note: read of non-const variable 'len' is not allowed in a constant expression
+/rwthfs/rz/cluster/home/ss540294/static-dynamic-interop/benchmarks/TeaLeaf/TeaLeaf.benchmarks/000001/000006_compile_tsan-cover/work/copy_source/driver/parse_config.cpp:152:10: note: declared here
+  152 |   size_t len = 0;
+      |          ^
+3 warnings generated.
+/rwthfs/rz/cluster/home/ss540294/static-dynamic-interop/benchmarks/TeaLeaf/TeaLeaf.benchmarks/000001/000006_compile_tsan-cover/work/copy_source/driver/eigenvalue_driver.cpp:16:17: warning: variable length arrays in C++ are a Clang extension [-Wvla-cxx-extension]
+   16 |     double diag[num_cg_iters];
+      |                 ^~~~~~~~~~~~
+/rwthfs/rz/cluster/home/ss540294/static-dynamic-interop/benchmarks/TeaLeaf/TeaLeaf.benchmarks/000001/000006_compile_tsan-cover/work/copy_source/driver/eigenvalue_driver.cpp:16:17: note: function parameter 'num_cg_iters' with unknown value cannot be used in a constant expression
+/rwthfs/rz/cluster/home/ss540294/static-dynamic-interop/benchmarks/TeaLeaf/TeaLeaf.benchmarks/000001/000006_compile_tsan-cover/work/copy_source/driver/eigenvalue_driver.cpp:12:74: note: declared here
+   12 | void eigenvalue_driver_initialise(Chunk *chunks, Settings &settings, int num_cg_iters) {
+      |                                                                          ^
+/rwthfs/rz/cluster/home/ss540294/static-dynamic-interop/benchmarks/TeaLeaf/TeaLeaf.benchmarks/000001/000006_compile_tsan-cover/work/copy_source/driver/eigenvalue_driver.cpp:17:20: warning: variable length arrays in C++ are a Clang extension [-Wvla-cxx-extension]
+   17 |     double offdiag[num_cg_iters];
+      |                    ^~~~~~~~~~~~
+/rwthfs/rz/cluster/home/ss540294/static-dynamic-interop/benchmarks/TeaLeaf/TeaLeaf.benchmarks/000001/000006_compile_tsan-cover/work/copy_source/driver/eigenvalue_driver.cpp:17:20: note: function parameter 'num_cg_iters' with unknown value cannot be used in a constant expression
+/rwthfs/rz/cluster/home/ss540294/static-dynamic-interop/benchmarks/TeaLeaf/TeaLeaf.benchmarks/000001/000006_compile_tsan-cover/work/copy_source/driver/eigenvalue_driver.cpp:12:74: note: declared here
+   12 | void eigenvalue_driver_initialise(Chunk *chunks, Settings &settings, int num_cg_iters) {
+      |                                                                          ^
+2 warnings generated.
+/rwthfs/rz/cluster/home/ss540294/static-dynamic-interop/benchmarks/TeaLeaf/TeaLeaf.benchmarks/000001/000006_compile_tsan-cover/work/copy_source/driver/remote_halo_driver.cpp:49:24: warning: variable length arrays in C++ are a Clang extension [-Wvla-cxx-extension]
+   49 |   MPI_Request requests[max_messages];
+      |                        ^~~~~~~~~~~~
+/rwthfs/rz/cluster/home/ss540294/static-dynamic-interop/benchmarks/TeaLeaf/TeaLeaf.benchmarks/000001/000006_compile_tsan-cover/work/copy_source/driver/remote_halo_driver.cpp:49:24: note: read of non-const variable 'max_messages' is not allowed in a constant expression
+/rwthfs/rz/cluster/home/ss540294/static-dynamic-interop/benchmarks/TeaLeaf/TeaLeaf.benchmarks/000001/000006_compile_tsan-cover/work/copy_source/driver/remote_halo_driver.cpp:48:7: note: declared here
+   48 |   int max_messages = settings.num_chunks_per_rank * 4;
+      |       ^
+1 warning generated.
+Using specified JSON file: /rwthfs/rz/cluster/home/ss540294/static-dynamic-interop/benchmarks/TeaLeaf/TeaLeaf.benchmarks/000001/000006_compile_tsan-cover/work/compile_cover/contract_messages.json
+Using specified JSON file: /rwthfs/rz/cluster/home/ss540294/static-dynamic-interop/benchmarks/TeaLeaf/TeaLeaf.benchmarks/000001/000006_compile_tsan-cover/work/compile_cover/contract_messages.json
+Using specified JSON file: /rwthfs/rz/cluster/home/ss540294/static-dynamic-interop/benchmarks/TeaLeaf/TeaLeaf.benchmarks/000001/000006_compile_tsan-cover/work/compile_cover/contract_messages.json
+Using specified JSON file: /rwthfs/rz/cluster/home/ss540294/static-dynamic-interop/benchmarks/TeaLeaf/TeaLeaf.benchmarks/000001/000006_compile_tsan-cover/work/compile_cover/contract_messages.json
+Using specified JSON file: /rwthfs/rz/cluster/home/ss540294/static-dynamic-interop/benchmarks/TeaLeaf/TeaLeaf.benchmarks/000001/000006_compile_tsan-cover/work/compile_cover/contract_messages.json
+Using specified JSON file: /rwthfs/rz/cluster/home/ss540294/static-dynamic-interop/benchmarks/TeaLeaf/TeaLeaf.benchmarks/000001/000006_compile_tsan-cover/work/compile_cover/contract_messages.json
+Using specified JSON file: /rwthfs/rz/cluster/home/ss540294/static-dynamic-interop/benchmarks/TeaLeaf/TeaLeaf.benchmarks/000001/000006_compile_tsan-cover/work/compile_cover/contract_messages.json
+Using specified JSON file: /rwthfs/rz/cluster/home/ss540294/static-dynamic-interop/benchmarks/TeaLeaf/TeaLeaf.benchmarks/000001/000006_compile_tsan-cover/work/compile_cover/contract_messages.json
+Using specified JSON file: /rwthfs/rz/cluster/home/ss540294/static-dynamic-interop/benchmarks/TeaLeaf/TeaLeaf.benchmarks/000001/000006_compile_tsan-cover/work/compile_cover/contract_messages.json
+Using specified JSON file: /rwthfs/rz/cluster/home/ss540294/static-dynamic-interop/benchmarks/TeaLeaf/TeaLeaf.benchmarks/000001/000006_compile_tsan-cover/work/compile_cover/contract_messages.json
+Using specified JSON file: /rwthfs/rz/cluster/home/ss540294/static-dynamic-interop/benchmarks/TeaLeaf/TeaLeaf.benchmarks/000001/000006_compile_tsan-cover/work/compile_cover/contract_messages.json
+Using specified JSON file: /rwthfs/rz/cluster/home/ss540294/static-dynamic-interop/benchmarks/TeaLeaf/TeaLeaf.benchmarks/000001/000006_compile_tsan-cover/work/compile_cover/contract_messages.json
+Using specified JSON file: /rwthfs/rz/cluster/home/ss540294/static-dynamic-interop/benchmarks/TeaLeaf/TeaLeaf.benchmarks/000001/000006_compile_tsan-cover/work/compile_cover/contract_messages.json
+Using specified JSON file: /rwthfs/rz/cluster/home/ss540294/static-dynamic-interop/benchmarks/TeaLeaf/TeaLeaf.benchmarks/000001/000006_compile_tsan-cover/work/compile_cover/contract_messages.json
+Using specified JSON file: /rwthfs/rz/cluster/home/ss540294/static-dynamic-interop/benchmarks/TeaLeaf/TeaLeaf.benchmarks/000001/000006_compile_tsan-cover/work/compile_cover/contract_messages.json
+Using specified JSON file: /rwthfs/rz/cluster/home/ss540294/static-dynamic-interop/benchmarks/TeaLeaf/TeaLeaf.benchmarks/000001/000006_compile_tsan-cover/work/compile_cover/contract_messages.json
+Using specified JSON file: /rwthfs/rz/cluster/home/ss540294/static-dynamic-interop/benchmarks/TeaLeaf/TeaLeaf.benchmarks/000001/000006_compile_tsan-cover/work/compile_cover/contract_messages.json
+Using specified JSON file: /rwthfs/rz/cluster/home/ss540294/static-dynamic-interop/benchmarks/TeaLeaf/TeaLeaf.benchmarks/000001/000006_compile_tsan-cover/work/compile_cover/contract_messages.json
+No debug information, assuming irrelevant:   %20 = load i32, ptr %19, align 8, !tbaa !3378
+No debug information, assuming irrelevant:   %26 = load ptr, ptr %25, align 8, !tbaa !3383
+No debug information, assuming irrelevant:   %24 = load i32, ptr %23, align 4, !tbaa !3382
+No debug information, assuming irrelevant:   %80 = load i32, ptr %79, align 4, !tbaa !3402
+No debug information, assuming irrelevant:   %86 = load ptr, ptr %85, align 8, !tbaa !3407
+No debug information, assuming irrelevant:   %84 = load i32, ptr %83, align 4, !tbaa !3382
+No debug information, assuming irrelevant:   %119 = load double, ptr %13, align 8, !tbaa !3372, !alias.scope !3415
+No debug information, assuming irrelevant:   %162 = load ptr, ptr %161, align 8, !tbaa !3427
+No debug information, assuming irrelevant:   %160 = load ptr, ptr %159, align 8, !tbaa !3383
+No debug information, assuming irrelevant:   %236 = load ptr, ptr %235, align 8, !tbaa !3448
+No debug information, assuming irrelevant:   %234 = load ptr, ptr %233, align 8, !tbaa !3407
+No debug information, assuming irrelevant:   %315 = load ptr, ptr %314, align 8, !tbaa !3471
+No debug information, assuming irrelevant:   %313 = load ptr, ptr %312, align 8, !tbaa !3470
+No debug information, assuming irrelevant:   %311 = load ptr, ptr %310, align 8, !tbaa !3469
+Using specified JSON file: /rwthfs/rz/cluster/home/ss540294/static-dynamic-interop/benchmarks/TeaLeaf/TeaLeaf.benchmarks/000001/000006_compile_tsan-cover/work/compile_cover/contract_messages.json
+No debug information, assuming irrelevant:   %7 = load i32, ptr %6, align 4, !tbaa !3375
+No debug information, assuming irrelevant:   %5 = load i32, ptr %4, align 8, !tbaa !3368
+No debug information, assuming irrelevant:   %16 = load ptr, ptr %15, align 8, !tbaa !3380
+No debug information, assuming irrelevant:   %13 = load ptr, ptr %12, align 8, !tbaa !3379
+No debug information, assuming irrelevant:   %54 = load double, ptr %14, align 8, !tbaa !3391, !alias.scope !3395
+No debug information, assuming irrelevant:   %51 = load double, ptr %11, align 8, !tbaa !3383, !alias.scope !3395
+No debug information, assuming irrelevant:   %69 = load i32, ptr %68, align 8, !tbaa !3408
+No debug information, assuming irrelevant:   %131 = load i32, ptr %100, align 8, !tbaa !3428
+No debug information, assuming irrelevant:   %211 = load ptr, ptr %116, align 8, !tbaa !3508
+No debug information, assuming irrelevant:   %210 = load ptr, ptr %115, align 8, !tbaa !3380
+No debug information, assuming irrelevant:   %209 = load ptr, ptr %114, align 8, !tbaa !3379
+Using specified JSON file: /rwthfs/rz/cluster/home/ss540294/static-dynamic-interop/benchmarks/TeaLeaf/TeaLeaf.benchmarks/000001/000006_compile_tsan-cover/work/compile_cover/contract_messages.json
+Using specified JSON file: /rwthfs/rz/cluster/home/ss540294/static-dynamic-interop/benchmarks/TeaLeaf/TeaLeaf.benchmarks/000001/000006_compile_tsan-cover/work/compile_cover/contract_messages.json
+No debug information, assuming irrelevant:   %41 = load ptr, ptr %10, align 8, !tbaa !3390
+No debug information, assuming irrelevant:   %48 = load ptr, ptr %10, align 8, !tbaa !3390
+No debug information, assuming irrelevant:   %64 = load ptr, ptr %10, align 8, !tbaa !3390
+No debug information, assuming irrelevant:   %96 = load ptr, ptr %67, align 8, !tbaa !3390
+No debug information, assuming irrelevant:   %103 = load ptr, ptr %67, align 8, !tbaa !3390
+No debug information, assuming irrelevant:   %119 = load ptr, ptr %67, align 8, !tbaa !3390
+No debug information, assuming irrelevant:   %151 = load ptr, ptr %122, align 8, !tbaa !3390
+No debug information, assuming irrelevant:   %158 = load ptr, ptr %122, align 8, !tbaa !3390
+No debug information, assuming irrelevant:   %174 = load ptr, ptr %122, align 8, !tbaa !3390
+No debug information, assuming irrelevant:   %206 = load ptr, ptr %177, align 8, !tbaa !3390
+No debug information, assuming irrelevant:   %213 = load ptr, ptr %177, align 8, !tbaa !3390
+No debug information, assuming irrelevant:   %229 = load ptr, ptr %177, align 8, !tbaa !3390
+No debug information, assuming irrelevant:   %261 = load ptr, ptr %232, align 8, !tbaa !3390
+No debug information, assuming irrelevant:   %268 = load ptr, ptr %232, align 8, !tbaa !3390
+No debug information, assuming irrelevant:   %284 = load ptr, ptr %232, align 8, !tbaa !3390
+No debug information, assuming irrelevant:   %316 = load ptr, ptr %287, align 8, !tbaa !3390
+No debug information, assuming irrelevant:   %323 = load ptr, ptr %287, align 8, !tbaa !3390
+No debug information, assuming irrelevant:   %339 = load ptr, ptr %287, align 8, !tbaa !3390
+No debug information, assuming irrelevant:   %371 = load ptr, ptr %342, align 8, !tbaa !3390
+No debug information, assuming irrelevant:   %378 = load ptr, ptr %342, align 8, !tbaa !3390
+No debug information, assuming irrelevant:   %394 = load ptr, ptr %342, align 8, !tbaa !3390
+No debug information, assuming irrelevant:   %426 = load ptr, ptr %397, align 8, !tbaa !3390
+No debug information, assuming irrelevant:   %433 = load ptr, ptr %397, align 8, !tbaa !3390
+No debug information, assuming irrelevant:   %449 = load ptr, ptr %397, align 8, !tbaa !3390
+No debug information, assuming irrelevant:   %481 = load ptr, ptr %452, align 8, !tbaa !3390
+No debug information, assuming irrelevant:   %488 = load ptr, ptr %452, align 8, !tbaa !3390
+No debug information, assuming irrelevant:   %504 = load ptr, ptr %452, align 8, !tbaa !3390
+No debug information, assuming irrelevant:   %536 = load ptr, ptr %507, align 8, !tbaa !3390
+No debug information, assuming irrelevant:   %543 = load ptr, ptr %507, align 8, !tbaa !3390
+No debug information, assuming irrelevant:   %559 = load ptr, ptr %507, align 8, !tbaa !3390
+No debug information, assuming irrelevant:   %591 = load ptr, ptr %562, align 8, !tbaa !3390
+No debug information, assuming irrelevant:   %598 = load ptr, ptr %562, align 8, !tbaa !3390
+No debug information, assuming irrelevant:   %614 = load ptr, ptr %562, align 8, !tbaa !3390
+No debug information, assuming irrelevant:   %646 = load ptr, ptr %617, align 8, !tbaa !3390
+No debug information, assuming irrelevant:   %653 = load ptr, ptr %617, align 8, !tbaa !3390
+No debug information, assuming irrelevant:   %669 = load ptr, ptr %617, align 8, !tbaa !3390
+No debug information, assuming irrelevant:   %701 = load ptr, ptr %672, align 8, !tbaa !3390
+No debug information, assuming irrelevant:   %708 = load ptr, ptr %672, align 8, !tbaa !3390
+No debug information, assuming irrelevant:   %724 = load ptr, ptr %672, align 8, !tbaa !3390
+No debug information, assuming irrelevant:   %756 = load ptr, ptr %727, align 8, !tbaa !3390
+No debug information, assuming irrelevant:   %763 = load ptr, ptr %727, align 8, !tbaa !3390
+No debug information, assuming irrelevant:   %779 = load ptr, ptr %727, align 8, !tbaa !3390
+No debug information, assuming irrelevant:   %812 = load ptr, ptr %782, align 8, !tbaa !3390
+No debug information, assuming irrelevant:   %819 = load ptr, ptr %782, align 8, !tbaa !3390
+No debug information, assuming irrelevant:   %835 = load ptr, ptr %782, align 8, !tbaa !3390
+No debug information, assuming irrelevant:   %868 = load ptr, ptr %838, align 8, !tbaa !3390
+No debug information, assuming irrelevant:   %875 = load ptr, ptr %838, align 8, !tbaa !3390
+No debug information, assuming irrelevant:   %891 = load ptr, ptr %838, align 8, !tbaa !3390
+No debug information, assuming irrelevant:   %906 = load ptr, ptr %894, align 8, !tbaa !3390
+No debug information, assuming irrelevant:   %939 = load ptr, ptr %908, align 8, !tbaa !3390
+No debug information, assuming irrelevant:   %935 = load ptr, ptr %908, align 8, !tbaa !3390
+No debug information, assuming irrelevant:   %931 = load ptr, ptr %908, align 8, !tbaa !3390
+No debug information, assuming irrelevant:   %927 = load ptr, ptr %908, align 8, !tbaa !3390
+No debug information, assuming irrelevant:   %951 = load ptr, ptr %908, align 8, !tbaa !3390
+No debug information, assuming irrelevant:   %969 = load ptr, ptr %957, align 8, !tbaa !3390
+No debug information, assuming irrelevant:   %1002 = load ptr, ptr %971, align 8, !tbaa !3390
+No debug information, assuming irrelevant:   %998 = load ptr, ptr %971, align 8, !tbaa !3390
+No debug information, assuming irrelevant:   %994 = load ptr, ptr %971, align 8, !tbaa !3390
+No debug information, assuming irrelevant:   %990 = load ptr, ptr %971, align 8, !tbaa !3390
+No debug information, assuming irrelevant:   %1014 = load ptr, ptr %971, align 8, !tbaa !3390
+No debug information, assuming irrelevant:   %1033 = load ptr, ptr %1020, align 8, !tbaa !3390
+No debug information, assuming irrelevant:   %1067 = load ptr, ptr %1035, align 8, !tbaa !3390
+No debug information, assuming irrelevant:   %1063 = load ptr, ptr %1035, align 8, !tbaa !3390
+No debug information, assuming irrelevant:   %1059 = load ptr, ptr %1035, align 8, !tbaa !3390
+No debug information, assuming irrelevant:   %1055 = load ptr, ptr %1035, align 8, !tbaa !3390
+No debug information, assuming irrelevant:   %1079 = load ptr, ptr %1035, align 8, !tbaa !3390
+No debug information, assuming irrelevant:   %1098 = load ptr, ptr %1085, align 8, !tbaa !3390
+No debug information, assuming irrelevant:   %1132 = load ptr, ptr %1100, align 8, !tbaa !3390
+No debug information, assuming irrelevant:   %1128 = load ptr, ptr %1100, align 8, !tbaa !3390
+No debug information, assuming irrelevant:   %1124 = load ptr, ptr %1100, align 8, !tbaa !3390
+No debug information, assuming irrelevant:   %1120 = load ptr, ptr %1100, align 8, !tbaa !3390
+No debug information, assuming irrelevant:   %1144 = load ptr, ptr %1100, align 8, !tbaa !3390
+No debug information, assuming irrelevant:   %1163 = load ptr, ptr %1150, align 8, !tbaa !3390
+No debug information, assuming irrelevant:   %1177 = load ptr, ptr %1165, align 8, !tbaa !3390
+No debug information, assuming irrelevant:   %1191 = load ptr, ptr %1179, align 8, !tbaa !3390
+No debug information, assuming irrelevant:   %1205 = load ptr, ptr %1193, align 8, !tbaa !3390
+No debug information, assuming irrelevant:   %1218 = load ptr, ptr %1207, align 8, !tbaa !3390
+No debug information, assuming irrelevant:   %1226 = load ptr, ptr %1220, align 8, !tbaa !3390
+No debug information, assuming irrelevant:   %1234 = load ptr, ptr %1228, align 8, !tbaa !3390
+No debug information, assuming irrelevant:   %1242 = load ptr, ptr %1236, align 8, !tbaa !3390
+No debug information, assuming irrelevant:   %1255 = load ptr, ptr %1244, align 8, !tbaa !3390
+No debug information, assuming irrelevant:   %1263 = load ptr, ptr %1257, align 8, !tbaa !3390
+No debug information, assuming irrelevant:   %1271 = load ptr, ptr %1265, align 8, !tbaa !3390
+No debug information, assuming irrelevant:   %1279 = load ptr, ptr %1273, align 8, !tbaa !3390
+Using specified JSON file: /rwthfs/rz/cluster/home/ss540294/static-dynamic-interop/benchmarks/TeaLeaf/TeaLeaf.benchmarks/000001/000006_compile_tsan-cover/work/compile_cover/contract_messages.json
+Using specified JSON file: /rwthfs/rz/cluster/home/ss540294/static-dynamic-interop/benchmarks/TeaLeaf/TeaLeaf.benchmarks/000001/000006_compile_tsan-cover/work/compile_cover/contract_messages.json
+Using specified JSON file: /rwthfs/rz/cluster/home/ss540294/static-dynamic-interop/benchmarks/TeaLeaf/TeaLeaf.benchmarks/000001/000006_compile_tsan-cover/work/compile_cover/contract_messages.json
+Using specified JSON file: /rwthfs/rz/cluster/home/ss540294/static-dynamic-interop/benchmarks/TeaLeaf/TeaLeaf.benchmarks/000001/000006_compile_tsan-cover/work/compile_cover/contract_messages.json
+Using specified JSON file: /rwthfs/rz/cluster/home/ss540294/static-dynamic-interop/benchmarks/TeaLeaf/TeaLeaf.benchmarks/000001/000006_compile_tsan-cover/work/compile_cover/contract_messages.json
+Using specified JSON file: /rwthfs/rz/cluster/home/ss540294/static-dynamic-interop/benchmarks/TeaLeaf/TeaLeaf.benchmarks/000001/000006_compile_tsan-cover/work/compile_cover/contract_messages.json
+Using specified JSON file: /rwthfs/rz/cluster/home/ss540294/static-dynamic-interop/benchmarks/TeaLeaf/TeaLeaf.benchmarks/000001/000006_compile_tsan-cover/work/compile_cover/contract_messages.json
+Using specified JSON file: /rwthfs/rz/cluster/home/ss540294/static-dynamic-interop/benchmarks/TeaLeaf/TeaLeaf.benchmarks/000001/000006_compile_tsan-cover/work/compile_cover/contract_messages.json
+Using specified JSON file: /rwthfs/rz/cluster/home/ss540294/static-dynamic-interop/benchmarks/TeaLeaf/TeaLeaf.benchmarks/000001/000006_compile_tsan-cover/work/compile_cover/contract_messages.json
+Using specified JSON file: /rwthfs/rz/cluster/home/ss540294/static-dynamic-interop/benchmarks/TeaLeaf/TeaLeaf.benchmarks/000001/000006_compile_tsan-cover/work/compile_cover/contract_messages.json
+Using specified JSON file: /rwthfs/rz/cluster/home/ss540294/static-dynamic-interop/benchmarks/TeaLeaf/TeaLeaf.benchmarks/000001/000006_compile_tsan-cover/work/compile_cover/contract_messages.json
+Using specified JSON file: /rwthfs/rz/cluster/home/ss540294/static-dynamic-interop/benchmarks/TeaLeaf/TeaLeaf.benchmarks/000001/000006_compile_tsan-cover/work/compile_cover/contract_messages.json
+Using specified JSON file: /rwthfs/rz/cluster/home/ss540294/static-dynamic-interop/benchmarks/TeaLeaf/TeaLeaf.benchmarks/000001/000006_compile_tsan-cover/work/compile_cover/contract_messages.json
+Using specified JSON file: /rwthfs/rz/cluster/home/ss540294/static-dynamic-interop/benchmarks/TeaLeaf/TeaLeaf.benchmarks/000001/000006_compile_tsan-cover/work/compile_cover/contract_messages.json
+Using specified JSON file: /rwthfs/rz/cluster/home/ss540294/static-dynamic-interop/benchmarks/TeaLeaf/TeaLeaf.benchmarks/000001/000006_compile_tsan-cover/work/compile_cover/contract_messages.json
+Using specified JSON file: /rwthfs/rz/cluster/home/ss540294/static-dynamic-interop/benchmarks/TeaLeaf/TeaLeaf.benchmarks/000001/000006_compile_tsan-cover/work/compile_cover/contract_messages.json
+Using specified JSON file: /rwthfs/rz/cluster/home/ss540294/static-dynamic-interop/benchmarks/TeaLeaf/TeaLeaf.benchmarks/000001/000006_compile_tsan-cover/work/compile_cover/contract_messages.json
+Using specified JSON file: /rwthfs/rz/cluster/home/ss540294/static-dynamic-interop/benchmarks/TeaLeaf/TeaLeaf.benchmarks/000001/000006_compile_tsan-cover/work/compile_cover/contract_messages.json
+Using specified JSON file: /rwthfs/rz/cluster/home/ss540294/static-dynamic-interop/benchmarks/TeaLeaf/TeaLeaf.benchmarks/000001/000006_compile_tsan-cover/work/compile_cover/contract_messages.json
+Using specified JSON file: /rwthfs/rz/cluster/home/ss540294/static-dynamic-interop/benchmarks/TeaLeaf/TeaLeaf.benchmarks/000001/000006_compile_tsan-cover/work/compile_cover/contract_messages.json
+Using specified JSON file: /rwthfs/rz/cluster/home/ss540294/static-dynamic-interop/benchmarks/TeaLeaf/TeaLeaf.benchmarks/000001/000006_compile_tsan-cover/work/compile_cover/contract_messages.json
+Using specified JSON file: /rwthfs/rz/cluster/home/ss540294/static-dynamic-interop/benchmarks/TeaLeaf/TeaLeaf.benchmarks/000001/000006_compile_tsan-cover/work/compile_cover/contract_messages.json
+Using specified JSON file: /rwthfs/rz/cluster/home/ss540294/static-dynamic-interop/benchmarks/TeaLeaf/TeaLeaf.benchmarks/000001/000006_compile_tsan-cover/work/compile_cover/contract_messages.json
+Using specified JSON file: /rwthfs/rz/cluster/home/ss540294/static-dynamic-interop/benchmarks/TeaLeaf/TeaLeaf.benchmarks/000001/000006_compile_tsan-cover/work/compile_cover/contract_messages.json
+Using specified JSON file: /rwthfs/rz/cluster/home/ss540294/static-dynamic-interop/benchmarks/TeaLeaf/TeaLeaf.benchmarks/000001/000006_compile_tsan-cover/work/compile_cover/contract_messages.json
+Using specified JSON file: /rwthfs/rz/cluster/home/ss540294/static-dynamic-interop/benchmarks/TeaLeaf/TeaLeaf.benchmarks/000001/000006_compile_tsan-cover/work/compile_cover/contract_messages.json
+Using specified JSON file: /rwthfs/rz/cluster/home/ss540294/static-dynamic-interop/benchmarks/TeaLeaf/TeaLeaf.benchmarks/000001/000006_compile_tsan-cover/work/compile_cover/contract_messages.json
+Using specified JSON file: /rwthfs/rz/cluster/home/ss540294/static-dynamic-interop/benchmarks/TeaLeaf/TeaLeaf.benchmarks/000001/000006_compile_tsan-cover/work/compile_cover/contract_messages.json
+Using specified JSON file: /rwthfs/rz/cluster/home/ss540294/static-dynamic-interop/benchmarks/TeaLeaf/TeaLeaf.benchmarks/000001/000006_compile_tsan-cover/work/compile_cover/contract_messages.json
+Using specified JSON file: /rwthfs/rz/cluster/home/ss540294/static-dynamic-interop/benchmarks/TeaLeaf/TeaLeaf.benchmarks/000001/000006_compile_tsan-cover/work/compile_cover/contract_messages.json
+Using specified JSON file: /rwthfs/rz/cluster/home/ss540294/static-dynamic-interop/benchmarks/TeaLeaf/TeaLeaf.benchmarks/000001/000006_compile_tsan-cover/work/compile_cover/contract_messages.json
+Using specified JSON file: /rwthfs/rz/cluster/home/ss540294/static-dynamic-interop/benchmarks/TeaLeaf/TeaLeaf.benchmarks/000001/000006_compile_tsan-cover/work/compile_cover/contract_messages.json
+Using specified JSON file: /rwthfs/rz/cluster/home/ss540294/static-dynamic-interop/benchmarks/TeaLeaf/TeaLeaf.benchmarks/000001/000006_compile_tsan-cover/work/compile_cover/contract_messages.json
+Using specified JSON file: /rwthfs/rz/cluster/home/ss540294/static-dynamic-interop/benchmarks/TeaLeaf/TeaLeaf.benchmarks/000001/000006_compile_tsan-cover/work/compile_cover/contract_messages.json
+Using specified JSON file: /rwthfs/rz/cluster/home/ss540294/static-dynamic-interop/benchmarks/TeaLeaf/TeaLeaf.benchmarks/000001/000006_compile_tsan-cover/work/compile_cover/contract_messages.json
+Using specified JSON file: /rwthfs/rz/cluster/home/ss540294/static-dynamic-interop/benchmarks/TeaLeaf/TeaLeaf.benchmarks/000001/000006_compile_tsan-cover/work/compile_cover/contract_messages.json
+Using specified JSON file: /rwthfs/rz/cluster/home/ss540294/static-dynamic-interop/benchmarks/TeaLeaf/TeaLeaf.benchmarks/000001/000006_compile_tsan-cover/work/compile_cover/contract_messages.json
+Using specified JSON file: /rwthfs/rz/cluster/home/ss540294/static-dynamic-interop/benchmarks/TeaLeaf/TeaLeaf.benchmarks/000001/000006_compile_tsan-cover/work/compile_cover/contract_messages.json
+No debug information, assuming irrelevant:   %25 = load i8, ptr %18, align 1
+No debug information, assuming irrelevant:   %31 = load i8, ptr %30, align 1
+No debug information, assuming irrelevant:   %37 = load i8, ptr %36, align 1
+No debug information, assuming irrelevant:   %48 = load i8, ptr %47, align 1
+No debug information, assuming irrelevant:   %54 = load i8, ptr %53, align 1
+No debug information, assuming irrelevant:   %60 = load i8, ptr %59, align 1
+No debug information, assuming irrelevant:   %81 = load i8, ptr %80, align 1
+No debug information, assuming irrelevant:   %87 = load i8, ptr %86, align 1
+No debug information, assuming irrelevant:   %101 = load i8, ptr %100, align 1
+No debug information, assuming irrelevant:   %107 = load i8, ptr %106, align 1
+No debug information, assuming irrelevant:   %141 = load i8, ptr %140, align 1
+No debug information, assuming irrelevant:   %147 = load i8, ptr %146, align 1
+No debug information, assuming irrelevant:   %167 = load i8, ptr %166, align 1
+No debug information, assuming irrelevant:   %173 = load i8, ptr %172, align 1
+No debug information, assuming irrelevant:   %190 = load i8, ptr %189, align 1
+No debug information, assuming irrelevant:   %196 = load i8, ptr %195, align 1
+No debug information, assuming irrelevant:   %207 = load i8, ptr %206, align 1
+No debug information, assuming irrelevant:   %213 = load i8, ptr %212, align 1
+No debug information, assuming irrelevant:   %230 = load i8, ptr %229, align 1
+No debug information, assuming irrelevant:   %236 = load i8, ptr %235, align 1
+No debug information, assuming irrelevant:   %256 = load i8, ptr %255, align 1
+No debug information, assuming irrelevant:   %262 = load i8, ptr %261, align 1
+Using specified JSON file: /rwthfs/rz/cluster/home/ss540294/static-dynamic-interop/benchmarks/TeaLeaf/TeaLeaf.benchmarks/000001/000006_compile_tsan-cover/work/compile_cover/contract_messages.json
+No debug information, assuming irrelevant:   %94 = load i32, ptr %93, align 8, !tbaa !3563
+No debug information, assuming irrelevant:   %99 = load i32, ptr %98, align 4, !tbaa !3567
+No debug information, assuming irrelevant:   %97 = load ptr, ptr %6, align 8, !tbaa !3437
+Using specified JSON file: /rwthfs/rz/cluster/home/ss540294/static-dynamic-interop/benchmarks/TeaLeaf/TeaLeaf.benchmarks/000001/000006_compile_tsan-cover/work/compile_cover/contract_messages.json
+No debug information, assuming irrelevant:   store ptr %1, ptr %4, align 8, !tbaa !3340, !DIAssignID !3342
+No debug information, assuming irrelevant:   store i32 %0, ptr %3, align 4, !tbaa !3335, !DIAssignID !3339
+Using specified JSON file: /rwthfs/rz/cluster/home/ss540294/static-dynamic-interop/benchmarks/TeaLeaf/TeaLeaf.benchmarks/000001/000006_compile_tsan-cover/work/compile_cover/contract_messages.json
+Using specified JSON file: /rwthfs/rz/cluster/home/ss540294/static-dynamic-interop/benchmarks/TeaLeaf/TeaLeaf.benchmarks/000001/000006_compile_tsan-cover/work/compile_cover/contract_messages.json
+Using specified JSON file: /rwthfs/rz/cluster/home/ss540294/static-dynamic-interop/benchmarks/TeaLeaf/TeaLeaf.benchmarks/000001/000006_compile_tsan-cover/work/compile_cover/contract_messages.json
+Using specified JSON file: /rwthfs/rz/cluster/home/ss540294/static-dynamic-interop/benchmarks/TeaLeaf/TeaLeaf.benchmarks/000001/000006_compile_tsan-cover/work/compile_cover/contract_messages.json
+Using specified JSON file: /rwthfs/rz/cluster/home/ss540294/static-dynamic-interop/benchmarks/TeaLeaf/TeaLeaf.benchmarks/000001/000006_compile_tsan-cover/work/compile_cover/contract_messages.json
+Using specified JSON file: /rwthfs/rz/cluster/home/ss540294/static-dynamic-interop/benchmarks/TeaLeaf/TeaLeaf.benchmarks/000001/000006_compile_tsan-cover/work/compile_cover/contract_messages.json
+Using specified JSON file: /rwthfs/rz/cluster/home/ss540294/static-dynamic-interop/benchmarks/TeaLeaf/TeaLeaf.benchmarks/000001/000006_compile_tsan-cover/work/compile_cover/contract_messages.json
+Using specified JSON file: /rwthfs/rz/cluster/home/ss540294/static-dynamic-interop/benchmarks/TeaLeaf/TeaLeaf.benchmarks/000001/000006_compile_tsan-cover/work/compile_cover/contract_messages.json
+Using specified JSON file: /rwthfs/rz/cluster/home/ss540294/static-dynamic-interop/benchmarks/TeaLeaf/TeaLeaf.benchmarks/000001/000006_compile_tsan-cover/work/compile_cover/contract_messages.json
+Using specified JSON file: /rwthfs/rz/cluster/home/ss540294/static-dynamic-interop/benchmarks/TeaLeaf/TeaLeaf.benchmarks/000001/000006_compile_tsan-cover/work/compile_cover/contract_messages.json
+Using specified JSON file: /rwthfs/rz/cluster/home/ss540294/static-dynamic-interop/benchmarks/TeaLeaf/TeaLeaf.benchmarks/000001/000006_compile_tsan-cover/work/compile_cover/contract_messages.json
+Using specified JSON file: /rwthfs/rz/cluster/home/ss540294/static-dynamic-interop/benchmarks/TeaLeaf/TeaLeaf.benchmarks/000001/000006_compile_tsan-cover/work/compile_cover/contract_messages.json
+Using specified JSON file: /rwthfs/rz/cluster/home/ss540294/static-dynamic-interop/benchmarks/TeaLeaf/TeaLeaf.benchmarks/000001/000006_compile_tsan-cover/work/compile_cover/contract_messages.json
+Using specified JSON file: /rwthfs/rz/cluster/home/ss540294/static-dynamic-interop/benchmarks/TeaLeaf/TeaLeaf.benchmarks/000001/000006_compile_tsan-cover/work/compile_cover/contract_messages.json
+Using specified JSON file: /rwthfs/rz/cluster/home/ss540294/static-dynamic-interop/benchmarks/TeaLeaf/TeaLeaf.benchmarks/000001/000006_compile_tsan-cover/work/compile_cover/contract_messages.json
+Using specified JSON file: /rwthfs/rz/cluster/home/ss540294/static-dynamic-interop/benchmarks/TeaLeaf/TeaLeaf.benchmarks/000001/000006_compile_tsan-cover/work/compile_cover/contract_messages.json
+Using specified JSON file: /rwthfs/rz/cluster/home/ss540294/static-dynamic-interop/benchmarks/TeaLeaf/TeaLeaf.benchmarks/000001/000006_compile_tsan-cover/work/compile_cover/contract_messages.json
+Using specified JSON file: /rwthfs/rz/cluster/home/ss540294/static-dynamic-interop/benchmarks/TeaLeaf/TeaLeaf.benchmarks/000001/000006_compile_tsan-cover/work/compile_cover/contract_messages.json
+Using specified JSON file: /rwthfs/rz/cluster/home/ss540294/static-dynamic-interop/benchmarks/TeaLeaf/TeaLeaf.benchmarks/000001/000006_compile_tsan-cover/work/compile_cover/contract_messages.json
+No debug information, assuming irrelevant:   %6 = load double, ptr %1, align 8, !tbaa !3342
+Using specified JSON file: /rwthfs/rz/cluster/home/ss540294/static-dynamic-interop/benchmarks/TeaLeaf/TeaLeaf.benchmarks/000001/000006_compile_tsan-cover/work/compile_cover/contract_messages.json
+Using specified JSON file: /rwthfs/rz/cluster/home/ss540294/static-dynamic-interop/benchmarks/TeaLeaf/TeaLeaf.benchmarks/000001/000006_compile_tsan-cover/work/compile_cover/contract_messages.json
+Using specified JSON file: /rwthfs/rz/cluster/home/ss540294/static-dynamic-interop/benchmarks/TeaLeaf/TeaLeaf.benchmarks/000001/000006_compile_tsan-cover/work/compile_cover/contract_messages.json
+Using specified JSON file: /rwthfs/rz/cluster/home/ss540294/static-dynamic-interop/benchmarks/TeaLeaf/TeaLeaf.benchmarks/000001/000006_compile_tsan-cover/work/compile_cover/contract_messages.json
+Using specified JSON file: /rwthfs/rz/cluster/home/ss540294/static-dynamic-interop/benchmarks/TeaLeaf/TeaLeaf.benchmarks/000001/000006_compile_tsan-cover/work/compile_cover/contract_messages.json
+No debug information, assuming irrelevant:   %7 = load i32, ptr %6, align 8, !tbaa !3342
+Using specified JSON file: /rwthfs/rz/cluster/home/ss540294/static-dynamic-interop/benchmarks/TeaLeaf/TeaLeaf.benchmarks/000001/000006_compile_tsan-cover/work/compile_cover/contract_messages.json
+Using specified JSON file: /rwthfs/rz/cluster/home/ss540294/static-dynamic-interop/benchmarks/TeaLeaf/TeaLeaf.benchmarks/000001/000006_compile_tsan-cover/work/compile_cover/contract_messages.json
+Using specified JSON file: /rwthfs/rz/cluster/home/ss540294/static-dynamic-interop/benchmarks/TeaLeaf/TeaLeaf.benchmarks/000001/000006_compile_tsan-cover/work/compile_cover/contract_messages.json
+No debug information, assuming irrelevant:   %4 = load i32, ptr %3, align 8, !tbaa !3336
+Using specified JSON file: /rwthfs/rz/cluster/home/ss540294/static-dynamic-interop/benchmarks/TeaLeaf/TeaLeaf.benchmarks/000001/000006_compile_tsan-cover/work/compile_cover/contract_messages.json
+Using specified JSON file: /rwthfs/rz/cluster/home/ss540294/static-dynamic-interop/benchmarks/TeaLeaf/TeaLeaf.benchmarks/000001/000006_compile_tsan-cover/work/compile_cover/contract_messages.json
+No debug information, assuming irrelevant:   %3 = load ptr, ptr %2, align 8, !tbaa !3336
+Using specified JSON file: /rwthfs/rz/cluster/home/ss540294/static-dynamic-interop/benchmarks/TeaLeaf/TeaLeaf.benchmarks/000001/000006_compile_tsan-cover/work/compile_cover/contract_messages.json
+No debug information, assuming irrelevant:   %3 = load ptr, ptr %2, align 8, !tbaa !3336
+Using specified JSON file: /rwthfs/rz/cluster/home/ss540294/static-dynamic-interop/benchmarks/TeaLeaf/TeaLeaf.benchmarks/000001/000006_compile_tsan-cover/work/compile_cover/contract_messages.json
+Using specified JSON file: /rwthfs/rz/cluster/home/ss540294/static-dynamic-interop/benchmarks/TeaLeaf/TeaLeaf.benchmarks/000001/000006_compile_tsan-cover/work/compile_cover/contract_messages.json
+Using specified JSON file: /rwthfs/rz/cluster/home/ss540294/static-dynamic-interop/benchmarks/TeaLeaf/TeaLeaf.benchmarks/000001/000006_compile_tsan-cover/work/compile_cover/contract_messages.json
+Using specified JSON file: /rwthfs/rz/cluster/home/ss540294/static-dynamic-interop/benchmarks/TeaLeaf/TeaLeaf.benchmarks/000001/000006_compile_tsan-cover/work/compile_cover/contract_messages.json
+Using specified JSON file: /rwthfs/rz/cluster/home/ss540294/static-dynamic-interop/benchmarks/TeaLeaf/TeaLeaf.benchmarks/000001/000006_compile_tsan-cover/work/compile_cover/contract_messages.json
+Using specified JSON file: /rwthfs/rz/cluster/home/ss540294/static-dynamic-interop/benchmarks/TeaLeaf/TeaLeaf.benchmarks/000001/000006_compile_tsan-cover/work/compile_cover/contract_messages.json
+Using specified JSON file: /rwthfs/rz/cluster/home/ss540294/static-dynamic-interop/benchmarks/TeaLeaf/TeaLeaf.benchmarks/000001/000006_compile_tsan-cover/work/compile_cover/contract_messages.json
+Using specified JSON file: /rwthfs/rz/cluster/home/ss540294/static-dynamic-interop/benchmarks/TeaLeaf/TeaLeaf.benchmarks/000001/000006_compile_tsan-cover/work/compile_cover/contract_messages.json
+Using specified JSON file: /rwthfs/rz/cluster/home/ss540294/static-dynamic-interop/benchmarks/TeaLeaf/TeaLeaf.benchmarks/000001/000006_compile_tsan-cover/work/compile_cover/contract_messages.json
+Using specified JSON file: /rwthfs/rz/cluster/home/ss540294/static-dynamic-interop/benchmarks/TeaLeaf/TeaLeaf.benchmarks/000001/000006_compile_tsan-cover/work/compile_cover/contract_messages.json
+Using specified JSON file: /rwthfs/rz/cluster/home/ss540294/static-dynamic-interop/benchmarks/TeaLeaf/TeaLeaf.benchmarks/000001/000006_compile_tsan-cover/work/compile_cover/contract_messages.json
+Using specified JSON file: /rwthfs/rz/cluster/home/ss540294/static-dynamic-interop/benchmarks/TeaLeaf/TeaLeaf.benchmarks/000001/000006_compile_tsan-cover/work/compile_cover/contract_messages.json
+Using specified JSON file: /rwthfs/rz/cluster/home/ss540294/static-dynamic-interop/benchmarks/TeaLeaf/TeaLeaf.benchmarks/000001/000006_compile_tsan-cover/work/compile_cover/contract_messages.json
+Using specified JSON file: /rwthfs/rz/cluster/home/ss540294/static-dynamic-interop/benchmarks/TeaLeaf/TeaLeaf.benchmarks/000001/000006_compile_tsan-cover/work/compile_cover/contract_messages.json
+Using specified JSON file: /rwthfs/rz/cluster/home/ss540294/static-dynamic-interop/benchmarks/TeaLeaf/TeaLeaf.benchmarks/000001/000006_compile_tsan-cover/work/compile_cover/contract_messages.json
+Using specified JSON file: /rwthfs/rz/cluster/home/ss540294/static-dynamic-interop/benchmarks/TeaLeaf/TeaLeaf.benchmarks/000001/000006_compile_tsan-cover/work/compile_cover/contract_messages.json
+Using specified JSON file: /rwthfs/rz/cluster/home/ss540294/static-dynamic-interop/benchmarks/TeaLeaf/TeaLeaf.benchmarks/000001/000006_compile_tsan-cover/work/compile_cover/contract_messages.json
+Using specified JSON file: /rwthfs/rz/cluster/home/ss540294/static-dynamic-interop/benchmarks/TeaLeaf/TeaLeaf.benchmarks/000001/000006_compile_tsan-cover/work/compile_cover/contract_messages.json
+Using specified JSON file: /rwthfs/rz/cluster/home/ss540294/static-dynamic-interop/benchmarks/TeaLeaf/TeaLeaf.benchmarks/000001/000006_compile_tsan-cover/work/compile_cover/contract_messages.json
+No debug information, assuming irrelevant:   %6 = load i32, ptr %5, align 8, !tbaa !3368
+No debug information, assuming irrelevant:   %37 = load ptr, ptr %36, align 8, !tbaa !3404
+No debug information, assuming irrelevant:   %35 = load ptr, ptr %34, align 8, !tbaa !3403
+Using specified JSON file: /rwthfs/rz/cluster/home/ss540294/static-dynamic-interop/benchmarks/TeaLeaf/TeaLeaf.benchmarks/000001/000006_compile_tsan-cover/work/compile_cover/contract_messages.json
+Using specified JSON file: /rwthfs/rz/cluster/home/ss540294/static-dynamic-interop/benchmarks/TeaLeaf/TeaLeaf.benchmarks/000001/000006_compile_tsan-cover/work/compile_cover/contract_messages.json
+Using specified JSON file: /rwthfs/rz/cluster/home/ss540294/static-dynamic-interop/benchmarks/TeaLeaf/TeaLeaf.benchmarks/000001/000006_compile_tsan-cover/work/compile_cover/contract_messages.json
+No debug information, assuming irrelevant:   %5 = load i32, ptr %4, align 8, !tbaa !3350
+No debug information, assuming irrelevant:   %34 = load ptr, ptr %33, align 8, !tbaa !3387
+No debug information, assuming irrelevant:   %32 = load ptr, ptr %31, align 8, !tbaa !3386
+Using specified JSON file: /rwthfs/rz/cluster/home/ss540294/static-dynamic-interop/benchmarks/TeaLeaf/TeaLeaf.benchmarks/000001/000006_compile_tsan-cover/work/compile_cover/contract_messages.json
+Using specified JSON file: /rwthfs/rz/cluster/home/ss540294/static-dynamic-interop/benchmarks/TeaLeaf/TeaLeaf.benchmarks/000001/000006_compile_tsan-cover/work/compile_cover/contract_messages.json
+Using specified JSON file: /rwthfs/rz/cluster/home/ss540294/static-dynamic-interop/benchmarks/TeaLeaf/TeaLeaf.benchmarks/000001/000006_compile_tsan-cover/work/compile_cover/contract_messages.json
+Using specified JSON file: /rwthfs/rz/cluster/home/ss540294/static-dynamic-interop/benchmarks/TeaLeaf/TeaLeaf.benchmarks/000001/000006_compile_tsan-cover/work/compile_cover/contract_messages.json
+Using specified JSON file: /rwthfs/rz/cluster/home/ss540294/static-dynamic-interop/benchmarks/TeaLeaf/TeaLeaf.benchmarks/000001/000006_compile_tsan-cover/work/compile_cover/contract_messages.json
+Using specified JSON file: /rwthfs/rz/cluster/home/ss540294/static-dynamic-interop/benchmarks/TeaLeaf/TeaLeaf.benchmarks/000001/000006_compile_tsan-cover/work/compile_cover/contract_messages.json
+Using specified JSON file: /rwthfs/rz/cluster/home/ss540294/static-dynamic-interop/benchmarks/TeaLeaf/TeaLeaf.benchmarks/000001/000006_compile_tsan-cover/work/compile_cover/contract_messages.json
+Using specified JSON file: /rwthfs/rz/cluster/home/ss540294/static-dynamic-interop/benchmarks/TeaLeaf/TeaLeaf.benchmarks/000001/000006_compile_tsan-cover/work/compile_cover/contract_messages.json
+No debug information, assuming irrelevant:   %158 = load ptr, ptr %148, align 8, !tbaa !3448
+No debug information, assuming irrelevant:   %492 = load ptr, ptr %482, align 8, !tbaa !3448
+Using specified JSON file: /rwthfs/rz/cluster/home/ss540294/static-dynamic-interop/benchmarks/TeaLeaf/TeaLeaf.benchmarks/000001/000006_compile_tsan-cover/work/compile_cover/contract_messages.json
+Using specified JSON file: /rwthfs/rz/cluster/home/ss540294/static-dynamic-interop/benchmarks/TeaLeaf/TeaLeaf.benchmarks/000001/000006_compile_tsan-cover/work/compile_cover/contract_messages.json
+No debug information, assuming irrelevant:   %19 = load i8, ptr %18, align 2, !range !3391
+Using specified JSON file: /rwthfs/rz/cluster/home/ss540294/static-dynamic-interop/benchmarks/TeaLeaf/TeaLeaf.benchmarks/000001/000006_compile_tsan-cover/work/compile_cover/contract_messages.json
+Using specified JSON file: /rwthfs/rz/cluster/home/ss540294/static-dynamic-interop/benchmarks/TeaLeaf/TeaLeaf.benchmarks/000001/000006_compile_tsan-cover/work/compile_cover/contract_messages.json
+Using specified JSON file: /rwthfs/rz/cluster/home/ss540294/static-dynamic-interop/benchmarks/TeaLeaf/TeaLeaf.benchmarks/000001/000006_compile_tsan-cover/work/compile_cover/contract_messages.json
+Using specified JSON file: /rwthfs/rz/cluster/home/ss540294/static-dynamic-interop/benchmarks/TeaLeaf/TeaLeaf.benchmarks/000001/000006_compile_tsan-cover/work/compile_cover/contract_messages.json
+Using specified JSON file: /rwthfs/rz/cluster/home/ss540294/static-dynamic-interop/benchmarks/TeaLeaf/TeaLeaf.benchmarks/000001/000006_compile_tsan-cover/work/compile_cover/contract_messages.json
+Using specified JSON file: /rwthfs/rz/cluster/home/ss540294/static-dynamic-interop/benchmarks/TeaLeaf/TeaLeaf.benchmarks/000001/000006_compile_tsan-cover/work/compile_cover/contract_messages.json
+Using specified JSON file: /rwthfs/rz/cluster/home/ss540294/static-dynamic-interop/benchmarks/TeaLeaf/TeaLeaf.benchmarks/000001/000006_compile_tsan-cover/work/compile_cover/contract_messages.json

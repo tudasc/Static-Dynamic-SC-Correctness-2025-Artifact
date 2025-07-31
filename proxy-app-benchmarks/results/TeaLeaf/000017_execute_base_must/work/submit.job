@@ -1,0 +1,55 @@
+#!/bin/bash -x
+#SBATCH --job-name="TeaLeaf_must_base_17"
+#SBATCH --mail-user=
+#SBATCH --mail-type=NONE
+#SBATCH --nodes=3
+#SBATCH --ntasks=97
+#SBATCH --cpus-per-task=2
+#SBATCH --time=00:30:00
+#SBATCH --output=job.out
+#SBATCH --error=job.err
+#SBATCH --partition=c23ms
+#SBATCH --gres=NONE
+#SBATCH --account=rwth1269
+#SBATCH --exclusive
+#SBATCH --switches=1
+#SBATCH --hwctr=likwid
+#SBATCH --ntasks-per-node=48
+${perftool_job_config}
+
+export MUST_DISABLE_TSAN_ONREPORT="1"
+export OMP_NUM_THREADS="1"
+export time_output_file="/rwthfs/rz/cluster/home/ss540294/static-dynamic-interop/benchmarks/TeaLeaf/TeaLeaf.benchmarks/000001/000003_compile_cover/work/time.out"
+export TSAN_OPTIONS="$TSAN_OPTIONS ignore_noninstrumented_modules=1 exitcode=0 log_path=stdout detect_deadlocks=0"
+
+
+echo "nodelist=$SLURM_JOB_NODELIST"     
+          SOURCE_DIR=compile/copy_source;
+          LAYOUT_DIR=$PWD;
+          COMPILE_DIR=compile;
+          module use /home/rwth1269/modules/; module purge; for path in /home/rwth1269/modules; do module use $path; done; for modulename in  gompi/2024a ${mpi_name}/${mpi_version} LLVM/19 CMake/3.29.3 ${must_prerequisite_modules}; do module load $modulename; done;
+          for item in  OMPI_CC=clang OMPI_CXX=clang++ CC=clang CXX=clang++ PMIX_MCA_gds=hash OMPI_MCA_memory=^patcher ${openmp_export} ${parcoach_export}; do export "$item"; done;
+
+JUBE_ERR_CODE=$?
+if [ $JUBE_ERR_CODE -ne 0 ]; then
+    touch error
+    exit $JUBE_ERR_CODE
+fi
+
+ /rwthfs/rz/cluster/home/ss540294/static-dynamic-interop/benchmarks/TeaLeaf/../../dep/MUST/459c14f6a5f98473cda82f9dadbd1370/install/bin/mustrun  --must:output stdout --must:mpiexec srun --must:layout $PWD/layout.xml  --must:no-user-cache --must:temp /rwthfs/rz/cluster/home/ss540294/static-dynamic-interop/benchmarks/TeaLeaf/TeaLeaf.benchmarks/000001/000017_execute_base_must/work/must_temp -- compile/serial-tealeaf ; echo "Total Wallclock: $(grep 'Wallclock:' job.out | tail -n 1 | cut -d: -f2)"
+
+JUBE_ERR_CODE=$?
+if [ $JUBE_ERR_CODE -ne 0 ]; then
+    touch error
+    exit $JUBE_ERR_CODE
+fi
+
+printf "EXECUTION VERIFICATION CHECK: ";if grep -q "\[MUST-REPORT\] Error.*race" job.out || grep -q "^srun: error:" job.err; then echo "FAILURE"; else echo "SUCCESS"; fi
+
+JUBE_ERR_CODE=$?
+if [ $JUBE_ERR_CODE -ne 0 ]; then
+    touch error
+    exit $JUBE_ERR_CODE
+fi
+
+touch ready

@@ -1,0 +1,36 @@
+[WARN] OpenMPI's default binding is set to OFF, you can override this
+[INFO] Module gompi/2024a loaded.
+Lmod has detected the following error: The following module(s) are unknown: ""
+
+Please check the spelling or version number. Also try "module spider ..."
+It is also possible your cache file is out-of-date; it may help to try:
+  $ module --ignore_cache load ""
+
+Also make sure that all modulefiles written in TCL start with the string #%Module
+
+
+
+[INFO] Module LLVM/19.1.7 loaded.
+[INFO] Module CMake/3.29.3 loaded.
+In file included from stencil.c:71:
+../../include/par-res-kern_general.h:190:12: warning: implicit conversion from 'int' to 'float' changes value from 2147483647 to 2147483648 [-Wimplicit-const-int-float-conversion]
+  190 |   cost_opt=INT_MAX;
+      |           ~^~~~~~~
+/cvmfs/software.hpc.rwth.de/Linux/RH9/x86_64/intel/sapphirerapids/software/LLVM/19.1.7-GCCcore-13.3.0/lib/clang/19/include/limits.h:50:19: note: expanded from macro 'INT_MAX'
+   50 | #define INT_MAX   __INT_MAX__
+      |                   ^~~~~~~~~~~
+<built-in>:60:21: note: expanded from macro '__INT_MAX__'
+   60 | #define __INT_MAX__ 2147483647
+      |                     ^~~~~~~~~~
+1 warning generated.
+In file included from ../../common/MPI_bail_out.c:50:
+../../include/par-res-kern_general.h:190:12: warning: implicit conversion from 'int' to 'float' changes value from 2147483647 to 2147483648 [-Wimplicit-const-int-float-conversion]
+  190 |   cost_opt=INT_MAX;
+      |           ~^~~~~~~
+/cvmfs/software.hpc.rwth.de/Linux/RH9/x86_64/intel/sapphirerapids/software/LLVM/19.1.7-GCCcore-13.3.0/lib/clang/19/include/limits.h:50:19: note: expanded from macro 'INT_MAX'
+   50 | #define INT_MAX   __INT_MAX__
+      |                   ^~~~~~~~~~~
+<built-in>:60:21: note: expanded from macro '__INT_MAX__'
+   60 | #define __INT_MAX__ 2147483647
+      |                     ^~~~~~~~~~
+1 warning generated.

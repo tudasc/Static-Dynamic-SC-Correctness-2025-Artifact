@@ -1,0 +1,40 @@
+nodelist=n23m0182
+==46426==ERROR: ThreadSanitizer: SEGV on unknown address 0x65620000b55a (pc 0x56382d4b487c bp 0x000000000001 sp 0x7fff81c6e4f8 T46426)
+==46426==The signal is caused by a READ memory access.
+    #0 void __tsan::MemoryAccessRangeT<false>(__tsan::ThreadState*, unsigned long, unsigned long, unsigned long) /dev/shm/eb.ss540294.2025-06-15T14-28-14/14_28_19/LLVM/19.1.7/GCCcore-13.3.0/llvm-project-19.1.7.src/compiler-rt/lib/tsan/rtl/tsan_rtl_access.cpp:707:19 (serial-tealeaf.tsan+0xe487c)
+    #1 MemoryAccessRange /dev/shm/eb.ss540294.2025-06-15T14-28-14/14_28_19/LLVM/19.1.7/GCCcore-13.3.0/llvm-project-19.1.7.src/compiler-rt/lib/tsan/rtl/tsan_rtl.h:541:5 (serial-tealeaf.tsan+0xae555)
+    #2 write_iovec /dev/shm/eb.ss540294.2025-06-15T14-28-14/14_28_19/LLVM/19.1.7/GCCcore-13.3.0/llvm-project-19.1.7.src/compiler-rt/lib/tsan/rtl/../../sanitizer_common/sanitizer_common_interceptors.inc:953:5 (serial-tealeaf.tsan+0xae555)
+    #3 process_vm_readv /dev/shm/eb.ss540294.2025-06-15T14-28-14/14_28_19/LLVM/19.1.7/GCCcore-13.3.0/llvm-project-19.1.7.src/compiler-rt/lib/tsan/rtl/../../sanitizer_common/sanitizer_common_interceptors.inc:6673:5 (serial-tealeaf.tsan+0xae555)
+    #4 uct_cma_iface_is_reachable_v2 /dev/shm/easybuild/easybuild.2024_10_30-09_39_12/UCX/1.16.0/GCCcore-13.3.0/ucx-1.16.0/src/uct/sm/scopy/cma/cma_iface.c:103:10 (libuct_cma.so.0+0x341c)
+    #5 ucp_wireup_is_reachable /dev/shm/easybuild/easybuild.2024_10_30-09_39_12/UCX/1.16.0/GCCcore-13.3.0/ucx-1.16.0/src/ucp/wireup/wireup.c:1270:13 (libucp.so.0+0x9f194)
+    #6 ucp_wireup_select_transport /dev/shm/easybuild/easybuild.2024_10_30-09_39_12/UCX/1.16.0/GCCcore-13.3.0/ucx-1.16.0/src/ucp/wireup/select.c:586:18 (libucp.so.0+0x99fd8)
+    #7 ucp_wireup_add_bw_lanes /dev/shm/easybuild/easybuild.2024_10_30-09_39_12/UCX/1.16.0/GCCcore-13.3.0/ucx-1.16.0/src/ucp/wireup/select.c:1588:22 (libucp.so.0+0x9a86a)
+    #8 ucp_wireup_add_rma_bw_lanes /dev/shm/easybuild/easybuild.2024_10_30-09_39_12/UCX/1.16.0/GCCcore-13.3.0/ucx-1.16.0/src/ucp/wireup/select.c:1866:46 (libucp.so.0+0x9af25)
+    #9 ucp_wireup_search_lanes /dev/shm/easybuild/easybuild.2024_10_30-09_39_12/UCX/1.16.0/GCCcore-13.3.0/ucx-1.16.0/src/ucp/wireup/select.c:2140:14 (libucp.so.0+0x9ba2f)
+    #10 ucp_wireup_select_lanes /dev/shm/easybuild/easybuild.2024_10_30-09_39_12/UCX/1.16.0/GCCcore-13.3.0/ucx-1.16.0/src/ucp/wireup/select.c:2400:18 (libucp.so.0+0x9c091)
+    #11 ucp_wireup_init_lanes /dev/shm/easybuild/easybuild.2024_10_30-09_39_12/UCX/1.16.0/GCCcore-13.3.0/ucx-1.16.0/src/ucp/wireup/wireup.c:1563:14 (libucp.so.0+0x9f351)
+    #12 ucp_ep_create_to_worker_addr /dev/shm/easybuild/easybuild.2024_10_30-09_39_12/UCX/1.16.0/GCCcore-13.3.0/ucx-1.16.0/src/ucp/core/ucp_ep.c:833:14 (libucp.so.0+0x35c9c)
+    #13 ucp_ep_create_api_to_worker_addr /dev/shm/easybuild/easybuild.2024_10_30-09_39_12/UCX/1.16.0/GCCcore-13.3.0/ucx-1.16.0/src/ucp/core/ucp_ep.c:1087:14 (libucp.so.0+0x364e3)
+    #14 ucp_ep_create /dev/shm/easybuild/easybuild.2024_10_30-09_39_12/UCX/1.16.0/GCCcore-13.3.0/ucx-1.16.0/src/ucp/core/ucp_ep.c:1193:18 (libucp.so.0+0x364e3)
+    #15 mca_pml_ucx_add_proc_common pml_ucx.c (libmpi.so.40+0x222c8e)
+    #16 mca_pml_ucx_add_procs <null> (libmpi.so.40+0x222ec6)
+    #17 ompi_mpi_instance_init_common instance.c (libmpi.so.40+0xa0998)
+    #18 ompi_mpi_instance_init <null> (libmpi.so.40+0xa0d12)
+    #19 ompi_mpi_init <null> (libmpi.so.40+0x94616)
+    #20 MPI_Init <null> (libmpi.so.40+0xc6aac)
+    #21 initialise_comms(int, char**) /rwthfs/rz/cluster/home/ss540294/static-dynamic-interop/benchmarks/TeaLeaf/TeaLeaf.benchmarks/000001/000005_compile_tsan/work/copy_source/driver/comms.cpp:5:48 (serial-tealeaf.tsan+0x13d2e6)
+    #22 main /rwthfs/rz/cluster/home/ss540294/static-dynamic-interop/benchmarks/TeaLeaf/TeaLeaf.benchmarks/000001/000005_compile_tsan/work/copy_source/driver/main.cpp:67:3 (serial-tealeaf.tsan+0x13c8fc)
+    #23 __libc_start_call_main <null> (libc.so.6+0x295cf) (BuildId: b5fa5a9afce174ac5751cad3fcbfacbc10158cfd)
+    #24 __libc_start_main@GLIBC_2.2.5 <null> (libc.so.6+0x2967f) (BuildId: b5fa5a9afce174ac5751cad3fcbfacbc10158cfd)
+    #25 _start <null> (serial-tealeaf.tsan+0x744b4)
+
+==46426==Register values:
+rax = 0x000056382d47e43f  rbx = 0x0000000000000010  rcx = 0x0000000000000010  rdx = 0x666f732f73646970  
+rdi = 0x00007f9e30c55800  rsi = 0x666f032f73646970  rbp = 0x0000000000000001  rsp = 0x00007fff81c6e4f8  
+ r8 = 0x0000000000000001   r9 = 0x00000fffffffffff  r10 = 0x00007fff81c6e570  r11 = 0x0000000000000297  
+r12 = 0x00007f9e30c55800  r13 = 0x0000000000000010  r14 = 0x0000000000000001  r15 = 0x00007fff81c6e578  
+ThreadSanitizer can not provide additional info.
+SUMMARY: ThreadSanitizer: SEGV /dev/shm/easybuild/easybuild.2024_10_30-09_39_12/UCX/1.16.0/GCCcore-13.3.0/ucx-1.16.0/src/uct/sm/scopy/cma/cma_iface.c:103:10 in uct_cma_iface_is_reachable_v2
+==46426==ABORTING
+Total Wallclock: 
+EXECUTION VERIFICATION CHECK: FAILURE

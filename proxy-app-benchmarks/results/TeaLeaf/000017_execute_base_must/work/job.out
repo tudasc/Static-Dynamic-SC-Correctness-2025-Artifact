@@ -1,0 +1,110 @@
+nodelist=r23m[0126,0132,0134]
+[MUST] Unknown environment option MUST_DISABLE_TSAN_ONREPORT=1 is ignored
+[MUST] MUST configuration ...  with given layout.xml
+[MUST] Information: overwritting old intermediate data in directory "/rwthfs/rz/cluster/home/ss540294/static-dynamic-interop/benchmarks/TeaLeaf/TeaLeaf.benchmarks/000001/000017_execute_base_must/work/must_temp"!
+[MUST] Weaver ... success
+[MUST] Weaver ... success
+[MUST] Code generation ... success
+[MUST] Build file generation ... success
+[MUST] Configuring intermediate build ... success
+[MUST] Building intermediate sources ... success
+[MUST] Installing intermediate modules ... success
+[MUST] Generating P^nMPI configuration ... success
+[MUST] Infrastructure in "/rwthfs/rz/cluster/home/ss540294/static-dynamic-interop/benchmarks/TeaLeaf/TeaLeaf.benchmarks/000001/000017_execute_base_must/work/must_temp/install" is present and used.
+[MUST] Search for linked P^nMPI ... not found ... using LD_PRELOAD to load P^nMPI ... success
+[MUST] Executing application:
+# Opening tea.out as log file.
+TeaLeaf:
+ - Ver.:     2.000
+ - Deck:     tea.in
+ - Out:      tea.out
+ - Problem:  tea.problems
+ - Solver:   CG
+ - Profiler: false
+Model:
+ - Name:      Serial
+ - Execution: Host
+MPI:
+ - Enabled:     true
+ - Total ranks: 96
+ - Header device-awareness (CUDA-awareness):  true
+ - Runtime device-awareness (CUDA-awareness): false
+ - Host-Device halo exchange staging buffer:  true
+ - X buffer elements: 292608
+ - Y buffer elements: 196608
+ - X buffer size:     24 KB
+ - Y buffer size:     16 KB
+# ---- 
+Output: |+1
+
+ Timestep 1
+ CG: 			2375 iterations
+ Wallclock: 		1.144s
+ Avg. time per cell: 	2.858770e-07
+ Error: 		9.663879e-31
+
+ Timestep 2
+ CG: 			2295 iterations
+ Wallclock: 		1.771s
+ Avg. time per cell: 	4.428013e-07
+ Error: 		9.901642e-31
+
+ Timestep 3
+ CG: 			2219 iterations
+ Wallclock: 		2.434s
+ Avg. time per cell: 	6.084722e-07
+ Error: 		9.929471e-31
+
+ Timestep 4
+ CG: 			2142 iterations
+ Wallclock: 		4.216s
+ Avg. time per cell: 	1.053932e-06
+ Error: 		9.811625e-31
+
+ Timestep 5
+ CG: 			2070 iterations
+ Wallclock: 		5.941s
+ Avg. time per cell: 	1.485305e-06
+ Error: 		9.553770e-31
+
+ Timestep 6
+ CG: 			2001 iterations
+ Wallclock: 		7.581s
+ Avg. time per cell: 	1.895232e-06
+ Error: 		9.773397e-31
+
+ Timestep 7
+ CG: 			1939 iterations
+ Wallclock: 		9.198s
+ Avg. time per cell: 	2.299564e-06
+ Error: 		9.824298e-31
+
+ Timestep 8
+ CG: 			1874 iterations
+ Wallclock: 		10.713s
+ Avg. time per cell: 	2.678146e-06
+ Error: 		9.958181e-31
+
+ Timestep 9
+ CG: 			1827 iterations
+ Wallclock: 		12.185s
+ Avg. time per cell: 	3.046316e-06
+ Error: 		9.966575e-31
+
+ Timestep 10
+ CG: 			1781 iterations
+ Wallclock: 		13.622s
+ Avg. time per cell: 	3.405498e-06
+ Error: 		9.974898e-31
+
+ Checking results...
+ Expected 9.605026999605091e+01
+ Actual   9.605027000162536e+01
+ This run PASSED (Difference is within 0.00000001%)
+Result:
+ - Problem: 2000x2000@10
+ - Outcome: PASSED
+[MUST-REPORT] MUST detected no MPI usage errors nor any suspicious behavior during this application run.
+[MUST] Execution finished.
+Total Wallclock:  		13.622s
+EXECUTION VERIFICATION CHECK: SUCCESS
