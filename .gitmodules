@@ -1,3 +1,6 @@
+[submodule "CoVer"]
+	path = CoVer
+	url = https://github.com/tudasc/CoVer
 [submodule "MUST"]
 	path = MUST
 	url = git@git-ce.rwth-aachen.de:hpc-research/correctness/MUST.git
