@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+#   PARCOACH specific settings
+-->
+<jube>
+    <parameterset name="parcoach_config_pset">
+      <parameter name="parcoach_release">Merge-non-adjacent+Flush</parameter>
+      <parameter name="parcoach_release_file">parcoach-${parcoach_release}.tar.gz</parameter>
+      <parameter name="parcoach_release_link">https://gitlab.inria.fr/parcoach/parcoach/-/archive/${parcoach_release}/${parcoach_release_file}</parameter>
+      <parameter name="build_parcoach" mode="shell">if ${force_parcoach_build} || [ ! -f "${parcoachbin_path}/parcoach" ]; then echo "1"; else echo "0"; fi</parameter>
+      <parameter name="parcoach_root">${jube_benchmark_home}/../../dep/PARCOACH/${__parcoach_hash}</parameter>
+      <parameter name="parcoach_build_folder">${parcoach_root}/build</parameter>
+      <parameter name="parcoach_install_folder" export="true" >${parcoach_root}/install</parameter>
+      <parameter name="parcoach_release_folder">${jube_benchmark_home}/../../dep/PARCOACH/</parameter>
+      <!-- path to a custom parcoach installation can be set here -->
+      <parameter name="parcoachbin_path" type="string">${parcoach_install_folder}/bin</parameter>
+      <parameter name="PARCOACHCC">${jube_benchmark_home}/../../utils/parcoach_wrapper/parcoach-cc</parameter>
+      <parameter name="PARCOACHCXX">${jube_benchmark_home}/../../utils/parcoach_wrapper/parcoach-cxx</parameter>
+      <parameter name="PARCOACHFC">${jube_benchmark_home}/../../utils/parcoach_wrapper/parcoach-fort</parameter>
+      <parameter name="parcoach_export" type="string">PATH=/${parcoachbin_path}:$PATH</parameter>
+      <parameter name="parcoach_available" type="int" mode="shell">if [[ -f "${parcoachbin_path}/parcoach" ]]; then echo "1"; else echo "0"; fi</parameter>
+      <parameter name="force_parcoach_build">false</parameter>
+      <parameter name="force_parcoach_build" tag="rebuild_parcoach|rebuild">true</parameter>
+      <!-- Use hashes to distinguish different binaries and PARCOACH builds for caching -->
+      <parameter name="__parcoach_hash" mode="shell">echo -n "${parcoach_release} ${__toolchain_module} ${__compiler_module} ${__mpi_module}" | md5sum | cut -f 1 -d " " | tr -d '\n'</parameter>
+    </parameterset>
+
+    <parameterset name="parcoach_build_pset">
+      <!-- PARCOACH build options -->
+      <parameter name="CMAKE_BUILD_TYPE">RelWithDebInfo</parameter>
+      <parameter name="MPI_C_COMPILER">mpicc</parameter>        
+      <parameter name="MPI_CXX_COMPILER">mpicxx</parameter>
+      <parameter name="ENABLE_TESTS">OFF</parameter>
+      <parameter name="parcoach_build_args">
+      -DMPI_C_COMPILER=${MPI_C_COMPILER} \
+      -DMPI_CXX_COMPILER=${MPI_CXX_COMPILER} \
+      -DCMAKE_INSTALL_PREFIX="${parcoach_install_folder}" \
+      -DPARCOACH_ENABLE_TESTS=${ENABLE_TESTS} \
+      -DCMAKE_BUILD_TYPE=${CMAKE_BUILD_TYPE}
+      </parameter>
+    </parameterset>
+
+    <parameterset name="parcoach_compile_pset">
+    </parameterset>
+
+    <parameterset name="parcoach_execute_pset">
+      <parameter name="tool_threads_per_task" type="int">1</parameter>
+    </parameterset>
+
+    <!-- Substitution -->
+    <substituteset name="parcoach_execute_sub">
+    </substituteset>
+
+     <!-- Files -->
+    <fileset name="parcoach_files">
+    </fileset>
+
+    <step name="build_parcoach" depend="build_must">
+      <use>toolchain_env_pset</use>
+      <use>module_env_pset</use>
+      <use>export_env_pset</use>
+      <use from="parcoach.xml">parcoach_config_pset</use>
+      <use from="parcoach.xml">parcoach_build_pset</use>
+
+      <do active="${build_parcoach}">
+        module purge;
+        module load GCC/11.3.0 Clang/15.0.5 OpenMPI/4.1.4;
+        rm -r -f ${parcoach_install_folder};
+        mkdir -p ${parcoach_release_folder};
+        cd ${parcoach_release_folder};
+        if [ ! -f "${parcoach_release_folder}/${parcoach_release_file}" ]; then wget ${parcoach_release_link}; fi;
+        tar xf ${parcoach_release_file};
+
+        mkdir -p ${parcoach_build_folder};
+        cd ${parcoach_build_folder};
+        CC=clang CXX=clang++ OMPI_CC=clang OMPI_CXX=clang++ cmake ${parcoach_build_args} ${parcoach_release_folder}/parcoach-${parcoach_release};
+        make -j50 install;
+        cd ${parcoach_release_folder};
+        rm -r -f ${parcoach_build_folder};
+
+        if [ ! -f "${parcoachbin_path}/parcoach" ]; then &gt;&amp;2 echo "parcoach executable does not exist at ${parcoachbin_path}"; exit 1; fi
+
+        # Restore modules
+        module purge;
+        ${load_modules};
+        ${export};
+      </do>
+    </step>
+</jube>

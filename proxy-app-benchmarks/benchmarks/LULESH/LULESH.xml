@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jube>  
+  <include-path>
+    <path>../../common</path>
+    <path>../../platform/CLAIX-23</path>
+  </include-path>
+
+  <benchmark name="LULESH" outpath="LULESH.benchmarks">
+    <!-- 
+      #Lulesh Configuration 
+    -->     
+    <parameterset name="config">
+      <parameter name="size" tag="C|(!S+!M+!L)">20</parameter> <!-- Custom size -->
+      <parameter name="size" tag="S">12</parameter> <!-- with 27 tasks: ~10s / ~1min-->
+      <parameter name="size" tag="M">20</parameter> <!-- with 27 tasks: ~57s / ~10min -->
+      <parameter name="size" tag="L">29</parameter> <!-- with 27 tasks: ~300s / ~20min -->
+    </parameterset>    
+    <!-- 
+      source directory 
+    -->  
+    <parameterset name="source"  init_with="defaults.xml">
+      <parameter name="path_to_source" type="string">${jube_benchmark_home}/LULESH/</parameter> <!-- - - - - - - - - - -  Path to the source folder       -->  
+    </parameterset> 
+    <!--
+      #Fetching system settings       
+      #Here you can add or change parameters to fit this specific benchmark
+    -->
+    <parameterset name="platform_specs_pset" init_with="system_settings.xml">  
+      <parameter name="application_tasks" type="int">27</parameter>       <!-- - - - - - - - - - - - - - - - -  tasks has to be N^3           -->
+      <parameter name="threads" type="int">1</parameter>   <!-- - - - - - - - - - - - - - - - -  Threads                       -->
+      <parameter name="taskspernode" type="int">48</parameter> <!-- - - - - - - - - - - - - - - - -  Tasks per node           -->
+      <parameter name="timelimit">01:00:00</parameter>
+      <parameter name="args_exec">-s $size</parameter>
+      <parameter name="ERROR_tasks_msg" type="string" separator="!NONE!">tasks ($application_tasks) need to be cubic (N^3), e.g., 1, 8, 27, 64, etc.</parameter>
+      <parameter name="ERROR_tasks" mode="python">
+      print(
+        '\n[\033[91m\033[1m'+'ERROR'+'\033[0m'+'] in step \033[1m${jube_step_name} (${jube_wp_id})\033[0m:\n'+
+        '        $ERROR_tasks_msg'
+        ) or 'ERR' if round($application_tasks**(1/3))**3 != $application_tasks else 'OK'
+      </parameter>
+    </parameterset>    
+    <parameterset name="execute_pset" init_with="system_settings.xml"></parameterset>  
+    <parameterset name="toolchain_env_pset" init_with="system_settings.xml">
+        <!-- <parameter name="compiler_name">clang</parameter>      - - - - - - - - - - - - - - - -  Compiler               -->
+        <!-- <parameter name="compiler_version">13.0.1</parameter>  - - - - - - - - - - - - - - - -  Compiler Version       -->
+        <!-- <parameter name="mpi_name">openmpi</parameter>         - - - - - - - - - - - - - - - -  MPI                    -->
+        <!-- <parameter name="mpi_version">2022a</parameter>        - - - - - - - - - - - - - - - -  MPI Version            -->
+    </parameterset>
+    <parameterset name="compile_pset" init_with="system_settings.xml">
+      <parameter name="executable_name">lulesh2.0</parameter> <!-- - - - - - - - - - -  Name of the executable       --> 
+      <!-- Change folder before compilation -->
+      <parameter name="compile_preparation" type="string">cd MPIRMA/${kernel_folder}</parameter> <!-- - - - - - - -  commands that have to be executed before compilation -->
+      <parameter name="compile_target" type="string">$executable_name</parameter> <!-- - - - - - - -  Makefile target for compilation -->
+      <!-- RMA is used by default -->
+      <!-- <parameter name="RMA_target" type="string" mode="python">"-DUSE_RMA=1"</parameter> -->
+      <parameter name="compile_env_vars" separator="!NONE!" mode="python" update_mode="use"> <!-- Environment variables for compilation with tsan -->
+        {"base": "",
+         "tsan": "CXX='${MUSTCXX}' CFLAGS='${compile_flags}' CXXFLAGS='${compile_flags}'",
+         "tsan-opt": "CXX='${MUSTCXX}' CFLAGS='${compile_flags}' CXXFLAGS='${compile_flags}'",
+         "tsan-cover": "CXX='${MUSTCXX}' CFLAGS='${compile_flags}' CXXFLAGS='${compile_flags}'",
+         }.get("${compile_mode}", 0)
+      </parameter> 
+    </parameterset>
+    <parameterset name="module_env_pset" init_with="system_settings.xml"></parameterset>
+    <parameterset name="mpirun_env_pset" init_with="system_settings.xml"></parameterset>
+    <parameterset name="export_env_pset" init_with="system_settings.xml"></parameterset>
+
+    <!-- CoVeR parametersets -->
+    <parameterset name="cover_config_pset" init_with="cover.xml"></parameterset>
+    <parameterset name="cover_build_pset" init_with="cover.xml"></parameterset>
+    <parameterset name="cover_compile_pset" init_with="cover.xml"></parameterset>
+    <parameterset name="cover_execute_pset" init_with="cover.xml"></parameterset>
+    <include from="cover.xml" path="fileset" />
+
+    <!-- MUST parametersets -->
+    <parameterset name="must_config_pset" init_with="must.xml"></parameterset>
+    <parameterset name="must_build_pset" init_with="must.xml"></parameterset>
+    <parameterset name="must_compile_pset" init_with="must.xml"></parameterset>
+    <parameterset name="must_execute_pset" init_with="must.xml"></parameterset>
+
+    <!-- PARCOACH parametersets -->
+    <parameterset name="parcoach_config_pset" init_with="parcoach.xml" tag="parcoach"></parameterset>
+    <parameterset name="parcoach_build_pset" init_with="parcoach.xml" tag="parcoach"></parameterset>
+    <parameterset name="parcoach_compile_pset" init_with="parcoach.xml" tag="parcoach"></parameterset>
+    <parameterset name="parcoach_execute_pset" init_with="parcoach.xml" tag="parcoach"></parameterset>
+
+    <!-- Regex patternsets -->
+    <patternset name="pattern" init_with="defaults.xml:pattern">
+      <pattern name="time" type="float">Grind time.*\(\s*${jube_pat_fp}\s*overall\)</pattern>
+    </patternset>
+    <include from="cover.xml" path="patternset" />
+  
+    <!-- Load filesets -->
+    <fileset name="source_files" init_with="system_settings.xml"></fileset>
+    <fileset name="job_files" init_with="system_settings.xml"></fileset> <!-- Slurm -->
+    <!-- Load substituteset -->
+    <substituteset name="job_sub" init_with="system_settings.xml"></substituteset> <!-- Slurm -->
+    <!-- Load steps -->
+    <include from="cover.xml" path="step" /> <!-- CoVeR -->
+    <include from="must.xml" path="step" /> <!-- Must -->
+    <include from="parcoach.xml" path="step" tag="parcoach"/> <!-- Parcoach -->
+    <include from="defaults.xml" path="step" />
+
+
+    <step name="compile_cover" depend="copy_source" do_log_file="log">
+      <use>compile_pset</use>
+      <use>toolchain_env_pset</use>
+      <use>module_env_pset</use>
+      <use>export_env_pset</use>
+      <use>cover_config_pset</use>
+      <use>cover_fset</use>
+      <!-- Compile executable -->
+      <do>
+        ${load_modules}; 
+        ${export}; 
+        ${compile_export};
+        <!-- COMPILE INSTRUCTIONS START -->
+        ${time_measure_command} ${COVER_CXX} -DUSE_MPI=1 -include ${cover_install_folder}/include/mpi_contracts.h copy_source/*.cc
+        <!-- COMPILE INSTRUCTIONS END --> 
+      </do>
+      <do>python cover_statistics.py contract_messages.json</do>
+    </step>
+    
+    <!-- Compile step -->
+    <step name="compile" depend="copy_source,compile_cover" suffix="${compile_mode}" procs="8" do_log_file="log">
+      <include from="defaults.xml" path="compile_psets/use" />
+      <!-- Compile executable -->
+      <do>
+        echo "${compile_mode}";
+        echo "${compile_common_env_vars}";
+        echo "${export}";
+        ${load_modules}; 
+        ${export}; 
+        ${compile_export};
+        <!-- COMPILE INSTRUCTIONS START -->
+        rm -r -f build
+        mkdir build
+        cd build
+        CXX="$MPICXX" cmake -DCMAKE_BUILD_TYPE=RelWithDebInfo -DWITH_OPENMP=OFF -DCMAKE_CXX_FLAGS="" ../copy_source/
+        make clean;
+        ${time_measure_command} make;
+        <!-- COMPILE INSTRUCTIONS END --> 
+        mv -f ${executable_name} ${jube_wp_abspath}/${executable_full_name};
+      </do>      
+    </step>
+  
+    <!-- Execute step -->
+    <step name="execute" depend="compile" suffix="${compile_mode}_${measurement_mode}" active="not ${ignorelist}" do_log_file="log" iterations="1">
+      <include from="defaults.xml" path="execute_psets/use" />
+      <do done_file="${done_file}" error_file="${error_file}">
+        if [[ "$ERROR_tasks" == "ERR" ]]; then &gt;&amp;2 echo "$ERROR_tasks_msg"; exit 1; fi
+        $submit $submit_script
+      </do>
+    </step>
+    <!-- Load analyser -->
+    <include from="defaults.xml" path="analyser"/>
+    <include from="cover.xml" path="analyser"/>
+
+    <!-- Load CoVer result -->
+    <include from="cover.xml" path="result"/>
+
+    <!-- Performance results -->
+    <result>
+      <use>analyse</use>
+      <table name="result_csv" style="csv" separator=";" sort="tasks,compile_mode,measurement_mode,jube_wp_id">
+        <include from="defaults.xml" path="columns/column" />
+        <column>size</column>
+        <column>time_avg</column>
+        <column>time_std</column>
+        <column title="memory total (MiB)" tag="memusage" format=".3f">memory_total</column>
+        <column>verification</column>
+      </table>
+      <table name="result" style="pretty" sort="tasks,compile_mode,measurement_mode,jube_wp_id">
+        <include from="defaults.xml" path="columns/column" />
+        <column>size</column>
+        <column format=".3f">time_avg</column>
+        <column format=".3f">time_std</column>
+        <column title="memory total (MiB)" tag="memusage" format=".3f">memory_total</column>
+        <column>verification</column>
+      </table>
+    </result>
+
+    <!-- Use additional features -->
+    <include from="includes.xml" path="includes/include"/>
+  </benchmark>
+</jube>

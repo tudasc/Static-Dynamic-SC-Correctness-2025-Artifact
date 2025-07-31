@@ -1,0 +1,3 @@
+[submodule "MUST"]
+	path = MUST
+	url = git@git-ce.rwth-aachen.de:hpc-research/correctness/MUST.git

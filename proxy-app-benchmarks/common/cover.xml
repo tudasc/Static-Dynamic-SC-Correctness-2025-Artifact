@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+#   CoVer specific settings
+-->
+<jube>
+    <parameterset name="cover_config_pset">
+      <parameter name="cover_commit">0f7a319af74b571095d308ac9f87e5acfbc56ef1</parameter> <!-- commit hash or "HEAD" -->
+      <!-- 52a26e26cb9be9425013e534afcd209009df28b5 -->
+      <parameter name="build_cover" mode="shell">if ${force_cover_build} || [ ! -f "${cover_cc_bin}" ]; then echo "1"; else echo "0"; fi</parameter>
+      <parameter name="cover_prerequisite_modules"  separator=";">
+        Java
+      </parameter>
+      <parameter name="cover_root">${jube_benchmark_home}/../../dep/CoVer/${__cover_hash}</parameter>
+      <parameter name="cover_build_folder">${cover_root}/build</parameter>
+      <parameter name="cover_install_folder">${cover_root}/install</parameter>
+      <parameter name="cover_repo_folder">${jube_benchmark_home}/../../../CoVer</parameter>
+      <!-- path to a custom must installation can be set here -->
+      <parameter name="coverbin_path" type="string">${cover_install_folder}/bin</parameter>
+      <parameter name="cover_cc_bin">${coverbin_path}/clangContracts</parameter>
+      <parameter name="cover_cxx_bin">${coverbin_path}/clangContracts++</parameter>
+      <parameter name="COVER_CC">${cover_cc_bin} --allow-multireports</parameter>
+      <parameter name="COVER_CXX">${cover_cxx_bin} --allow-multireports</parameter>
+      <!-- Set to space 
+      separated list of optimizations -->
+      <parameter name="cover_available" type="int" mode="shell">if [[ -f "${cover_cc_bin}" ]]; then echo "1"; else echo "0"; fi</parameter>
+      <parameter name="force_cover_build">false</parameter>
+      <parameter name="force_cover_build" tag="rebuild_must|rebuild">true</parameter>
+      <!-- Use hashes to distinguish different binaries and MUST builds for caching -->
+      <parameter name="__cover_hash" mode="shell">echo -n "${cover_commit} ${cover_git_branch} ${__toolchain_module} ${__compiler_module} ${__mpi_module}" | md5sum | cut -f 1 -d " " | tr -d '\n'</parameter>
+    </parameterset>
+
+    <parameterset name="cover_build_pset">
+      <!-- MUST build options -->
+      <parameter name="CMAKE_BUILD_TYPE">RelWithDebInfo</parameter>
+      <parameter name="MPI_C_COMPILER">mpicc</parameter>        
+      <parameter name="MPI_CXX_COMPILER">mpicxx</parameter>
+      <parameter name="ENABLE_TSAN">1</parameter>      
+      <parameter name="ENABLE_TYPEART">OFF</parameter>  
+      <parameter name="ENABLE_TESTS">ON</parameter>
+      <parameter name="USE_BACKWARD">ON</parameter>
+      <parameter name="cover_build_args">
+      -DMPI_C_COMPILER=${MPI_C_COMPILER} \
+      -DMPI_CXX_COMPILER=${MPI_CXX_COMPILER} \
+      -DCMAKE_Fortran_COMPILER=${MPI_Fortran_COMPILER} \
+      -DCMAKE_INSTALL_PREFIX="${cover_install_folder}" \
+      -DENABLE_FORTRAN=${ENABLE_FORTRAN} \
+      -DENABLE_TSAN=${ENABLE_TSAN} \
+      -DENABLE_TYPEART=${ENABLE_TYPEART} \
+      -DCMAKE_BUILD_TYPE=${CMAKE_BUILD_TYPE} \
+      -DENABLE_TESTS=${ENABLE_TESTS} \
+      -DGTI_DEBUG=${GTI_DEBUG} \
+      -DUSE_BACKWARD=${USE_BACKWARD}
+      </parameter>
+
+      <parameter name="cover_git_clone_ssh">https://github.com/tudasc/CoVer</parameter>
+    </parameterset>
+
+    <parameterset name="cover_compile_pset">
+      <parameter name="cover_compile_opt" mode="python" separator=";">
+        {"tsan-opt": "ALX1000,CLUSTER"}.get("${compile_mode}", "") 
+      </parameter>
+      <parameter name="__tsan_opt_hash" separator=";" mode="shell">echo -n "$cover_compile_opt $__cover_hash" | md5sum | cut -f 1 -d " " | tr -d '\n'</parameter>
+    </parameterset>
+
+    <parameterset name="cover_execute_pset">
+      <parameter name="cover_additional_arguments">--must:tsan</parameter>
+      <parameter name="cover_arguments">${cover_verbose} --must:output stdout --must:mpiexec ${mpirun} ${cover_layout} ${cover_additional_arguments}</parameter>
+    </parameterset>
+
+
+
+    <!-- Files -->
+    <fileset name="cover_fset">
+      <copy>${jube_benchmark_home}/../../scripts/cover_statistics.py</copy>
+    </fileset>
+
+    <patternset name="cover_time_pattern">
+      <pattern name="cover_time" type="float">real ${jube_pat_fp}</pattern>
+    </patternset>
+
+    <patternset name="cover_messages_pattern">
+      <pattern name="cover_total_messages" type="int" default="0">Total messages: ${jube_pat_int}</pattern>
+      <pattern name="cover_race_messages" type="int" default="0">Local Data Race messages: ${jube_pat_int}</pattern>
+    </patternset>
+
+
+    <step name="build_cover">
+      <use>toolchain_env_pset</use>
+      <use>module_env_pset</use>
+      <use>export_env_pset</use>
+      <use from="cover.xml">cover_config_pset</use>
+      <use from="cover.xml">cover_build_pset</use>
+
+      <do active="${build_cover}">
+        ${load_modules};
+        ${export}; 
+
+        rm -r -f ${cover_install_folder}
+        if [ ! -d "${cover_repo_folder}" ]; then git clone ${cover_git_clone_ssh} ${cover_repo_folder}; fi;
+        cd ${cover_repo_folder};
+        if ! git cat-file -t ${cover_commit}; then git pull; fi;
+        git reset --hard;
+        git clean -fdx;
+        git checkout ${cover_commit};
+        git submodule update --init --recursive;
+
+        mkdir -p ${cover_build_folder};
+        cd ${cover_build_folder};
+        cmake ${cover_build_args} ${cover_repo_folder};
+        make -j50 install;
+        rm -r -f ${cover_build_folder};
+
+        if [ ! -f "${cover_cc_bin}" ]; then &gt;&amp;2 echo "CoVeR does not exist at ${coverbin_path}"; exit 1; fi
+      </do>
+    </step>
+
+    <analyser name="cover_analyse">
+      <use>pattern</use>
+      <analyse step="compile_cover">
+        <file use="cover_time_pattern">time.out</file>
+        <file use="cover_messages_pattern">stdout</file>
+      </analyse>
+    </analyser>
+    
+    <result>
+      <use>cover_analyse</use>
+      <table name="cover_csv" style="csv" separator=";" sort="jube_wp_id">
+        <column>jube_benchmark_id</column>
+        <column>cover_time</column>
+        <column>cover_total_messages</column>
+        <column>cover_race_messages</column>
+      </table>
+      <table name="cover" style="pretty" separator=";" sort="jube_wp_id">
+        <column>jube_benchmark_id</column>
+        <column>cover_time</column>
+        <column>cover_total_messages</column>
+        <column>cover_race_messages</column>
+      </table>
+    </result>
+</jube>

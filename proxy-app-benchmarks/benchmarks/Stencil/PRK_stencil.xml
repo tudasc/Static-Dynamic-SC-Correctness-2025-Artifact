@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jube>  
+  <include-path>
+    <path>../../common</path>
+    <path>../../platform/CLAIX-23</path>
+  </include-path>
+
+  <benchmark name="PRK Stencil" outpath="PRK_stencil.benchmarks">
+    <!-- 
+      #Stencil Configuration Default
+    -->     
+    <parameterset name="config" tag="C|(!S+!M+!L+!S_fixed)"> 
+      <parameter name="num_iterations">1000</parameter>
+      <parameter name="grid_size" mode="python" separator="!NONE!">__import__("math").ceil(__import__("math").sqrt(${application_tasks}/48)*48000)</parameter>
+    </parameterset>
+
+    <!-- Presets S, M, L -->
+    <parameterset name="config" tag="S_fixed"> 
+      <parameter name="num_iterations">100</parameter>
+      <parameter name="grid_size" mode="python" separator="!NONE!">48000</parameter>
+    </parameterset>
+    <parameterset name="config" tag="S"> 
+      <parameter name="num_iterations">100</parameter>
+      <parameter name="grid_size" mode="python" separator="!NONE!">__import__("math").ceil(__import__("math").sqrt(${application_tasks}/48)*48000)</parameter>
+    </parameterset>
+    <parameterset name="config" tag="M"> 
+      <parameter name="num_iterations">400</parameter>
+      <parameter name="grid_size" mode="python" separator="!NONE!">__import__("math").ceil(__import__("math").sqrt(${application_tasks}/48)*48000)</parameter>
+    </parameterset>
+    <parameterset name="config" tag="L"> 
+      <parameter name="num_iterations">400</parameter>
+      <parameter name="grid_size">36000</parameter>
+    </parameterset>
+
+    <!-- 
+      source directory 
+    -->  
+    <parameterset name="source"  init_with="defaults.xml">
+      <parameter name="path_to_source" type="string">${jube_benchmark_home}/prk/</parameter> <!-- - - - - - - - - - -  Path to the source folder       -->  
+    </parameterset> 
+    <!-- 
+      #Fetching system settings       
+      #Here you can add or change parameters to fit this specific benchmark
+    -->
+    <parameterset name="platform_specs_pset" init_with="system_settings.xml">  
+      <parameter name="application_tasks" type="int">48,96,192</parameter>         
+      <parameter name="taskspernode" type="int">48</parameter> <!-- - - - - - - - - - - - - - - - -  Tasks per node           -->  
+      <parameter name="threads" type="int">1</parameter>       <!-- - - - - - - - - - - - - - - - -  Threads                -->
+      <parameter name="timelimit">01:00:00</parameter>
+      <parameter name="args_exec">$num_iterations $grid_size</parameter> 
+    </parameterset>
+
+    <parameterset name="execute_pset" init_with="system_settings.xml"></parameterset>  
+    <parameterset name="toolchain_env_pset" init_with="system_settings.xml">
+        <!-- <parameter name="compiler_name">clang</parameter>      - - - - - - - - - - - - - - - -  Compiler               -->
+        <!-- <parameter name="compiler_version">13.0.1</parameter>  - - - - - - - - - - - - - - - -  Compiler Version       -->
+        <!-- <parameter name="mpi_name">openmpi</parameter>        - - - - - - - - - - - - - - - -  MPI                    -->
+        <!-- <parameter name="mpi_version">4.1.4</parameter>       - - - - - - - - - - - - - - - -  MPI Version            -->
+    </parameterset>
+    <parameterset name="compile_pset" init_with="system_settings.xml">
+      <parameter name="executable_name">stencil</parameter> <!-- - - - - - - - - - -  Name of the executable       --> 
+      <parameter name="kernel_folder">Stencil</parameter>
+      <!-- Change folder before compilation -->
+      <parameter name="compile_preparation" type="string">cd MPIRMA/${kernel_folder}</parameter> <!-- - - - - - - -  commands that have to be executed before compilation -->
+      <parameter name="compile_target" type="string">$executable_name</parameter> <!-- - - - - - - -  Makefile target for compilation -->
+    </parameterset>
+    <parameterset name="module_env_pset" init_with="system_settings.xml"></parameterset>
+    <parameterset name="mpirun_env_pset" init_with="system_settings.xml"></parameterset>
+    <parameterset name="export_env_pset" init_with="system_settings.xml"></parameterset>
+
+    <!-- CoVeR parametersets -->
+    <parameterset name="cover_config_pset" init_with="cover.xml"></parameterset>
+    <parameterset name="cover_build_pset" init_with="cover.xml"></parameterset>
+    <parameterset name="cover_compile_pset" init_with="cover.xml"></parameterset>
+    <parameterset name="cover_execute_pset" init_with="cover.xml"></parameterset>
+    <include from="cover.xml" path="fileset" />
+    
+    <!-- MUST parametersets -->
+    <parameterset name="must_config_pset" init_with="must.xml"></parameterset>
+    <parameterset name="must_build_pset" init_with="must.xml"></parameterset>
+    <parameterset name="must_compile_pset" init_with="must.xml"></parameterset>
+    <parameterset name="must_execute_pset" init_with="must.xml">
+      <!-- Load RMA race file -->
+      <parameter name="must_layout_file" duplicate="replace">must_layout_mpitsan_rma.xml.in</parameter>
+    </parameterset>
+
+    <!-- PARCOACH parametersets -->
+    <parameterset name="parcoach_config_pset" init_with="parcoach.xml" tag="parcoach"></parameterset>
+    <parameterset name="parcoach_build_pset" init_with="parcoach.xml" tag="parcoach"></parameterset>
+    <parameterset name="parcoach_compile_pset" init_with="parcoach.xml" tag="parcoach"></parameterset>
+    <parameterset name="parcoach_execute_pset" init_with="parcoach.xml" tag="parcoach"></parameterset>
+
+    <!-- Regex patternsets -->
+    <patternset name="pattern" init_with="defaults.xml:pattern">
+      <pattern name="time" type="float">Total time \(s\): ${jube_pat_fp}</pattern>
+      <pattern name="time_average" type="float">Avg time \(s\): ${jube_pat_fp}</pattern>
+      <pattern name="rate" type="float">Rate \([^\s]*\): ${jube_pat_fp}</pattern>
+    </patternset>
+    <include from="cover.xml" path="patternset" />
+
+    <!-- Load filesets -->
+    <fileset name="source_files" init_with="system_settings.xml"></fileset>
+    <fileset name="job_files" init_with="system_settings.xml"></fileset> <!-- Slurm -->
+    <!-- Load substituteset -->
+    <substituteset name="job_sub" init_with="system_settings.xml"></substituteset> <!-- Slurm -->
+
+    <!-- Load steps -->
+    <include from="cover.xml" path="step" /> <!-- CoVeR -->
+    <include from="must.xml" path="step" /> <!-- Must -->
+    <include from="parcoach.xml" path="step" tag="parcoach"/> <!-- Parcoach -->
+    <include from="defaults.xml" path="step" />
+
+
+    <step name="compile_cover" depend="copy_source">
+      <use>compile_pset</use>
+      <use>toolchain_env_pset</use>
+      <use>module_env_pset</use>
+      <use>export_env_pset</use>
+      <use>cover_config_pset</use>
+      <use>cover_fset</use>
+      <!-- Compile executable -->
+      <do>
+        cd copy_source/;
+        ${load_modules}; 
+        ${export}; 
+        ${compile_export};
+        <!-- COMPILE INSTRUCTIONS START -->
+        cd MPIRMA/${kernel_folder}
+        make clean;
+        ${time_measure_command} make $compile_target MPICC="${COVER_CC} -include ${cover_install_folder}/include/mpi_contracts.h";
+        cp contract_messages.json ${jube_wp_abspath}
+      </do>
+      <do>python cover_statistics.py contract_messages.json</do>
+    </step>
+    
+    <!-- Compile step -->
+    <step name="compile" depend="copy_source,compile_cover" suffix="${compile_mode}">
+      <include from="defaults.xml" path="compile_psets/use" />
+      <!-- Compile executable -->
+      <do active="${do_compile}">
+        cd copy_source/;
+        ${load_modules}; 
+        ${export}; 
+        ${compile_export};
+        <!-- COMPILE INSTRUCTIONS START -->
+        cd MPIRMA/${kernel_folder}
+        make clean;
+        ${time_measure_command} make $compile_target;
+        <!-- COMPILE INSTRUCTIONS END -->
+        mv -f ${executable_name} ${jube_wp_abspath}/${executable_full_name};
+      </do>
+    </step>
+    <!-- Execute step -->
+    <step name="execute" depend="compile" suffix="${compile_mode}_${measurement_mode}" active="not ${ignorelist}" iterations="3">
+      <include from="defaults.xml" path="execute_psets/use" />
+      <do done_file="${done_file}" error_file="${error_file}">
+        $submit $submit_script
+      </do>
+    </step>
+    <!-- Load analyser -->
+    <include from="defaults.xml" path="analyser"/>
+    <include from="cover.xml" path="analyser"/>
+
+    <!-- Load CoVer result -->
+    <include from="cover.xml" path="result"/>
+
+    <result>
+      <use>analyse</use>
+      <table name="result_csv" style="csv" separator=";" sort="tasks,compile_mode,measurement_mode,jube_wp_id">
+        <include from="defaults.xml" path="columns/column" />
+        <column title="num_iters">num_iterations</column>
+        <column title="grid_size">grid_size</column>
+        <column title="time_avg">time_avg</column>
+        <column title="time_std">time_std</column>
+        <column title="rate (MFlops/s)">rate_avg</column>
+        <column title="memory total (MiB)" tag="memusage" format=".3f">memory_total</column>
+        <column>verification</column>
+      </table>
+      <table name="result" style="pretty" sort="tasks,compile_mode,measurement_mode,jube_wp_id">
+        <include from="defaults.xml" path="columns/column" />
+        <column title="num_iters">num_iterations</column>
+        <column title="grid_size">grid_size</column>
+        <column format=".3f">time_avg</column>
+        <column format=".3f">time_std</column>
+        <column title="rate (MFlops/s)">rate_avg</column>
+        <column title="memory total (MiB)" tag="memusage" format=".3f">memory_total</column>
+        <column>verification</column>
+      </table>
+    </result>
+    
+    <!-- Use additional features -->
+    <include from="includes.xml" path="includes/include"/>
+  </benchmark>
+</jube>
