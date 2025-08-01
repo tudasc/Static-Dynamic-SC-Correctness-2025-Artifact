@@ -1,0 +1,21 @@
+{
+  "messages": [
+    {
+      "error_id": "",
+      "references": [
+        {
+          "column": 9,
+          "file": "/home/yo30qaqy/data-race-detection-benchmark-suite/results-20250730-140308/SPMDIR-MUST/static/029-MPI-static-flush-multiple-wins-local-yes.c",
+          "line": 44
+        },
+        {
+          "column": 9,
+          "file": "/home/yo30qaqy/data-race-detection-benchmark-suite/results-20250730-140308/SPMDIR-MUST/static/029-MPI-static-flush-multiple-wins-local-yes.c",
+          "line": 49
+        }
+      ],
+      "text": "Found put operation/call at results-20250730-140308/SPMDIR-MUST/static/029-MPI-static-flush-multiple-wins-local-yes.c:44:9 which is in conflict with get operation/call at results-20250730-140308/SPMDIR-MUST/static/029-MPI-static-flush-multiple-wins-local-yes.c:49:9 before release",
+      "type": "Local Data Race"
+    }
+  ]
+}

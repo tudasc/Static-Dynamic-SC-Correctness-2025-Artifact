@@ -1,0 +1,21 @@
+{
+  "messages": [
+    {
+      "error_id": "",
+      "references": [
+        {
+          "column": 24,
+          "file": "/home/yo30qaqy/data-race-detection-benchmark-suite/results-20250730-145557/SPMDIR-MUST/P2P/LocalConcurrency-send-mpi_bsend_init-001.c",
+          "line": 45
+        },
+        {
+          "column": 31,
+          "file": "/home/yo30qaqy/data-race-detection-benchmark-suite/results-20250730-145557/SPMDIR-MUST/P2P/LocalConcurrency-send-mpi_bsend_init-001.c",
+          "line": 48
+        }
+      ],
+      "text": "Found sendInit operation/call at results-20250730-145557/SPMDIR-MUST/P2P/LocalConcurrency-send-mpi_bsend_init-001.c:45:24 which is in conflict with store operation/call at results-20250730-145557/SPMDIR-MUST/P2P/LocalConcurrency-send-mpi_bsend_init-001.c:48:31 before release",
+      "type": "Local Data Race"
+    }
+  ]
+}

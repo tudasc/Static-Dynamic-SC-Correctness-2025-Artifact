@@ -1,0 +1,21 @@
+{
+  "messages": [
+    {
+      "error_id": "",
+      "references": [
+        {
+          "column": 24,
+          "file": "/home/yo30qaqy/data-race-detection-benchmark-suite/results-20250730-145557/SPMDIR-MUST/RMA/LocalConcurrency-lockunlock-compare_and_swap_bufwrite-001.c",
+          "line": 50
+        },
+        {
+          "column": 31,
+          "file": "/home/yo30qaqy/data-race-detection-benchmark-suite/results-20250730-145557/SPMDIR-MUST/RMA/LocalConcurrency-lockunlock-compare_and_swap_bufwrite-001.c",
+          "line": 52
+        }
+      ],
+      "text": "Found compareAndSwap operation/call at results-20250730-145557/SPMDIR-MUST/RMA/LocalConcurrency-lockunlock-compare_and_swap_bufwrite-001.c:50:24 which is in conflict with store operation/call at results-20250730-145557/SPMDIR-MUST/RMA/LocalConcurrency-lockunlock-compare_and_swap_bufwrite-001.c:52:31 before release",
+      "type": "Local Data Race"
+    }
+  ]
+}

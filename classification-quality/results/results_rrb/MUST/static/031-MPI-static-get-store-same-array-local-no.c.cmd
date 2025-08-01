@@ -1,0 +1,4 @@
+apptainer run --cleanenv /work/home/yo30qaqy/data-race-detection-benchmark-suite/util/apptainer/must.sif mpicc -fsanitize=thread -g -fopenmp results-20250730-140308/MUST/static/031-MPI-static-get-store-same-array-local-no.c -o results-20250730-140308/MUST/static/031-MPI-static-get-store-same-array-local-no.c.exe-must
+apptainer run --cleanenv /work/home/yo30qaqy/data-race-detection-benchmark-suite/util/apptainer/must.sif mktemp -d
+apptainer run --cleanenv /work/home/yo30qaqy/data-race-detection-benchmark-suite/util/apptainer/must.sif /opt/must/bin/mustrun -np 2 --must:temp /tmp/tmp.13wnf4MFKK
+ --must:clean --must:output stdout --must:distributed --must:nodl --must:tsan --must:rma-race results-20250730-140308/MUST/static/031-MPI-static-get-store-same-array-local-no.c.exe-must

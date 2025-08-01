@@ -1,0 +1,45 @@
+[MUST] Unknown environment option MUST_DISABLE_TSAN_ONREPORT=1 is ignored
+[MUST] MUST configuration ... distributed checks without application crash handling
+[MUST] Information: overwritting old intermediate data in directory "/tmp/tmp.aOu2K7zv5Q"!
+[MUST] Using prebuilt infrastructure at /home/yo30qaqy/.cache/must/prebuilds/5dea4e371384d15a125b8f9f8c610645
+[MUST] Weaver ... success
+[MUST] Generating P^nMPI configuration ... success
+[MUST] Infrastructure in "/home/yo30qaqy/.cache/must/prebuilds/5dea4e371384d15a125b8f9f8c610645" is present and used.
+[MUST] Search for linked P^nMPI ... not found ... using LD_PRELOAD to load P^nMPI ... success
+[MUST] Note: Full ThreadSanitizer support requires the application to be built with either a GNU-based compiler in version 9 to 11 or an LLVM-based compiler in version 6 or later.
+[MUST] Note: MPI RMA support requires the application to be built with Clang >= 15.
+[MUST] Executing application:
+/usr/bin/llvm-symbolizer-19: error: '[stack]': No such file or directory
+==================
+[1m[31mWARNING: ThreadSanitizer: data race (pid=2143113)
+[1m[0m[1m[34m  Read of size 4 at 0x7fff34615e48 by thread T4:
+[1m[0m    #0 <null> <null> (0xfeb331e931d1)
+    #1 <null> <null> (0xfffffffffffffff)
+    #2 <null> <null> (0x00000fffffff)
+    #3 <null> <null> (0x000100000000)
+    #4 <null> <null> (0x000100000007)
+    #5 main /home/yo30qaqy/data-race-detection-benchmark-suite/results-20250730-140308/CoVer-MUST/rma+nonrma/003-MPI-p2p-put-irecv-local-yes.c:42:9 (003-MPI-p2p-put-irecv-local-yes.c.exe-must+0xe68cb) (BuildId: dc14f7d87a7e228165c4f571b8f2d5f06fe91d74)
+
+[1m[34m  Previous write of size 4 at 0x7fff34615e48 by thread T14:
+[1m[0m    #0 MPI_Irecv <null> (libpnmpi.so+0x8d400) (BuildId: 1b73837cf83c78082966586ef45277b17343017b)
+    #1 main /home/yo30qaqy/data-race-detection-benchmark-suite/results-20250730-140308/CoVer-MUST/rma+nonrma/003-MPI-p2p-put-irecv-local-yes.c:40:9 (003-MPI-p2p-put-irecv-local-yes.c.exe-must+0xe689b) (BuildId: dc14f7d87a7e228165c4f571b8f2d5f06fe91d74)
+
+[1m[32m  Location is stack of main thread.
+
+[1m[0m[1m[32m  Location is global '??' at 0x7fff345f6000 ([stack]+0x1fe48)
+
+[1m[0m[1m[36m  Thread T4 'RMAFiber' (tid=0, running) created by thread T3 at:
+[1m[0m    #0 must::OriginChecks::OriginChecks(char const*) <null> (liboriginChecks.so+0xd481) (BuildId: a6e4323a364e79bf1125e4b6955dd3f2cfa6be93)
+
+[1m[36m  Thread T14 'Request from call MPI_Irecv' (tid=0, finished) created by main thread at:
+[1m[0m    #0 must::MpiTSanAnnotations::makeBlocksActive(unsigned long, unsigned long, must::MustMemIntervalListType const&, long) <null> (libmpiTSanAnnotations.so+0x172b0) (BuildId: 4b8fda56fcd0a6362187e56177347bd44720908c)
+    #1 MPI_Irecv <null> (libpnmpi.so+0x8d400) (BuildId: 1b73837cf83c78082966586ef45277b17343017b)
+    #2 main /home/yo30qaqy/data-race-detection-benchmark-suite/results-20250730-140308/CoVer-MUST/rma+nonrma/003-MPI-p2p-put-irecv-local-yes.c:40:9 (003-MPI-p2p-put-irecv-local-yes.c.exe-must+0xe689b) (BuildId: dc14f7d87a7e228165c4f571b8f2d5f06fe91d74)
+
+SUMMARY: ThreadSanitizer: data race (<unknown module>) 
+==================
+Process 1: Execution finished, variable contents: value = 1, value2 = 2, win_base[0] = 2
+Process 0: Execution finished, variable contents: value = 2, value2 = 2, win_base[0] = 0
+[MUST-REPORT] MUST detected no MPI usage errors nor any suspicious behavior during this application run.
+ThreadSanitizer: reported 1 warnings
+[MUST] Execution finished.

@@ -1,0 +1,13 @@
+Running Contract Manager on Module: /tmp/contrPlugin_SZaJ4U
+CoVer: Parsed contracts after 0.001505s
+## Contract violation detected! ##
+--> Function: MPI_Wait
+--> Contract: CONTRACT{PRE { call_tag!(mpi_init) MSG "Missing Initialization call", call_tag!(request_gen,$:0) MSG "Unmatched Wait" } POST { call_tag!(mpi_finalize) MSG "Missing Finalization call" } TAGS { req_complete(0) }}
+--> Precondition Subformula Status: Violated
+    --> Formula String: call_tag!(request_gen,$:0)
+    --> Message: Unmatched Wait
+    --> Error Info:
+        [ContractVerifierPreCall] Did not find precall function request_gen (Tag) with required parameters before MPI_Wait at /home/yo30qaqy/data-race-detection-benchmark-suite/results-20250730-145557/CoVer/RMA/Correct-lockallflushlocal-compare_and_swap_rget-001.c:57:5
+
+CoVer: Total Tool Runtime 0.002305s
+

@@ -1,0 +1,48 @@
+\documentclass[a4paper,10pt]{article}
+\usepackage[margin=2cm]{geometry}
+
+\newcommand{\es}{$\emptyset$}
+\newcommand{\s}{$\sum$}
+
+\begin{document}
+\subsubsection*{RMARaceBench SHMEM}
+\begin{tabular}{|l|c|c|c|} \hline
+    Category & Local & Remote & \s \\ \hline
+    Atomic & \es & 001-009 & 9 \\
+    Conflict & 001-015 & 016-049 & 49 \\
+    Hybrid & 001-010 & 011-022 & 22 \\
+    Misc & 001-008 & 009-018 & 18 \\
+    Sync & 001-006 & 007-024 & 24 \\ \hline
+\end{tabular}
+
+\subsubsection*{NVSHMEM Port GPUInitiated}
+\begin{tabular}{|l|l|l|c|l|l|c|} \hline
+    & \multicolumn{3}{c}{Supported by NVSHMEM} & \multicolumn{3}{|c|}{Not supported by NVSHMEM} \\
+    Category & Local & Remote & \s & Local & Remote & \s \\ \hline
+    Atomic & \es & 004-009 & 6 & \es & 001-003 & 3 \\
+    Conflict & 001-015 & 016-043, 046 & 44 & \es & 044-045, 047-049 & 5 \\
+    Misc & 001-008 & 009-018 & 18 & \es & \es & 0 \\
+    Sync & 001-006 & 007-012, 018, 021-024 & 17 & \es & 013-017, 019-020 & 7 \\ \hline
+\end{tabular}
+
+\subsubsection*{NVSHMEM Port HostInitiated}
+\begin{tabular}{|l|l|l|c|l|l|c|} \hline
+    & \multicolumn{3}{c}{Supported by NVSHMEM} & \multicolumn{3}{|c|}{Not supported by NVSHMEM} \\
+    Category & Local & Remote & \s & Local & Remote & \s \\ \hline
+    Atomic & \es & \es & 0 & \es & 001-009 & 9 \\
+    Conflict & 001-009 & 016-019, 022-024, 034-043 & 26 & 010-015 & 020-021, 025-033, 044-049 & 23 \\
+    Misc & 001-008 & 009-018 & 18 & \es & \es & 0 \\
+    Sync & 001-004 & 007-012, 018, 021-024 & 15 & 005-006 & 013-017, 019-020 & 9 \\ \hline
+\end{tabular}
+
+\subsubsection*{NVSHMEM Port HybridInitiated}
+\begin{tabular}{|l|l|l|c|l|l|c|} \hline
+    & \multicolumn{3}{c}{Supported by NVSHMEM} & \multicolumn{3}{|c|}{Not supported by NVSHMEM} \\
+    Category & Local & Remote & \s & Local & Remote & \s \\ \hline
+    Atomic & \es & \es & 0 & \es & 001-009 & 9 \\
+    Conflict & 001-015 & 016-028, 032-043 & 40 & \es & 029-031, 044-049 & 9 \\
+    Misc & 001-008 & 009-018 & 18 & \es & \es & 0 \\
+    Sync & 001-004 & 007-012, 018, 021-024 & 15 & 005-006 & 013-017, 019-020 & 9 \\ \hline
+\end{tabular}
+
+\end{document}

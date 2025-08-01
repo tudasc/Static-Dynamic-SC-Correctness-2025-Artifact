@@ -1,0 +1,13 @@
+Running Contract Manager on Module: /tmp/contrPlugin_L67DuI
+CoVer: Parsed contracts after 0.001410s
+## Contract violation detected! ##
+--> Function: MPI_Fetch_and_op
+--> Contract: CONTRACT{PRE { call_tag!(mpi_init) MSG "Missing Initialization call", ( call_tag!(epoch_fence_create,$:6) MSG "No fence epoch" ^ call_tag!(epoch_lock_create,$:6) MSG "No lock epoch" ^ call_tag!(epoch_pscw_create,$:6) MSG "No PSCW epoch") MSG "Mixed sync or missing epoch", call_tag!(rma_createwin,$:&6) MSG "Window initialization missing" } POST { call_tag!(mpi_finalize) MSG "Missing Finalization call", no! (write!(*0)) until! (call_tag!(rma_complete,$:6)) MSG "Local Data Race - Local write", no! (call_tag!(buf_write,$:0)) until! (call_tag!(rma_complete,$:6)) MSG "Local Data Race - Local write by call", no! (read!(*1)) until! (call_tag!(rma_complete,$:6)) MSG "Local Data Race - Local read", no! (call_tag!(buf_read,$:1)) until! (call_tag!(rma_complete,$:6)) MSG "Local Data Race - Local read by call", no! (write!(*1)) until! (call_tag!(rma_complete,$:6)) MSG "Local Data Race - Local write", no! (call_tag!(buf_write,$:1)) until! (call_tag!(rma_complete,$:6)) MSG "Local Data Race - Local write by call", no! (call!(MPI_Win_free,0:&6)) until! (call_tag!(rma_complete,$:6)) MSG "Possible inflight call at MPI_Win_free" } TAGS { buf_read(0), buf_write(1) }}
+--> Postcondition Subformula Status: Violated
+    --> Formula String: no!(call_tag!(buf_write,$:0))until!(call_tag!(rma_complete,$:6))
+    --> Message: Local Data Race - Local write by call
+    --> Error Info:
+        Found call to MPI_Get at /home/yo30qaqy/data-race-detection-benchmark-suite/results-20250730-145557/CoVer/RMA/LocalConcurrency-lockallflushlocal-fetch_and_op_get-001.c:49:24 which is in conflict with MPI_Fetch_and_op at /home/yo30qaqy/data-race-detection-benchmark-suite/results-20250730-145557/CoVer/RMA/LocalConcurrency-lockallflushlocal-fetch_and_op_get-001.c:47:24 before release
+
+CoVer: Total Tool Runtime 0.002054s
+

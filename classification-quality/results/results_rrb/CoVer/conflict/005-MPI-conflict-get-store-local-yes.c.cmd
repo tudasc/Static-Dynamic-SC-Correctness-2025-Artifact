@@ -1,0 +1,1 @@
+apptainer run --cleanenv /work/home/yo30qaqy/data-race-detection-benchmark-suite/util/apptainer/cover.sif clangContracts -include /opt/cover/include/mpi_contracts.h results-20250730-140308/CoVer/conflict/005-MPI-conflict-get-store-local-yes.c -o /dev/null

@@ -1,0 +1,1 @@
+apptainer run --cleanenv /work/home/yo30qaqy/data-race-detection-benchmark-suite/util/apptainer/spmdir.sif spmd-verify check-dataRace emitSPMDIR results-20250730-145557/SPMDIR/RMA/Correct-lockallflushlocal-fetch_and_op_get-001.c

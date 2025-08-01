@@ -1,0 +1,49 @@
+=== conflict ===
+             TP  TN  FP  FN  NC-TP  NC-FP  TO  CR    P    R    A
+SPMDIR       12   3   0   0      0      0   0   0 1.00 1.00 1.00
+CoVer        12   3   0   0      0      0   0   0 1.00 1.00 1.00
+MUST         12   3   0   0      0      0   0   0 1.00 1.00 1.00
+SPMDIR-MUST  12   3   0   0      0      0   0   0 1.00 1.00 1.00
+CoVer-MUST   12   3   0   0      0      0   0   0 1.00 1.00 1.00
+=== sync ===
+             TP  TN  FP  FN  NC-TP  NC-FP  TO  CR    P    R    A
+SPMDIR        6   6   0   0      0      0   0   0 1.00 1.00 1.00
+CoVer         6   6   0   0      0      0   0   0 1.00 1.00 1.00
+MUST          6   6   0   0      0      0   0   0 1.00 1.00 1.00
+SPMDIR-MUST   6   6   0   0      0      0   0   0 1.00 1.00 1.00
+CoVer-MUST    6   6   0   0      0      0   0   0 1.00 1.00 1.00
+=== hybrid ===
+             TP  TN  FP  FN  NC-TP  NC-FP  TO  CR    P    R    A
+SPMDIR        0   5   0   5      0      0   0   0 0.00 0.00 0.50
+CoVer         0   5   0   5      0      0   0   0 0.00 0.00 0.50
+MUST          5   3   2   0      0      0   0   0 0.71 1.00 0.80
+SPMDIR-MUST   0   5   0   5      0      0   0   0 0.00 0.00 0.50
+CoVer-MUST    0   5   0   5      0      0   0   0 0.00 0.00 0.50
+=== dynamic ===
+             TP  TN  FP  FN  NC-TP  NC-FP  TO  CR    P    R    A
+SPMDIR        4   3   0   1      0      0   0   0 1.00 0.80 0.88
+CoVer         4   3   0   1      0      0   0   0 1.00 0.80 0.88
+MUST          3   3   0   2      0      0   0   0 1.00 0.60 0.75
+SPMDIR-MUST   2   3   0   1      2      0   0   0 1.00 0.80 0.88
+CoVer-MUST    2   3   0   1      2      0   0   0 1.00 0.80 0.88
+=== static ===
+             TP  TN  FP  FN  NC-TP  NC-FP  TO  CR    P    R    A
+SPMDIR       12   8   5   1      0      0   0   0 0.71 0.92 0.77
+CoVer         6  10   3   7      0      0   0   0 0.67 0.46 0.62
+MUST         12  13   0   1      0      0   0   0 1.00 0.92 0.96
+SPMDIR-MUST  12  13   0   1      0      0   0   0 1.00 0.92 0.96
+CoVer-MUST    6  13   0   7      0      0   0   0 1.00 0.46 0.73
+=== rma+nonrma ===
+             TP  TN  FP  FN  NC-TP  NC-FP  TO  CR    P    R    A
+SPMDIR        5   5   0   0      0      0   0   0 1.00 1.00 1.00
+CoVer         5   4   1   0      0      0   0   0 0.83 1.00 0.90
+MUST          5   4   1   0      0      0   0   0 0.83 1.00 0.90
+SPMDIR-MUST   5   5   0   0      0      0   0   0 1.00 1.00 1.00
+CoVer-MUST    5   5   0   0      0      0   0   0 1.00 1.00 1.00
+=== Total ===
+             TP  TN  FP  FN  NC-TP  NC-FP  TO  CR    P    R    A
+SPMDIR       39  30   5   7      0      0   0   0 0.89 0.85 0.85
+CoVer        33  31   4  13      0      0   0   0 0.89 0.72 0.79
+MUST         43  32   3   3      0      0   0   0 0.93 0.93 0.93
+SPMDIR-MUST  37  35   0   7      2      0   0   0 1.00 0.85 0.91
+CoVer-MUST   31  35   0  13      2      0   0   0 1.00 0.72 0.84

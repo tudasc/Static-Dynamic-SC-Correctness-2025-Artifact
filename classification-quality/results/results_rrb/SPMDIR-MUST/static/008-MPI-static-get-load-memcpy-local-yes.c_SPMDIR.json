@@ -1,0 +1,21 @@
+{
+  "messages": [
+    {
+      "error_id": "",
+      "references": [
+        {
+          "column": 9,
+          "file": "/home/yo30qaqy/data-race-detection-benchmark-suite/results-20250730-140308/SPMDIR-MUST/static/008-MPI-static-get-load-memcpy-local-yes.c",
+          "line": 48
+        },
+        {
+          "column": 38,
+          "file": "/home/yo30qaqy/data-race-detection-benchmark-suite/results-20250730-140308/SPMDIR-MUST/static/008-MPI-static-get-load-memcpy-local-yes.c",
+          "line": 50
+        }
+      ],
+      "text": "Found get operation/call at results-20250730-140308/SPMDIR-MUST/static/008-MPI-static-get-load-memcpy-local-yes.c:48:9 which is in conflict with load operation/call at results-20250730-140308/SPMDIR-MUST/static/008-MPI-static-get-load-memcpy-local-yes.c:50:38 before release",
+      "type": "Local Data Race"
+    }
+  ]
+}

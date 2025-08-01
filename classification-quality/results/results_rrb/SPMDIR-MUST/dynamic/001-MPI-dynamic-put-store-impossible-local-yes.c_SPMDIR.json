@@ -1,0 +1,21 @@
+{
+  "messages": [
+    {
+      "error_id": "",
+      "references": [
+        {
+          "column": 9,
+          "file": "/home/yo30qaqy/data-race-detection-benchmark-suite/results-20250730-140308/SPMDIR-MUST/dynamic/001-MPI-dynamic-put-store-impossible-local-yes.c",
+          "line": 45
+        },
+        {
+          "column": 15,
+          "file": "/home/yo30qaqy/data-race-detection-benchmark-suite/results-20250730-140308/SPMDIR-MUST/dynamic/001-MPI-dynamic-put-store-impossible-local-yes.c",
+          "line": 47
+        }
+      ],
+      "text": "Found put operation/call at results-20250730-140308/SPMDIR-MUST/dynamic/001-MPI-dynamic-put-store-impossible-local-yes.c:45:9 which is in conflict with store operation/call at results-20250730-140308/SPMDIR-MUST/dynamic/001-MPI-dynamic-put-store-impossible-local-yes.c:47:15 before release",
+      "type": "Local Data Race"
+    }
+  ]
+}

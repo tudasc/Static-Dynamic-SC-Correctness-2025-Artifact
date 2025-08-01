@@ -1,0 +1,21 @@
+{
+  "messages": [
+    {
+      "error_id": "",
+      "references": [
+        {
+          "column": 24,
+          "file": "/home/yo30qaqy/data-race-detection-benchmark-suite/results-20250730-145557/SPMDIR-MUST/P2P/LocalConcurrency-receive-mpi_imrecv-001.c",
+          "line": 40
+        },
+        {
+          "column": 31,
+          "file": "/home/yo30qaqy/data-race-detection-benchmark-suite/results-20250730-145557/SPMDIR-MUST/P2P/LocalConcurrency-receive-mpi_imrecv-001.c",
+          "line": 42
+        }
+      ],
+      "text": "Found mRecv operation/call at results-20250730-145557/SPMDIR-MUST/P2P/LocalConcurrency-receive-mpi_imrecv-001.c:40:24 which is in conflict with store operation/call at results-20250730-145557/SPMDIR-MUST/P2P/LocalConcurrency-receive-mpi_imrecv-001.c:42:31 before release",
+      "type": "Local Data Race"
+    }
+  ]
+}

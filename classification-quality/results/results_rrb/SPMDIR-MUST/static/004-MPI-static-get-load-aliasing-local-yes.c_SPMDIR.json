@@ -1,0 +1,21 @@
+{
+  "messages": [
+    {
+      "error_id": "",
+      "references": [
+        {
+          "column": 9,
+          "file": "/home/yo30qaqy/data-race-detection-benchmark-suite/results-20250730-140308/SPMDIR-MUST/static/004-MPI-static-get-load-aliasing-local-yes.c",
+          "line": 49
+        },
+        {
+          "column": 38,
+          "file": "/home/yo30qaqy/data-race-detection-benchmark-suite/results-20250730-140308/SPMDIR-MUST/static/004-MPI-static-get-load-aliasing-local-yes.c",
+          "line": 51
+        }
+      ],
+      "text": "Found get operation/call at results-20250730-140308/SPMDIR-MUST/static/004-MPI-static-get-load-aliasing-local-yes.c:49:9 which is in conflict with load operation/call at results-20250730-140308/SPMDIR-MUST/static/004-MPI-static-get-load-aliasing-local-yes.c:51:38 before release",
+      "type": "Local Data Race"
+    }
+  ]
+}

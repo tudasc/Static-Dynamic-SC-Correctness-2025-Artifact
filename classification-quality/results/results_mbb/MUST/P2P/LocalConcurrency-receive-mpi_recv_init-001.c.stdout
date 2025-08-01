@@ -1,0 +1,36 @@
+[MUST] Unknown environment option MUST_DISABLE_TSAN_ONREPORT=1 is ignored
+[MUST] MUST configuration ... distributed checks without application crash handling
+[MUST] Information: overwritting old intermediate data in directory "/tmp/tmp.gmoAstr0Zp"!
+[MUST] Using prebuilt infrastructure at /home/yo30qaqy/.cache/must/prebuilds/651129c018b63f1b57587bcde7b7ece3
+[MUST] Weaver ... success
+[MUST] Generating P^nMPI configuration ... success
+[MUST] Infrastructure in "/home/yo30qaqy/.cache/must/prebuilds/651129c018b63f1b57587bcde7b7ece3" is present and used.
+[MUST] Search for linked P^nMPI ... not found ... using LD_PRELOAD to load P^nMPI ... success
+[MUST] Note: Full ThreadSanitizer support requires the application to be built with either a GNU-based compiler in version 9 to 11 or an LLVM-based compiler in version 6 or later.
+[MUST] Note: MPI RMA support requires the application to be built with Clang >= 15.
+[MUST] Executing application:
+==================
+[1m[31mWARNING: ThreadSanitizer: data race (pid=2541235)
+[1m[0m[1m[34m  Write of size 4 at 0x720c00034238 by main thread:
+[1m[0m    #0 main /home/yo30qaqy/data-race-detection-benchmark-suite/results-20250730-145557/MUST/P2P/LocalConcurrency-receive-mpi_recv_init-001.c:40:31 (LocalConcurrency-receive-mpi_recv_init-001.c.exe-must+0xe6714) (BuildId: 3b8a5fd8136763b8328974e496a3d27bafa9e183)
+
+[1m[34m  Previous write of size 8 at 0x720c00034238 by thread T14:
+[1m[0m    #0 MPI_Recv_init <null> (libpnmpi.so+0x91790) (BuildId: 5eab7454ce5986bf84a20dbfeab42660adfd5aeb)
+    #1 main /home/yo30qaqy/data-race-detection-benchmark-suite/results-20250730-145557/MUST/P2P/LocalConcurrency-receive-mpi_recv_init-001.c:37:24 (LocalConcurrency-receive-mpi_recv_init-001.c.exe-must+0xe66fa) (BuildId: 3b8a5fd8136763b8328974e496a3d27bafa9e183)
+
+[1m[32m  Location is heap block of size 40 at 0x720c00034230 allocated by main thread:
+[1m[0m    #0 calloc <null> (LocalConcurrency-receive-mpi_recv_init-001.c.exe-must+0x614df) (BuildId: 3b8a5fd8136763b8328974e496a3d27bafa9e183)
+    #1 main /home/yo30qaqy/data-race-detection-benchmark-suite/results-20250730-145557/MUST/P2P/LocalConcurrency-receive-mpi_recv_init-001.c:34:21 (LocalConcurrency-receive-mpi_recv_init-001.c.exe-must+0xe66bb) (BuildId: 3b8a5fd8136763b8328974e496a3d27bafa9e183)
+
+[1m[36m  Thread T14 'Request from call MPI_Recv_init' (tid=0, running) created by main thread at:
+[1m[0m    #0 must::MpiTSanAnnotations::makeBlocksActive(unsigned long, unsigned long, must::MustMemIntervalListType const&, long) <null> (libmpiTSanAnnotations.so+0x172b0) (BuildId: 4b8fda56fcd0a6362187e56177347bd44720908c)
+    #1 MPI_Recv_init <null> (libpnmpi.so+0x91790) (BuildId: 5eab7454ce5986bf84a20dbfeab42660adfd5aeb)
+    #2 main /home/yo30qaqy/data-race-detection-benchmark-suite/results-20250730-145557/MUST/P2P/LocalConcurrency-receive-mpi_recv_init-001.c:37:24 (LocalConcurrency-receive-mpi_recv_init-001.c.exe-must+0xe66fa) (BuildId: 3b8a5fd8136763b8328974e496a3d27bafa9e183)
+
+SUMMARY: ThreadSanitizer: data race /home/yo30qaqy/data-race-detection-benchmark-suite/results-20250730-145557/MUST/P2P/LocalConcurrency-receive-mpi_recv_init-001.c:40:31 in main
+==================
+[MUST-REPORT] MUST detected no MPI usage errors nor any suspicious behavior during this application run.
+Rank 1 finished normally
+Rank 0 finished normally
+ThreadSanitizer: reported 1 warnings
+[MUST] Execution finished.

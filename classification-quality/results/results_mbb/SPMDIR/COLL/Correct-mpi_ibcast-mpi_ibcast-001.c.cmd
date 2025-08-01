@@ -1,0 +1,1 @@
+apptainer run --cleanenv /work/home/yo30qaqy/data-race-detection-benchmark-suite/util/apptainer/spmdir.sif spmd-verify check-dataRace emitSPMDIR results-20250730-145557/SPMDIR/COLL/Correct-mpi_ibcast-mpi_ibcast-001.c

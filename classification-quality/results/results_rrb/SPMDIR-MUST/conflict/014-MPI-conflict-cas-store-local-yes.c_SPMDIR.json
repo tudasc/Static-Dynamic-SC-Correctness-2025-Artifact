@@ -1,0 +1,21 @@
+{
+  "messages": [
+    {
+      "error_id": "",
+      "references": [
+        {
+          "column": 9,
+          "file": "/home/yo30qaqy/data-race-detection-benchmark-suite/results-20250730-140308/SPMDIR-MUST/conflict/014-MPI-conflict-cas-store-local-yes.c",
+          "line": 39
+        },
+        {
+          "column": 15,
+          "file": "/home/yo30qaqy/data-race-detection-benchmark-suite/results-20250730-140308/SPMDIR-MUST/conflict/014-MPI-conflict-cas-store-local-yes.c",
+          "line": 41
+        }
+      ],
+      "text": "Found compareAndSwap operation/call at results-20250730-140308/SPMDIR-MUST/conflict/014-MPI-conflict-cas-store-local-yes.c:39:9 which is in conflict with store operation/call at results-20250730-140308/SPMDIR-MUST/conflict/014-MPI-conflict-cas-store-local-yes.c:41:15 before release",
+      "type": "Local Data Race"
+    }
+  ]
+}

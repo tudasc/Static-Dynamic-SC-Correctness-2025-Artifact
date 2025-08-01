@@ -1,0 +1,21 @@
+{
+  "messages": [
+    {
+      "error_id": "",
+      "references": [
+        {
+          "column": 5,
+          "file": "/home/yo30qaqy/data-race-detection-benchmark-suite/results-20250730-140308/SPMDIR-MUST/static/020-MPI-static-get-get-recursive-local-no.c",
+          "line": 14
+        },
+        {
+          "column": 5,
+          "file": "/home/yo30qaqy/data-race-detection-benchmark-suite/results-20250730-140308/SPMDIR-MUST/static/020-MPI-static-get-get-recursive-local-no.c",
+          "line": 14
+        }
+      ],
+      "text": "Found get operation/call at results-20250730-140308/SPMDIR-MUST/static/020-MPI-static-get-get-recursive-local-no.c:14:5 which is in conflict with get operation/call at results-20250730-140308/SPMDIR-MUST/static/020-MPI-static-get-get-recursive-local-no.c:14:5 before release",
+      "type": "Local Data Race"
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "messages": [
+    {
+      "error_id": "",
+      "references": [
+        {
+          "column": 24,
+          "file": "/home/yo30qaqy/data-race-detection-benchmark-suite/results-20250730-145557/SPMDIR-MUST/RMA/LocalConcurrency-lockunlock-accumulate_bufwrite-001.c",
+          "line": 44
+        },
+        {
+          "column": 31,
+          "file": "/home/yo30qaqy/data-race-detection-benchmark-suite/results-20250730-145557/SPMDIR-MUST/RMA/LocalConcurrency-lockunlock-accumulate_bufwrite-001.c",
+          "line": 46
+        }
+      ],
+      "text": "Found accumulate operation/call at results-20250730-145557/SPMDIR-MUST/RMA/LocalConcurrency-lockunlock-accumulate_bufwrite-001.c:44:24 which is in conflict with store operation/call at results-20250730-145557/SPMDIR-MUST/RMA/LocalConcurrency-lockunlock-accumulate_bufwrite-001.c:46:31 before release",
+      "type": "Local Data Race"
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+@LIT_SITE_CFG_IN_HEADER@
+
+import sys
+import os
+
+config.filecheck = "@SPMD_RACE_FILECHECK_EXEC@"
+config.spmd_verify="@SPMD_VERIFY@"
+
+config.spmd_race_testdir="@SPMD_RACE_TEST_DIR@"
+config.spmd_race_build_dir="@SPMD_RACE_BUILD_DIR@"
+
+# Let the main config do the real work.
+config.loaded_site_config = True
+lit_config.load_config(config, "@SPMD_RACE_PROJECT_DIR@/lit.cfg")
+

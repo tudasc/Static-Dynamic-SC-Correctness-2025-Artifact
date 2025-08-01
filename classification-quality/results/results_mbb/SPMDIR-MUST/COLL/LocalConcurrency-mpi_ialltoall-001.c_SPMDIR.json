@@ -1,0 +1,21 @@
+{
+  "messages": [
+    {
+      "error_id": "",
+      "references": [
+        {
+          "column": 22,
+          "file": "/home/yo30qaqy/data-race-detection-benchmark-suite/results-20250730-145557/SPMDIR-MUST/COLL/LocalConcurrency-mpi_ialltoall-001.c",
+          "line": 38
+        },
+        {
+          "column": 29,
+          "file": "/home/yo30qaqy/data-race-detection-benchmark-suite/results-20250730-145557/SPMDIR-MUST/COLL/LocalConcurrency-mpi_ialltoall-001.c",
+          "line": 40
+        }
+      ],
+      "text": "Found alltoall operation/call at results-20250730-145557/SPMDIR-MUST/COLL/LocalConcurrency-mpi_ialltoall-001.c:38:22 which is in conflict with store operation/call at results-20250730-145557/SPMDIR-MUST/COLL/LocalConcurrency-mpi_ialltoall-001.c:40:29 before release",
+      "type": "Local Data Race"
+    }
+  ]
+}

@@ -1,0 +1,3 @@
+Which test cases belong to this category?
+1. test cases that are testing proper handling of the approach of data race detection (mostly covered by rmaRaceBench) but also the combination of RMA with nonBlocking semantics (see some of MBI test cases)
+2. programming model dependent problems, e.g. data races that may only occur at nccl or nvshmem and are unique for them, if they cannot be covered by spmd ir verification, we might need to move thjem to another category such as spmdIRProblems

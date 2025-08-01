@@ -1,0 +1,1 @@
+apptainer run --cleanenv /work/home/yo30qaqy/data-race-detection-benchmark-suite/util/apptainer/spmdir.sif spmd-verify check-dataRace emitSPMDIR results-20250730-140308/SPMDIR/rma+nonrma/003-MPI-p2p-put-irecv-local-yes.c

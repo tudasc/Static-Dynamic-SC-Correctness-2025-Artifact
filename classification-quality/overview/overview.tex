@@ -1,0 +1,357 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[margin=2cm]{geometry}
+\usepackage{graphicx}
+\usepackage{tabularx}
+\usepackage{pgf,tikz}
+\usepackage{multirow}
+\usepackage{pifont}
+\usepackage{etoolbox}
+\usepackage{enumitem}
+
+\newcommand{\cmark}{\ding{51}}
+\newcommand{\es}{$\emptyset$}
+\newcommand{\xmark}{\ding{55}}
+\newcommand{\tb}{\textbullet}
+\newcommand{\ro}[3]{\multicolumn{#2}{#3}{\multirow{5}{*}{\rotatebox{90}{#1}}}}
+\newcommand{\rv}[1]{\multirow{9}{*}{\rotatebox{90}{#1}}}
+\newcolumntype{Y}{>{\centering\arraybackslash}X}
+
+\newcommand{\comment}[1]{}
+
+\newcommand{\tableHead}{
+\begin{tabularx}{\textwidth}{|c|c|c|c|c|c|Y|Y|Y|Y|Y|Y|Y|Y|Y|Y|} \cline{1-6}
+\rv{Local Store} & \rv{Local Write} & \rv{Remote Store} & \rv{Remote Write} & \rv{Atomic Remote Store} & \rv{Atomic Remote Write} & \multicolumn{10}{c}{} \\
+&&&&&& \multicolumn{10}{c}{} \\
+&&&&&& \multicolumn{10}{c}{} \\
+&&&&&& \multicolumn{10}{c}{} \\
+&&&&&& \multicolumn{10}{c}{} \\
+&&&&&& \multicolumn{10}{c}{} \\ \cline{7-10}
+&&&&&& \multicolumn{4}{c|}{RMA} & \multicolumn{6}{c}{} \\ \cline{11-16}
+&&&&&& \multicolumn{2}{c|}{Local} & \multicolumn{2}{c|}{Remote} & \multicolumn{2}{c|}{Collective} & \multicolumn{2}{c|}{P2P} & \multicolumn{2}{c|}{Hybrid} \\
+&&&&&& \cmark & \xmark & \cmark & \xmark & \cmark & \xmark & \cmark & \xmark & \cmark & \xmark \\ \hline \hline
+}
+
+\newcommand{\tabLine}[2]{%
+  \ifnum#1=0 \tb \else\ifnum#2=0 \tb\fi\fi%
+  &%
+  \ifnum#1=1 \tb \else\ifnum#2=1 \tb\fi\fi%
+  &%
+  \ifnum#1=2 \tb \else\ifnum#2=2 \tb\fi\fi%
+  &%
+  \ifnum#1=3 \tb \else\ifnum#2=3 \tb\fi\fi%
+  &%
+  \ifnum#1=4 \tb \else\ifnum#2=4 \tb\fi\fi%
+  &%
+  \ifnum#1=5 \tb \else\ifnum#2=5 \tb\fi\fi%
+}
+
+% Save #1 in pathList and print an ID instead
+\newcounter{pathCount}
+\setcounter{pathCount}{0}
+\newcommand{\pathList}{}
+\newcommand{\ap}[1]{%
+	\ifstrempty{#1}{-}{%
+		\stepcounter{pathCount}%
+		\noindent{\thepathCount}%
+		\listgadd{\pathList}{\detokenize{#1}}%
+	}
+}
+
+% Print pathList contents with ID assigned with \ap
+\newcommand{\printPathList}{
+\begin{enumerate}[label=\arabic*., wide, labelwidth=12pt, labelindent=5pt]
+	\scriptsize
+	\itemsep0em
+	\newcounter{pathCountRef}
+	\setcounter{pathCountRef}{0}
+	\renewcommand{\do}[1]{
+		\stepcounter{pathCountRef}
+		\ifnum\value{pathCount}<\value{pathCountRef}
+		\else
+			\item \texttt{##1}
+		\fi
+	}
+	\dolistloop{\pathList}
+\end{enumerate}
+\normalsize
+}
+
+\begin{document}
+\noindent The \cmark\ signifies, that a case has no data race and would pass a data race check. \\
+The \xmark\ signifies, that a case has a data race and would not pass a data race check.
+
+\section{Categorised for Coverd Hazard Type} % boolean (yes/no)
+\newcolumntype{s}{>{\hsize=.55\textwidth}X}
+\begin{tabularx}{\textwidth}{|s|Y|Y|Y|Y|Y|Y|Y|Y|} \cline{2-9}
+\multicolumn{1}{c|}{} & \ro{MPI}{2}{c|} & \ro{Open-}{1}{c} & \ro{SHMEM}{1}{c|} & \ro{NV-}{1}{c} & \ro{SHMEM}{1}{c|} & \ro{Hybrid}{2}{c|} \\
+\multicolumn{1}{c|}{} & \ro{}{2}{c|} & \ro{}{1}{c} & \ro{}{1}{c|} & \ro{}{2}{c|} & \ro{}{2}{c|} \\
+\multicolumn{1}{c|}{} & \ro{}{2}{c|} & \ro{}{1}{c} & \ro{}{1}{c|} & \ro{}{2}{c|} & \ro{}{2}{c|} \\
+\multicolumn{1}{c|}{} & \ro{}{2}{c|} & \ro{}{1}{c} & \ro{}{1}{c|} & \ro{}{2}{c|} & \ro{}{2}{c|} \\
+\multicolumn{1}{c|}{} & \ro{}{2}{c|} & \ro{}{1}{c} & \ro{}{1}{c|} & \ro{}{2}{c|} & \ro{}{2}{c|} \\ \cline{1-1}
+The (potential) data race occurs ... & \cmark & \xmark & \cmark & \xmark & \cmark & \xmark & \cmark & \xmark \\ \hline \hline
+... due to a dirty read initialised on the same rank &
+\ap{} & % MPI no race
+\ap{MBB/level1/COLL/LocalConcurrency-mpi_iallreduce-001.c} & % MPI has race
+\ap{} & % OpenSHMEM no race
+\ap{RRB/SHMEM/conflict/002-shmem-conflict-putnbi-store-local-yes.c} & % OpenSHMEM has race
+\ap{} & % NVSHMEM no race
+\ap{RRB/NVSHMEM/hostInitiated/conflict/002-nvshmem-conflict-putnbi-store-local-yes.cpp} & % NVSHMEM has race
+\ap{} & % Hybrid has race
+\ap{} \\% Hybrid has race
+... due to a dirty write initialised on the same rank &
+\ap{} & % MPI no race
+\ap{MBB/level1/RMA/LocalConcurrency-fence-get_get-001.c} & % MPI has race
+\ap{} & % OpenSHMEM no race
+\ap{RRB/SHMEM/conflict/005-shmem-conflict-getnbi-store-local-yes.c} & % OpenSHMEM has race
+\ap{} & % NVSHMEM no race
+\ap{RRB/NVSHMEM/hostInitiated/conflict/005-nvshmem-conflict-getnbi-store-local-yes.cpp} & % NVSHMEM has race
+\ap{newTestCases/implementationProblems/hybrid/mpi+shmem/002-no-rma-on-same-arr.cpp} & % Hybrid has race
+\ap{newTestCases/implementationProblems/hybrid/mpi+shmem/001-yes-rma-on-same-arr.cpp} \\% Hybrid has race
+... due to a dirty read initialised on different ranks &
+\ap{} & % MPI no race
+\ap{RRB/MPIRMA/conflict/remote/018-MPI-conflict-get-store-remote-yes.c} & % MPI has race
+\ap{} & % OpenSHMEM no race
+\ap{RRB/SHMEM/conflict/remote/018-shmem-conflict-get-store-remote-yes.c} & % OpenSHMEM has race
+\ap{} & % NVSHMEM no race
+\ap{RRB/NVSHMEM/hostInitiated/conflict/remote/018-nvshmem-conflict-get-store-remote-yes.c} & % NVSHMEM has race
+\ap{} & % Hybrid has race
+\ap{} \\% Hybrid has race
+... due to a dirty write initialised on different ranks &
+\ap{} & % MPI no race
+\ap{RRB/MPIRMA/conflict/remote/023-MPI-conflict-put-store-remote-yes.c} & % MPI has race
+\ap{} & % OpenSHMEM no race
+\ap{RRB/SHMEM/conflict/remote/024-shmem-conflict-put-put-remote-yes.c} & % OpenSHMEM has race
+\ap{} & % NVSHMEM no race
+\ap{RRB/NVSHMEM/hostInitiated/conflict/remote/024-nvshmem-conflict-put-put-remote-yes.c} & % NVSHMEM has race
+\ap{} & % Hybrid has race
+\ap{} \\% Hybrid has race
+... while using lock-unlock style synchronisation &
+\ap{MBB/level1/RMA/Correct-lockunlock-get_bufwrite-001.c} & % MPI no race
+\ap{MBB/level1/RMA/LocalConcurrency-lockallflush-accumulate_get-001.c} & % MPI has race
+\ap{RRB/SHMEM/sync/remote/013-shmem-sync-lock-remote-no.c} & % OpenSHMEM no race
+\ap{RRB/SHMEM/sync/remote/014-shmem-sync-lock-remote-yes.c} & % OpenSHMEM has race
+\ap{RRB/NVSHMEM/hostInitiated/sync/currentlyNotSupportedByNVSHMEM/013-nvshmem-sync-lock-remote-no.c} & % NVSHMEM no race
+\ap{RRB/NVSHMEM/hostInitiated/sync/currentlyNotSupportedByNVSHMEM/014-nvshmem-sync-lock-remote-yes.c} & % NVSHMEM has race
+\ap{} & % Hybrid has race
+\ap{} \\% Hybrid has race
+... while using wait style synchronisation &
+\ap{RRB/MPIRMA/sync/012-MPI-sync-pscw-local-no.c} & % MPI no race
+\ap{RRB/MPIRMA/sync/011-MPI-sync-pscw-local-yes.c} & % MPI has race
+\ap{RRB/SHMEM/sync/005-shmem-sync-waituntil-local-no.c} & % OpenSHMEM no race
+\ap{RRB/SHMEM/sync/006-shmem-sync-waituntil-local-yes.c} & % OpenSHMEM has race
+\ap{RRB/NVSHMEM/hostInitiated/sync/currentlyNotSupportedByNVSHMEM/016-nvshmem-sync-waituntil-remote-no.c} & % NVSHMEM no race
+\ap{RRB/NVSHMEM/hostInitiated/sync/currentlyNotSupportedByNVSHMEM/015-nvshmem-sync-waituntil-remote-yes.c} & % NVSHMEM has race
+\ap{} & % Hybrid has race
+\ap{} \\% Hybrid has race
+... while using collective style synchronisation &
+\ap{MBB/level1/RMA/Correct-fence-get_get-001.c} & % MPI no race
+\ap{MBB/level1/RMA/LocalConcurrency-fence-get_get-001.c} & % MPI has race
+\ap{RRB/SHMEM/sync/002-shmem-sync-barrierall-local-no.c} & % OpenSHMEM no race
+\ap{RRB/SHMEM/sync/001-shmem-sync-barrierall-local-yes.c} & % OpenSHMEM has race
+\ap{RRB/NVSHMEM/hostInitiated/sync/remote/008-nvshmem-sync-barrierall-remote-no.cpp} & % NVSHMEM no race
+\ap{RRB/NVSHMEM/hostInitiated/sync/remote/007-nvshmem-sync-barrierall-remote-yes.cpp} & % NVSHMEM has race
+\ap{} & % Hybrid has race
+\ap{} \\% Hybrid has race
+... with the sync being dependant on a handle &
+\ap{RRB/MPIRMA/sync/010-MPI-sync-request-local-no.c} & % MPI no race
+\ap{RRB/MPIRMA/sync/009-MPI-sync-request-local-yes.c} & % MPI has race
+\ap{RRB/SHMEM/sync/remote/019-shmem-sync-ctx-remote-no.c} & % OpenSHMEM no race
+\ap{RRB/SHMEM/sync/remote/020-shmem-sync-ctx-remote-yes.c} & % OpenSHMEM has race
+\ap{RRB/NVSHMEM/hostInitiated/sync/currentlyNotSupportedByNVSHMEM/019-shmem-sync-ctx-remote-no.c} & % NVSHMEM no race
+\ap{RRB/NVSHMEM/hostInitiated/sync/currentlyNotSupportedByNVSHMEM/020-shmem-sync-ctx-remote-yes.c} & % NVSHMEM has race
+\ap{} & % Hybrid has race
+\ap{} \\% Hybrid has race
+... using P2P communication &
+\ap{MBB/level2/P2P/Correct-mpi_send_init-001.c} & % MPI no race
+\ap{MBB/level2/P2P/LocalConcurrency-receive-mpi_recv_init-001.c} & % MPI has race
+\ap{} & % OpenSHMEM no race
+\ap{} & % OpenSHMEM has race
+\ap{} & % NVSHMEM no race
+\ap{} & % NVSHMEM has race
+\ap{} & % Hybrid has race
+\ap{} \\% Hybrid has race
+... using collective communication &
+\ap{MBB/level2/COLL/Correct-mpi_iscatter-mpi_iscatter-001.c} & % MPI no race
+\ap{MBB/level2/COLL/LocalConcurrency-mpi_ialltoall-001.c} & % MPI has race
+\ap{} & % OpenSHMEM no race
+\ap{} & % OpenSHMEM has race
+\ap{} & % NVSHMEM no race
+\ap{} & % NVSHMEM has race
+\ap{} & % Hybrid has race
+\ap{} \\% Hybrid has race
+... using RMA communication &
+\ap{MBB/level2/RMA/Correct-lockallflush-compare_and_swap_compare_and_swap-001.c} & % MPI no race
+\ap{MBB/level2/RMA/LocalConcurrency-lockunlock-fetch_and_op_bufwrite-001.c} & % MPI has race
+\ap{RRB/SHMEM/conflict/001-shmem-conflict-putnbi-load-local-no.c} & % OpenSHMEM no race
+\ap{RRB/SHMEM/conflict/002-shmem-conflict-putnbi-store-local-yes.c} & % OpenSHMEM has race
+\ap{RRB/NVSHMEM/gpuInitiated/conflict/009-nvshmem-conflict-put_signal_nbi-load-local-no.cu} & % NVSHMEM no race
+\ap{RRB/NVSHMEM/gpuInitiated/conflict/008-nvshmem-conflict-put_signal_nbi-store-local-yes.cu} & % NVSHMEM has race
+\ap{} & % Hybrid has race
+\ap{} \\% Hybrid has race
+... using custom datatypes &
+\ap{RRB/MPIRMA/atomic/remote/001-MPI-atomic-customdatatype-remote-no.c} & % MPI no race
+\ap{RRB/MPIRMA/atomic/remote/002-MPI-atomic-customdatatype-remote-yes.c} & % MPI has race
+\ap{} & % OpenSHMEM no race
+\ap{} & % OpenSHMEM has race
+\ap{} & % NVSHMEM no race
+\ap{} & % NVSHMEM has race
+\ap{} & % Hybrid has race
+\ap{} \\% Hybrid has race
+... using operations with atomicity guarantees &
+\ap{RRB/MPIRMA/atomic/remote/009-MPI-atomic-int-int-remote-no.c} & % MPI no race
+\ap{RRB/MPIRMA/atomic/remote/008-MPI-atomic-double-float-remote-yes.c} & % MPI has race
+\ap{RRB/SHMEM/atomic/remote/005-shmem-atomic-int-int-sameorigin-remote-no.c} & % OpenSHMEM no race
+\ap{RRB/SHMEM/atomic/remote/006-shmem-atomic-double-long-remote-yes.c} & % OpenSHMEM has race
+\ap{RRB/NVSHMEM/gpuInitiated/atomic/remote/004-nvshmem-atomic-int-int-remote-no.cu} & % NVSHMEM no race
+\ap{RRB/NVSHMEM/gpuInitiated/atomic/remote/006-nvshmem-atomic-double-long-remote-yes.cu} & % NVSHMEM has race
+\ap{} & % Hybrid has race
+\ap{} \\% Hybrid has race
+... using inter- \& intra-node-parallelism (e.g. OpenMP) &
+\ap{RRB/MPIRMA/hybrid/002-MPI-hybrid-master-local-no.c} & % MPI no race
+\ap{RRB/MPIRMA/hybrid/001-MPI-hybrid-master-local-yes.c} & % MPI has race
+\ap{RRB/SHMEM/hybrid/002-shmem-hybrid-for-ordered-local-no.c} & % OpenSHMEM no race
+\ap{RRB/SHMEM/hybrid/001-shmem-hybrid-for-local-yes.c} & % OpenSHMEM has race
+\ap{RRB/NVSHMEM/gpuInitiated/conflict/009-nvshmem-conflict-put_signal_nbi-load-local-no.cu} & % NVSHMEM no race
+\ap{RRB/NVSHMEM/gpuInitiated/conflict/008-nvshmem-conflict-put_signal_nbi-store-local-yes.cu} & % NVSHMEM has race
+\ap{} & % Hybrid has race
+\ap{} \\% Hybrid has race
+... in nested function calls &
+\ap{RRB/MPIRMA/misc/001-MPI-misc-put-load-deep-nesting-local-no.c} & % MPI no race
+\ap{RRB/MPIRMA/misc/002-MPI-misc-get-load-deep-nesting-local-yes.c} & % MPI has race
+\ap{RRB/SHMEM/misc/001-shmem-misc-putnbi-load-deep-nesting-local-no.c} & % OpenSHMEM no race
+\ap{RRB/SHMEM/misc/002-shmem-misc-getnbi-load-deep-nesting-local-yes.c} & % OpenSHMEM has race
+\ap{RRB/NVSHMEM/gpuInitiated/misc/remote/009-nvshmem-misc-get-load-deep-nesting-remote-no.cu} & % NVSHMEM no race
+\ap{RRB/NVSHMEM/gpuInitiated/misc/remote/010-nvshmem-misc-get-store-deep-nesting-remote-yes.cu} & % NVSHMEM has race
+\ap{} & % Hybrid has race
+\ap{} \\% Hybrid has race
+... in a recursive function call &
+\ap{newTestCases/implementationProblems/mpi/002-no-recursive.c} & % MPI no race
+\ap{newTestCases/implementationProblems/mpi/001-yes-recursive.c} & % MPI has race
+\ap{} & % OpenSHMEM no race
+\ap{} & % OpenSHMEM has race
+\ap{} & % NVSHMEM no race
+\ap{} & % NVSHMEM has race
+\ap{} & % Hybrid has race
+\ap{} \\% Hybrid has race
+... in a function called by a pointer &
+\ap{RRB/MPIRMA/misc/remote/011-MPI-misc-get-load-funcpointer-remote-no.c} & % MPI no race
+\ap{RRB/MPIRMA/misc/remote/012-MPI-misc-get-store-funcpointer-remote-yes.} & % MPI has race
+\ap{RRB/SHMEM/misc/remote/011-shmem-misc-get-load-funcpointer-remote-no.c} & % OpenSHMEM no race
+\ap{RRB/SHMEM/misc/remote/012-shmem-misc-get-store-funcpointer-remote-yes.c} & % OpenSHMEM has race
+\ap{RRB/NVSHMEM/gpuInitiated/misc/remote/011-nvshmem-misc-get-load-funcpointer-remote-no.cu} & % NVSHMEM no race
+\ap{RRB/NVSHMEM/gpuInitiated/misc/remote/012-nvshmem-misc-get-store-funcpointer-remote-yes.cu} & % NVSHMEM has race
+\ap{} & % Hybrid has race
+\ap{} \\% Hybrid has race
+... on an aliased memory region. &
+\ap{RRB/MPIRMA/misc/003-MPI-misc-put-load-aliasing-local-no.c} & % MPI no race
+\ap{RRB/MPIRMA/misc/004-MPI-misc-get-load-aliasing-local-yes.c} & % MPI has race
+\ap{RRB/SHMEM/misc/003-shmem-misc-putnbi-load-aliasing-local-no.c} & % OpenSHMEM no race
+\ap{RRB/SHMEM/misc/004-shmem-misc-getnbi-load-aliasing-local-yes.c} & % OpenSHMEM has race
+\ap{RRB/NVSHMEM/hostInitiated/misc/003-nvshmem-misc-putnbi-load-retval-local-no.cpp} & % NVSHMEM no race
+\ap{RRB/NVSHMEM/hostInitiated/misc/006-nvshmem-misc-getnbi-load-aliasing-local-yes.cpp} & % NVSHMEM has race
+\ap{} & % Hybrid has race
+\ap{} \\% Hybrid has race
+... due to the sync not applying to the affected memory &
+\ap{} & % MPI no race
+\ap{} & % MPI has race
+\ap{} & % OpenSHMEM no race
+\ap{} & % OpenSHMEM has race
+\ap{RRB/NVSHMEM/hybridInitiated/sync/002-nvshmem-sync-barrierall-local-no.cu} & % NVSHMEM no race
+\ap{newTestCases/gpuSpecificNVSHMEM/barrierNotSyncGPUStuff.cpp} & % NVSHMEM has race
+\ap{} & % Hybrid has race
+\ap{} \\% Hybrid has race
+... with comm relevant handles stored in lists &
+\ap{newTestCases/implementationProblems/mpi/008-no-winNotTrackable.c} & % MPI no race
+\ap{newTestCases/implementationProblems/mpi/007-yes-winNotTrackable.c} & % MPI has race
+\ap{} & % OpenSHMEM no race
+\ap{} & % OpenSHMEM has race
+\ap{} & % NVSHMEM no race
+\ap{} & % NVSHMEM has race
+\ap{} & % Hybrid has race
+\ap{} \\% Hybrid has race
+... using multiple syncs on different memory regions &
+\ap{newTestCases/implementationProblems/mpi/006-no-flush-multiple-wins.cpp} & % MPI no race
+\ap{newTestCases/implementationProblems/mpi/005-yes-flush-multiple-wins.cpp} & % MPI has race
+\ap{} & % OpenSHMEM no race
+\ap{} & % OpenSHMEM has race
+\ap{RRB/NVSHMEM/hybridInitiated/sync/remote/008-nvshmem-sync-barrierall-remote-no.cu} & % NVSHMEM no race
+\ap{RRB/NVSHMEM/hybridInitiated/sync/remote/007-nvshmem-sync-barrierall-remote-yes.cu} & % NVSHMEM has race
+\ap{} & % Hybrid has race
+\ap{} \\% Hybrid has race
+... using (non-)overlapping regions of the same array &
+\ap{newTestCases/staticAnalysisWeakness/spmdIRProblems/mpi/001-no-pointer-in-same-arr.cpp} & % MPI no race
+\ap{} & % MPI has race
+\ap{newTestCases/staticAnalysisWeakness/spmdIRProblems/shmem/001-no-pointer-in-same-arr.cpp} & % OpenSHMEM no race
+\ap{} & % OpenSHMEM has race
+\ap{} & % NVSHMEM no race
+\ap{} & % NVSHMEM has race
+\ap{} & % Hybrid has race
+\ap{} \\% Hybrid has race
+... in a proxy app &
+\ap{proxyApps/PRK/MPIRMA/Stencil/stencil.c} & % MPI no race
+\ap{} & % MPI has race
+\ap{proxyApps/PRK/SHMEM/Synch_p2p/p2p.c} & % OpenSHMEM no race
+\ap{} & % OpenSHMEM has race
+\ap{} & % NVSHMEM no race
+\ap{} & % NVSHMEM has race
+\ap{} & % Hybrid has race
+\ap{} \\% Hybrid has race
+\hline
+\end{tabularx}
+
+\printPathList
+
+\comment{
+\section{Categorised for Involved Communication Types} % count (how many cases contain combination)
+\subsection{MPI}
+\tableHead
+\tabLine{0}{0} % Only Local Store
+&  &  &  &  &  &  &  &  &  &  \\ \hline
+\tabLine{1}{1} % Only Local Write
+&  &  &  &  &  &  &  &  &  &  \\ \hline
+\tabLine{2}{2} % Only Remote Store
+&  &  &  &  &  &  &  &  &  &  \\ \hline
+\tabLine{3}{3} % Only Remote Write
+&  &  &  &  &  &  &  &  &  &  \\ \hline
+\tabLine{4}{4} % Only Atomic Remote Store
+&  &  &  &  &  &  &  &  &  &  \\ \hline
+\tabLine{5}{5} % Only Atomic Remote Write
+&  &  &  &  &  &  &  &  &  &  \\ \hline
+\tabLine{0}{2} % Local Store - Remote Store
+&  &  &  &  &  &  &  &  &  &  \\ \hline
+\tabLine{0}{3} % Local Store - Remote Write
+&  &  &  &  &  &  &  &  &  &  \\ \hline
+\tabLine{0}{4} % Local Store - Atomic Remote Store
+&  &  &  &  &  &  &  &  &  &  \\ \hline
+\tabLine{0}{5} % Local Store - Atomic Remote Write
+&  &  &  &  &  &  &  &  &  &  \\ \hline
+\tabLine{1}{2} % Local Write - Remote Store
+&  &  &  &  &  &  &  &  &  &  \\ \hline
+\tabLine{1}{3} % Local Write - Remote Write
+&  &  &  &  &  &  &  &  &  &  \\ \hline
+\tabLine{1}{4} % Local Write - Atomic Remote Store
+&  &  &  &  &  &  &  &  &  &  \\ \hline
+\tabLine{1}{5} % Local Write - Atomic Remote Write
+&  &  &  &  &  &  &  &  &  &  \\ \hline
+\tabLine{2}{3} % Remote Store - Remote Write
+&  &  &  &  &  &  &  &  &  &  \\ \hline
+\tabLine{2}{4} % Remote Store - Atmoic Remote Store
+&  &  &  &  &  &  &  &  &  &  \\ \hline
+\tabLine{2}{5} % Remote Store - Atmoic Remote Write
+&  &  &  &  &  &  &  &  &  &  \\ \hline
+\tabLine{3}{4} % Remote Write - Atmoic Remote Store
+&  &  &  &  &  &  &  &  &  &  \\ \hline
+\tabLine{3}{5} % Remote Write - Atmoic Remote Write
+&  &  &  &  &  &  &  &  &  &  \\ \hline
+\tabLine{4}{5} % Atmoic Remote Store - Atmoic Remote Write
+&  &  &  &  &  &  &  &  &  &  \\ \hline
+\end{tabularx}
+
+\subsection{OpenSHMEM}
+
+\subsection{NVSHMEM}
+
+\subsection{GASPI}
+}
+
+\end{document}

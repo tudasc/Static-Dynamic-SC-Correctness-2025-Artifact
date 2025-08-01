@@ -1,0 +1,17 @@
+Running Contract Manager on Module: /tmp/contrPlugin_bik69r
+CoVer: Parsed contracts after 0.001164s
+## Contract violation detected! ##
+--> Function: MPI_Raccumulate
+--> Contract: CONTRACT{PRE { call_tag!(mpi_init) MSG "Missing Initialization call" } POST { call_tag!(mpi_finalize) MSG "Missing Finalization call", ( no! (write!(*0)) until! (call_tag!(rma_complete,$:8)) | no! (write!(*0)) until! (call_tag!(req_complete,$:9)) ) MSG "Local Data Race - Local write", ( no! (call_tag!(buf_write,$:0)) until! (call_tag!(rma_complete,$:8)) | no! (call_tag!(buf_write,$:0)) until! (call_tag!(req_complete,$:9)) ) MSG "Local Data Race - Local write by MPI call" } TAGS { request_gen(9), buf_read(0) }}
+--> Postcondition Subformula Status: Violated
+    --> Formula String: (no!(write!(*0))until!(call_tag!(rma_complete,$:8))|no!(write!(*0))until!(call_tag!(req_complete,$:9)))MSG"Local Data Race - Local write"
+    --> Message: Local Data Race - Local write
+    --> Error Info:
+        No children satisfied for subformula: (no!(write!(*0))until!(call_tag!(rma_complete,$:8))|no!(write!(*0))until!(call_tag!(req_complete,$:9)))MSG"Local Data Race - Local write"
+        Error Info for child: no!(write!(*0))until!(call_tag!(rma_complete,$:8))
+        Found store at /home/yo30qaqy/data-race-detection-benchmark-suite/results-20250730-145557/CoVer/RMA/LocalConcurrency-lockunlock-raccumulate_bufwrite-001.c:48:31 which is in conflict with MPI_Raccumulate at /home/yo30qaqy/data-race-detection-benchmark-suite/results-20250730-145557/CoVer/RMA/LocalConcurrency-lockunlock-raccumulate_bufwrite-001.c:45:24 before release
+        Error Info for child: no!(write!(*0))until!(call_tag!(req_complete,$:9))
+        Found store at /home/yo30qaqy/data-race-detection-benchmark-suite/results-20250730-145557/CoVer/RMA/LocalConcurrency-lockunlock-raccumulate_bufwrite-001.c:48:31 which is in conflict with MPI_Raccumulate at /home/yo30qaqy/data-race-detection-benchmark-suite/results-20250730-145557/CoVer/RMA/LocalConcurrency-lockunlock-raccumulate_bufwrite-001.c:45:24 before release
+
+CoVer: Total Tool Runtime 0.001623s
+

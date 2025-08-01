@@ -1,0 +1,13 @@
+Running Contract Manager on Module: /tmp/contrPlugin_CdhAQE
+CoVer: Parsed contracts after 0.000917s
+## Contract violation detected! ##
+--> Function: MPI_Igather
+--> Contract: CONTRACT{PRE { call_tag!(mpi_init) MSG "Missing Initialization call" } POST { call_tag!(mpi_finalize) MSG "Missing Finalization call", no! (call_tag!(request_gen,$:8)) until! (call_tag!(req_complete,$:8)) MSG "Double Request Use", call_tag!(req_complete,$:8) MSG "Request Leak", no! (write!(*0)) until! (call_tag!(req_complete,$:8)) MSG "Local Data Race - Local write", no! (call_tag!(buf_write,$:0)) until! (call_tag!(req_complete,$:8)) MSG "Local Data Race - Local write by call", no! (read!(*3)) until! (call_tag!(req_complete,$:8)) MSG "Local Data Race - Local read", no! (call_tag!(buf_read,$:3)) until! (call_tag!(req_complete,$:8)) MSG "Local Data Race - Local read by call", no! (write!(*3)) until! (call_tag!(req_complete,$:8)) MSG "Local Data Race - Local write", no! (call_tag!(buf_write,$:3)) until! (call_tag!(req_complete,$:8)) MSG "Local Data Race - Local write by call" } TAGS { request_gen(8), buf_read(0), buf_write(3) }}
+--> Postcondition Subformula Status: Violated
+    --> Formula String: no!(write!(*0))until!(call_tag!(req_complete,$:8))
+    --> Message: Local Data Race - Local write
+    --> Error Info:
+        Found store at /home/yo30qaqy/data-race-detection-benchmark-suite/results-20250730-145557/CoVer/COLL/LocalConcurrency-mpi_igather-001.c:40:29 which is in conflict with MPI_Igather at /home/yo30qaqy/data-race-detection-benchmark-suite/results-20250730-145557/CoVer/COLL/LocalConcurrency-mpi_igather-001.c:38:23 before release
+
+CoVer: Total Tool Runtime 0.001232s
+

@@ -1,0 +1,21 @@
+{
+  "messages": [
+    {
+      "error_id": "",
+      "references": [
+        {
+          "column": 9,
+          "file": "/home/yo30qaqy/data-race-detection-benchmark-suite/results-20250730-140308/SPMDIR-MUST/static/031-MPI-static-get-store-same-array-local-no.c",
+          "line": 42
+        },
+        {
+          "column": 21,
+          "file": "/home/yo30qaqy/data-race-detection-benchmark-suite/results-20250730-140308/SPMDIR-MUST/static/031-MPI-static-get-store-same-array-local-no.c",
+          "line": 43
+        }
+      ],
+      "text": "Found get operation/call at results-20250730-140308/SPMDIR-MUST/static/031-MPI-static-get-store-same-array-local-no.c:42:9 which is in conflict with store operation/call at results-20250730-140308/SPMDIR-MUST/static/031-MPI-static-get-store-same-array-local-no.c:43:21 before release",
+      "type": "Local Data Race"
+    }
+  ]
+}

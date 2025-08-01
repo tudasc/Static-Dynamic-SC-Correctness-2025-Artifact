@@ -1,0 +1,38 @@
+{
+  "messages": [
+    {
+      "error_id": "",
+      "references": [
+        {
+          "column": 13,
+          "file": "/home/yo30qaqy/data-race-detection-benchmark-suite/results-20250730-140308/SPMDIR-MUST/static/038-MPI-static-loop-array-bounds-local-no.c",
+          "line": 42
+        },
+        {
+          "column": 21,
+          "file": "/home/yo30qaqy/data-race-detection-benchmark-suite/results-20250730-140308/SPMDIR-MUST/static/038-MPI-static-loop-array-bounds-local-no.c",
+          "line": 43
+        }
+      ],
+      "text": "Found get operation/call at results-20250730-140308/SPMDIR-MUST/static/038-MPI-static-loop-array-bounds-local-no.c:42:13 which is in conflict with store operation/call at results-20250730-140308/SPMDIR-MUST/static/038-MPI-static-loop-array-bounds-local-no.c:43:21 before release",
+      "type": "Local Data Race"
+    },
+    {
+      "error_id": "",
+      "references": [
+        {
+          "column": 13,
+          "file": "/home/yo30qaqy/data-race-detection-benchmark-suite/results-20250730-140308/SPMDIR-MUST/static/038-MPI-static-loop-array-bounds-local-no.c",
+          "line": 42
+        },
+        {
+          "column": 13,
+          "file": "/home/yo30qaqy/data-race-detection-benchmark-suite/results-20250730-140308/SPMDIR-MUST/static/038-MPI-static-loop-array-bounds-local-no.c",
+          "line": 42
+        }
+      ],
+      "text": "Found get operation/call at results-20250730-140308/SPMDIR-MUST/static/038-MPI-static-loop-array-bounds-local-no.c:42:13 which is in conflict with get operation/call at results-20250730-140308/SPMDIR-MUST/static/038-MPI-static-loop-array-bounds-local-no.c:42:13 before release",
+      "type": "Local Data Race"
+    }
+  ]
+}

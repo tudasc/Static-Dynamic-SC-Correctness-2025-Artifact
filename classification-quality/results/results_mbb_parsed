@@ -1,0 +1,28 @@
+=== RMA ===
+             TP   TN  FP  FN  NC-TP  NC-FP  TO  CR    P    R    A
+SPMDIR       47  139   0   0      0      0   0   0 1.00 1.00 1.00
+CoVer        47  139   0   0      0      0   0   0 1.00 1.00 1.00
+MUST         47  139   0   0      0      0   0   0 1.00 1.00 1.00
+SPMDIR-MUST  47  139   0   0      0      0   0   0 1.00 1.00 1.00
+CoVer-MUST   47  139   0   0      0      0   0   0 1.00 1.00 1.00
+=== COLL ===
+             TP  TN  FP  FN  NC-TP  NC-FP  TO  CR    P    R    A
+SPMDIR        7  40   0   0      0      0   0   0 1.00 1.00 1.00
+CoVer         7  34   6   0      0      0   0   0 0.54 1.00 0.87
+MUST          7  40   0   0      0      0   0   0 1.00 1.00 1.00
+SPMDIR-MUST   7  40   0   0      0      0   0   0 1.00 1.00 1.00
+CoVer-MUST    7  40   0   0      0      0   0   0 1.00 1.00 1.00
+=== P2P ===
+             TP  TN  FP  FN  NC-TP  NC-FP  TO  CR    P    R    A
+SPMDIR       13  19   0   0      0      0   0   0 1.00 1.00 1.00
+CoVer         6  19   0   7      0      0   0   0 1.00 0.46 0.78
+MUST          4  10   0   1      0      0  17   0 1.00 0.80 0.93
+SPMDIR-MUST   2  10   0   2      1      0  17   0 1.00 0.60 0.87
+CoVer-MUST    2  10   0   2      1      0  17   0 1.00 0.60 0.87
+=== Total ===
+             TP   TN  FP  FN  NC-TP  NC-FP  TO  CR    P    R    A
+SPMDIR       67  198   0   0      0      0   0   0 1.00 1.00 1.00
+CoVer        60  192   6   7      0      0   0   0 0.91 0.90 0.95
+MUST         58  189   0   1      0      0  17   0 1.00 0.98 1.00
+SPMDIR-MUST  56  189   0   2      1      0  17   0 1.00 0.97 0.99
+CoVer-MUST   56  189   0   2      1      0  17   0 1.00 0.97 0.99

@@ -1,0 +1,21 @@
+{
+  "messages": [
+    {
+      "error_id": "",
+      "references": [
+        {
+          "column": 9,
+          "file": "/home/yo30qaqy/data-race-detection-benchmark-suite/results-20250730-140308/SPMDIR-MUST/rma+nonrma/011-MPI-coll-get-broadcast-local-yes.c",
+          "line": 39
+        },
+        {
+          "column": 5,
+          "file": "/home/yo30qaqy/data-race-detection-benchmark-suite/results-20250730-140308/SPMDIR-MUST/rma+nonrma/011-MPI-coll-get-broadcast-local-yes.c",
+          "line": 42
+        }
+      ],
+      "text": "Found get operation/call at results-20250730-140308/SPMDIR-MUST/rma+nonrma/011-MPI-coll-get-broadcast-local-yes.c:39:9 which is in conflict with bcast operation/call at results-20250730-140308/SPMDIR-MUST/rma+nonrma/011-MPI-coll-get-broadcast-local-yes.c:42:5 before release",
+      "type": "Local Data Race"
+    }
+  ]
+}

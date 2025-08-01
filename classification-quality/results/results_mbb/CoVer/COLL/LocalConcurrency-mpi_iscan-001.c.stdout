@@ -1,0 +1,22 @@
+Running Contract Manager on Module: /tmp/contrPlugin_bYUUfi
+CoVer: Parsed contracts after 0.000906s
+## Contract violation detected! ##
+--> Function: MPI_Iscan
+--> Contract: CONTRACT{PRE { call_tag!(mpi_init) MSG "Missing Initialization call" } POST { call_tag!(mpi_finalize) MSG "Missing Finalization call", no! (write!(*0)) until! (call_tag!(req_complete,$:6)) MSG "Local Data Race - Local write", no! (call_tag!(buf_write,$:0)) until! (call_tag!(req_complete,$:6)) MSG "Local Data Race - Local write by call", no! (read!(*1)) until! (call_tag!(req_complete,$:6)) MSG "Local Data Race - Local read", no! (call_tag!(buf_read,$:1)) until! (call_tag!(req_complete,$:6)) MSG "Local Data Race - Local read by call", no! (write!(*1)) until! (call_tag!(req_complete,$:6)) MSG "Local Data Race - Local write", no! (call_tag!(buf_write,$:1)) until! (call_tag!(req_complete,$:6)) MSG "Local Data Race - Local write by call" } TAGS { buf_read(0), buf_write(1) }}
+--> Postcondition Subformula Status: Violated
+    --> Formula String: no!(write!(*0))until!(call_tag!(req_complete,$:6))
+    --> Message: Local Data Race - Local write
+    --> Error Info:
+        Found store at /home/yo30qaqy/data-race-detection-benchmark-suite/results-20250730-145557/CoVer/COLL/LocalConcurrency-mpi_iscan-001.c:40:29 which is in conflict with MPI_Iscan at /home/yo30qaqy/data-race-detection-benchmark-suite/results-20250730-145557/CoVer/COLL/LocalConcurrency-mpi_iscan-001.c:38:22 before release
+
+## Contract violation detected! ##
+--> Function: MPI_Wait
+--> Contract: CONTRACT{PRE { call_tag!(mpi_init) MSG "Missing Initialization call", call_tag!(request_gen,$:0) MSG "Unmatched Wait" } POST { call_tag!(mpi_finalize) MSG "Missing Finalization call" } TAGS { req_complete(0) }}
+--> Precondition Subformula Status: Violated
+    --> Formula String: call_tag!(request_gen,$:0)
+    --> Message: Unmatched Wait
+    --> Error Info:
+        [ContractVerifierPreCall] Did not find precall function request_gen (Tag) with required parameters before MPI_Wait at /home/yo30qaqy/data-race-detection-benchmark-suite/results-20250730-145557/CoVer/COLL/LocalConcurrency-mpi_iscan-001.c:41:3
+
+CoVer: Total Tool Runtime 0.001246s
+

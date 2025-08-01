@@ -1,0 +1,56 @@
+/* Part of RMARaceBench, under BSD-3-Clause License
+ * See https://github.com/RWTH-HPC/RMARaceBench/LICENSE for license information.
+ * SPDX-License-Identifier: BSD-3-Clause
+ */
+ 
+#include <mpi.h>
+#include <stdio.h>
+
+#define PROC_NUM 2
+#define ARR_SIZE 100
+
+int main(int argc, char** argv) {
+    int rank;
+    int arr[ARR_SIZE];
+    int packet_size = ARR_SIZE / 4;
+
+    MPI_Init(&argc, &argv);
+    MPI_Comm_rank(MPI_COMM_WORLD, &rank);
+
+    for (int i = 0; i < ARR_SIZE; i++) {
+        arr[i] = i * rank;
+    }
+
+    MPI_Request reqs[3];
+    MPI_Status stat;
+
+    MPI_Barrier(MPI_COMM_WORLD);
+
+    if (rank == 0) {
+        // CONFLICT
+        MPI_Irecv(arr, packet_size, MPI_INT, 1, 0, MPI_COMM_WORLD, &reqs[0]);
+        MPI_Irecv(arr+packet_size, packet_size, MPI_INT, 1, 0, MPI_COMM_WORLD, &reqs[1]);
+        MPI_Wait(&reqs[1], &stat);
+
+        // CONFLICT
+        MPI_Irecv(arr, packet_size, MPI_INT, 1, 0, MPI_COMM_WORLD, &reqs[2]);
+
+    } else {
+        MPI_Isend(arr, packet_size, MPI_INT, 0, 0, MPI_COMM_WORLD, &reqs[0]);
+        MPI_Isend(arr+packet_size, packet_size, MPI_INT, 0, 0, MPI_COMM_WORLD, &reqs[1]);
+        MPI_Wait(&reqs[1], &stat);
+        MPI_Isend(arr, packet_size, MPI_INT, 0, 0, MPI_COMM_WORLD, &reqs[2]);
+    }
+
+    MPI_Barrier(MPI_COMM_WORLD);
+
+    int sum = 0;
+    for (int i = 0; i < ARR_SIZE; i++) {
+        sum += arr[i];
+    }
+    printf("Process %d finished. Array sum %d\n", rank, sum);
+
+    MPI_Finalize();
+
+    return 0;
+}

@@ -1,0 +1,21 @@
+{
+  "messages": [
+    {
+      "error_id": "",
+      "references": [
+        {
+          "column": 24,
+          "file": "/home/yo30qaqy/data-race-detection-benchmark-suite/results-20250730-145557/SPMDIR-MUST/RMA/LocalConcurrency-lockallflushlocal-rget_accumulate_rget-001.c",
+          "line": 49
+        },
+        {
+          "column": 24,
+          "file": "/home/yo30qaqy/data-race-detection-benchmark-suite/results-20250730-145557/SPMDIR-MUST/RMA/LocalConcurrency-lockallflushlocal-rget_accumulate_rget-001.c",
+          "line": 52
+        }
+      ],
+      "text": "Found getAccumulate operation/call at results-20250730-145557/SPMDIR-MUST/RMA/LocalConcurrency-lockallflushlocal-rget_accumulate_rget-001.c:49:24 which is in conflict with get operation/call at results-20250730-145557/SPMDIR-MUST/RMA/LocalConcurrency-lockallflushlocal-rget_accumulate_rget-001.c:52:24 before release",
+      "type": "Local Data Race"
+    }
+  ]
+}

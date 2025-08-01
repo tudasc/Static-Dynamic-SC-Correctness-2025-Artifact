@@ -8,10 +8,13 @@ Authors: Yussur Mustafa Oraji, Simon Schwitanski, Semih Burak, Christian Bischof
 - [CoVer](CoVer/): Contains the CoVer tool used for static analysis
 - [MUST](MUST/): Contains the MUST tool used for dynamic analysis
 - [proxy-app-benchmarks](proxy-app-benchmarks/): Contains the proxy application benchmarks and the results used in the paper.
-
+- [classification-quality](classification-quality/): Contains the classification quality testing infrastructure and the results used in the paper.
 
 ## Reproducing Results
 
+### Classification Quality
+
+See [here](classification-quality/README.md)
 
 ### Proxy Application Benchmarks
 The proxy application benchmarks use the JUBE framework.

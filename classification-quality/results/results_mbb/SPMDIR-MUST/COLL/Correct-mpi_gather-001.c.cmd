@@ -1,0 +1,6 @@
+apptainer run --cleanenv /work/home/yo30qaqy/data-race-detection-benchmark-suite/util/apptainer/spmdir.sif spmd-verify check-dataRace emitSPMDIR emitJson results-20250730-145557/SPMDIR-MUST/COLL/Correct-mpi_gather-001.c
+apptainer run --cleanenv /work/home/yo30qaqy/data-race-detection-benchmark-suite/util/apptainer/spmdir.sif mv local_data_race_report.json results-20250730-145557/SPMDIR-MUST/COLL/Correct-mpi_gather-001.c_SPMDIR.json
+apptainer run --cleanenv /work/home/yo30qaqy/data-race-detection-benchmark-suite/util/apptainer/spmdir.sif must-tsan-cc --tsan-json results-20250730-145557/SPMDIR-MUST/COLL/Correct-mpi_gather-001.c_SPMDIR.json -fopenmp -g -ldl results-20250730-145557/SPMDIR-MUST/COLL/Correct-mpi_gather-001.c -o results-20250730-145557/SPMDIR-MUST/COLL/Correct-mpi_gather-001.c.exe-must
+apptainer run --cleanenv /work/home/yo30qaqy/data-race-detection-benchmark-suite/util/apptainer/spmdir.sif mktemp -d
+apptainer run --cleanenv /work/home/yo30qaqy/data-race-detection-benchmark-suite/util/apptainer/spmdir.sif mustrun -np 2 --must:detection-json-file results-20250730-145557/SPMDIR-MUST/COLL/Correct-mpi_gather-001.c_SPMDIR.json --must:temp /tmp/tmp.dYl7P04gCO
+ --must:clean --must:output stdout --must:distributed --must:nodl --must:tsan --must:rma-race results-20250730-145557/SPMDIR-MUST/COLL/Correct-mpi_gather-001.c.exe-must

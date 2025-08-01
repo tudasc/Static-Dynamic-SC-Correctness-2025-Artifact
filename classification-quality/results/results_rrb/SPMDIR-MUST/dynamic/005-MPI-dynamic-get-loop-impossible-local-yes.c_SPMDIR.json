@@ -1,0 +1,21 @@
+{
+  "messages": [
+    {
+      "error_id": "",
+      "references": [
+        {
+          "column": 13,
+          "file": "/home/yo30qaqy/data-race-detection-benchmark-suite/results-20250730-140308/SPMDIR-MUST/dynamic/005-MPI-dynamic-get-loop-impossible-local-yes.c",
+          "line": 46
+        },
+        {
+          "column": 13,
+          "file": "/home/yo30qaqy/data-race-detection-benchmark-suite/results-20250730-140308/SPMDIR-MUST/dynamic/005-MPI-dynamic-get-loop-impossible-local-yes.c",
+          "line": 46
+        }
+      ],
+      "text": "Found get operation/call at results-20250730-140308/SPMDIR-MUST/dynamic/005-MPI-dynamic-get-loop-impossible-local-yes.c:46:13 which is in conflict with get operation/call at results-20250730-140308/SPMDIR-MUST/dynamic/005-MPI-dynamic-get-loop-impossible-local-yes.c:46:13 before release",
+      "type": "Local Data Race"
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+[MUST] Unknown environment option MUST_DISABLE_TSAN_ONREPORT=1 is ignored
+[MUST] MUST configuration ... distributed checks without application crash handling
+[MUST] Information: overwritting old intermediate data in directory "/tmp/tmp.6Gu0MMb4kC"!
+[MUST] Using prebuilt infrastructure at /home/yo30qaqy/.cache/must/prebuilds/752224b6452974e853065e8ca52c91ce
+[MUST] Weaver ... success
+[MUST] Generating P^nMPI configuration ... success
+[MUST] Infrastructure in "/home/yo30qaqy/.cache/must/prebuilds/752224b6452974e853065e8ca52c91ce" is present and used.
+[MUST] Search for linked P^nMPI ... not found ... using LD_PRELOAD to load P^nMPI ... success
+[MUST] Note: Full ThreadSanitizer support requires the application to be built with either a GNU-based compiler in version 9 to 11 or an LLVM-based compiler in version 6 or later.
+[MUST] Note: MPI RMA support requires the application to be built with Clang >= 15.
+[MUST] Executing application:
+==================
+[1m[31mWARNING: ThreadSanitizer: data race (pid=3110430)
+[1m[0m[1m[34m  Read of size 8 at 0x720c00034e30 by thread T5:
+[1m[0m    #0 <null> <null> (0xfeb8c1d60811)
+    #1 <null> <null> (0xfffffffffffffff)
+    #2 <null> <null> (0x00000fffffff)
+    #3 <null> <null> (0x000100000000)
+    #4 <null> <null> (0x000100000006)
+    #5 main /home/yo30qaqy/data-race-detection-benchmark-suite/results-20250730-145557/SPMDIR-MUST/RMA/LocalConcurrency-lockunlock-rget_accumulate_bufwrite-001.c:48:24 (LocalConcurrency-lockunlock-rget_accumulate_bufwrite-001.c.exe-must+0xe68b6) (BuildId: 4ccfbaaa8ceeaf815f518a48db74c796ef309e11)
+
+[1m[34m  Previous write of size 4 at 0x720c00034e30 by main thread:
+[1m[0m    #0 main /home/yo30qaqy/data-race-detection-benchmark-suite/results-20250730-145557/SPMDIR-MUST/RMA/LocalConcurrency-lockunlock-rget_accumulate_bufwrite-001.c:51:31 (LocalConcurrency-lockunlock-rget_accumulate_bufwrite-001.c.exe-must+0xe68d5) (BuildId: 4ccfbaaa8ceeaf815f518a48db74c796ef309e11)
+
+[1m[32m  Location is heap block of size 40 at 0x720c00034e30 allocated by main thread:
+[1m[0m    #0 calloc <null> (LocalConcurrency-lockunlock-rget_accumulate_bufwrite-001.c.exe-must+0x6155f) (BuildId: 4ccfbaaa8ceeaf815f518a48db74c796ef309e11)
+    #1 main /home/yo30qaqy/data-race-detection-benchmark-suite/results-20250730-145557/SPMDIR-MUST/RMA/LocalConcurrency-lockunlock-rget_accumulate_bufwrite-001.c:44:23 (LocalConcurrency-lockunlock-rget_accumulate_bufwrite-001.c.exe-must+0xe6842) (BuildId: 4ccfbaaa8ceeaf815f518a48db74c796ef309e11)
+
+[1m[36m  Thread T5 'RMAFiber' (tid=0, running) created by thread T3 at:
+[1m[0m    #0 must::OriginChecks::OriginChecks(char const*) <null> (liboriginChecks.so+0xd481) (BuildId: a6e4323a364e79bf1125e4b6955dd3f2cfa6be93)
+
+SUMMARY: ThreadSanitizer: data race (<unknown module>) 
+==================
+[MUST-REPORT] MUST detected no MPI usage errors nor any suspicious behavior during this application run.
+Rank 1 finished normally
+Rank 0 finished normally
+ThreadSanitizer: reported 1 warnings
+[MUST] Execution finished.

@@ -1,0 +1,27 @@
+Running Contract Manager on Module: /tmp/contrPlugin_e81PyA
+CoVer: Parsed contracts after 0.000942s
+## Contract violation detected! ##
+--> Function: MPI_Igather
+--> Contract: CONTRACT{PRE { call_tag!(mpi_init) MSG "Missing Initialization call" } POST { call_tag!(mpi_finalize) MSG "Missing Finalization call", no! (call_tag!(request_gen,$:8)) until! (call_tag!(req_complete,$:8)) MSG "Double Request Use", call_tag!(req_complete,$:8) MSG "Request Leak", no! (write!(*0)) until! (call_tag!(req_complete,$:8)) MSG "Local Data Race - Local write", no! (call_tag!(buf_write,$:0)) until! (call_tag!(req_complete,$:8)) MSG "Local Data Race - Local write by call", no! (read!(*3)) until! (call_tag!(req_complete,$:8)) MSG "Local Data Race - Local read", no! (call_tag!(buf_read,$:3)) until! (call_tag!(req_complete,$:8)) MSG "Local Data Race - Local read by call", no! (write!(*3)) until! (call_tag!(req_complete,$:8)) MSG "Local Data Race - Local write", no! (call_tag!(buf_write,$:3)) until! (call_tag!(req_complete,$:8)) MSG "Local Data Race - Local write by call" } TAGS { request_gen(8), buf_read(0), buf_write(3) }}
+--> Postcondition Subformula Status: Violated
+    --> Formula String: no!(call_tag!(request_gen,$:8))until!(call_tag!(req_complete,$:8))
+    --> Message: Double Request Use
+    --> Error Info:
+        Found call to MPI_Igather at /home/yo30qaqy/data-race-detection-benchmark-suite/results-20250730-145557/CoVer/COLL/Correct-mpi_igather-mpi_igather-001.c:43:5 which is in conflict with MPI_Igather at /home/yo30qaqy/data-race-detection-benchmark-suite/results-20250730-145557/CoVer/COLL/Correct-mpi_igather-mpi_igather-001.c:39:5 before release
+--> Postcondition Subformula Status: Violated
+    --> Formula String: no!(call_tag!(buf_write,$:3))until!(call_tag!(req_complete,$:8))
+    --> Message: Local Data Race - Local write by call
+    --> Error Info:
+        Found call to MPI_Igather at /home/yo30qaqy/data-race-detection-benchmark-suite/results-20250730-145557/CoVer/COLL/Correct-mpi_igather-mpi_igather-001.c:43:5 which is in conflict with MPI_Igather at /home/yo30qaqy/data-race-detection-benchmark-suite/results-20250730-145557/CoVer/COLL/Correct-mpi_igather-mpi_igather-001.c:39:5 before release
+
+## Contract violation detected! ##
+--> Function: MPI_Wait
+--> Contract: CONTRACT{PRE { call_tag!(mpi_init) MSG "Missing Initialization call", call_tag!(request_gen,$:0) MSG "Unmatched Wait" } POST { call_tag!(mpi_finalize) MSG "Missing Finalization call" } TAGS { req_complete(0) }}
+--> Precondition Subformula Status: Violated
+    --> Formula String: call_tag!(request_gen,$:0)
+    --> Message: Unmatched Wait
+    --> Error Info:
+        [ContractVerifierPreCall] Did not find precall function request_gen (Tag) with required parameters before MPI_Wait at /home/yo30qaqy/data-race-detection-benchmark-suite/results-20250730-145557/CoVer/COLL/Correct-mpi_igather-mpi_igather-001.c:46:3
+
+CoVer: Total Tool Runtime 0.001412s
+

@@ -1,0 +1,1 @@
+apptainer run --cleanenv /work/home/yo30qaqy/data-race-detection-benchmark-suite/util/apptainer/cover.sif clangContracts -include /opt/cover/include/mpi_contracts.h results-20250730-140308/CoVer/rma+nonrma/012-MPI-coll-put-ireduce-local-yes.c -o /dev/null

@@ -1,0 +1,21 @@
+{
+  "messages": [
+    {
+      "error_id": "",
+      "references": [
+        {
+          "column": 9,
+          "file": "/home/yo30qaqy/data-race-detection-benchmark-suite/results-20250730-140308/SPMDIR-MUST/sync/001-MPI-sync-fence-local-yes.c",
+          "line": 42
+        },
+        {
+          "column": 15,
+          "file": "/home/yo30qaqy/data-race-detection-benchmark-suite/results-20250730-140308/SPMDIR-MUST/sync/001-MPI-sync-fence-local-yes.c",
+          "line": 44
+        }
+      ],
+      "text": "Found put operation/call at results-20250730-140308/SPMDIR-MUST/sync/001-MPI-sync-fence-local-yes.c:42:9 which is in conflict with store operation/call at results-20250730-140308/SPMDIR-MUST/sync/001-MPI-sync-fence-local-yes.c:44:15 before release",
+      "type": "Local Data Race"
+    }
+  ]
+}

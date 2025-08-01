@@ -1,0 +1,57 @@
+[MUST] Unknown environment option MUST_DISABLE_TSAN_ONREPORT=1 is ignored
+[MUST] MUST configuration ... distributed checks without application crash handling
+[MUST] Information: overwritting old intermediate data in directory "/tmp/tmp.1bWfPvNbU5"!
+[MUST] Using prebuilt infrastructure at /home/yo30qaqy/.cache/must/prebuilds/651129c018b63f1b57587bcde7b7ece3
+[MUST] Weaver ... success
+[MUST] Generating P^nMPI configuration ... success
+[MUST] Infrastructure in "/home/yo30qaqy/.cache/must/prebuilds/651129c018b63f1b57587bcde7b7ece3" is present and used.
+[MUST] Search for linked P^nMPI ... not found ... using LD_PRELOAD to load P^nMPI ... success
+[MUST] Note: Full ThreadSanitizer support requires the application to be built with either a GNU-based compiler in version 9 to 11 or an LLVM-based compiler in version 6 or later.
+[MUST] Note: MPI RMA support requires the application to be built with Clang >= 15.
+[MUST] Executing application:
+==================
+[1m[31mWARNING: ThreadSanitizer: data race (pid=2481644)
+[1m[0m[1m[34m  Write of size 4 at 0x72140001cd98 by main thread:
+[1m[0m    #0 main /home/yo30qaqy/data-race-detection-benchmark-suite/results-20250730-145557/MUST/COLL/LocalConcurrency-mpi_ialltoall-001.c:40:29 (LocalConcurrency-mpi_ialltoall-001.c.exe-must+0xe66fd) (BuildId: 5e4baabb2a64cb0d483649c40b52f40620458b5c)
+
+[1m[34m  Previous read of size 8 at 0x72140001cd98 by thread T14:
+[1m[0m    #0 MPI_Ialltoall <null> (libpnmpi.so+0x8a9b0) (BuildId: 5eab7454ce5986bf84a20dbfeab42660adfd5aeb)
+==================
+[1m[31mWARNING: ThreadSanitizer: data race (pid=2481643)
+[1m[0m[1m[34m  Write of size 4 at 0x72140001cd98 by main thread:
+[1m[0m    #0 main /home/yo30qaqy/data-race-detection-benchmark-suite/results-20250730-145557/MUST/COLL/LocalConcurrency-mpi_ialltoall-001.c:40:29 (LocalConcurrency-mpi_ialltoall-001.c.exe-must+0xe66fd) (BuildId: 5e4baabb2a64cb0d483649c40b52f40620458b5c)
+
+[1m[34m  Previous read of size 8 at 0x72140001cd98 by thread T14:
+[1m[0m    #0 MPI_Ialltoall <null> (libpnmpi.so+0x8a9b0) (BuildId: 5eab7454ce5986bf84a20dbfeab42660adfd5aeb)
+    #1 main /home/yo30qaqy/data-race-detection-benchmark-suite/results-20250730-145557/MUST/COLL/LocalConcurrency-mpi_ialltoall-001.c:38:22 (LocalConcurrency-mpi_ialltoall-001.c.exe-must+0xe66ec) (BuildId: 5e4baabb2a64cb0d483649c40b52f40620458b5c)
+
+[1m[32m  Location is heap block of size 80 at 0x72140001cd90 allocated by main thread:
+[1m[0m    #1 main /home/yo30qaqy/data-race-detection-benchmark-suite/results-20250730-145557/MUST/COLL/LocalConcurrency-mpi_ialltoall-001.c:38:22 (LocalConcurrency-mpi_ialltoall-001.c.exe-must+0xe66ec) (BuildId: 5e4baabb2a64cb0d483649c40b52f40620458b5c)
+
+[1m[32m  Location is heap block of size 80 at 0x72140001cd90 allocated by main thread:
+[1m[0m    #0 calloc <null> (LocalConcurrency-mpi_ialltoall-001.c.exe-must+0x614af) (BuildId: 5e4baabb2a64cb0d483649c40b52f40620458b5c)
+    #0 calloc <null> (LocalConcurrency-mpi_ialltoall-001.c.exe-must+0x614af) (BuildId: 5e4baabb2a64cb0d483649c40b52f40620458b5c)
+    #1 main /home/yo30qaqy/data-race-detection-benchmark-suite/results-20250730-145557/MUST/COLL/LocalConcurrency-mpi_ialltoall-001.c:34:21 (LocalConcurrency-mpi_ialltoall-001.c.exe-must+0xe6696) (BuildId: 5e4baabb2a64cb0d483649c40b52f40620458b5c)
+
+[1m[36m  Thread T14 'Request from call MPI_Ialltoall' (tid=0, running) created by main thread at:
+[1m[0m    #1 main /home/yo30qaqy/data-race-detection-benchmark-suite/results-20250730-145557/MUST/COLL/LocalConcurrency-mpi_ialltoall-001.c:34:21 (LocalConcurrency-mpi_ialltoall-001.c.exe-must+0xe6696) (BuildId: 5e4baabb2a64cb0d483649c40b52f40620458b5c)
+
+[1m[36m  Thread T14 'Request from call MPI_Ialltoall' (tid=0, running) created by main thread at:
+[1m[0m    #0 must::MpiTSanAnnotations::makeBlocksActive(unsigned long, unsigned long, must::MustMemIntervalListType const&, long) <null> (libmpiTSanAnnotations.so+0x172b0) (BuildId: 4b8fda56fcd0a6362187e56177347bd44720908c)
+    #0 must::MpiTSanAnnotations::makeBlocksActive(unsigned long, unsigned long, must::MustMemIntervalListType const&, long) <null> (libmpiTSanAnnotations.so+0x172b0) (BuildId: 4b8fda56fcd0a6362187e56177347bd44720908c)
+    #1 MPI_Ialltoall <null> (libpnmpi.so+0x8a9b0) (BuildId: 5eab7454ce5986bf84a20dbfeab42660adfd5aeb)
+    #1 MPI_Ialltoall <null> (libpnmpi.so+0x8a9b0) (BuildId: 5eab7454ce5986bf84a20dbfeab42660adfd5aeb)
+    #2 main /home/yo30qaqy/data-race-detection-benchmark-suite/results-20250730-145557/MUST/COLL/LocalConcurrency-mpi_ialltoall-001.c:38:22 (LocalConcurrency-mpi_ialltoall-001.c.exe-must+0xe66ec) (BuildId: 5e4baabb2a64cb0d483649c40b52f40620458b5c)
+
+    #2 main /home/yo30qaqy/data-race-detection-benchmark-suite/results-20250730-145557/MUST/COLL/LocalConcurrency-mpi_ialltoall-001.c:38:22 (LocalConcurrency-mpi_ialltoall-001.c.exe-must+0xe66ec) (BuildId: 5e4baabb2a64cb0d483649c40b52f40620458b5c)
+
+SUMMARY: ThreadSanitizer: data race /home/yo30qaqy/data-race-detection-benchmark-suite/results-20250730-145557/MUST/COLL/LocalConcurrency-mpi_ialltoall-001.c:40:29 in main
+==================
+SUMMARY: ThreadSanitizer: data race /home/yo30qaqy/data-race-detection-benchmark-suite/results-20250730-145557/MUST/COLL/LocalConcurrency-mpi_ialltoall-001.c:40:29 in main
+==================
+[MUST-REPORT] MUST detected no MPI usage errors nor any suspicious behavior during this application run.
+Rank 1 finished normally
+Rank 0 finished normally
+ThreadSanitizer: reported 1 warnings
+ThreadSanitizer: reported 1 warnings
+[MUST] Execution finished.

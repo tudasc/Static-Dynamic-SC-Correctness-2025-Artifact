@@ -1,0 +1,26 @@
+Running Contract Manager on Module: /tmp/contrPlugin_vuDZLF
+CoVer: Parsed contracts after 0.001311s
+## Contract violation detected! ##
+--> Function: MPI_Rget_accumulate
+--> Contract: CONTRACT{PRE { call_tag!(mpi_init) MSG "Missing Initialization call" } POST { call_tag!(mpi_finalize) MSG "Missing Finalization call", ( no! (write!(*0)) until! (call_tag!(rma_complete,$:11)) | no! (write!(*0)) until! (call_tag!(req_complete,$:12)) ) MSG "Local Data Race - Local write", ( no! (call_tag!(buf_write,$:0)) until! (call_tag!(rma_complete,$:11)) | no! (call_tag!(buf_write,$:0)) until! (call_tag!(req_complete,$:12)) ) MSG "Local Data Race - Local write by MPI call", ( no! (read!(*3)) until! (call_tag!(rma_complete,$:11)) | no! (read!(*3)) until! (call_tag!(req_complete,$:12)) ) MSG "Local Data Race - Local read", ( no! (call_tag!(buf_read,$:3)) until! (call_tag!(rma_complete,$:11)) | no! (call_tag!(buf_read,$:3)) until! (call_tag!(req_complete,$:12)) ) MSG "Local Data Race - Local read by MPI call", ( no! (write!(*3)) until! (call_tag!(rma_complete,$:11)) | no! (write!(*3)) until! (call_tag!(req_complete,$:12)) ) MSG "Local Data Race - Local write", ( no! (call_tag!(buf_write,$:3)) until! (call_tag!(rma_complete,$:11)) | no! (call_tag!(buf_write,$:3)) until! (call_tag!(req_complete,$:12)) ) MSG "Local Data Race - Local write by MPI call" } TAGS { buf_read(0), buf_write(3) }}
+--> Postcondition Subformula Status: Violated
+    --> Formula String: (no!(write!(*0))until!(call_tag!(rma_complete,$:11))|no!(write!(*0))until!(call_tag!(req_complete,$:12)))MSG"Local Data Race - Local write"
+    --> Message: Local Data Race - Local write
+    --> Error Info:
+        No children satisfied for subformula: (no!(write!(*0))until!(call_tag!(rma_complete,$:11))|no!(write!(*0))until!(call_tag!(req_complete,$:12)))MSG"Local Data Race - Local write"
+        Error Info for child: no!(write!(*0))until!(call_tag!(rma_complete,$:11))
+        Found store at /home/yo30qaqy/data-race-detection-benchmark-suite/results-20250730-145557/CoVer/RMA/LocalConcurrency-lockunlock-rget_accumulate_bufwrite-001.c:51:31 which is in conflict with MPI_Rget_accumulate at /home/yo30qaqy/data-race-detection-benchmark-suite/results-20250730-145557/CoVer/RMA/LocalConcurrency-lockunlock-rget_accumulate_bufwrite-001.c:48:24 before release
+        Error Info for child: no!(write!(*0))until!(call_tag!(req_complete,$:12))
+        Found store at /home/yo30qaqy/data-race-detection-benchmark-suite/results-20250730-145557/CoVer/RMA/LocalConcurrency-lockunlock-rget_accumulate_bufwrite-001.c:51:31 which is in conflict with MPI_Rget_accumulate at /home/yo30qaqy/data-race-detection-benchmark-suite/results-20250730-145557/CoVer/RMA/LocalConcurrency-lockunlock-rget_accumulate_bufwrite-001.c:48:24 before release
+
+## Contract violation detected! ##
+--> Function: MPI_Wait
+--> Contract: CONTRACT{PRE { call_tag!(mpi_init) MSG "Missing Initialization call", call_tag!(request_gen,$:0) MSG "Unmatched Wait" } POST { call_tag!(mpi_finalize) MSG "Missing Finalization call" } TAGS { req_complete(0) }}
+--> Precondition Subformula Status: Violated
+    --> Formula String: call_tag!(request_gen,$:0)
+    --> Message: Unmatched Wait
+    --> Error Info:
+        [ContractVerifierPreCall] Did not find precall function request_gen (Tag) with required parameters before MPI_Wait at /home/yo30qaqy/data-race-detection-benchmark-suite/results-20250730-145557/CoVer/RMA/LocalConcurrency-lockunlock-rget_accumulate_bufwrite-001.c:53:5
+
+CoVer: Total Tool Runtime 0.001813s
+

@@ -1,0 +1,46 @@
+[MUST] Unknown environment option MUST_DISABLE_TSAN_ONREPORT=1 is ignored
+[MUST] MUST configuration ... distributed checks without application crash handling
+[MUST] Information: overwritting old intermediate data in directory "/tmp/tmp.VUG732MOjw"!
+[MUST] Using prebuilt infrastructure at /home/yo30qaqy/.cache/must/prebuilds/5dea4e371384d15a125b8f9f8c610645
+[MUST] Weaver ... success
+[MUST] Generating P^nMPI configuration ... success
+[MUST] Infrastructure in "/home/yo30qaqy/.cache/must/prebuilds/5dea4e371384d15a125b8f9f8c610645" is present and used.
+[MUST] Search for linked P^nMPI ... not found ... using LD_PRELOAD to load P^nMPI ... success
+[MUST] Note: Full ThreadSanitizer support requires the application to be built with either a GNU-based compiler in version 9 to 11 or an LLVM-based compiler in version 6 or later.
+[MUST] Note: MPI RMA support requires the application to be built with Clang >= 15.
+[MUST] Executing application:
+==================
+[1m[31mWARNING: ThreadSanitizer: data race (pid=2726119)
+[1m[0m[1m[34m  Read of size 8 at 0x720c00034e90 by thread T5:
+[1m[0m    #0 <null> <null> (0xfe7055ee1461)
+    #1 <null> <null> (0xfffffffffffffff)
+    #2 <null> <null> (0x00000fffffff)
+    #3 <null> <null> (0x000100000000)
+    #4 <null> <null> (0x000100000007)
+    #5 main /home/yo30qaqy/data-race-detection-benchmark-suite/results-20250730-145557/CoVer-MUST/RMA/LocalConcurrency-lockflush-get_raccumulate-001.c:47:24 (LocalConcurrency-lockflush-get_raccumulate-001.c.exe-must+0xe68b4) (BuildId: 3d0c26e86103eac48ba6fbfca3fb6cc1253792da)
+
+[1m[34m  Previous write of size 8 at 0x720c00034e90 by thread T4:
+[1m[0m    #0 <null> <null> (0x7e7055ed80c1)
+    #1 <null> <null> (0xfffffffffffffff)
+    #2 <null> <null> (0x00000fffffff)
+    #3 <null> <null> (0x000100000000)
+    #4 <null> <null> (0x000100000006)
+    #5 main /home/yo30qaqy/data-race-detection-benchmark-suite/results-20250730-145557/CoVer-MUST/RMA/LocalConcurrency-lockflush-get_raccumulate-001.c:45:24 (LocalConcurrency-lockflush-get_raccumulate-001.c.exe-must+0xe686c) (BuildId: 3d0c26e86103eac48ba6fbfca3fb6cc1253792da)
+
+[1m[32m  Location is heap block of size 40 at 0x720c00034e90 allocated by main thread:
+[1m[0m    #0 calloc <null> (LocalConcurrency-lockflush-get_raccumulate-001.c.exe-must+0x6155f) (BuildId: 3d0c26e86103eac48ba6fbfca3fb6cc1253792da)
+    #1 main /home/yo30qaqy/data-race-detection-benchmark-suite/results-20250730-145557/CoVer-MUST/RMA/LocalConcurrency-lockflush-get_raccumulate-001.c:43:23 (LocalConcurrency-lockflush-get_raccumulate-001.c.exe-must+0xe6838) (BuildId: 3d0c26e86103eac48ba6fbfca3fb6cc1253792da)
+
+[1m[36m  Thread T5 'RMAFiber' (tid=0, running) created by thread T3 at:
+[1m[0m    #0 must::OriginChecks::OriginChecks(char const*) <null> (liboriginChecks.so+0xd481) (BuildId: a6e4323a364e79bf1125e4b6955dd3f2cfa6be93)
+
+[1m[36m  Thread T4 'RMAFiber' (tid=0, running) created by thread T3 at:
+[1m[0m    #0 must::OriginChecks::OriginChecks(char const*) <null> (liboriginChecks.so+0xd481) (BuildId: a6e4323a364e79bf1125e4b6955dd3f2cfa6be93)
+
+SUMMARY: ThreadSanitizer: data race (<unknown module>) 
+==================
+[MUST-REPORT] MUST detected no MPI usage errors nor any suspicious behavior during this application run.
+Rank 1 finished normally
+Rank 0 finished normally
+ThreadSanitizer: reported 1 warnings
+[MUST] Execution finished.

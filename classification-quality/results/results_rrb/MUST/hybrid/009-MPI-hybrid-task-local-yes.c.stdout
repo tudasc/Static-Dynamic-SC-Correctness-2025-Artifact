@@ -1,0 +1,48 @@
+[MUST] Unknown environment option MUST_DISABLE_TSAN_ONREPORT=1 is ignored
+[MUST] MUST configuration ... distributed checks without application crash handling
+[MUST] Information: overwritting old intermediate data in directory "/tmp/tmp.LchkECBbDV"!
+[MUST] Using prebuilt infrastructure at /home/yo30qaqy/.cache/must/prebuilds/651129c018b63f1b57587bcde7b7ece3
+[MUST] Weaver ... success
+[MUST] Generating P^nMPI configuration ... success
+[MUST] Infrastructure in "/home/yo30qaqy/.cache/must/prebuilds/651129c018b63f1b57587bcde7b7ece3" is present and used.
+[MUST] Search for linked P^nMPI ... not found ... using LD_PRELOAD to load P^nMPI ... success
+[MUST] Note: Full ThreadSanitizer support requires the application to be built with either a GNU-based compiler in version 9 to 11 or an LLVM-based compiler in version 6 or later.
+[MUST] Note: MPI RMA support requires the application to be built with Clang >= 15.
+[MUST] Executing application:
+win_base[0] is 0
+/usr/bin/llvm-symbolizer-19: error: '/dev/shm/osc_sm.logc0002.e62d0001.0.11 (deleted)': No such file or directory
+==================
+[1m[31mWARNING: ThreadSanitizer: data race (pid=2003048)
+[1m[0m[1m[34m  Write of size 4 at 0x7f20e0101000 by thread T4:
+[1m[0m    #0 <null> <null> (0xfe41c4f980c1)
+    #1 <null> <null> (0xfffffffffffffff)
+    #2 <null> <null> (0x00000fffffff)
+    #3 <null> <null> (0x000200000000)
+    #4 <null> <null> (0x000100000007)
+    #5 .omp_outlined. /home/yo30qaqy/data-race-detection-benchmark-suite/results-20250730-140308/MUST/hybrid/009-MPI-hybrid-task-local-yes.c:71:21 (009-MPI-hybrid-task-local-yes.c.exe-must+0xe6cfc) (BuildId: ffc0e7d8cd5c07e836d1d9bb30f5a51373bb825b)
+    #6 .omp_task_entry. /home/yo30qaqy/data-race-detection-benchmark-suite/results-20250730-140308/MUST/hybrid/009-MPI-hybrid-task-local-yes.c:66:1 (009-MPI-hybrid-task-local-yes.c.exe-must+0xe6cfc)
+
+[1m[34m  Previous read of size 4 at 0x7f20e0101000 by main thread:
+[1m[0m    #0 main.omp_outlined_debug__ /home/yo30qaqy/data-race-detection-benchmark-suite/results-20250730-140308/MUST/hybrid/009-MPI-hybrid-task-local-yes.c:78:47 (009-MPI-hybrid-task-local-yes.c.exe-must+0xe6b63) (BuildId: ffc0e7d8cd5c07e836d1d9bb30f5a51373bb825b)
+    #1 main.omp_outlined /home/yo30qaqy/data-race-detection-benchmark-suite/results-20250730-140308/MUST/hybrid/009-MPI-hybrid-task-local-yes.c:62:1 (009-MPI-hybrid-task-local-yes.c.exe-must+0xe6da5) (BuildId: ffc0e7d8cd5c07e836d1d9bb30f5a51373bb825b)
+    #2 __kmp_invoke_microtask <null> (libomp.so.5+0xe2f88) (BuildId: f563fa174bd100d29baad91b5a627c9f1f687f6e)
+    #3 <null> <null> (libc.so.6+0x29ca7) (BuildId: a9c7c322a0d31942d458fed29db458df49262b9a)
+
+[1m[32m  Location is global '??' at 0x7f20e0100000 (osc_sm.logc0002.e62d0001.0.11 (deleted)+0x1000)
+
+[1m[0m[1m[36m  Thread T4 'RMAFiber' (tid=0, running) created by thread T3 at:
+[1m[0m    #0 must::OriginChecks::OriginChecks(char const*) <null> (liboriginChecks.so+0xd481) (BuildId: a6e4323a364e79bf1125e4b6955dd3f2cfa6be93)
+
+SUMMARY: ThreadSanitizer: data race (<unknown module>) 
+==================
+win_base[0] is 0
+Process 1: Execution finished, variable contents: value = 1, value2 = 2, win_base[0] = 0
+Process 0: Execution finished, variable contents: value = 1, value2 = 2, win_base[0] = 0
+[MUST-REPORT] Error: from: call MPI_Win_lock@0: The provided lock type (1) for MPI_Win_lock is invalid.
+[MUST-REPORT] Representative location:
+[MUST-REPORT] .omp_outlined. at /home/yo30qaqy/data-race-detection-benchmark-suite/results-20250730-140308/MUST/hybrid/009-MPI-hybrid-task-local-yes.c:69
+[MUST-REPORT]  (inlined by) .omp_task_entry. at /home/yo30qaqy/data-race-detection-benchmark-suite/results-20250730-140308/MUST/hybrid/009-MPI-hybrid-task-local-yes.c:66
+[MUST-REPORT] 
+[MUST-REPORT] 
+ThreadSanitizer: reported 1 warnings
+[MUST] Execution finished.

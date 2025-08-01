@@ -1,0 +1,1 @@
+apptainer run --cleanenv /work/home/yo30qaqy/data-race-detection-benchmark-suite/util/apptainer/cover.sif clangContracts -include /opt/cover/include/mpi_contracts.h results-20250730-145557/CoVer/RMA/Correct-lockallflush-rget_accumulate_raccumulate-001.c -o /dev/null
