@@ -9,7 +9,7 @@ Authors: Yussur Mustafa Oraji, Simon Schwitanski, Semih Burak, Christian Bischof
 - [MUST](MUST/): Contains the MUST tool used for dynamic analysis
 - [proxy-app-benchmarks](proxy-app-benchmarks/): Contains the proxy application benchmarks and the results used in the paper.
 - [classification-quality](classification-quality/): Contains the classification quality testing infrastructure and the results used in the paper.
-
+- `schema_v1.json`: JSON Schema File for the format used in the paper
 ## Reproducing Results
 
 ### Classification Quality
