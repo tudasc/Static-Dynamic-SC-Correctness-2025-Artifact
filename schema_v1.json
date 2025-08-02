@@ -1,0 +1,66 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "title": "Interface for Static/Dynamic Parallel Programming Verification Tools",
+    "description": "This schema defines the common exchange format for both static and dynamic tools verifying code utilizing parallel programming models.",
+    "type": "object",
+    "properties": {
+        "messages": {
+            "description": "List of messages reported by the tool",
+            "type": "array",
+            "items": {
+                "description": "Message object representing a report of the verification tool",
+                "type": "object",
+                "properties": {
+                    "error_id": {
+                        "description": "String identifier for the verification method",
+                        "type": "string"
+                    },
+                    "references": {
+                        "description": "List of code locations relevant to this error report",
+                        "type": "array",
+                        "items": {
+                            "description": "A code location that is part of an error report",
+                            "type": "object",
+                            "properties": {
+                                "column": {
+                                    "description": "Column number of this code location",
+                                    "type": "integer"
+                                },
+                                "file": {
+                                    "description": "The source file path containing the location.",
+                                    "type": "string"
+                                },
+                                "line": {
+                                    "description": "Line number of this code location",
+                                    "type": "integer"
+                                }
+                            },
+                            "required": [
+                                "file",
+                                "line"
+                            ],
+                            "additionalProperties": false
+                        }
+                    },
+                    "text": {
+                        "description": "Textual description of the error reported",
+                        "type": "string"
+                    },
+                    "type": {
+                        "description": "Short identifier of the error class",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "references",
+                    "type"
+                ],
+                "additionalProperties": false
+            }
+        }
+    },
+    "required": [
+        "messages"
+    ],
+    "additionalProperties": false
+}
